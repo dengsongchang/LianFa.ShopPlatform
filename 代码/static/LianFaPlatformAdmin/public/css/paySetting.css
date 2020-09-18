@@ -1,0 +1,59 @@
+.content-wrapper{
+    background: #fff;
+}
+/*以下是公共样式*/
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+#choice_condition_box label{
+    font-size: 12px;
+    padding-right: 0px !important;
+    font-weight: 500;
+
+}
+input,select{
+    border-radius: 4px !important;
+}
+/*这是自己写的*/
+.content_pay_box {
+    margin: 30px 0px;
+}
+.swiper_slide_box ul {
+    overflow: hidden;
+}
+.swiper_slide_box li {
+    float: left;
+    width: 33.333%;
+}
+.swiper_slide_box li .switch {
+    display: inline-block;
+    vertical-align: middle;
+}
+.form_big_con,.about_service_box {
+    width: 800px;
+    margin: 30px auto;
+}
+.form_big_con .form-control,.about_service_box .form-control {
+    display: inline-block;
+    width: 400px;
+}
+.form_big_con .form-group label{
+    width:100px;
+    text-align: right;
+}
+.tip_about_uploader{
+    color:#666;
+    font-size: 12px;
+}
+.zhen{
+    margin-left: 40px;
+}
+.service_if{
+    width: 843px;
+    margin: 30px auto;
+    /*margin-left: 40px;*/
+}
+#Letter{
+    margin-left: 5px;
+}

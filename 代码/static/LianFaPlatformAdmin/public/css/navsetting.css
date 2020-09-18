@@ -1,0 +1,213 @@
+.content{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.list_title_header{
+
+}
+.option-list{
+    padding-bottom: 30px;
+    padding-top:30px;
+}
+.brandNav{
+    width:100%;
+    height:52px;
+    background-color: #f8f8f8;
+    line-height:52px;
+    text-align: center;
+    color:#3f3f3f;
+    font-size:14px;
+    border-bottom: 2px solid #dddddd;
+}
+.brandItem{
+    width:100%;
+    height:100px;
+    line-height: 100px;
+    text-align: center;
+    font-size:14px;
+    border-bottom:1px solid #e8e8e8;
+}
+.brandImg{
+    height:69px;
+}
+.inputNum{
+    width:73px;height:40px;
+    border:1px solid #e8e8e8;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+}
+.brandItem  .col-md-3 span{
+    color:#1792e7;
+}
+/*品牌添加*/
+.brandAdd{
+    padding-left:100px;
+}
+.form-input{
+    display: inline-block;
+    width: 382px;
+    vertical-align: middle;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    border:1px solid #e8e8e8;
+    font-size:14px;
+    color:#aaa;
+}
+.brandAdd .brand-list .form-group{
+    margin-top:41px;
+    display: block;
+}
+.brandAdd .brand-list .form-group .upload{
+    width:50px;
+    height:50px;
+    position:absolute;
+    top:0;
+    left:75px;
+    opacity: 0;
+}
+.imgSize{
+    font-size:12px;
+    color:#666;
+    margin-left:80px;
+    margin-top:5px;
+}
+.finish{
+    width:120px;
+    height:43px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+.finish:hover{
+    color:#fff !important;
+}
+.content{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.head-type ul{
+    border-bottom: 1px solid #fd522d;
+}
+.head-type ul li a{
+    color: black;
+}
+.head-type ul .active a{
+    color: #ffffff !important;
+    background-color: #fd522d !important;
+}
+.option-list{
+    border-bottom: 1px solid #c5c5c5;
+    padding-bottom: 30px;
+}
+.option-list .form-group{
+    margin-top: 20px;
+}
+.delete-btn{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #fd522d;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    background-color: #fd522d;
+    border-bottom-color: transparent;
+    border-radius: 10px 10px 0px 0px;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.nav-tabs > li > a:hover {
+    border-color: transparent transparent #fd522d;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #3f3f3f;
+}
+.product_consulting_box {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#uploader_food_btn{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    /*background:url(../images/pic.jpg) #f8f8f8 no-repeat center center;*/
+    position: absolute;
+    left: 75px;
+    top:0;
+}
+#uploader_food_btn div{
+    width:100% !important;
+    height:100% !important;
+    left:0px !important;
+    top:0px !important;
+}
+#uploader_food_btn input{
+    width:100% !important;
+    height:100% !important;
+    opacity: 0;
+}
+.pagination-detail{
+    display: none;
+}
+.order-disp {
+    display: inline-block;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    line-height: 35px;
+    border-radius: 5px;
+    width: 50px;
+    min-height: 38px;
+}
+.all_zongti_operation {
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+#all_delte_box {
+    background: #f8f8f8;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    width: 48px;
+    line-height: 37px;
+    font-size: 14px;
+    padding: 0px;
+    height: 37px;
+}
+.all_delte_box {
+    background: #efefef;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #d8d6d6;
+    text-align: center;
+    cursor: pointer;
+}
+.quanxuan_con {
+    background: #f8f8f8;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-right: 15px;
+    width: 48px;
+}
+
+

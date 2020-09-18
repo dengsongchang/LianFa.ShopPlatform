@@ -1,0 +1,93 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}商品分类列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/classifyAdd.css">
+<link rel="stylesheet" href="/public/plugins/jquery-chosen/chosen.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/classify/classifyList">管理</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" href="/classify/classifyAdd">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="classify_add_box">
+                    <div class="row form-group">
+
+                        <label for="classify_name" class="col-md-3 text-right"> <em
+                                style="color: red">*</em>分类名称：</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="classify_name" placeholder="不超过20个字符">
+                        </div>
+                    </div>
+                    <!--<div class="row form-group">-->
+                        <!--<label for="classify_choice" class="col-md-3 text-right">选择上级分类：</label>-->
+                        <!--<div class="col-md-9">-->
+                            <!--<select id="cateBox" class="form-control select2 select2-hidden-accessible" tabindex="-1"-->
+                                    <!--aria-hidden="true">-->
+
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row form-group" id="smallBox" style="display: none">-->
+                        <!--<label for="" class="col-md-3 text-right">分类大图标：</label>-->
+                        <!--<div class="col-md-9">-->
+                            <!--<div class="icon-box_about_classify">-->
+                                <!--<div class="small_con">-->
+                                    <!--<img src="/public/images/addImg.png" style="width: 100px;height: 100px" alt=""-->
+                                         <!--id="small_icon">-->
+                                    <!--<div id="small_upload_pick"></div>-->
+                                <!--</div>-->
+                                <!--<div>143*143</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row form-group" id="bigBox">-->
+                        <!--<label for="" class="col-md-3 text-right">分类小图标：</label>-->
+                        <!--<div class="col-md-9">-->
+                            <!--<div class="icon-box_about_classify">-->
+                                <!--<div class="big_con">-->
+                                    <!--<img src="/public/images/addImg.png" alt="" id="big_icon">-->
+                                    <!--<div id="big_upload_pick"></div>-->
+                                <!--</div>-->
+                                <!--<div>40*45</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="row form-group" style="margin-top: 30px;">
+                        <div class="col-md-3" style="text-align: right">
+                            <button class="btn btn-primary finish_bth_add">完成</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/jquery-chosen/chosen.jquery.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/js/classifyAdd.js" type="text/babel"></script>
+{{/block}}

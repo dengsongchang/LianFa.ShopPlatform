@@ -1,0 +1,65 @@
+.checkall{
+    padding: 3px 20px;
+}
+.paginalNum span{
+    line-height: 30px;
+}
+#pagesize_dropdown{
+    height: 30px;
+}
+.order-select{
+    height: 30px;
+    float: left;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-right: 40px;
+}
+.operate-box .btn{
+    margin-left: 0;
+    margin-right: 20px;
+}
+@media (max-width: 1116px){
+    .paginalNum{
+        float: left;
+        margin-top: 10px;
+    }
+}
+
+.label-list{
+    padding: 0 20px;
+}
+
+.confirm-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+.coup-content{
+    padding: 20px;
+}
+.coup-search input{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+.coup-search .btn-primary{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+#sendCoupBox{
+    padding-bottom: 90px;
+}
+.content-box{
+    display: none;
+}
+
+.see-label{
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.coup-search{
+    margin-bottom: 20px;
+}

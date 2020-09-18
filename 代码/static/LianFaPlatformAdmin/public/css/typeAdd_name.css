@@ -1,0 +1,48 @@
+/*重写css*/
+.content-wrapper{
+    background: #fff;
+}
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+/*公共样式*/
+.star{
+    color: Red;
+    margin-right: 4px;
+}
+.form-group label{
+    color:#333;
+    font-weight: 100;
+    font-size: 12px;
+    width: 120px;
+    text-align: right;
+}
+.modal-body{
+    font-size: 12px;
+}
+.active_li_aboutClassify{
+    background:#fd522d !important;
+    color:#fff !important;
+}
+/*以下是自己添加的样式*/
+.table_body_classify{
+    font-size:12px;
+    margin-bottom: 32px;
+}
+.tab_li_type_box{
+    overflow: hidden;
+    margin:30px auto;
+}
+#table_header_classify{
+    overflow: hidden;
+    width:100%;
+    padding:12px 0px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+}
+.first-step-con {
+    width: 600px;
+    margin: auto;
+}

@@ -1,0 +1,141 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}商品分析{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/analysisCommodity.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/daterangepicker/daterangepicker-bs3.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css"> {{/block}}{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="row" style="border-bottom: 1px solid #e8e8e8;padding: 10px 0;">
+        <div class="col-sm-6">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">商品类目销售分析</span>
+                </h3>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="r_title_r">
+                <ul id="dateUl" class="tabDay">
+                    <li svalue="inOneDay" class="active">昨天</li>
+                    <li svalue="inOneWeek">最近7天</li>
+                    <li svalue="inOneMonth">最近30天</li>
+                </ul>
+                <div class="input-prepend input-group">
+                    <span class="add-on input-group-addon">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </span>
+                    <input type="text" placeholder="MM/DD/YY — MM/DD/YY" readonly="" style="width: 165px" name="reservation" id="CalendarWatch"
+                        class="form-control" value="">
+                </div>
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;border: 1px solid #e8e8e8">
+        <div class="col-sm-12">
+            <div id="VermicelliMembership" class="chart_1" style="width:100%;height:453px;"></div>
+        </div>
+    </div>
+    <div class="row" style="border: 1px solid #e8e8e8;padding: 10px 0; margin-top: 20px">
+        <div class="col-sm-6">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">商品销售情况</span>
+                    <img class="queryImg" src="/public/images/ic_query.png">
+                    <span class="export" style="color: #0091ea;cursor: pointer">导出数据</span>
+                </h3>
+                <div class="tipBox" style="display: none;">
+                    <p><b>浏览量：</b>所有端口商品普通详情页及商品活动详情页浏览量总和</p>
+                    <p><b>浏览人数：</b>浏览整个普通详情页及商品活动详情页的去重人数</p>
+                    <p><b>付款人数：</b>成功付款的人数</p>
+                    <p><b>单品转化率：</b>付款人数/浏览人数*100%</p>
+                    <p><b>销售数量：</b>商品付款统计数量，退货扣除数量</p>
+                    <p><b>销售金额：</b>商品付款统计金额，退款扣除金额</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="r_title_r">
+                <ul id="dateUl1" class="tabDay">
+                    <li svalue="inOneWeek" class="active">最近7天</li>
+                    <li svalue="inOneMonth">最近30天</li>
+                    <li svalue="preThreeMonth">最近90天</li>
+                </ul>
+
+                <div class="input-prepend input-group">
+                    <span class="add-on input-group-addon">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </span>
+                    <input type="text" placeholder="MM/DD/YY — MM/DD/YY" readonly="" style="width: 165px" name="reservation" id="calendar" class="form-control"
+                        value="">
+
+                </div>
+
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;border: 1px solid #e8e8e8">
+        <div class="col-sm-12 tableBg chart_1" style="padding-left: 32px;padding-right: 27px;">
+            <div class="sSelect">
+                <span>每页显示数量：</span>
+                <select id="pagesize_dropdown">
+                    <option>5</option>
+                    <option selected="selected">10</option>
+                    <option>20</option>
+                    <option>30</option>
+                </select>
+            </div>
+            <table id="goodsStatistics" class="table table-striped ">
+                <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<td>商品名称</td>-->
+                        <!--<td id="PV">浏览量-->
+                            <!--<img class="down" style="visibility: initial;" src="/public/images/down_ranged.png" />-->
+                        <!--</td>-->
+                        <!--<td id="UV">浏览人数-->
+                            <!--<img class="down" src="" />-->
+                        <!--</td>-->
+                        <!--<td id="PaymentNum">付款人数-->
+                            <!--<img class="down" src="" />-->
+                        <!--</td>-->
+                        <!--<td id="productconversionrate">单品转化率-->
+                            <!--<img class="down" src="" />-->
+                        <!--</td>-->
+                        <!--<td id="SaleQuantity">销售数量-->
+                            <!--<img class="down" src="" />-->
+                        <!--</td>-->
+                        <!--<td id="SaleAmount">销售金额-->
+                            <!--<img class="down" src="" />-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</thead>-->
+            </table>
+
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/echarts/echarts.min.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/analysis_commodity.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

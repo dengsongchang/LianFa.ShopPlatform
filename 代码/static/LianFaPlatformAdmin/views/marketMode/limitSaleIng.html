@@ -1,0 +1,76 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}限时抢购 正在进行{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/limitSaleIng.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/marketMode/limitSaleIng">正在进行</a>
+                        </li>
+                        <li>
+                            <a data-type="2" href="/marketMode/limitSaleWillStar">即将开始</a>
+                        </li>
+                        <li>
+                            <a data-type="3" href="/marketMode/limitSaleHistory">历史抢购</a>
+                        </li>
+                        <li>
+                            <a data-type="4" href="/marketMode/limitSaleAdd">添加</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="manageClassify_box_contanier">
+                    <div class="file_search_box">
+                        <!--<div class="form-group form-inline">-->
+                            <!--<lable>商品名称：</lable>-->
+                            <!--<input type="text" id="proName" class="form-control">-->
+                            <!--<button class="btn btn-primary" id="searchBtn" style="margin-left:10px ">查询</button>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="page_size_box" style="overflow: hidden">
+                        <div class="form-group form-inline pull-right" style="margin-bottom: 0px">
+                            <label for="">每页显示数量：</label>
+                            <select name="" id="pagesize_dropdown" class="form-control page_number_box_select">
+                                <option value="10">10</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--以下是表格内容-->
+                    <div class="table_content_box">
+                        <table id="tb_limit_content">
+
+                        </table>
+                    </div>
+                    <!--以上是表格内容end-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/js/limitSaleIng.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

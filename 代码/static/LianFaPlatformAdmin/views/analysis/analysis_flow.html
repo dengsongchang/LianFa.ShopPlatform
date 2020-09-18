@@ -1,0 +1,107 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}流量分析{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/analysis_flow.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/plugins/daterangepicker/daterangepicker-bs3.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="row" style="border-bottom: 1px solid #e8e8e8;padding: 10px 0;">
+        <div class="col-sm-6">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">交易数据</span>
+                    <span class="export" style="color: #0091ea;">导出数据</span>
+                </h3>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="r_title_r">
+                <ul id="dateUl1" class="tabDay_1">
+                    <li svalue="inOneWeek" class="active">昨天</li>
+                    <li svalue="inOneMonth">最近7天</li>
+                    <li svalue="preThreeMonth">最近30天</li>
+                </ul>
+                <div class="input-prepend input-group">
+                    <span class="add-on input-group-addon">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </span>
+                    <input type="text" placeholder="MM/DD/YY — MM/DD/YY" readonly="" style="width: 165px" name="reservation" id="AmountDate"
+                        class="form-control" value="">
+                </div>
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;border: 1px solid #e8e8e8">
+
+        <div class="col-sm-12 flow_chart">
+            <div class="sSelect">
+                <span>统计页面：</span>
+                <select id="pageSelect">
+                    <option value="4">全站</option>
+                    <option value="1">首页</option>
+                    <option value="2">分类页</option>
+                    <option value="3">商品详情页</option>
+                </select>
+            </div>
+            <div id="getPageview" class="chart_1" style="width:100%;height:400px;"></div>
+        </div>
+    </div>
+    <div class="row" style="border: 1px solid #e8e8e8;padding: 10px 0;">
+        <div class="col-sm-5">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">交易数据</span>
+                    <span class="export" style="color: #0091ea;">导出数据</span>
+                </h3>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <div class="r_title_r">
+                <ul id="dateUl1" class="tabDay">
+                    <li svalue="yesterday" class="active">昨天</li>
+                    <li svalue="inOneWeek">最近7天</li>
+                    <li svalue="inOneMonth">最近30天</li>
+                    <li svalue="preThreeMonth">最近90天</li>
+                </ul>
+                <div class="input-prepend input-group">
+                    <span class="add-on input-group-addon">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </span>
+                    <input type="text" placeholder="MM/DD/YY — MM/DD/YY" readonly="" style="width: 165px" name="reservation" id="calendar"
+                        class="form-control" value="">
+                </div>
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;border: 1px solid #e8e8e8 ">
+        <div class="col-sm-12 flow_chart">
+            <div class="dBlock">
+                <div class="sSelect">
+                    <span>统计类型： </span>
+                    <select id="userCount">
+                        <option value="pv">浏览次数(pv)</option>
+                        <option value="uv">独立访客(uv)</option>
+                    </select>
+                </div>
+                <div id="VermicelliMembership" class="chart_1" style="width:100%;height:402px;"></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/echarts/echarts.min.js"></script>
+<script src="/public/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/analysisFlow.js"></script>
+{{/block}}

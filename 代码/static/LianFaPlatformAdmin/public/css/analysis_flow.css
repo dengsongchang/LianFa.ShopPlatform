@@ -1,0 +1,77 @@
+#all_box {
+    background: #fff;
+    margin: 20px 20px 100px 20px;
+    border-radius: 5px;
+    width: 1200px;
+}
+.r_title h3 {
+    font-size: 16px;
+    float: left;
+    width: 300px;
+    padding-left: 10px;
+    margin-top: 8px;
+}
+.r_title_r {
+    line-height: 35px;
+}
+.r_title_r .tabDay_1{
+    width: 266px;
+    float: left;
+    height: 35px;
+    border: solid #e0e0e0 1px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-left: 48px;
+    margin-bottom: 0px;
+}
+.r_title_r .tabDay{
+    width: 354px;
+    float: left;
+    height: 35px;
+    border: solid #e0e0e0 1px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-left: 48px;
+
+    margin-bottom: 0px;
+}
+.r_title_r ul li {
+    float: left;
+    width: 88px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+    background: #eeeeee;
+    cursor: pointer;
+}
+.input-prepend {
+    margin-right: 35px;
+    float: right;
+}
+.input-group {
+    line-height: 32px;
+    color: #999;
+    width: 200px;
+}
+.img_toggle {
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 0px;
+}
+.export {
+    padding-left: 26px;
+    background: url(../images/ic_export.png) no-repeat;
+    font-size: 14px;
+    text-decoration: underline !important;
+    margin-left: 30px;
+    float: left;
+}
+.sSelect{
+    padding-top: 33px;
+    padding-left: 30px;
+}

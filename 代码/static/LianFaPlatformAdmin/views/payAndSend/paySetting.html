@@ -1,0 +1,109 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}支付设置{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/paySetting.css"><!--productList.css-->
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">支付设置</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content_pay_box">
+                    <div class="page-header">微信支付(支持微商城、触屏版、生活号（原支付宝服务窗）)</div>
+                    <!--<div class="swiper_slide_box">-->
+                        <!--<ul>-->
+                            <!--<li>-->
+                                <!--<label for="">微商城是否开启：</label>-->
+                                <!--<div class="switch" id="EStore">-->
+                                    <!--<p></p>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<label for="">微信H5支付是否开启：</label>-->
+                                <!--<div class="switch" id="H5Pay">-->
+                                    <!--<p></p>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<label for="">微信扫码支付是否开启：</label>-->
+                                <!--<div class="switch" id="ScanPay">-->
+                                    <!--<p></p>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <div class="form_big_con">
+                        <div class="form-group">
+                            <label for="">AppId:</label>
+                            <input type="text" class="form-control" id="appId">
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label for="">AppSecret:</label>-->
+                            <!--<input type="text" class="form-control" id="appSecret">-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <label for="">mch_id:</label>
+                            <input type="text" class="form-control" id="mchId">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Key:</label>
+                            <input type="text" class="form-control" id="key">
+                        </div>
+                    </div>
+                    <div class="service_if">
+                        <label for="" class="realName">是否校验真实姓名：</label>
+                        <div class="switch" style="display: inline-block;vertical-align: middle" id="serviceModel">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="about_service_box">
+                        <!--<div class="form-group">-->
+                            <!--<label for="">服务商商户ID:</label>-->
+                            <!--<input type="text" class="form-control" id="businessId">-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="">服务商AppID:</label>-->
+                            <!--<input type="text" class="form-control" id="businessAppId">-->
+                        <!--</div>-->
+
+                        <div class="form-group zhen" >
+                            <label for="">微信证书:<span id="Letter"></span></label>
+                            <input type="file" class="" id="weChatCerti">
+                            <p class="tip_about_uploader">
+                                证书用于企业帐号支付以及退款原路返回，请使用扩展名为p12的证书文件
+                            </p>
+                        </div>
+                    </div>
+                    <div class="finish_btn_con">
+                        <button class="btn btn-primary" id="submitBtn">完成</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<!--<script src="/public/plugins/ajaxfileupload/ajaxfileupload.js"></script>-->
+<!--<script src="/public/js/uploadPayFile.js"></script>-->
+<script src="/public/js/paySetting.js" type="text/babel"></script>
+
+{{/block}}

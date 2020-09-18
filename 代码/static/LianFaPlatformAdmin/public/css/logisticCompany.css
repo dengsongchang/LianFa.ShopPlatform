@@ -1,0 +1,44 @@
+.content-wrapper{
+    background: #fff;
+}
+/*以下是公共样式*/
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+#choice_condition_box label{
+    font-size: 12px;
+    padding-right: 0px !important;
+    font-weight: 500;
+
+}
+input,select{
+    border-radius: 4px !important;
+}
+/*这是自己写的css代码*/
+.file_search_box {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #DDD;
+}
+#logistic_info_tb{
+    width:100%;
+
+}
+#logistic_info_tb thead{
+    background: #f8f8f8;
+    line-height: 45px;
+    border-bottom: 2px solid #ccc;
+}
+#logistic_info_tb td,#logistic_info_tb th{
+    text-align: center;
+}
+#logistic_info_tb td{
+    padding:12px 0px;
+}
+#logistic_info_tb tbody tr{
+    border-bottom: 1px solid #ccc;
+}
+#logistic_info_tb td img{
+    cursor:pointer;
+}

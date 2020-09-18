@@ -1,0 +1,109 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}图片库/首页{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/picLibrary.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/classify/classifyList">图片库</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pic_box_contanier">
+                    <div class="file_search_box">
+                        <div class="form-group form-inline">
+                            <lable>文件名：</lable>
+                            <input type="text" class="form-control">
+                            <button class="btn btn-primary" style="margin-left:10px ">查询</button>
+                        </div>
+                    </div>
+                    <div class="operation_file_dv">
+                        <div class="left_delete_dv">
+
+                            <div class="btn-group" style="margin-left: 30px">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    添加
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu add_choice_ul">
+                                    <li style="position:relative">
+                                        <a class="btn" id="add_pic_Btn">
+                                            <span class="glyphicon glyphicon-open"></span>上传图片
+                                            <div id="uploader_pic_trigger"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="btn create_file_pic">
+                                            <span class="glyphicon glyphicon-folder-open"></span>创建文件夹
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right_condition_dv">
+                            <select id="timeOrder_box" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">按注册时间降序排序</option>
+                                <option data-state="20" value="20">默认</option>
+                            </select>
+                            <div style="display: inline-block;margin-left: 40px">
+                                <label for="">每页显示数量：</label>
+                                <select id="numOrder_box" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                    <option selected="selected" value="0">10</option>
+                                    <option data-state="20" value="20">50</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <p class="header_tips">大小不超过2M，支持bmp/png/jpeg/jpg/gif格式，上传将同步至公众平台</p>
+                    <!--以下是文件夹部分-->
+                    <div class="box_file_custom" id="Pic_box">
+                        <div class="file_item" data-type="0" data-id="112">
+                            <a href="/picLibraryDetail">
+                                <img class="img_icon" src="../public/images/file_pic.png" alt="">
+                            </a>
+                            <div class="edit_Filename_box">
+                                <span class="edit_ipt isspan" style="border-width: 0px 0px 0px;">未分组</span>
+                            </div>
+                        </div>
+                        <div class="file_item" data-type="0" data-id="112">
+                            <a href="/picLibraryDetail">
+                                <img class="img_icon" src="../public/images/file_pic.png" alt="">
+                            </a>
+                            <div class="edit_Filename_box">
+                                <span class="edit_ipt isspan" style="border-width: 0px 0px 0px;">测试文件夹1</span>
+                            </div>
+                            <div class="edit_dv">
+                                <span class="edite_file" data-id="112">编辑</span>
+                                <span class="delete_file" data-id="112">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--以上是文件夹部分-->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/uploader_pic_toLibrary.js"></script>
+<script src="/public/js/picLibrary.js" type="text/babel"></script>
+{{/block}}

@@ -1,0 +1,43 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}统计分析/会员分析{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/chartMember.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>
+                <span>会员增长情况</span>
+                <span class="export">导出数据</span>
+            </h3>
+        </div>
+        <div class="col-sm-6">
+            <select class="iselect_one" id="myOne">
+                <option value="1">按月</option>
+                <option value="2">按年</option>
+            </select>
+            <div class="calend_part" style="float: right">
+                <i class="glyphicon glyphicon-calendar fa fa-calendar" style="float: left;line-height: 32px;padding-right: 5px;"></i>
+                <input id="mydatepicker1" class="col-sm-7 form-con date form_date form-control hasDatepicker" type="text">
+            </div>
+        </div>
+    </div>
+</section>
+
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/echarts/echarts.min.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/uploader_pic_toLibrary.js"></script>
+<script src="/public/js/picLibrary.js"></script>
+{{/block}}

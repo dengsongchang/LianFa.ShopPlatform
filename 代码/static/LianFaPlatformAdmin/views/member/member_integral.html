@@ -1,0 +1,214 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}熊豆管理{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/css/memberIntegral.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li >
+                            <a href="/member/memberIntegralManagement">熊豆规则管理列表</a>
+                        </li>
+                        <li class="active">
+                            <a href="/member/memberIntegral">熊豆获取规则</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <!--<div class="tab-pane active" id="first">-->
+                        <!--<div class="option-list form-inline clearfix">-->
+                            <!--<div class="form-group col-lg-3 col-sm-6">-->
+                                <!--<label>会员名：</label>-->
+                                <!--<input type="text" class="form-control" id="memberName">-->
+                            <!--</div>-->
+                            <!--<div class="form-group col-lg-3 col-sm-6">-->
+                                <!--<label>会员等级：</label>-->
+                                <!--<select class="form-control" id="grade-select">-->
+                                    <!--<option selected="selected" value="-1">请选择会员等级</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                            <!--<div class="form-group col-lg-3 col-sm-6">-->
+                                <!--<a class="btn btn-primary" id="searchBtn">查询</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<div class="row operate-box">-->
+                                <!--<input type="checkbox" class="select-all">-->
+                                <!--<button class="btn" id="editorMore">批量修改积分</button>-->
+                                <!--<button class="btn btn-primary" id="exportBtn">导出数据</button>-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<table id="cashTable" class="table table-bordered table-striped">-->
+                                <!--</table>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="tab-pane" id="second" style="display: block">
+                        <div>
+                            <h2 class="integral-title">熊豆获取规则</h2>
+                            <div class="form-horizontal">
+                                <!--<div class="form-group">-->
+                                    <!--<label class="col-sm-3 control-label">注册会员奖励：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="input-group">-->
+                                            <!--<input type="text" class="form-control" placeholder="0" id="register">-->
+                                            <!--<span class="input-group-addon">熊豆</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">每日签到奖励：</label>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="0" id="signDaily">
+                                            <span class="input-group-addon">熊豆</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">100熊豆换算金额：</label>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="PayCreditPrice">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">-->
+                                    <!--<label class="col-sm-3 control-label">每连续签到：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="input-group">-->
+                                            <!--<input type="text" class="form-control" placeholder="0" id="continuSign">-->
+                                            <!--<span class="input-group-addon">天</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<label class="control-label right-label" style="float: left;margin-left: 15px;">额外奖励：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="input-group">-->
+                                            <!--<input type="text" class="form-control" placeholder="0" id="signDay">-->
+                                            <!--<span class="input-group-addon">天</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="col-sm-3 control-label">购物消费：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="input-group">-->
+                                            <!--<input type="text" class="form-control" placeholder="0" id="consumeNum">-->
+                                            <!--<span class="input-group-addon">元</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<label class="col-sm-3 control-label right-label">奖励一积分(不含运费)</label>-->
+                                <!--</div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="col-sm-3 control-label">评论商品奖励：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="input-group">-->
+                                            <!--<input type="text" class="form-control" placeholder="0" id="commentGoods">-->
+                                            <!--<span class="input-group-addon">分</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<label class="col-sm-5 control-label right-label">(每一个由内容的评价都会获得相应的积分)</label>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <!--<div>-->
+                            <!--<h2 class="integral-title">积分抵扣规则</h2>-->
+                            <!--<div class="form-horizontal">-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="col-sm-3 control-label">抵扣订单金额每：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="input-group">-->
+                                            <!--<input type="text" class="form-control" placeholder="1" id="deductNum">-->
+                                            <!--<span class="input-group-addon">分</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<label class="col-sm-2 control-label right-label">(抵扣一元)</label>-->
+                                <!--</div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="col-sm-3 control-label">最高可抵扣比例：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="input-group">-->
+                                            <!--<input type="text" class="form-control" placeholder="90" id="deductRatio">-->
+                                            <!--<span class="input-group-addon">%</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="switch-box form-group">-->
+                                    <!--<label class="col-sm-3 control-label switch-text">与优惠券同时使用：</label>-->
+                                    <!--<div class="col-sm-3">-->
+                                        <!--<div class="switch" id="togetherCoupon">-->
+                                            <!--<p></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <a class="btn btn-primary finish" id="inteSubmit">完成</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask">
+        <div class="content-box">
+            <h2>修改积分</h2>
+            <a class="close">×</a>
+            <div class="form-horizontal" style="margin-top: 40px;">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><span class="red-star">*</span>操作：</label>
+                    <label class="checkbox-inline" style="float: left;">
+                        <input type="radio" name="editIntegral" checked="checked" id="addRadio" value="0">
+                        增加
+                    </label>
+                    <div class="col-sm-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="请输入大于0的整数" value="0" id="addNum">
+                            <span class="input-group-addon">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"></label>
+                    <label class="checkbox-inline" style="float: left;">
+                        <input type="radio" name="editIntegral" id="reduceRadio" value="1">
+                        减少
+                    </label>
+                    <div class="col-sm-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="请输入大于0的整数" value="0" id="reduceNum">
+                            <span class="input-group-addon">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group remark-form">
+                    <label class="col-sm-3 control-label">备注：</label>
+                    <div class="col-sm-3">
+                        <textarea class="form-control remark" id="remark"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <a class="btn btn-primary" id="editorBtn">保存</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/memberIntegral.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

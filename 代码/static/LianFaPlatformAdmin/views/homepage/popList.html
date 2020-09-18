@@ -1,0 +1,41 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}弹窗广告列表{{/block}} {{block 'head'}}
+
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/css/navsetting.css">
+
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#manage">弹窗广告列表</a>
+                        </li>
+                        <li class="">
+                            <a href="/homePage/popAdd">添加</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="manage">
+                        <table id="brand_box">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/js/popList.js" type="text/babel"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

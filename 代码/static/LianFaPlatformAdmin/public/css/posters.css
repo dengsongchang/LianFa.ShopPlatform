@@ -1,0 +1,133 @@
+.edit-text-left {
+    float: left;
+}
+.mobile-border {
+    width: 352px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+.mobile-d {
+    width: 320px;
+    padding: 13px 15px 0;
+    box-sizing: content-box;
+}
+.mobile-d .mobile-title {
+    width: 318px;
+    height: 32px;
+    padding-top: 32px;
+    background: url(../images/modules.png) no-repeat 0 0;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #22292C;
+    border-bottom: none;
+    cursor: pointer;
+    box-sizing: content-box;
+}
+.mobile-footer {
+    margin: 10px auto;
+    width: 62px;
+    height: 62px;
+    background: url(../images/modules.png) no-repeat -253px -70px;
+}
+.exitbusinesscard {
+    position: relative;
+    width: 320px;
+    height: 490px;
+    background-color: #F5F5F5;
+}
+.exitbusinesscard .img {
+    position: absolute;
+    top: 20px;
+    left: 28%;
+    padding: 1px;
+    border: 1px dashed transparent;
+}
+.exitbusinesscard .img img {
+    display: block;
+    border-radius: 50%;
+}
+.exitbusinesscard .img span.left {
+    left: -5px;
+    top: 50%;
+    margin-top: -5px;
+    cursor: e-resize;
+}
+.exitbusinesscard h1 {
+    position: absolute;
+    top: 170px;
+    left: 44%;
+    font-size: 14px;
+}
+.exitbusinesscard h1 strong, .exitbusinesscard h3 strong {
+    font-weight: normal;
+    color: #D34619;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.exitbusinesscard h3 {
+    position: absolute;
+    top: 190px;
+    left: 21%;
+    font-size: 14px;
+}
+.exitbusinesscard .cardqrcode {
+    padding: 3px 20px;
+    height: 270px;
+}
+.exitbusinesscard .cardqrcode .cardimg {
+    position: absolute;
+    top: 245px;
+    left: 75px;
+    padding: 1px;
+    border: 1px dashed transparent;
+}
+.edit-text-right {
+    float: left;
+    margin-left: 30px;
+}
+.edit-text-right .edit-inner {
+    position: relative;
+    width: 600px;
+    padding: 30px 20px;
+    margin-bottom: 15px;
+    border: 1px solid #E7E6EB;
+    background-color: #F4F5F9;
+    font-size: 14px;
+    border-radius: 10px;
+}
+small {
+    font-size: 12px;
+    display: block;
+    color: #999;
+    line-height: 24px;
+}
+.resetSize {
+    width: 167px;
+    margin: 0px;
+    padding: 0px;
+}
+#uploadBtn{
+    position: relative;
+    z-index: 100;
+    width: 54px;
+    height: 34px;
+}
+.webuploader-pick{
+    width: 54px;
+    height:34px;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 0;
+}
+#uploadBtn div{
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+}
+.webuploader-pick{
+    opacity: 1!important;
+    line-height: 34px;
+}

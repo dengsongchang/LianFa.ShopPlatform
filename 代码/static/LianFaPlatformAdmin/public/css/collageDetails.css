@@ -1,0 +1,49 @@
+.tuanzhangInfo{
+    width: 100%;
+}
+.tuanzhang{
+    font-size: 20px;
+    color:#656565;
+    margin-top: 40px;
+    margin-left: 16px;
+}
+.Info_details{
+    margin-top: 20px;
+}
+.Info_details .info p{
+    color: #656565;
+    font-size: 16px;
+}
+.getproductinfo p{
+    margin-left: 16px;
+    color: #656565;
+    font-size: 16px;
+
+}
+.passtime p{
+    margin-left: 15px;
+    color: #656565;
+    font-size: 16px;
+
+}
+.customerinfo p{
+    margin-left: 15px;
+    color: #656565;
+    font-size: 16px;
+
+}
+.productInfo{
+    width: 100%;
+}
+.shangpin{
+    font-size: 20px;
+    color:#656565;
+    margin-top: 40px;
+
+}
+/*.main_list_content .type_box{*/
+    /*overflow: hidden;*/
+/*}*/
+.number_ul .dingdan_xinxi li{
+margin-top: 20px;
+}

@@ -1,0 +1,289 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}分销员列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/statisticsDistribution.css">
+<link rel="stylesheet" href="/public/css/userList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/distribution/UserList">分销员列表</a>
+                        </li>
+                        <!--<li class="">-->
+                            <!--<a data-type="2" href="/distribution/UserApply">熊王审核列表</a>-->
+                        <!--</li>-->
+                        <!--<li class="">-->
+                            <!--<a data-type="3" href="/distribution/addKing">添加熊王</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <div class="form-group col-lg-3 col-md-6">
+                        <label>分销员账号：</label>
+                        <input type="text" class="form-control" id="UserName">
+                    </div>
+                    <div class="form-group col-lg-3 col-md-6">
+                        <label>分销员昵称：</label>
+                        <input type="text" class="form-control" id="NickName">
+                    </div>
+                    <div class="form-group col-lg-6 col-md-12">
+                        <label>选择时间段：</label>
+                        <input type="datetime" class="form-control" readonly="" id="start">
+                        至
+                        <input type="datetime" class="form-control" readonly="" id="end">
+                    </div>
+
+                    <div class="form-group col-lg-3 col-md-6">
+                        <a class="btn btn-primary" id="search">查询</a>
+                    </div>
+                </div>
+                <div class="all_data_operation_box clearfix">
+                    <div class="about_output_box pull-left">
+                        <button class="btn btn-primary" id="exportBtn">导出数据</button>
+                    </div>
+                    <div class="disp_page_box pull-right">
+                        <label style="float:left;line-height: 34px;margin-right: 4px;">每页显示数量：</label>
+                        <select id="pagesize_dropdown" class="orderTypeSelect select2 pull-right" tabindex="-1">
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                            <option value="200">200</option>
+                            <option value="500">500</option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bootstrap-table">
+                    <table id="productTable" class="table table-bordered table-striped table-hover">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分销码弹窗 -->
+    <div class="modal  " id="scatterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" style="width:810px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">分销码</h4>
+                </div>
+                <div class="modal-body coupon_modalBody" style="margin:auto">
+                    <div class="form-group">
+                        <label for="" style="width:95px;text-align: right;vertical-align: top;" class="">
+                            分销链接：
+                        </label>
+                        <div class="input-group form-group" style="width: 400px;display: inline-block">
+                            <div class="link_txt">
+                                https://demo.vshop.kuaidiantong.cn/wapshop/
+                                CouponDetails.aspx?couponId=3
+                            </div>
+                        </div>
+                        <!--<button class="btn btn-default pull-right"-->
+                                <!--style="display:inline-block;vertical-align: top;">复制-->
+                        <!--</button>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:95px;text-align: right;">
+                            二维码：
+                        </label>
+                        <div class="input-group form-group" style="display:inline-block;vertical-align: top;">
+                            <img src="/public/images/erweima.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改上级弹窗 -->
+    <div class="modal  " id="superiorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" style="width:810px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">调整所属上级</h4>
+                </div>
+                <div class="modal-body coupon_modalBody" style="margin:auto">
+                    <div class="tips">
+                        注意：调整上级只能调给上级为平台的分销员,由其它人发展来的分销员不在下方列表显示
+                    </div>
+                    <div class="superiorInfo row clearfix">
+                        <div class=" col-md-offset-1 col-md-4">
+                            当前分销员名称:
+                            <span id="currentUser"></span>
+                        </div>
+                        <div class="  col-md-4">
+                            上级分销员:
+                            <span id="upUser"></span>
+                        </div>
+                    </div>
+                    <div class="search row">
+                        <div class="col-md-offset-1 form-group col-lg-12 col-md-12">
+                            <label>搜索分销员:</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="user">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="searchAdjust">搜索</button>
+                        </div>
+                    </div>
+                    <table id="superiorTable" class="table table-bordered table-striped table-hover">
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--查看清退后备注模态框-->
+    <div class="modal fade" id="mySeeModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title" id="">查看清退情况</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal" style="margin-top: 40px;">
+                        <div class="form-group remark-form">
+                            <label class="col-sm-3 control-label form-text">清退时间：</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="time" class="form-control" style="width: 200px" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group remark-form">
+                            <label class="col-sm-3 control-label form-text">备注：</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control remark1" readonly
+                                          style="width: 400px;min-height: 150px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--清退分销员模态框-->
+    <div class="modal fade" id="myRepelModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title">清退分销员</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal" style="margin-top: 40px;">
+                        <div class="form-group remark-form">
+                            <label class="col-sm-3 control-label form-text">备注：</label>
+                            <div class="col-sm-3">
+                                <textarea class="form-control remark"
+                                          style="width: 400px;min-height: 150px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary"  id="repelBtn">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--恢复分销员模态框-->
+    <div class="modal fade" id="myRestoreModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title">恢复分销员身份</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal" style="min-height: 100px">
+                        <h4>确认恢复该分销员身份？</h4>
+                        <div class="formitem_con">分销员恢复身份后，他的原下级会员将继续归属于该分销员。</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary"  id="restoreBtn">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--调整分销员等级模态框-->
+    <div class="modal fade" id="myAdjustModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                    </button>
+                    <h4 class="modal-title">调整分销员等级</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal" style="min-height: 100px">
+                        <h4 class="graynotic">注意：调整分销员的等级，分销员产生佣金也只会进行升级操作,不会进行降级操作？</h4>
+                        <div class="form-group remark-form">
+                            <label class="col-sm-3 control-label form-text">分销员名称：</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="Name" class="form-control" style="width: 200px" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group remark-form">
+                            <label class="col-sm-3 control-label form-text">当前分销员等级：</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="currentGrade" class="form-control" style="width: 200px" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group remark-form">
+                            <label class="col-sm-3 control-label form-text">设置分销员等级：</label>
+                            <div class="col-sm-3">
+                                <select name="" class="form-control" id="setGrade">
+                                    <option value="0">优惠顾客</option>
+                                    <option value="1">vip</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary"  id="adjustBtn">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+{{/block}}
+
+{{block 'requirejs'}}
+<!--<script src="/public/js/template.js"></script>-->
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/userList.js" type="text/babel"></script>
+{{/block}}

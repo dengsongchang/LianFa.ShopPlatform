@@ -1,0 +1,41 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}拼团详情{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/orderList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/collageDetails.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box clearfix">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs tabs_orderList_ul">
+                        <li class="active">
+                            <a data-type="1" data-state="0" href="javascript:void(0);">拼团详情</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/template.js"></script>
+<script src="/public/js/collageDetails.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/layer/layer.js"></script>
+{{/block}}

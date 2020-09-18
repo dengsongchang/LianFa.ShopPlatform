@@ -1,0 +1,17 @@
+/*重写css*/
+.content-wrapper{
+    background-color: #ffffff;
+}
+.inform_container .box{
+	margin-bottom: 0px;
+}
+.box-header .box-title {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1;
+}
+.box.box-default {
+    border-top-color: #fff;
+    background: #fff;
+}

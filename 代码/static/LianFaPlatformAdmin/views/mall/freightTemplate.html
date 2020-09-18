@@ -1,0 +1,55 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}运费模板列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/armchairList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/mall/freightTemplate">管理</a>
+                        </li>
+                        <li>
+                            <a data-type="2"  href="/mall/addFreightTemplate">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="manage">
+                        <div class="option-list form-inline clearfix">
+                            <!--<div class="batchHandleArea">-->
+                            <div class="checkall {{ IsStoreManager ? 'hide': 'show'}}">
+                                <input type="checkbox" name="selectall" id="selAll" class="check-box" />
+                            </div>
+                            <!--</div>-->
+                            <a class="btn btn-default ml20 pull-left {{ IsStoreManager ? 'hide': 'show'}}" id="delete">删除</a>
+                        </div>
+                        <div>
+                            <table id="armchairTable" class="table table-bordered table-striped">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/freightTemplate.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

@@ -1,0 +1,28 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}订单详情{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/orderListDetail.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+
+</section>
+<!--遮罩-->
+<div class="pmask"></div>
+<div id="productPreBox" style="display: none">
+    <div class="productPreInner">
+        <iframe src="" id="preIframe"  frameborder="0" border="0"width="392" height="761"></iframe>
+    </div>
+</div>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/exchangeOrderDetail.js" type="text/babel"></script>
+{{/block}}

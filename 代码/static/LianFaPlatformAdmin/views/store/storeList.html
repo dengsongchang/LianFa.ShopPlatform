@@ -1,0 +1,181 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}门店管理{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/qrcode.css">
+<link rel="stylesheet" href="/public/css/store.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/store/storeList">门店列表</a>
+                        </li>
+                        <li>
+                            <a data-type="2" class="{{ IsStoreManager ? 'hide': 'show'}}" href="/store/storeAdd">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="manage">
+                        <div class="option-list form-inline clearfix" style="padding-top: 0;">
+                            <div class="row form-horizontal">
+                                <div class="col-md-12">
+                                    <div class="form-group" style="width: 100%">
+                                        <div class=" col-md-4">
+                                            <div class="col-md-4" style="height: 34px;line-height: 34px">
+                                                <label>门店名称：</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input id="storeName" type="text" class="form-control"
+                                                       style="width: 100%">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-4" style="height: 34px;line-height: 34px">
+                                                <label>门店联系人：</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input id="userName" type="text" class="form-control"
+                                                       style="width: 100%">
+                                            </div>
+
+                                        </div>
+                                        <div class=" col-md-4">
+                                            <div class="col-md-4" style="height: 34px;line-height: 34px">
+                                                <label>门店联系电话：</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input id="userPhone" type="text" class="form-control"
+                                                       style="width: 100%">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-horizontal">
+                                <div class="col-md-12">
+                                    <div class="form-group" style="width: 100%">
+                                        <div class=" col-md-4">
+                                            <!--<div class="col-md-4" style="height: 34px;line-height: 34px">-->
+                                                <!--<label>门店编号：</label>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-md-8">-->
+                                                <!--<input id="storeCode" type="text" class="form-control"-->
+                                                       <!--style="width: 100%">-->
+                                            <!--</div>-->
+                                        </div>
+                                        <div class=" col-md-4">
+
+                                        </div>
+                                        <div class=" col-md-4">
+                                            <div class="col-md-4">
+
+                                            </div>
+                                            <div class="col-md-8">
+                                                <a class="btn btn-primary pull-right" id="searchBtn">查询</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="all_zongti_operation">
+                            <div class="" style="padding-left: 0px;float: left">
+                                <div class="quanxuan_con {{ IsStoreManager ? 'hide': 'show'}}">
+                                    <input type="checkbox" id="check_classify_delete_all" style="margin-top: 8.5px;">
+                                </div>
+
+                            </div>
+                            <div class="col-xs-1 all_delte_box {{ IsStoreManager ? 'hide': 'show'}}" id="all_delte_box">
+                                删除
+                            </div>
+                            <!-- <div class="pull-right" style="font-weight: 800">
+                                总预约数量：1000
+                            </div> -->
+                            <div class="paginalNum">
+                                <span>每页显示数量：</span>
+                                <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="20">20</option>
+                                    <option value="40">40</option>
+                                    <option value="200">200</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="2000">2000</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <table id="brand_box">
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 查看二维码模态框 -->
+<div class="modal fade" id="qrCode_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">查看二维码信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="erweima_tupian_container" style="width: 200px;margin: 0 auto;">
+                    <div class="weima_box">
+                        <div class="weima_pic" style="width: 200px;height: 200px">
+                            <img id="qrCodeImg" style="width: 200px;height: 200px" src="" alt="">
+                        </div>
+                        <div class="down_load_dimission" style="text-align: center;margin-bottom: 50px;">
+                            <!--<select id="qrCodeSize">-->
+                                <!--<option value="168">168</option>-->
+                                <!--<option value="258">258</option>-->
+                                <!--<option value="344">344</option>-->
+                                <!--<option value="430">430</option>-->
+                                <!--<option value="860">860</option>-->
+                                <!--<option value="1280">1280</option>-->
+                            <!--</select>-->
+                            <!--<a id="download" class="shouzhi" type="button" target="_blank">-->
+                                <!--下载二维码-->
+                            <!--</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/storeList.js" type="text/babel"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

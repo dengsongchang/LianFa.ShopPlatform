@@ -1,0 +1,278 @@
+.content-wrapper{
+    background: #fff;
+}
+.settings {
+    height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.settings_text {
+    font-size: 16px;
+    color: #666;
+    padding-left: 20px;
+}
+
+.basicsetup_txet {
+    margin-left: 187px;
+    margin-top: 40px;
+}
+
+.basicsetup_title {
+    height: 32px;
+    width: 100%;
+    line-height: 32px;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.basicsetup_title label em {
+    color: red;
+    position: relative;
+    text-align: right;
+}
+
+.basicsetup_title label {
+    float: left;
+    position: relative;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+}
+
+.basicsetup_title input {
+    width: 14px;
+    height: 14px;
+    line-height: 32px;
+}
+
+.basicsetup_title_next {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.register_span textarea {
+    width: 380px;
+    height: 102px;
+    float: left;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #e8e8e8;
+    color: #aaa;
+}
+
+.basicsetup_title_next label {
+    float: left;
+    position: relative;
+    font-size: 14px;
+    text-align: right;
+    color: #999;
+}
+
+.basicsetup_title_last {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.basicsetup_title_last label {
+    float: left;
+    position: relative;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+}
+
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+    position: relative;
+    min-height: 1px;
+}
+
+.button {
+    margin-top: 40px;
+    margin-left: 177px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 44px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.icheck {
+    height: 32px;
+    line-height: 32px;
+}
+
+.icheck_user {
+    float: left;
+    margin-right: 20px;
+}
+
+.icheck_mailbox {
+    float: left;
+    margin-right: 20px;
+}
+
+.icheck_phone {
+    float: left;
+}
+
+.register_span span {
+    float: left;
+    bottom: 0px;
+    position: absolute;
+    padding-left: 10px;
+    color: #999;
+}
+
+.register_input {
+    border: 1px solid #ccc;
+    width: 120px;
+    line-height: 32px;
+    float: left;
+    padding: 0 10px;
+}
+
+.register-label {
+    float: left;
+    line-height: 32px;
+    position: relative;
+    font-size: 14px;
+    padding-left: 10px;
+    color: #999;
+}
+
+.icheck {
+    float: left;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    color: #666;
+    overflow: hidden;
+}
+
+.icheck span {
+    float: left;
+}
+
+.checked {
+    float: left ;
+}
+
+.register_title label {
+    float: left;
+    position: relative;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+}
+
+.register_title input {
+    width: 16px;
+    height: 16px;
+    line-height: 32px;
+}
+
+.register_title {
+    height: 32px;
+    width: 100%;
+    line-height: 32px;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.register_title label {
+    float: left;
+    position: relative;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+}
+
+.register_title span {
+    float: left;
+    position: relative;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.register_title .icheck {
+    line-height: 32px;
+    vertical-align: middle;
+}
+.iradio_flat-blue {
+    display: block !important;
+}
+.icheckbox_flat-blue {
+    float: left;
+    margin-top: 5px !important;
+    margin-right: 6px !important;
+
+}

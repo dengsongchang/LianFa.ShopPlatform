@@ -1,0 +1,67 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}会员详情{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/member_detailInfo.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div style="margin-bottom: 15px"><a class="backBtn"><img src="/public/images/back.png" alt=""><span>返回</span></a></div>
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">会员详情</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="info-title">基本信息</h2>
+                    <div class="row base-info" id="baseInfo">
+
+                    </div>
+                </div>
+                <div>
+                    <h2 class="info-title">统计信息</h2>
+                    <div class="stastic-list">
+                        <ul class="clearfix" id="stasticInfo">
+
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="info-title">购买记录</h2>
+                    <div class="record-list">
+                        <div class="record-title clearfix">
+                            <p>订单编号</p>
+                            <p>下单时间</p>
+                            <p>订单完成时间</p>
+                            <p>支付方式</p>
+                            <p>订单实付金额</p>
+                            <p>消费金额</p>
+                        </div>
+                        <ul id="buyInfo">
+
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <table id="cashTable" class="table table-bordered table-striped">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/memberDetailInfo.js" type="text/babel"></script>
+{{/block}}

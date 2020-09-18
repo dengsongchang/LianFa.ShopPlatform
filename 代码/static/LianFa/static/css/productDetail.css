@@ -1,0 +1,546 @@
+.allBox {
+    min-height: 100vh;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.swipeItem {
+    width: 375px;
+    height: 375px;
+    position: relative;
+}
+
+.swipIndex {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    right: 10px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 13px;
+    color: #b8b8b8;
+    border-radius: 10px;
+    background: #eeeeee;
+}
+
+.weight {
+    font-size: 15px;
+    color: #333;
+}
+
+.vanSwipe {
+    height: 375px;
+}
+
+.swipeItem img {
+    width: 100%;
+    height: 100%;
+}
+
+.productBox {
+    box-sizing: border-box;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+
+.productName {
+    font-size: 17px;
+    color: #333;
+    font-weight: 800;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.productDecription {
+    font-size: 13px;
+    color: #999;
+    margin-top: 8px;
+    text-indent: 2em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.priceBox {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.priceIcon {
+    font-size: 16px;
+    color: #D94E3A;
+    float: left;
+    position: relative;
+    top: 8px;
+}
+
+.price {
+    font-size: 24px;
+    color: #D94E3A;
+    float: left;
+    margin-right: 11px;
+}
+
+.integral {
+    min-width: 66px;
+    height: 16px;
+    float: left;
+    font-size: 10px;
+    color: #D10202;
+    text-align: center;
+    line-height: 16px;
+    background: #fae5e5;
+    border-radius: 16px;
+    position: relative;
+    top: 9px;
+}
+
+.storeBox {
+    margin-bottom: 5px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.storeNameBox {
+    width: 100%;
+    height: 90px;
+    margin-bottom: 5px;
+}
+
+.logo {
+    width: 55px;
+    height: 16px;
+    margin-right: 13px;
+    float: left;
+    position: relative;
+    top: 36px;
+}
+
+.name {
+    font-size: 14px;
+    color: #333;
+    float: left;
+    position: relative;
+    top: 34px;
+    font-weight: 800;
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.allProductBtn {
+    width: 66px;
+    height: 24px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    color: #22BAAE;
+    border: 1px solid #22BAAE;
+    float: right;
+    border-radius: 12px;
+    position: relative;
+    top: 33px;
+    box-sizing: border-box;
+}
+
+.enterStore {
+    width: 66px;
+    height: 24px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    color: #fff;
+    background: #22BAAE;
+    border: 1px solid #22BAAE;
+    float: right;
+    border-radius: 12px;
+    position: relative;
+    top: 33px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+.tab {
+    height: 50px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    line-height: 50px;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+}
+
+.middleLine {
+    position: absolute;
+    left: 50%;
+    top: 16px;
+    width: 1px;
+    height: 18px;
+    background: #ddd;
+}
+
+.tabActive {
+    color: #D94E3A;
+}
+
+.tabLine {
+    height: 2px;
+    background: #22BAAE;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition-duration: 0.3s;
+    transform: translateX(0)
+}
+
+.tabItem {
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+.productFooterBox {
+    width: 375px;
+    height: 48px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1000;
+}
+
+.footerItem {
+    width: 33.3%;
+    height: 48px;
+    float: left;
+}
+
+.cartBtn {
+    background: #e17161;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+.soonBtn {
+    background: #D94E3A;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+.iconBox {
+    box-sizing: border-box;
+    /*padding: 0 28px;*/
+}
+
+.iconLeftBox {
+    width: 50%;
+    height: 48px;
+    float: left;
+    text-align: center;
+}
+
+.homeIcon {
+    width: 20px;
+    height: 20px;
+    float: left;
+    position: relative;
+    left: 22px;
+    top: 0;
+    margin-bottom: 3px;
+    margin-top: 4px;
+}
+
+.text {
+    font-size: 12px;
+    color: #333;
+    float: left;
+    width: 100%;
+}
+
+.iconRightBox {
+    width: 50%;
+    height: 48px;
+    float: right;
+    text-align: center;
+}
+
+.tabContext {
+    margin-bottom: 48px;
+    overflow: hidden;
+}
+
+.tabContext p {
+    width: 100%
+}
+
+.tabContext img {
+    width: 100%;
+}
+
+.evaluationItem {
+    background: #fff;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.evaluationItemLeft {
+    float: left;
+    margin-right: 10px;
+}
+
+.userImg {
+    width: 40px;
+    height: 40px;
+}
+
+.evaluationItemRight {
+    float: left;
+    overflow: hidden;
+    width: 300px;
+}
+
+.userName {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 9px;
+}
+
+.dateBox {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.evaluationContent {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 12px;
+    color: #333;
+}
+
+.imgList {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.imgItem {
+    width: 95px;
+    height: 95px;
+    float: left;
+    margin-right: 7px;
+    border-radius: 5px;
+}
+
+.imgList .imgItem:last-child {
+    margin-right: 0;
+}
+
+.seeMoreBox {
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.seeMoreBtn {
+    width: 74px;
+    height: 24px;
+    color: #fff;
+    background: #22BAAE;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    float: left;
+    position: relative;
+    left: 149px;
+}
+
+
+/*弹窗*/
+
+.mark {
+    background: #000;
+    opacity: 0.5;
+    width: 375px;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+
+.skuModel {
+    width: 375px;
+    height: 336px;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1005;
+}
+
+.skuContentBox {
+    width: 375px;
+    height: 288px;
+    box-sizing: border-box;
+    padding: 25px 15px;
+    overflow: hidden;
+}
+
+.tabContext {
+    background: #FFF;
+}
+
+.btnBox {
+    width: 375px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 15px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.btnLeft {
+    width: 50%;
+    height: 48px;
+    float: left;
+    background: #e17161;
+}
+
+.btnRight {
+    width: 50%;
+    height: 48px;
+    float: left;
+    background: #D94E3A;
+}
+
+.skuTopBox {
+    width: 100%;
+    height: 100px;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.skuImg {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    float: left;
+}
+
+.skuTopRight {
+    float: left;
+    height: 100px;
+    width: 230px;
+    position: relative;
+}
+
+.delectIcon {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.iconText {
+    font-size: 14px;
+    color: #D91625;
+}
+
+.skuPrice {
+    font-size: 19px;
+    color: #D91625;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.countBox {
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    /*padding: 0 15px;*/
+    border-top: 1px solid #E3E3E3;
+    border-bottom: 1px solid #E3E3E3;
+    float: left;
+    overflow: hidden;
+}
+
+.countText {
+    float: left;
+}
+
+.countChangeBox {
+    float: right;
+    overflow: hidden;
+    position: relative;
+    top: 15px;
+}
+
+.addIcon {
+    width: 21px;
+    height: 21px;
+    float: left;
+}
+
+.count {
+    width: 50px;
+    height: 21px;
+    text-align: center;
+    line-height: 21px;
+    font-size: 15px;
+    color: #333;
+    float: left;
+}
+
+.CostPrice {
+    font-size: 24px;
+    float: left;
+    position: relative;
+}
+
+.CostPrice_Amount {
+    font-weight: bold;
+    color: #D94E3A;
+    font-size: 16px;
+    position: relative;
+}
+
+.CostPrice_span {
+    font-size: 24px;
+    color: #D94E3A;
+    position: relative;
+    top: 1px;
+}
+
+.ShopPrice {
+    font-size: 16px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 14px;
+}

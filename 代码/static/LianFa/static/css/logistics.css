@@ -1,0 +1,132 @@
+.allBox {
+    min-height: 100vh;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.productBox {
+    width: 100%;
+    min-height: 70px;
+    background: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+.productImg {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.productRight {
+    width: 260px;
+    float: left;
+    height: 50px;
+}
+
+.productName {
+    width: 260px;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.logisticsNum {
+    width: 260px;
+    font-size: 12px;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.logisticsBox {
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    padding-left: 64px;
+}
+
+.item_info {
+    min-height: 50px;
+    position: relative;
+    padding-bottom: 20px;
+    border-left: 1px solid #DDDDDD;
+}
+
+.item_info_list:last-child .item_info {
+    border-left: none !important;
+}
+
+.icon_sign {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    left: -44px;
+    top: 0px;
+    background: #b7b7b7;
+    border-radius: 50%;
+}
+
+.icon_sign_dot {
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: -3.5px;
+    top: 0px;
+    background: #CCCCCC;
+    border-radius: 50%;
+}
+
+.title_desc {
+    font-size: 12px;
+    color: #999999;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.time_date {
+    color: #BBBBBB;
+    font-size: 10px;
+    position: absolute;
+    left: -50px;
+    top: 15px;
+}
+
+.time_dateNext {
+    color: #BBBBBB;
+    font-size: 10px;
+    position: absolute;
+    left: -50px;
+    top: 0px;
+}
+
+.icon {
+    width: 10px;
+    height: 10px;
+    background: #EC594F;
+    border-radius: 50%;
+    position: absolute;
+    left: -5.5px;
+    top: 0px;
+}
+
+.item_infoTop {
+    /* min-height: 50px; */
+    position: relative;
+    /* padding-bottom: 20px; */
+    /* border-left: 1px solid #DDDDDD; */
+    font-size: 12px;
+    color: #aaa;
+}

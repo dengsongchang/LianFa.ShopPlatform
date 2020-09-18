@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuCheng.Util.Office.Npoi</name>
+    </assembly>
+    <members>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.ExcelHelper">
+            <summary>
+            Excel帮助类
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelHelper.#ctor(System.String)">
+            <summary>
+            ExcelHelper构造函数
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelHelper.DataTableToExcel(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            将DataTable数据导入到excel中
+            </summary>
+            <param name="data">要导入的数据</param>
+            <param name="isColumnWritten">DataTable的列名是否要导入</param>
+            <param name="sheetName">要导入的excel的sheet的名称</param>
+            <returns>导入数据行数(包含列名那一行)</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelHelper.ExcelToDataTable(System.String,System.Boolean)">
+            <summary>
+            将excel中的数据导入到DataTable中
+            </summary>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>返回的DataTable</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelHelper.ExcelToDataTable(System.String,System.Boolean,System.Collections.Generic.List{HuCheng.Util.Office.Npoi.PicturesInfo}@)">
+            <summary>
+            将excel中的数据导入到DataTable中并返回图片信息列表(.xlsx2007版本的Excel会很卡，建议使用2003.xls)
+            </summary>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <param name="pictures">Excel图片信息列表</param>
+            <returns>返回的DataTable</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelHelper.GetExcelImgPath(System.String,HuCheng.Util.Office.Npoi.PicturesInfo)">
+            <summary>
+            从excel获取图片
+            </summary>
+            <param name="savePath">图片保存路径</param>
+            <param name="pic">Excel图片信息</param>
+            <returns>Excel图片路径</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelHelper.GetExcelImgsPath(System.String,System.Collections.Generic.IEnumerable{HuCheng.Util.Office.Npoi.PicturesInfo})">
+            <summary>
+            从excel获取图片
+            </summary>
+            <param name="savePath">图片保存路径</param>
+            <param name="pictures">Excel图片信息列表</param>
+            <returns>Excel图片路径</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelHelper.Dispose(System.Boolean)">
+            <summary>
+            Dispose
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver">
+            <summary>
+            单元格样式解析器
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.#ctor(NPOI.SS.UserModel.IWorkbook,HuCheng.Util.Core.Offices.CellStyle)">
+            <summary>
+            初始化单元格样式解析器
+            </summary>
+            <param name="workbook">工作薄</param>
+            <param name="style">单元格样式</param>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver._workbook">
+            <summary>
+            工作薄
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver._style">
+            <summary>
+            单元格样式
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver._result">
+            <summary>
+            单元格样式
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.Resolve">
+            <summary>
+            解析为Npoi单元格样式
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.GetHorizontalAlignment">
+            <summary>
+            获取水平对齐
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.GetVerticalAlignment">
+            <summary>
+            获取垂直对齐
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.SetBackgroundColor">
+            <summary>
+            设置背景色
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.SetFillPattern">
+            <summary>
+            设置填充模式
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.SetBorderColor">
+            <summary>
+            设置边框颜色
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.SetFont">
+            <summary>
+            设置字体
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.CellStyleResolver.Resolve(NPOI.SS.UserModel.IWorkbook,HuCheng.Util.Core.Offices.CellStyle)">
+            <summary>
+            解析单元格样式
+            </summary>
+            <param name="workbook">工作薄</param>
+            <param name="style">单元格样式</param>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.ColorResolver">
+            <summary>
+            颜色转换
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ColorResolver.Resolve(HuCheng.Util.Core.Offices.Color)">
+            <summary>
+            转换
+            </summary>
+            <param name="color">颜色枚举</param>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.ExcelExport">
+            <summary>
+            导出Excel
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.#ctor(HuCheng.Util.Core.Exports.ExportFormat,HuCheng.Util.Core.Offices.IExcel)">
+            <summary>
+            初始化Excel导出
+            </summary>
+            <param name="format">导出格式</param>
+            <param name="excel">Excel操作</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.ExportExcel``1(System.Collections.Generic.List{System.String},System.Collections.Generic.List{``0},System.String,System.Boolean,HuCheng.Util.Core.Exports.ExportFormat,System.String)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="headList">表头</param>
+            <param name="dataList">正文</param>
+            <param name="saveTempPath">保存路径,如：/upload/excel/</param>
+            <param name="isFullUrl">是否返回完整路径</param>
+            <param name="exportFormat">导出格式，(xls或xlsx)</param>
+            <param name="fileType">文件名前缀</param>
+            <returns>Excel文件路径</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.ExportCustomCellHeadExcel``1(System.Collections.Generic.List{HuCheng.Util.Core.Offices.CellHead},System.Collections.Generic.List{``0},System.String,System.Boolean,HuCheng.Util.Core.Exports.ExportFormat,System.String)">
+            <summary>
+            导出自定义表头Excel方法
+            </summary>
+            <param name="cellHeadList">自定义表头</param>
+            <param name="dataList">正文</param>
+            <param name="saveTempPath">保存路径,如：/upload/excel/</param>
+            <param name="isFullUrl">是否返回完整路径</param>
+            <param name="exportFormat">导出格式，(xls或xlsx)</param>
+            <param name="fileType">文件名前缀</param>
+            <returns>Excel文件路径</returns>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.ExcelExport._excel">
+            <summary>
+            Excel操作
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.ColumnWidth(System.Int32,System.Int32)">
+            <summary>
+            列宽
+            </summary>
+            <param name="columnIndex">列索引</param>
+            <param name="width">宽度</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.DateFormat(System.String)">
+            <summary>
+            设置日期格式
+            </summary>
+            <param name="format">日期格式，默认"yyyy-mm-dd"</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.WriteStream(System.IO.Stream)">
+            <summary>
+            写入流
+            </summary>
+            <param name="stream">流</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.AddHeader">
+            <summary>
+            添加表头
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.CreateRows(System.Collections.Generic.IEnumerable{HuCheng.Util.Core.Offices.Row})">
+            <summary>
+            创建行
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.AddBody">
+            <summary>
+            添加正文
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExcelExport.AddFoot">
+            <summary>
+            添加页脚
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.ExportFactory">
+            <summary>
+            导出工厂
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExportFactory.Create(HuCheng.Util.Core.Exports.ExportFormat)">
+            <summary>
+            创建导出
+            </summary>
+            <param name="format">导出格式</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExportFactory.CreateNpoiExcel2003Export">
+            <summary>
+            创建Npoi Excel 2003导出
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.ExportFactory.CreateNpoiExcel2007Export">
+            <summary>
+            创建Npoi Excel 2007导出
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2003">
+            <summary>
+            Npoi Excel2003操作
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2003.GetWorkbook">
+            <summary>
+            创建工作薄
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2003Export">
+            <summary>
+            Npoi Excel2003 导出操作
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2003Export.#ctor">
+            <summary>
+            初始化Npoi Excel2003 导出操作
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2007">
+            <summary>
+            Npoi Excel2007操作
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2007.GetWorkbook">
+            <summary>
+            创建工作薄
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2007Export">
+            <summary>
+            Npoi Excel2007 导出操作
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcel2007Export.#ctor">
+            <summary>
+            初始化Npoi Excel2003 导出操作
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase">
+            <summary>
+            Npoi Excel操作
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.#ctor">
+            <summary>
+            初始化Npoi操作
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._workbook">
+            <summary>
+            Excel工作薄
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._sheet">
+            <summary>
+            Excel工作表
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._row">
+            <summary>
+            当前行
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._cell">
+            <summary>
+            当前单元格
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._dateFormat">
+            <summary>
+            日期格式
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._headStyle">
+            <summary>
+            表头样式
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._bodyStyle">
+            <summary>
+            正文样式
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._footStyle">
+            <summary>
+            页脚样式
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase._dateStyle">
+            <summary>
+            日期样式
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.CreateWorkbook">
+            <summary>
+            创建工作薄
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.GetWorkbook">
+            <summary>
+            创建工作薄
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.CreateSheet(System.String)">
+            <summary>
+            创建工作表
+            </summary>
+            <param name="sheetName">工作表名称</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.CreateRow(System.Int32)">
+            <summary>
+            创建行
+            </summary>
+            <param name="rowIndex">行索引</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.GetOrCreateRow(System.Int32)">
+            <summary>
+            获取行，如果不存在则创建
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.CreateCell(HuCheng.Util.Core.Offices.Cell)">
+            <summary>
+            创建单元格
+            </summary>
+            <param name="cell">单元格</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.GetOrCreateCell(NPOI.SS.UserModel.IRow,System.Int32)">
+            <summary>
+            获取单元格，如果不存在则创建
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.SetCellValue(System.Object)">
+            <summary>
+            设置单元格的值
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.MergeCell(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            合并单元格
+            </summary>
+            <param name="startRowIndex">起始行索引</param>
+            <param name="endRowIndex">结束行索引</param>
+            <param name="startColumnIndex">起始列索引</param>
+            <param name="endColumnIndex">结束列索引</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.MergeCell(HuCheng.Util.Core.Offices.Cell)">
+            <summary>
+            合并单元格
+            </summary>
+            <param name="cell">单元格</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.Write(System.IO.Stream)">
+            <summary>
+            写入流
+            </summary>
+            <param name="stream">流</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.CreateDateStyle">
+            <summary>
+            创建日期样式
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.Style(System.Int32,System.Int32,System.Int32,System.Int32,NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            设置样式
+            </summary>
+            <param name="startRowIndex">起始行索引</param>
+            <param name="endRowIndex">结束行索引</param>
+            <param name="startColumnIndex">起始列索引</param>
+            <param name="endColumnIndex">结束列索引</param>
+            <param name="style">单元格样式</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.HeadStyle(HuCheng.Util.Core.Offices.Table,HuCheng.Util.Core.Offices.CellStyle)">
+            <summary>
+            设置表头样式
+            </summary>
+            <param name="table">表格</param>
+            <param name="style">单元格样式</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.BodyStyle(HuCheng.Util.Core.Offices.Table,HuCheng.Util.Core.Offices.CellStyle)">
+            <summary>
+            设置正文样式
+            </summary>
+            <param name="table">表格</param>
+            <param name="style">单元格样式</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.FootStyle(HuCheng.Util.Core.Offices.Table,HuCheng.Util.Core.Offices.CellStyle)">
+            <summary>
+            设置页脚样式
+            </summary>
+            <param name="table">表格</param>
+            <param name="style">单元格样式</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.DateFormat(System.String)">
+            <summary>
+            设置日期格式
+            </summary>
+            <param name="format">日期格式，默认"yyyy-mm-dd"</param>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.Excel.NpoiExcelBase.ColumnWidth(System.Int32,System.Int32)">
+            <summary>
+            列宽
+            </summary>
+            <param name="columnIndex">列索引</param>
+            <param name="width">列宽度，设置字符数</param>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.NpoiExtend">
+            <summary>
+            Npoi扩展方法
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.NpoiExtend.GetAllPictureInfos(NPOI.SS.UserModel.ISheet)">
+            <summary>
+            获取Excel所有图片信息列表
+            </summary>
+            <param name="sheet">Excel sheet</param>
+            <returns>图片信息列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.NpoiExtend.GetAllPictureInfos(NPOI.SS.UserModel.ISheet,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            获取Excel指定区域图片信息列表
+            </summary>
+            <param name="sheet">Excel sheet</param>
+            <param name="minRow">最小行数</param>
+            <param name="maxRow">最大行数</param>
+            <param name="minCol">最小列数</param>
+            <param name="maxCol">最大列数</param>
+            <param name="onlyInternal">是否内部</param>
+            <returns>图片信息列表</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.NpoiExtend.GetAllPictureInfos(NPOI.HSSF.UserModel.HSSFSheet,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            获取Excel指定区域图片信息列表(2003版本)
+            </summary>
+            <param name="sheet">Excel sheet</param>
+            <param name="minRow">最小行数</param>
+            <param name="maxRow">最大行数</param>
+            <param name="minCol">最小列数</param>
+            <param name="maxCol">最大列数</param>
+            <param name="onlyInternal">是否内部</param>
+            <returns>图片信息列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.NpoiExtend.GetAllPictureInfos(NPOI.XSSF.UserModel.XSSFSheet,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            获取Excel指定区域图片信息列表(2007版本)
+            </summary>
+            <param name="sheet">Excel sheet</param>
+            <param name="minRow">最小行数</param>
+            <param name="maxRow">最大行数</param>
+            <param name="minCol">最小列数</param>
+            <param name="maxCol">最大列数</param>
+            <param name="onlyInternal">是否内部</param>
+            <returns>图片信息列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.NpoiExtend.IsInternalOrIntersect(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            是否内部还是交叉
+            </summary>
+            <param name="rangeMinRow"></param>
+            <param name="rangeMaxRow"></param>
+            <param name="rangeMinCol"></param>
+            <param name="rangeMaxCol"></param>
+            <param name="pictureMinRow"></param>
+            <param name="pictureMaxRow"></param>
+            <param name="pictureMinCol"></param>
+            <param name="pictureMaxCol"></param>
+            <param name="onlyInternal"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HuCheng.Util.Office.Npoi.PicturesInfo">
+            <summary>
+            图片信息类
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Office.Npoi.PicturesInfo.Ext">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Office.Npoi.PicturesInfo.MinRow">
+            <summary>
+            最小行数
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Office.Npoi.PicturesInfo.MaxRow">
+            <summary>
+            最大行数
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Office.Npoi.PicturesInfo.MinCol">
+            <summary>
+            最小列数
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Office.Npoi.PicturesInfo.MaxCol">
+            <summary>
+            最大列数
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Office.Npoi.PicturesInfo.PictureData">
+            <summary>
+            图片字节数据
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Office.Npoi.PicturesInfo.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[],System.String)">
+            <summary>
+            图片信息类构造函数
+            </summary>
+            <param name="minRow">最小行数</param>
+            <param name="maxRow">最大行数</param>
+            <param name="minCol">最小列数</param>
+            <param name="maxCol">最大列数</param>
+            <param name="pictureData">图片字节数据</param>
+            <param name="ext">文件扩展名</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,71 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}门店后台入口相关设置{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/classifyList.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link type="text/css" rel="stylesheet" href="/public/plugins/ueditor/themes/default/css/ueditor.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box" style="padding-top: 30px">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li  >
+                            <a data-type="1" href="javascript:void(0);" class="listBtn">门店后台入口相关设置</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content edit-content" style="margin-top: 40px">
+                    <div class="tab-pane active" id="first">
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                门店后台入口相关设置
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button" class="btn btn-sm pull-right btn-primary operate-btn" data-widget="collapse" data-toggle="tooltip"
+                                                        title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group" style="margin-bottom: 10px">
+                                                    <label class="col-sm-2 control-label"><span class="red-star">*</span>内容：</label>
+                                                    <div class="col-sm-9" id="editorContent">
+                                                        <!-- 加载编辑器的容器 -->
+                                                        <script id="hcEditor" name="content" type="text/plain">
+                                                        </script>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-btn">
+                            <button class="btn btn-primary" id="nextStep">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+<script src="/public/js/storeAgreement.js" type="text/babel"></script>
+{{/block}}

@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuCheng.Util.Oss.AliYun</name>
+    </assembly>
+    <members>
+        <member name="T:HuCheng.Util.Oss.AliYun.AliyunOssService">
+            <summary>
+            阿里云短信服务类
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.AliyunOssService._endpoint">
+            <summary>
+            地域节点
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.AliyunOssService._accessKeyId">
+            <summary>
+            阿里云AccessKeyId
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.AliyunOssService._accessKeySecret">
+            <summary>
+            阿里云AccessKeySecret
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.AliyunOssService._ossClient">
+            <summary>
+            阿里云Oss客户端
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.AliyunOssService.OssProcess">
+            <summary>
+            阿里云Oss处理服务参数
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.InitAliYunOss(System.String,System.String,System.String)">
+            <summary>
+            初始化阿里云配置
+            </summary>
+            <param name="accessKeyId">accessKeyId</param>
+            <param name="accessKeySecret">accessKeySecret</param>
+            <param name="endpoint">地域节点，默认为深圳</param>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.PutObjectFromFile(System.String,System.String,System.String)">
+            <summary>
+            上传指定的本地文件
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.PutObjectFromStream(System.String,System.IO.Stream,System.String)">
+            <summary>
+            上传文件流
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="fileStream">文件流</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.PutObjectFromFileWithTimeout(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            上传指定的本地文件(带超时时间)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="connTimeout">链接超时时间</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.PutObjectFromFileWithMd5(System.String,System.String,System.String)">
+            <summary>
+            上传指定的本地文件(带MD5校验)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.PutObjectFromFileWithHeader(System.String,System.String,Aliyun.OSS.ObjectMetadata,System.String)">
+            <summary>
+            上传指定的本地文件(带Header)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="objectMetadata">头部元数据</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.PutObjectFromFileWithMetadata(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            上传指定的本地文件(带自定义Metadata)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="userMetadatas">自定义元数据键值对</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.DirectGetObjectUrl(System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取指定的OSS文件链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.DirectGetObjectCdnUrl(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取指定的OSS文件的CDN链接(永久，需OSS公共读权限及CDN服务)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetObjectUrl(System.String,System.String,System.Boolean)">
+            <summary>
+            获取指定的OSS文件链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetObjectUrlWithImgProcessType(System.String,System.String,System.Boolean)">
+            <summary>
+            获取指定处理服务的OSS文件链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetObjectCdnUrl(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取指定的OSS文件的CDN链接(永久，需OSS公共读权限及CDN服务)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetObjectBySignedUrl(System.String,System.String,System.Int32)">
+            <summary>
+            获取指定的OSS文件具有有效时间的签名链接
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="timeout">过期时间-秒，默认为15分钟</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetOssImgInfo(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取OSS图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetOssFormatImgInfo(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取OSS格式化的图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.FormatOssImgInfo(HuCheng.Util.Oss.AliYun.Response.ImageInfoResponse)">
+            <summary>
+            格式化OSS的图片Exif信息
+            </summary>
+            <param name="imgExifInfo">图片Exif信息</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetCdnImgInfo(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取CDN图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetCdnFormatImgInfo(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取CDN图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetExifSpecificValue(System.String,System.Int32)">
+            <summary>
+            获取Exif具体数值
+            </summary>
+            <param name="exifInfo">exif数值</param>
+            <param name="digits">小数点后保留几位,默认2位</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetExifSpecificFormatValue(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取Exif格式化的具体数值
+            </summary>
+            <param name="exifInfo">exif数值</param>
+            <param name="digits">小数点后保留几位,默认2位</param>
+            <param name="showDigits">是否显示小数点</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.DirectGetOssStyleImgUrl(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取OSS使用样式的图片链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="styleName">图片样式名称</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.DirectGetCdnStyleImgUrl(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取CDN使用样式的图片链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="styleName">图片样式名称</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetObject(System.String,System.String,System.String)">
+            <summary>
+            下载指定的OSS文件
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="dirToDownload">文件下载路径</param>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetObjectByRequest(System.String,System.String)">
+            <summary>
+            通过请求获取指定的OSS文件
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.CopyObject(System.String,System.String,System.String,System.String,Aliyun.OSS.ObjectMetadata)">
+            <summary>
+            拷贝文件
+            </summary>
+            <param name="sourceBucket">源存储空间名称</param>
+            <param name="sourceKey">源文件名</param>
+            <param name="targetBucket">目标存储空间</param>
+            <param name="targetKey">目标文件键名</param>
+            <param name="objectMetadata">自定义元数据</param>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.CheckOssClientIsNull">
+            <summary>
+            检测阿里云Oss客户端是否为空
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetNewFileName(System.String,System.String)">
+            <summary>
+            如果文件键名为空获取新文件键名
+            </summary>
+            <param name="key">文件键名</param>
+            <param name="localFilePath">本地文件路径</param>
+            <returns>新</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.GetImgProcessByType(HuCheng.Util.Oss.AliYun.Enum.ImgProcessType)">
+            <summary>
+            通过类型获取对应图片处理服务
+            </summary>
+            <param name="imgProcessType">图片处理服务类型</param>
+            <returns>新</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.AliyunOssService.StreamToString(System.IO.Stream)">
+            <summary>
+            将 Stream 转成 string
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType">
+            <summary>
+            阿里云OSS图片处理服务类型
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Resize">
+            <summary>
+            图片缩放
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Crop">
+            <summary>
+            图片裁剪
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Rotate">
+            <summary>
+            图片旋转
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Sharpen">
+            <summary>
+            图片锐化
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Watermark">
+            <summary>
+            图片加文字水印
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Format">
+            <summary>
+            图片格式转换
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Info">
+            <summary>
+            图片信息
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Oss.AliYun.Enum.ImgProcessType.Style">
+            <summary>
+            图片样式
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Oss.AliYun.IAliyunOssService">
+            <summary>
+            阿里云短信服务
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.InitAliYunOss(System.String,System.String,System.String)">
+            <summary>
+            初始化阿里云配置
+            </summary>
+            <param name="accessKeyId">accessKeyId</param>
+            <param name="accessKeySecret">accessKeySecret</param>
+            <param name="endpoint">地域节点，默认为深圳</param>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.PutObjectFromFile(System.String,System.String,System.String)">
+            <summary>
+            上传指定的本地文件
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.PutObjectFromStream(System.String,System.IO.Stream,System.String)">
+            <summary>
+            上传文件流
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="fileStream">文件流</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.PutObjectFromFileWithTimeout(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            上传指定的本地文件(带超时时间)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="connTimeout">链接超时时间</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.PutObjectFromFileWithMd5(System.String,System.String,System.String)">
+            <summary>
+            上传指定的本地文件(带MD5校验)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.PutObjectFromFileWithHeader(System.String,System.String,Aliyun.OSS.ObjectMetadata,System.String)">
+            <summary>
+            上传指定的本地文件(带Header)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="objectMetadata">头部元数据</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.PutObjectFromFileWithMetadata(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            上传指定的本地文件(带自定义Metadata)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="localFilePath">本地文件路径</param>
+            <param name="userMetadatas">自定义元数据键值对</param>
+            <param name="key">文件键名,默认为空,取当前时间戳.如果是目录,请使用folder/sub_folder/key形式</param>
+            <returns>上传结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.DirectGetObjectUrl(System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取指定的OSS文件链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.DirectGetObjectCdnUrl(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取指定的OSS文件的CDN链接(永久，需OSS公共读权限及CDN服务)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetObjectUrl(System.String,System.String,System.Boolean)">
+            <summary>
+            获取指定的OSS文件链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetObjectCdnUrl(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取指定的OSS文件的CDN链接(永久，需OSS公共读权限及CDN服务)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetObjectBySignedUrl(System.String,System.String,System.Int32)">
+            <summary>
+            获取指定的OSS文件具有有效时间的签名链接
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="timeout">过期时间-秒，默认为15分钟</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetObject(System.String,System.String,System.String)">
+            <summary>
+            下载指定的OSS文件
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="dirToDownload">文件下载路径</param>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetObjectByRequest(System.String,System.String)">
+            <summary>
+            通过请求获取指定的OSS文件
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetOssImgInfo(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取OSS图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetOssFormatImgInfo(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取OSS格式化的图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.FormatOssImgInfo(HuCheng.Util.Oss.AliYun.Response.ImageInfoResponse)">
+            <summary>
+            格式化OSS的图片Exif信息
+            </summary>
+            <param name="imgExifInfo">图片Exif信息</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetCdnImgInfo(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取CDN图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.GetCdnFormatImgInfo(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            获取CDN图片信息
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="referer">请求来源</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>图片信息Json字符串</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.DirectGetOssStyleImgUrl(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取OSS使用样式的图片链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="styleName">图片样式名称</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.DirectGetCdnStyleImgUrl(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            直接获取CDN使用样式的图片链接(永久，需OSS公共读权限)
+            </summary>
+            <param name="bucketName">储存空间名称</param>
+            <param name="key">文件键名.如果是目录,请使用folder/sub_folder/key形式</param>
+            <param name="cdnDomain">CDN域名</param>
+            <param name="styleName">图片样式名称</param>
+            <param name="isHttps">是否为Https,默认是</param>
+            <returns>文件链接</returns>
+        </member>
+        <member name="M:HuCheng.Util.Oss.AliYun.IAliyunOssService.CopyObject(System.String,System.String,System.String,System.String,Aliyun.OSS.ObjectMetadata)">
+            <summary>
+            拷贝文件
+            </summary>
+            <param name="sourceBucket">源存储空间名称</param>
+            <param name="sourceKey">源文件名</param>
+            <param name="targetBucket">目标存储空间</param>
+            <param name="targetKey">目标文件键名</param>
+            <param name="objectMetadata">自定义元数据</param>
+        </member>
+        <member name="T:HuCheng.Util.Oss.AliYun.Response.ImageInfoResponse">
+            <summary>
+            图片信息响应类
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Oss.AliYun.Response.ImageInfoResponse.Device">
+            <summary>  
+            设备型号  
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Oss.AliYun.Response.ImageInfoResponse.Foci">
+            <summary>  
+            焦距  
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Oss.AliYun.Response.ImageInfoResponse.ShootingTime">
+            <summary>  
+            拍摄时间
+            </summary>
+        </member>
+    </members>
+</doc>

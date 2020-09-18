@@ -1,0 +1,98 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}导航编辑{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/classifyList.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link type="text/css" rel="stylesheet" href="/public/plugins/ueditor/themes/default/css/ueditor.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box" style="padding-top: 30px">
+	<div class="main_list_content type_box">
+		<div class="list_title_header" style="float:left;width:100%">
+			<div class="">
+				<div class="head-type">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a data-type="1" href="/homePage/navSetting">导航列表</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="tab-content edit-content" style="margin-top: 40px">
+					<div class="tab-pane active" id="first">
+						<div>
+							<ul>
+								<li>
+									<div class="box box-solid">
+
+										<div class="box-body">
+											<div class="form-box form-horizontal">
+												<div class="form-group">
+													<label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>标题：</label>
+													<div class="col-md-6">
+														<input type="text" class="form-control" id="consultingName" placeholder="请输入名称">
+													</div>
+												</div>
+												<!--<div class="form-group">-->
+													<!--<label class="col-md-2 control-label">-->
+                                                        <!--<span class="red-star">*</span>链接地址：</label>-->
+													<!--<div class="col-md-6">-->
+														<!--<input type="text" class="form-control" id="url" placeholder="请输入地址">-->
+													<!--</div>-->
+												<!--</div>-->
+												<div class="form-group">
+													<label class="col-md-2 control-label">
+														<span class="red-star">*</span>导航图标</label>
+													<div class="col-md-9">
+														<div class="icon-box_about_classify">
+															<div class="small_con">
+																<img src="/public/images/addImg.png" alt="" id="small_icon" style="width: 100px;height: 100px">
+																<div id="small_upload_pick" class="webuploader-container">
+																	<div class="webuploader-pick"></div>
+																	<div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar1" style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div>
+																</div>
+															</div>
+															<div style="text-align: center">45*45</div>
+														</div>
+													</div>
+												</div>
+												<!--<div class="form-group" style="position: relative;top: 10px;display:none;" id="sortGroup">-->
+													<!--<label class="col-md-2 control-label">-->
+                                                        <!--<span class="red-star">*</span>排序：</label>-->
+													<!--<div class="col-md-10">-->
+														<!--<input type="text" class="form-control" id="sort" style="width: 120px">-->
+													<!--</div>-->
+												<!--</div>-->
+												<!--<div class="form-group">-->
+													<!--<label class="col-md-2 control-label">-->
+														<!--<span class="red-star">*</span>类型：</label>-->
+													<!--<div class="col-md-10" style="position: relative;top: 5px;">-->
+														<!--移动端：<input type="radio" checked value="0" name="type">-->
+														<!--PC端：<input type="radio" value="1" name="type">-->
+													<!--</div>-->
+												<!--</div>-->
+												<input type="hidden" id="type">
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-btn">
+							<button class="btn btn-primary" id="nextStep">保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+
+<script src="/public/js/navEditor.js" type="text/babel"></script>
+
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+{{/block}}

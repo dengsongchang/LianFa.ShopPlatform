@@ -1,0 +1,451 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}添加门店{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/classifyList.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/viewer/viewer.min.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box" style="padding-top: 30px">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/store/storeList">门店列表</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" href="/store/storeAdd">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content edit-content" style="margin-top: 40px">
+                    <div class="tab-pane active" id="first">
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                门店基本信息
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button"
+                                                        class="btn btn-sm pull-right btn-primary operate-btn"
+                                                        data-widget="collapse" data-toggle="tooltip"
+                                                        title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <!--<div class="form-group">-->
+                                                <!--<label class="col-md-2 control-label">-->
+                                                <!--<span class="red-star">*</span>门店编号：</label>-->
+                                                <!--<div class="col-md-6">-->
+                                                <!--<input type="text" class="form-control" id="storeNum"-->
+                                                <!--placeholder="请输入编号">-->
+                                                <!--</div>-->
+                                                <!--</div>-->
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店名称：</label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" id="storeName"
+                                                               placeholder="请输入名称">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店图片：</label>
+                                                    <div class="col-md-9">
+                                                        <div class="icon-box_about_classify">
+                                                            <div class="small_con">
+                                                                <img src="/public/images/addImg.png" alt=""
+                                                                     id="small_icon">
+                                                                <div id="small_upload_pick"
+                                                                     class="webuploader-container">
+                                                                    <div class="webuploader-pick"></div>
+                                                                    <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar1"
+                                                                         style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                        <input type="file" name="file"
+                                                                               class="webuploader-element-invisible"
+                                                                               multiple="multiple"
+                                                                               accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                                            style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="color: #ccc;margin-top: 10px;width: 300px">限定上传1张图片，建议尺寸750 *
+                                                                200像素
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-top: 40px">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店客服二维码：</label>
+                                                    <div class="col-md-9">
+                                                        <div class="icon-box_about_classify">
+                                                            <div class="code_con">
+                                                                <img src="/public/images/addImg.png" alt=""
+                                                                     id="code_icon">
+                                                                <div id="code_upload_pick"
+                                                                     class="webuploader-container">
+                                                                    <div class="webuploader-pick"></div>
+                                                                    <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar6"
+                                                                         style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                        <input type="file" name="file"
+                                                                               class="webuploader-element-invisible"
+                                                                               multiple="multiple"
+                                                                               accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                                            style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="color: #ccc;margin-top: 10px;width: 300px">限定上传1张图片，建议尺寸300 *
+                                                                300像素
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-top: 40px">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店联系人：</label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" id="userName"
+                                                               placeholder="请输入姓名">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店联系电话：</label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" id="phone"
+                                                               placeholder="请输入手机号码">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店关键词：</label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" id="key"
+                                                               placeholder="请输入门店关键词">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店简介：</label>
+                                                    <div class="col-md-6">
+                                                        <textarea name="" class="form-control" cols="30" rows="10"
+                                                                  id="introduction" placeholder="请输入门店关键词"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店地址：</label>
+                                                    <div class="col-md-10">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" id="province_box">
+                                                                    <option selected="selected" value="0">请选择省</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" id="city_box">
+                                                                    <option selected="selected" value="0">请选择市</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" id="area_box">
+                                                                    <option selected="selected" value="0">请选择区/县
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin-top:20px">
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control"
+                                                                       id="detailAddress" placeholder="请输入详细地址">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">定位：</label>
+                                                    <div class="col-md-9" id="Map" style="width: 530px;height: 390px;">
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店资质牌照：</label>
+                                                    <div class="col-md-6">
+                                                        <div id="dowebok">
+                                                            <div class="icon-box_about_classify">
+                                                                <div class="merchantQualification_img">
+                                                                    <img data-original="/public/images/addImg.png"
+                                                                         src="/public/images/addImg.png" alt=""
+                                                                         id="merchantQualification">
+                                                                    <div id="merchantQualification_pick"
+                                                                         class="webuploader-container">
+                                                                        <div class="webuploader-pick"></div>
+                                                                        <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar2"
+                                                                             style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                            <input type="file" name="file"
+                                                                                   class="webuploader-element-invisible"
+                                                                                   multiple="multiple"
+                                                                                   accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                                                style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="preBox">
+                                                                <button class="preBtn1 btn btn-primary">预览</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>身份证件照：</label>
+                                                    <div class="col-md-6">
+                                                        <div id="dowebok1">
+                                                            <div class="icon-box_about_classify">
+                                                                <div class="merchantQualification_img">
+                                                                    <img data-original1="/public/images/addImg.png"
+                                                                         src="/public/images/addImg.png" alt=""
+                                                                         id="merchantIdCardOne">
+                                                                    <div id="merchantIdCardOne_pick"
+                                                                         class="webuploader-container">
+                                                                        <div class="webuploader-pick"></div>
+                                                                        <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar4"
+                                                                             style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                            <input type="file" name="file"
+                                                                                   class="webuploader-element-invisible"
+                                                                                   multiple="multiple"
+                                                                                   accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                                                style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="icon-box_about_classify">
+                                                                <div class="merchantQualification_img">
+                                                                    <img data-original1="/public/images/addImg.png"
+                                                                         src="/public/images/addImg.png" alt=""
+                                                                         id="merchantIdCardTwo">
+                                                                    <div id="merchantIdCardTwo_pick"
+                                                                         class="webuploader-container">
+                                                                        <div class="webuploader-pick"></div>
+                                                                        <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar5"
+                                                                             style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                            <input type="file" name="file"
+                                                                                   class="webuploader-element-invisible"
+                                                                                   multiple="multiple"
+                                                                                   accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                                                style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="preBox" style="left: 225px">
+                                                                <button class="preBtn2 btn btn-primary">预览</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>门店logo：</label>
+                                                    <div class="col-md-6" style="position: relative">
+                                                        <div id="dowebok2">
+                                                            <div class="icon-box_about_classify">
+                                                                <div class="merchantQualification_img">
+                                                                    <img data-original2="/public/images/addImg.png"
+                                                                         src="/public/images/addImg.png" alt=""
+                                                                         id="merchantLogo">
+                                                                    <div id="merchantLogo_pick"
+                                                                         class="webuploader-container">
+                                                                        <div class="webuploader-pick"></div>
+                                                                        <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar3"
+                                                                             style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;z-index: 999">
+                                                                            <input type="file" name="file"
+                                                                                   class="webuploader-element-invisible"
+                                                                                   multiple="multiple"
+                                                                                   accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                                                style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="preBox">
+                                                                <button class="preBtn3 btn btn-primary">预览</button>
+                                                            </div>
+                                                        </div>
+                                                        <div style="color: #ccc;margin-top: 10px;width: 300px;position: absolute;top: 92px">限定上传1张图片，建议尺寸300 *
+                                                            300像素
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>入驻身份 ：</label>
+                                                    <div class="col-md-10" style="padding-top: 5px;">
+                                                        个人：<input type="radio" name="Identity" checked
+                                                                  style="position:relative;top: 2px;" value="0">
+                                                        公司：<input type="radio" name="Identity"
+                                                                  style="position:relative;top: 2px;" value="1">
+                                                    </div>
+                                                </div>
+                                                <!--<div class="form-group">-->
+                                                    <!--<label class="col-md-2 control-label">-->
+                                                        <!--<span class="red-star">*</span>是否营销 ：</label>-->
+                                                    <!--<div class="col-md-10" style="padding-top: 5px;">-->
+                                                        <!--是：<input type="radio" name="IsMarketing" checked-->
+                                                                 <!--style="position:relative;top: 2px;" value="true">-->
+                                                        <!--否：<input type="radio" name="IsMarketing"-->
+                                                                 <!--style="position:relative;top: 2px;" value="false">-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                店长设置
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button"
+                                                        class="btn btn-sm pull-right btn-primary operate-btn"
+                                                        data-widget="collapse" data-toggle="tooltip"
+                                                        title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label"
+                                                       style="height: 34px;line-height: 34px">请选择店长：</label>
+                                                <div class="col-md-2">
+                                                    <input type='button' value='选择店长' class="btn btn-default uploadBtn"
+                                                           id="selectClassify"/>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p class="managerName" data-id="0"
+                                                       style="margin-bottom: 0;position: relative;top: 5px;"
+                                                       id="managerName"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                轮播图设置
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button"
+                                                        class="btn btn-sm pull-right btn-primary operate-btn"
+                                                        data-widget="collapse" data-toggle="tooltip"
+                                                        title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">店铺轮播图：</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="productImg" id="productImg">
+                                                            <div class="img-container">
+                                                                <img class="select-img" src="/public/images/addImg.png">
+                                                                <input class="img-input" type="file"
+                                                                       accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+                                                                <img class="close-img" src="/public/images/close.png">
+                                                            </div>
+                                                        </div>
+                                                        <div style="color: #ccc;margin-top: 8px">限定上传8张图片，建议尺寸750 *
+                                                            300像素
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="footer-btn">
+                            <button class="btn btn-primary" id="nextStep">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask">
+        <div class="content-box">
+            <h2>选择店长</h2>
+            <a class="close">×</a>
+            <div class="coup-content">
+                <div id="table_header_classify">
+                    <div class="form-group" style="width: 100%">
+                        <div class=" col-md-6">
+                            <div class="col-md-4" style="height: 34px;line-height: 34px">
+                                <label>店长名称：</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input id="Name" type="text" class="form-control" style="width: 100%">
+                            </div>
+
+                        </div>
+                        <div class=" col-md-4">
+                            <div class="col-md-8">
+                                <a class="btn btn-primary pull-right" id="searchBtn" style="margin-right: 15px">查询</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <table id="table_content_classify">
+
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/plugins/viewer/viewer.min.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2"></script>
+<script src="/public/js/uploadProductImg.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/js/storeAdd.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

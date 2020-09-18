@@ -1,0 +1,229 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}分销员列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/statisticsDistribution.css">
+<link rel="stylesheet" href="/public/css/groupedList.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/distribution/UserList">分销员列表</a>
+                        </li>
+                        <!--<li class="active">-->
+                            <!--<a data-type="2" href="/distribution/GroupedList">分组列表</a>-->
+                        <!--</li>-->
+                        <li class="">
+                            <a data-type="3" href="/distribution/UserApply">分销员审核</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <div class="form-group col-lg-3 col-md-6">
+                        <label>分组名称：</label>
+                        <input type="text" class="form-control" id="UserName">
+                    </div>
+                    
+                    <div class="form-group  col-lg-3 col-md-6">
+                        <div class="col-md-5" style="padding-left: 0;padding-right: 2px">
+                            <select class="form-control select2 select2-hidden-accessible" id="province_box" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">请选择省</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-5" style="padding-left: 3px;padding-right: 2px">
+                            <select id="city_box" class=" form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">请选择市</option>
+                            </select>
+                        </div> 
+                    </div>
+                    
+                    <div class="form-group col-lg-3 col-md-6">
+                        <a class="btn btn-primary" id="search">查询</a>
+                    </div>
+                </div>
+                <div class="all_data_operation_box clearfix">
+                        <div class="about_output_box pull-left">
+                            <div class="btn btn-danger" style="cursor: pointer" data-toggle="modal" data-target="#addGroupedModal">新增</div>
+                        </div>
+                    <div class="disp_page_box pull-right">
+                        <label style="float:left;line-height: 34px;margin-right: 4px;">每页显示数量：</label>
+                        <select id="pagesize_dropdown" class="orderTypeSelect select2 pull-right" tabindex="-1" aria-hidden="true">
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                            <option value="200">200</option>
+                            <option value="500">500</option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bootstrap-table">
+                    <div class="fixed-table-toolbar">
+                        <div class="bs-bars pull-left"></div>
+                    </div>
+                    <div class="fixed-table-container" style="padding-bottom: 0px;">
+                        <div class="fixed-table-header" style="display: none;">
+                            <table></table>
+                        </div>
+                        <div class="fixed-table-body">
+                            <div class="fixed-table-loading" style="top: 41.8px; display: none;">请稍等，正在加载中...</div>
+                            <table id="productTable" class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center; vertical-align: middle; ">
+                                            <div class="th-inner ">分组名称</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th style="text-align: center; vertical-align: middle; " >
+                                            <div class="th-inner ">业绩</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th style="text-align: center; vertical-align: middle; " >
+                                            <div class="th-inner ">佣金</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th style="text-align: center; vertical-align: middle; " >
+                                            <div class="th-inner ">组员人数</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th style="text-align: center; vertical-align: middle; " >
+                                            <div class="th-inner ">所属省市</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th style="text-align: center; vertical-align: middle;">
+                                            <div class="th-inner ">操作</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-index="0">
+                                        <td style="text-align: center; vertical-align: middle; ">小组041</td>
+                                        <td style="text-align: center; vertical-align: middle; ">400</td>
+                                        <td style="text-align: center; vertical-align: middle; ">¥10000.00</td>
+                                        <td style="text-align: center; vertical-align: middle; ">120</td>
+                                        <td style="text-align: center; vertical-align: middle; ">广东广州</td>
+                                        <td style="text-align: center; vertical-align: middle; ">
+                                            <span class="status_edit" style="margin-right: 15px" >编辑  </span>
+                                            <span class="status_delete">删除  </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="fixed-table-footer" style="display: none;">
+                            <table>
+                                <tbody>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="fixed-table-pagination" >
+                            <div class="pull-left pagination-detail">
+                                <span class="pagination-info">显示第 1 到第 10 条记录，总共 17 条记录</span>
+                                <span class="page-list">每页显示
+                                    <span class="btn-group dropup">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="page-size">10</span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li role="menuitem">
+                                                <a href="#">10</a>
+                                            </li>
+                                            <li role="menuitem">
+                                                <a href="#">20</a>
+                                            </li>
+                                        </ul>
+                                    </span> 条记录</span>
+                            </div>
+                            <div class="pull-right pagination">
+                                <ul class="pagination">
+                                    <li class="page-pre">
+                                        <a href="#">‹</a>
+                                    </li>
+                                    <li class="page-number active">
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li class="page-number">
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li class="page-next">
+                                        <a href="#">›</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="maskBox">
+        <div class="modal fade" id="addGroupedModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">新增分组</h4>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="modal-body" style="width:452px;margin:auto;">
+                                <div class="row groupName" >
+                                        <div class="form-group col-lg-12 col-md12">
+                                            <label class="pull-left">分组名称：</label>
+                                            <div class="col-md-8"  style="padding-left: 0;padding-right: 2px">
+                                                <input type="text" class="form-control" id="">
+                                            </div>
+                                            
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group  col-lg-12 col-md-12">
+                                        <label class="pull-left">选择城市：</label>
+                                        <div class="col-md-4" style="padding-left: 0;padding-right: 2px">
+                                            <select class="form-control select2 select2-hidden-accessible" id="province_box" tabindex="-1" aria-hidden="true">
+                                                <option selected="selected" value="0">请选择省</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4" style="padding-left: 3px;padding-right: 2px">
+                                            <select id="city_box" class=" form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                                <option selected="selected" value="0">请选择市</option>
+                                            </select>
+                                        </div> 
+                                    </div>
+                                </div>
+                                
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+{{/block}}
+
+{{block 'requirejs'}}
+<!--<script src="/public/js/template.js"></script>-->
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+
+<script src="/public/js/groupedList.js" type="text/babel"></script>
+{{/block}}

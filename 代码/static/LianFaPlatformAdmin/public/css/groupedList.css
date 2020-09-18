@@ -1,0 +1,14 @@
+.all_data_operation_box {
+    padding: 20px 0px;
+}
+
+.modal-dialog{
+    padding-top:200px; 
+}
+.modal-body .form-group label {
+    height: 34px;
+    width: 20%;
+    line-height: 34px;
+    float: left;
+    text-align: right;
+}

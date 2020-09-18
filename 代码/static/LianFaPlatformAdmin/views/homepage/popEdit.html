@@ -1,0 +1,288 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}编辑弹窗广告{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/classifyList.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link rel="stylesheet" href="/public/css/limitSaleAdd.css">
+<link rel="stylesheet" href="/public/plugins/viewer/viewer.min.css">
+<link type="text/css" rel="stylesheet"
+      href="/public/plugins/ueditor/themes/default/css/ueditor.css">
+
+{{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box" style="padding-top: 30px">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="/homePage/popList">弹窗广告列表</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:void(0);">编辑</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="tab-content edit-content" style="margin-top: 40px">
+                    <div class="tab-pane active" id="first">
+                        <div style="margin-bottom: 50px">
+                            <ul>
+                                <li>
+                                    <div class="box box-solid">
+
+                                        <div class="box-body" style="margin-bottom: 50px">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>广告名称：</label>
+                                                    <div class="col-md-3">
+                                                        <input type="text" class="form-control" id="Title" style="width: 180px">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>链接类型：</label>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control" id="type" style="width: 180px">
+                                                            <option selected="selected" value="0">请选择</option>
+                                                            <option value="1">商品</option>
+                                                            <option value="2">秒杀专区</option>
+                                                            <option value="3">品牌专区</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!--选择商品的时候出现-->
+                                                <div class="form-group" style="display: none" id="productBox">
+                                                    <label class="col-md-2 control-label"><em
+                                                            style="color: red;font-size: 15px">*</em>商品名称：</label>
+                                                    <div class="col-md-8">
+                                                        <a data-toggle="modal" href="#choicePresentModal"
+                                                           class="btn btn-default">选择商品</a>
+                                                        <span class="goods-name_final" style="display: none"></span>
+                                                    </div>
+                                                </div>
+                                                <!--选择秒杀专场的时候出现-->
+                                                <div class="form-group" style="display: none" id="performanceBox">
+                                                    <label class="col-md-2 control-label"><em
+                                                            style="color: red;font-size: 15px">*</em>专场名称：</label>
+                                                    <div class="col-md-8">
+                                                        <a data-toggle="modal" href="#choicePerformanceModal"
+                                                           class="btn btn-default">选择秒杀专场</a>
+                                                        <span class="performance-name_final"
+                                                              style="display: none"></span>
+                                                    </div>
+                                                </div>
+                                                <!--选择品牌专场的时候出现-->
+                                                <div class="form-group" style="display: none" id="BrandBox">
+                                                    <label class="col-md-2 control-label"><em
+                                                            style="color: red;font-size: 15px">*</em>专场名称：</label>
+                                                    <div class="col-md-8">
+                                                        <a data-toggle="modal" href="#choiceBrandModal"
+                                                           class="btn btn-default">选择品牌专场</a>
+                                                        <span class="brand-name_final"
+                                                              style="display: none"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group" style="margin-bottom: 50px">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>广告图</label>
+                                                    <div class="col-md-9">
+                                                        <div id="dowebok" style="float: left">
+                                                            <div class="icon-box_about_classify">
+                                                                <div class="small_con">
+                                                                    <img src="/public/images/addImg.png" alt=""
+                                                                         id="small_icon"
+                                                                         style="width: 100px;height: 100px">
+                                                                    <!--<div id="small_upload_pick"-->
+                                                                         <!--class="webuploader-container">-->
+                                                                        <!--<div class="webuploader-pick"></div>-->
+                                                                        <!--<div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar1"-->
+                                                                             <!--style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">-->
+                                                                            <!--<input type="file" name="file"-->
+                                                                                   <!--class="webuploader-element-invisible"-->
+                                                                                   <!--multiple="multiple"-->
+                                                                                   <!--accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label-->
+                                                                                <!--style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>-->
+                                                                        <!--</div>-->
+                                                                    <!--</div>-->
+                                                                    <input class="img-input1" type="file" id="listImgBtn"
+                                                                            style="cursor: pointer">
+                                                                </div>
+                                                                <div style="width: 200px;margin-top: 10px">建议尺寸：594*792
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>时间段：</label>
+
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="start_time"
+                                                               placeholder="" lay-key="1" readonly>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <div style="text-align: center">
+                                                            <label class="control-label"
+                                                                   for="coupon_taking_way" style="text-align: center">至</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="end_time"
+                                                               placeholder="" lay-key="2" readonly>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>排序：</label>
+                                                    <div class="col-md-3">
+                                                        <input type="number" class="form-control" id="DisplayOrder" style="width: 180px">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>状态：
+                                                    </label>
+
+                                                    <div class="col-md-6 sale-state" id="State">
+                                                        <label class="checkbox-inline" style="text-align: left">
+                                                            <input type="radio" name="state" value="1"
+                                                                   checked="checked"> 开启
+                                                        </label>
+                                                        <label class="checkbox-inline" style="text-align: left">
+                                                            <input type="radio" name="state" value="0"> 关闭
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-btn">
+                            <button class="btn btn-primary" id="preBtn" style="margin-right: 10px">预览</button>
+                            <button class="btn btn-primary" id="nextStep">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--选择商品模态框-->
+<div class="modal fade" id="choicePresentModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width:980px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">选择商品</h4>
+            </div>
+            <div class="modal-body" style="margin:auto">
+                <div class="row form-group search_goods_box">
+                    <label for="" style="width:80px;text-align: right">商品名称：</label>
+                    <input type="text" class="form-control" id="choice_presentName"
+                           style="width:200px;display: inline-block;text-align:left;border-radius: 4px ">
+                    <button class="btn btn-primary" id="prosearchBtn" style="margin-left: 20px">查询</button>
+                </div>
+                <div class="row form-group">
+                    <div class="box_choice_goods">
+                        <table id="choice_goods_tb">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="edit_Department_confirm">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择商品模态框end-->
+<!--选择秒杀专场模态框-->
+<div class="modal fade" id="choicePerformanceModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width:980px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">选择秒杀专场</h4>
+            </div>
+            <div class="modal-body" style="margin:auto">
+                <div class="row form-group search_goods_box">
+                    <label for="" style="width:120px;text-align: right">秒杀专场名称：</label>
+                    <input type="text" class="form-control" id="choicePerformanceName"
+                           style="width:200px;display: inline-block;text-align:left;border-radius: 4px ">
+                    <button class="btn btn-primary" id="performanceBtn" style="margin-left: 20px">查询</button>
+                </div>
+                <div class="row form-group">
+                    <div class="box_choice_goods">
+                        <table id="choice_performance_tb">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="edit_Performance_confirm">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择专场模态框end-->
+<!--选择品牌专场模态框-->
+<div class="modal fade" id="choiceBrandModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width:980px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">选择品牌专场</h4>
+            </div>
+            <div class="modal-body" style="margin:auto">
+                <div class="row form-group search_goods_box">
+                    <!--<label for="" style="width:120px;text-align: right">品牌专场名称：</label>-->
+                    <!--<input type="text" class="form-control" id="choiceBrandName"-->
+                           <!--style="width:200px;display: inline-block;text-align:left;border-radius: 4px ">-->
+                    <!--<button class="btn btn-primary" id="BrandBtn" style="margin-left: 20px">查询</button>-->
+                </div>
+                <div class="row form-group">
+                    <div class="box_choice_goods">
+                        <table id="tb_limit_content">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="edit_Brand_confirm">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择品牌专场模态框end-->
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/js/uploadImg.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/plugins/viewer/viewer.min.js"></script>
+<script src="/public/js/popEdit.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+{{/block}}

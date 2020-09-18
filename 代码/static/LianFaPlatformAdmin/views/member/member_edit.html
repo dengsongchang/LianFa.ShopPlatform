@@ -1,0 +1,168 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}编辑会员信息{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/memberEdit.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div style="margin-bottom: 15px"><a class="backBtn"><img src="/public/images/back.png" alt=""><span>返回</span></a></div>
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">基本信息</a>
+                        </li>
+                        <li>
+                            <a data-type="2" data-toggle="tab" href="#second">登录密码</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="first">
+                        <div class="form-box form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">会员名：</label>
+                                <div class="col-md-4">
+                                    <p class="form-text" id="MemberName"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>会员等级：</label>
+                                <div class="col-md-2">
+                                    <select class="form-control" id="rankList">
+                                        <option selected="selected" value="0">请选择会员等级</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">姓名：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="RealName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">生日：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" readonly id="BDay">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">性别：</label>
+                                <div class="col-md-9 sale-state" id="Gender">
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="gender" value="0" checked="checked"> 保密
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="gender" value="1"> 男性
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="gender" value="2"> 女性
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">电子邮件地址：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="Email" placeholder="1-256个字符以内">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">所在区域：</label>
+                                <div class="col-md-4 address-select">
+                                    <select class="form-control" id="province" style="width: 30%;">
+                                        <option selected="selected" value="0">请选择省</option>
+                                    </select>
+                                    <select class="form-control" id="city" style="width: 20%;">
+                                        <option selected="selected" value="0">市</option>
+                                    </select>
+                                    <select class="form-control" id="area" style="width: 30%;">
+                                        <option selected="selected" value="0">区/县</option>
+                                    </select>
+                                    <select class="form-control" id="street" style="width: 20%;">
+                                        <option selected="selected" value="0">街道</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">详细地址：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="Address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">昵称：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="NickName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">手机号码：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="Mobile">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">注册日期：</label>
+                                <div class="col-md-3">
+                                    <p class="form-text" id="RegisterTime"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">消费总金额：</label>
+                                <div class="col-md-3">
+                                    <p class="form-text" id="OrderAmount"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">会员标签：</label>
+                                <div class="col-md-9">
+                                    <ul class="labelList" id="labelList">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" id="baseConfirm">确定</a>
+                    </div>
+                    <div class="tab-pane" id="second">
+                        <div class="form-box form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">会员名：</label>
+                                <div class="col-md-4">
+                                    <p class="form-text" id="UserName"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>新登录密码：</label>
+                                <div class="col-md-3">
+                                    <input type="password" class="form-control" id="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>重复输入一次：</label>
+                                <div class="col-md-3">
+                                    <input type="password" class="form-control" id="ConfirmPwd">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" id="passwordConfirm">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/memberEdit.js" type="text/babel"></script>
+{{/block}}

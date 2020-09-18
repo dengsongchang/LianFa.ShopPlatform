@@ -1,0 +1,31 @@
+.content{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.marketTitle{
+    font-size:20px;
+    color:#3f3f3f;
+    padding-bottom: 15px;
+    border-bottom:1px solid #d2d2d2;
+}
+.market-container-wrap{
+
+}
+.market-item{
+    margin-top:50px;
+    text-align: center;
+    color:#aaaaaa;
+}
+.market-item .marketImg{
+    width:120px;
+    border-radius: 10px;
+}
+.market-item .market-title{
+    font-size:20px;
+    color:#3f3f3f;
+    margin:10px auto;
+}
+a{
+    color:#aaa;
+}

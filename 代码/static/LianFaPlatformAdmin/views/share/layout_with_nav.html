@@ -1,0 +1,145 @@
+<!--模板页面.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{block 'title'}}熊呗商城管理后台{{/block}}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/plugins/bTabs-master/b.tabs.css">
+    <link rel="stylesheet" href="/public/plugins/contabs/style.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/public/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- 阿里巴巴字体图标库 -->
+    <link rel="stylesheet" href="/public/Ali_fonts/iconfont.css">
+    <link rel="stylesheet" href="/public/plugins/sweetalert/sweetalert2.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/public/dist/css/skins/skin-custom.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="/public/css/googleapis-fonts/fonts.css">
+    <!--<link rel="stylesheet" href="/public/css/sweetalert.css">-->
+    <!-- 公有css -->
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/common.css">
+    <!-- 头部块 -->
+    {{block 'head'}}{{/block}}
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper" style="padding: 0">
+
+    <!-- 导航块 -->
+    {{block 'nav'}}
+
+    <!-- 头部导航开始 -->
+    {{include './header.html'}}
+    <!-- 头部导航结束 -->
+
+    <!-- 左侧导航栏开始 -->
+    {{include './nav.html'}}
+    <!-- 左侧导航栏结束 -->
+
+    {{/block}}
+
+    <!-- 内容区域开始 -->
+    <div class="content-wrapper-nav">
+        <div class="span10" id="mainFrameTabs">
+            <div class="containerHeadBox" style="position: relative;overflow: hidden;width: 100%">
+                <!--往左按钮-->
+                <div class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i></div>
+                <div class="listOutBox">
+                    <!-- Nav tabs -->
+                    <ul class="nav wrapper-nav-tabs" role="tablist" style="right: 0px">
+                        <!-- 设置默认的首页标签页，设置noclose样式，则不会被关闭 -->
+                        <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--往右按钮-->
+                <div class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i></div>
+            </div>
+
+
+            <!-- Tab panes -->
+            <div class="tab-content" id="navTabsContent">
+
+                <!-- 首页容器 -->
+                <div class="tab-pane active" id="bTabs_navTabsMainPage">
+                    <section class="content container-fluid" id="all_box">
+                        <div class="main_list_content type_box">
+                            <div class="list_title_header" style="float:left;width:100%">
+                                <!-- 总容器box -->
+                                <div Id="indexBox">
+
+                                </div>
+                                <!-- 总容器box end -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- 首页容器 end -->
+
+                {{block 'content'}}{{/block}}
+            </div>
+
+        </div>
+        <!-- 内容区域结束 -->
+
+    </div>
+    <!-- 内容区域结束 -->
+
+    <!-- 底部区域开始 -->
+    <footer class="main-footer">
+        {{block 'footer'}}{{/block}}
+    </footer>
+    <!-- 底部区域结束 -->
+</div>
+
+<!-- REQUIRED JS SCRIPTS -->
+<!--兼容ES6-->
+<script src="/public/plugins/babel-core/browser.min.js"></script>
+
+<!-- jQuery 2.24 -->
+<script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!--解决bTabs-master .size不存在问题-->
+<!-- <script src="/public/plugins/bTabs-master/jquery.min.js"></script> -->
+
+<script>
+    if (localStorage.getItem("IsStoreManager") == "true") {
+        $('.hideClass').hide();
+    }
+</script>
+
+<script src="/public/js/jquery.md5.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- 标签页插件 -->
+<script src="/public/plugins/bTabs-master/b.tabs.js"></script>
+<script src="/public/plugins/contabs/contabs.min.js"></script>
+<!-- 分页插件 -->
+<script src="/public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/public/dist/js/adminlte.min.js"></script>
+<script src="/public/dist/js/app.min.js"></script>
+<script src="/public/plugins/layer/layer.js"></script>
+<script src="/public/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+<script src="/public/js/template.js"></script>
+<script src="/public/js/common.js"></script>
+<script src="/public/js/validate.js"></script>
+<script src="/public/js/layoutwithnav.js"></script>
+<script src="/public/js/signrequest.js"></script>
+<!-- 底部js块 -->
+{{block 'requirejs'}} {{/block}}
+</body>
+
+</html>

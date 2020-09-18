@@ -1,0 +1,107 @@
+/*重写css*/
+.content-wrapper{
+    background: #fff;
+}
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+/*公共样式*/
+.star{
+    color: Red;
+    margin-right: 4px;
+}
+.form-group label{
+    color:#333;
+    font-weight: 100;
+    font-size: 12px;
+    width: 86px;
+    text-align: right;
+}
+.modal-body{
+    font-size: 12px;
+}
+.active_li_aboutClassify{
+    background:#fd522d !important;
+    color:#fff !important;
+}
+/*以下是自己添加的样式*/
+.table_body_classify{
+    font-size:12px;
+    margin-bottom: 32px;
+}
+.tab_li_type_box{
+    overflow: hidden;
+    margin:30px auto;
+}
+#table_header_classify{
+    overflow: hidden;
+    width:100%;
+    padding:12px 0px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+}
+.item_add_property {
+    overflow: hidden;
+    padding: 12px 0px;
+    border-bottom: 1px solid #ccc;
+}
+.add_property_operation span,.add_property_operation a{
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 4px;
+    color: #1792e7;
+}
+.property-name{
+    padding: 0 10px;
+    /*border: 1px solid #e4e4e4;*/
+    /*height: 32px;*/
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    word-wrap: break-word;
+
+    word-break: break-all;
+    display: inline-block;
+}
+.revise_span{
+    color: #1792e7;
+    margin-left: 4px;
+    display: inline-block;
+    cursor: pointer;
+}
+.tip-txt-name {
+    font-size: 12px;
+    color: #888;
+    line-height: 22px;
+    padding-top: 8px;
+}
+.property-value-span {
+    height: 26px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    line-height: 26px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.shuxingzhi-txt {
+    height: 100%;
+    display: inline-block;
+    padding: 0px 8px;
+    color:#333;
+}
+.delete-txt {
+    display: inline-block;
+    height: 100%;
+    width: 16px;
+    background: #efefef;
+    color: #fd522d;
+    cursor: pointer;
+    text-align: center;
+}
+.if_verity_box {
+    font-size: 20px;
+}

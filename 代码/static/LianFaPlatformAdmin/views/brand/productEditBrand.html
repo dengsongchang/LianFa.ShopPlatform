@@ -1,0 +1,97 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}商品品牌{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/productBrandOne.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a  data-type="1"  href="/brand" aria-expanded="false">管理</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" data-toggle="tab" href="#add" aria-expanded="true">编辑</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane " id="manage">
+                        <div class="option-list form-inline clearfix">
+                            <div class="form-group col-lg-3 col-sm-6">
+                                <label>品牌名称：</label>
+                                <input id="brand_name" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-3 col-sm-6">
+                                <a class="btn btn-primary" id="searchBtn">查询</a>
+                            </div>
+                        </div>
+                        <div class="brandNav">
+                            <div class="row">
+                                <div class="col-md-3">品牌Logo</div>
+                                <div class="col-md-3">品牌名称</div>
+                                <div class="col-md-3">显示顺序</div>
+                                <div class="col-md-3">操作</div>
+                            </div>
+                        </div>
+                        <ul class="brandList">
+                            <li class="brandItem">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="../../public/images/brand.png" class="brandImg">
+                                    </div>
+                                    <div class="col-md-3">这是名称</div>
+                                    <div class="col-md-3"><input type="text" class="inputNum" value="66" ></div>
+                                    <div class="col-md-3"><span class="editor">编辑</span> &nbsp;&nbsp;<span class="delete">删除</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div >
+                    <div role="tabpanel" class="tab-pane active" id="add">
+                        <div class="brandAdd">
+                            <div class="brand-list form-inline clearfix">
+                                <div class="form-group">
+                                    <label>品牌名称：</label>
+                                    <input type="text" class="form-input"  placeholder="品牌名称不能为空，长度限制在15字符以内" id="brandName" maxlength="15">
+                                </div>
+                                <!--<div class="form-group" style="position:relative">-->
+                                    <!--<label>品牌Logo：</label>-->
+                                    <!--<div id="uploader_food_btn"></div>-->
+                                    <!--<img id="brandbox" style="width: 50px;height: 50px" src="../../public/images/addImg.png">-->
+                                    <!--<p class="imgSize">135*85</p>-->
+                                <!--</div>-->
+                                <div class="form-group">
+                                    <label>排序：</label>
+                                    <input type="number" style="width: 150px" class="form-input" id="sort_name" placeholder="排序" id="sort_name" maxlength="15">
+                                </div>
+                                <div class="form-group">
+                                    <a class="btn btn-primary finish" id="submit">编辑</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/uploader_picset.js"></script>
+<script src="/public/js/productEditBrand.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

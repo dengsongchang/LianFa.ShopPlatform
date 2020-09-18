@@ -1,0 +1,32 @@
+.content{
+    background-color: #ffffff;
+    margin-left: 20px;
+}
+.form-box{
+    padding-top: 40px;
+}
+.form-text{
+    line-height: 34px;
+    margin: 0;
+}
+.labelList li{
+    float: left;
+    margin-left: 10px;
+}
+.labelList li:first-child{
+    margin-left: 0;
+}
+.labelList li p{
+    margin: 0;
+    line-height: 32px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+.btn-primary{
+    margin-left: 80px;
+    margin-top: 40px;
+}
+.address-select select{
+    float: left;
+}

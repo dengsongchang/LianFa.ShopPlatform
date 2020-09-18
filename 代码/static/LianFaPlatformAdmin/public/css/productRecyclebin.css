@@ -1,0 +1,13 @@
+.recycle_reply{
+border-bottom: 1px #fd522d solid;
+    height: 44px;
+}
+.recycle_reply span{
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    width: 90px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+}

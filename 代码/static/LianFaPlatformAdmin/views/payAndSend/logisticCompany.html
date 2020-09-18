@@ -1,0 +1,102 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}物流公司{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/logisticCompany.css"><!--productList.css-->
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">管理</a>
+                        </li>
+                        <li>
+                            <a data-type="1" data-toggle="modal" href="#addLogisticModal">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="file_search_box">
+                    <div class="form-group form-inline">
+                        <lable>公司名称：</lable>
+                        <input type="text" class="form-control" id="companyNameTxt">
+                        <button class="btn btn-primary" id="search_company_btn" style="margin-left:10px ">查询</button>
+                    </div>
+                </div>
+                <!--以下是一个关于物流公司的表格-->
+                <table id="logistic_info_tb">
+
+                </table>
+                <!--需要的图标-->
+
+                <!--<img src="../public/images/dui.png" alt="">-->
+                <!--以上是一个关于物流公司的表格 end-->
+                <!--添加物流公司模态框-->
+                <div class="modal fade" id="addLogisticModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">添加物流公司</h4>
+                            </div>
+                            <div class="modal-body" style="width:452px;margin:auto">
+                                <div class="row form-group">
+                                    <label for="">公司名称：</label>
+                                    <input type="text" class="form-control" id="add_Logistic_input">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="add_Logistic_confirm">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--添加物流公司模态框 end-->
+                <!--编辑物流公司模态框-->
+                <div class="modal fade" id="editLogisticModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">编辑物流公司</h4>
+                            </div>
+                            <div class="modal-body" style="width:452px;margin:auto">
+                                <div class="row form-group">
+                                    <label for="">公司名称：</label>
+                                    <input type="text" class="form-control" id="edit_Logistic_input">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="edit_Logistic_confirm">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--编辑物流公司模态框 end-->
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/logisticCompany.js" type="text/babel"></script><!--productExport.js-->
+{{/block}}

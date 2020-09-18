@@ -1,0 +1,120 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}添加规格{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/typeAdd.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/classify/typeList">管理</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" href="javascript:void(0);">编辑</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--商品类型添加主体内容-->
+                    <div class="tab_li_type_box">
+                        <div class="col-xs-4">
+                            <button class="btn btn-block">1.添加类型名称</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-block active_li_aboutClassify">2.编辑规格</button>
+                        </div>
+                    </div>
+
+
+                    <div class="step_content_container">
+                        <div class="second-step-con">
+                            <div class="form-group" style="overflow: hidden">
+                                <div class="col-xs-12">
+                                    <button class="btn btn-primary"  data-toggle="modal" data-target="#addPropertyModal">
+                                        添加新规格值
+                                    </button>
+                                </div>
+                            </div>
+                            <table id="orderBox">
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                <!--商品类型添加主体内容end-->
+                <!--添加属性模态框-->
+                <div class="modal fade" id="addPropertyModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">添加新的规格值</h4>
+                            </div>
+                            <div class="modal-body" style="width:500px;margin:auto">
+                                <div class="row form-group">
+                                    <label for="" class="pull-left">属性值名称：<span class="star">*</span></label>
+                                    <div class="pull-left" style="width:360px;">
+                                        <input type="text" class="form-control" id="addProperymingchen">
+                                        <!--<div class="tip-txt-name">-->
+                                            <!--扩展属性的名称，最多15个字符，不允许包含脚本标签和\(反斜杠)。-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="addProperty-confirm">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--添加属性模态框end-->
+                <!--修改规格模态框名称-->
+                <div class="modal fade" id="revisePropertyModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">修改属性值名称</h4>
+                            </div>
+                            <div class="modal-body" style="width:500px;margin:auto">
+                                <div class="row form-group">
+                                    <label for="" class="pull-left">属性值名称：<span class="star">*</span></label>
+                                    <div class="pull-left" style="width:360px;">
+                                        <input type="text" class="form-control" id="reviseProperymingchen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="reviseProperty-confirm">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--修改规格模态框名称end-->
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/typeEdit.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

@@ -1,0 +1,118 @@
+.content-wrapper{
+    background: #fff;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none !important;
+     margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+}
+ input[type="number"]{
+ -moz-appearance: textfield;
+}
+/*以下是我自己加的css*/
+.manageClassify_box_contanier {
+    overflow: hidden;
+    margin: 30px auto;
+}
+#table_header_classify {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    background: #f8f8f8;
+}
+.contentBody {
+    overflow: hidden;
+}
+.contentBody>div{
+    line-height: 60px;
+}
+.edit_classify,.edit_classify_one,.edit_classify_two,.edit_classify_three {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 4px;
+    color:#1792e7;
+}
+.edit_dele,.edit_dele_one,.edit_dele_two,.edit_dele_three{
+    cursor: pointer;
+    display: inline-block;
+    color:#1792e7;
+}
+.classify_two{
+    text-indent: 2em;
+}
+.classify_three{
+    text-indent: 4em;
+ }
+.delete_all_box{
+    overflow: hidden;
+    margin: 40px auto 20px;
+}
+.checkbox_all_dv{
+    background: #efefef;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #d8d6d6;
+    text-align: center;
+}
+.all_delte_box{
+    background: #efefef;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #d8d6d6;
+    text-align: center;
+    cursor: pointer;
+}
+.main_list_content input[type="checkbox"]{
+
+}
+.all_zongti_operation{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+#all_delte_box{
+    background: #f8f8f8;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    width: 48px;
+    line-height: 37px;
+    font-size: 14px;
+    padding: 0px;
+    height: 37px;
+}
+.quanxuan_con{
+    background: #f8f8f8;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-right: 15px;
+    width: 48px;
+}
+.contentBody .iconfont{
+    color:#cdcdcd;
+    font-size: 22px;
+    vertical-align: middle;
+}
+.contentBody{
+    border-bottom: 1px solid #ccc;
+}
+.order-disp {
+    display: inline-block;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    line-height: 35px;
+    border-radius: 5px;
+    width: 50px;
+    min-height: 38px;
+    text-align: center;
+}

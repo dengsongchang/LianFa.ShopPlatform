@@ -1,0 +1,313 @@
+﻿<#@ template language="C#v3.5" hostspecific="True" #>
+<#@ assembly name="EnvDTE" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Configuration" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.Common" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Configuration" #>
+<#+
+
+string _connectionStringName = "";//数据库连接字符串名称
+string _connectionString = "";
+string _providerName = "";
+
+//数据库连接字符串
+public string ConnectionString
+{
+    get 
+    {
+		InitConnectionString();
+        return _connectionString;
+    }
+}
+
+//数据库提供者名称
+public string ProviderName
+{
+    get 
+    {
+		InitConnectionString();
+        return _providerName;
+    }
+}
+
+//获取列说明备注
+public string GetColumnSummary(string tablename,string columnname)
+{
+	InitConnectionString();
+	DbProviderFactory _factory;
+	
+   _factory = DbProviderFactories.GetFactory(ProviderName);
+	
+	using(var conn = _factory.CreateConnection())
+	{
+		conn.ConnectionString = ConnectionString;         
+		conn.Open();
+        
+		//获取数据库列备注sql语句(SqlServer)
+	    string sql=@"SELECT TOP 1 ex.value AS ColumnSummary FROM sys.columns c LEFT OUTER JOIN sys.extended_properties ex ON ex.major_id = c.object_id AND ex.minor_id = c.column_id AND ex.name = 'MS_Description' left outer join systypes t on c.system_type_id=t.xtype WHERE OBJECTPROPERTY(c.object_id, 'IsMsShipped')=0 AND OBJECT_NAME(c.object_id)=@tablename AND c.name=@columname ";
+		
+		using (var cmd = _factory.CreateCommand())
+		{
+			cmd.Connection = conn;
+			cmd.CommandText = sql;
+
+			var p = cmd.CreateParameter();
+			p.ParameterName = "@tablename";
+			p.Value = tablename;
+			cmd.Parameters.Add(p);
+
+			 p = cmd.CreateParameter();
+			p.ParameterName = "@columname";
+			p.Value = columnname;
+			cmd.Parameters.Add(p);
+
+			var result = cmd.ExecuteScalar();
+
+			conn.Close();
+
+			//如有返回结果则替换换行符，否返回空字符
+			if(result != null)
+				return result.ToString().Replace("\r\n"," ").Replace("\r"," ").Replace("\n"," ");    
+			else
+				return "";
+		}	    
+          
+		return "";
+	
+	}
+	     
+}
+
+//获取表说明备注
+public string GetTableSummary(string tablename)
+{
+	InitConnectionString();
+	DbProviderFactory _factory;
+	
+   _factory = DbProviderFactories.GetFactory(ProviderName);
+	
+	using(var conn = _factory.CreateConnection())
+	{
+		conn.ConnectionString=ConnectionString;         
+		conn.Open();
+        
+		//获取数据库表备注sql语句(SqlServer)
+	    string sql=@"SELECT TOP 1 TableSummary FROM (select c.Name AS TableName,isnull(f.[value],'') AS TableSummary from  sys.columns a left join sys.types b on a.user_type_id=b.user_type_id inner join  sys.objects c on a.object_id=c.object_id and c.Type='U' left join  syscomments d on a.default_object_id=d.ID left join sys.extended_properties e on e.major_id=c.object_id and e.minor_id=a.Column_id and e.class=1 left join  sys.extended_properties f on f.major_id=c.object_id and f.minor_id=0 and f.class=1) AS Mytb WHERE TableName=@tablename ";
+		
+		using (var cmd=_factory.CreateCommand())
+		{
+			cmd.Connection = conn;
+			cmd.CommandText = sql;
+
+			var p = cmd.CreateParameter();
+			p.ParameterName = "@tablename";
+			p.Value = tablename;
+			cmd.Parameters.Add(p);
+
+			var result = cmd.ExecuteScalar();
+
+			conn.Close();
+
+			//如有返回结果则替换换行符，否返回空字符
+			if(result != null)
+				return result.ToString().Replace("\r\n"," ").Replace("\r"," ").Replace("\n"," ");
+			else
+				return "";
+		}	    
+          
+		return "";
+	
+	}
+	     
+}
+
+//获取当前项目
+public EnvDTE.Project GetCurrentProject()  {
+
+    IServiceProvider _ServiceProvider = (IServiceProvider)Host;
+    if (_ServiceProvider == null)
+        throw new Exception("主机属性返回意外值（空）");
+	
+    EnvDTE.DTE dte = (EnvDTE.DTE)_ServiceProvider.GetService(typeof(EnvDTE.DTE));
+    if (dte == null)
+        throw new Exception("找不到EnvDTE.DTE");
+	
+	//获取当前运行的解决方案
+    Array activeSolutionProjects = (Array)dte.ActiveSolutionProjects;
+    if (activeSolutionProjects == null)
+        throw new Exception("DTE.ActiveSolutionProjects 为空");
+	
+    EnvDTE.Project dteProject = (EnvDTE.Project)activeSolutionProjects.GetValue(0);
+    if (dteProject == null)
+        throw new Exception("DTE.ActiveSolutionProjects[0] 为空");
+	
+    return dteProject;
+
+}
+
+//获取数据目录
+public string GetDataDirectory()
+{
+    EnvDTE.Project project = GetCurrentProject();
+    return System.IO.Path.GetDirectoryName(project.FileName) + "\\App_Data\\";
+}
+
+
+//初始化数据库连接字符串
+private void InitConnectionString()
+{
+    if(String.IsNullOrEmpty(_connectionString))
+    {
+        _connectionString = GetConnectionString(ref _connectionStringName, out _providerName);
+
+		if(_connectionString.Contains("|DataDirectory|"))
+		{
+			//替换"|DataDirectory|"为数据库文件路径
+			string dataFilePath = GetDataDirectory();
+			_connectionString = _connectionString.Replace("|DataDirectory|",dataFilePath);
+		}    
+	}
+}
+
+//获取数据库连接字符串
+private string GetConnectionString(ref string connectionStringName, out string providerName)
+{
+    var _CurrentProject = GetCurrentProject();
+
+	providerName=null;
+    
+    string result="";
+    ExeConfigurationFileMap configFile = new ExeConfigurationFileMap();
+	//获取配置文件路径
+    configFile.ExeConfigFilename = GetConfigPath();
+
+    if (string.IsNullOrEmpty(configFile.ExeConfigFilename))
+        throw new ArgumentNullException("项目中没有App.config 或 Web.config 文件");
+    
+    //获取配置文件
+    var config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(configFile, ConfigurationUserLevel.None);
+    var connSection = config.ConnectionStrings;
+
+	//正则匹配值
+	string groupName = "key";
+
+	//如果连接字符串为空(默认情况)，则寻找count-1的连接字符串(则找到最后一条连接字符串,因为默认会有AppServices或LocalSqlServer的连接字符串，要排除)
+    if(string.IsNullOrEmpty(connectionStringName))
+    {
+        if(connSection.ConnectionStrings.Count > 1)
+        {
+			var stringsSection = connSection.ConnectionStrings[connSection.ConnectionStrings.Count-1];
+			//获取数据库连接的Name字符串
+			connectionStringName = stringsSection.Name;
+			//获取数据库连接的Provider字符串
+			providerName = GetProviderString(stringsSection,groupName);
+			//获取数据库连接的ConnectionString字符串
+            result =  GetConnectionString(stringsSection,groupName);
+        }            
+    }
+    else
+    {
+        try
+        {
+			var stringsSection = connSection.ConnectionStrings[connectionStringName];
+			//获取数据库连接的Provider字符串
+			providerName = GetProviderString(stringsSection,groupName);
+			//获取数据库连接的ConnectionString字符串
+            result =  GetConnectionString(stringsSection,groupName);
+        }
+        catch
+        {
+            result="找不到名称为：'"+connectionStringName+"的字符串'";
+        }
+    }
+    
+    return result;
+}
+
+//获取项目路径
+private string GetProjectPath()
+{
+    EnvDTE.Project project = GetCurrentProject();
+    System.IO.FileInfo info = new System.IO.FileInfo(project.FullName);
+    return info.Directory.FullName;
+}
+
+//获取配置文件路径
+private string GetConfigPath()
+{
+    EnvDTE.Project project = GetCurrentProject();
+    foreach (EnvDTE.ProjectItem item in project.ProjectItems)
+    {
+		//如果是app.config文件，然后打开它
+        if (item.Name.Equals("App.config",StringComparison.InvariantCultureIgnoreCase) || item.Name.Equals("Web.config",StringComparison.InvariantCultureIgnoreCase))
+			return GetProjectPath() + "\\" + item.Name;
+    }
+    return String.Empty;
+}
+
+//根据正则表达式获取数据库连接的ConnectionString字符串
+private string GetConnectionString(ConnectionStringSettings stringsSettings, string groupName, bool isEF = true)
+{
+	var connectionStr = string.Empty;
+	//是否为EF
+	if(isEF)
+	{
+		//获取EF的链接字符串
+		var efConnectionString = stringsSettings.ConnectionString;
+
+        // 匹配 "provider connection string=" 与 "MultipleActiveResultSets" 之间的所有字符的正则表达式
+        string connectionRegexStr = "provider connection string=(?<key>.*?)multipleActiveResultSets";
+        //获取EF生成的链接字符串的connectionString中的provider Connection String
+        connectionStr = GetMatchStringByRegex(efConnectionString,connectionRegexStr,groupName).Replace("\"", "");
+	}
+	else
+	{
+		//获取链接字符串(非EF生成)
+		connectionStr = stringsSettings.ConnectionString;
+	}
+	return connectionStr;
+}
+
+//根据正则表达式获取数据库连接的Provider字符串
+private string GetProviderString(ConnectionStringSettings stringsSettings, string groupName, bool isEF = true)
+{
+	var providerNameStr = string.Empty;
+	//是否为EF
+	if(isEF)
+	{
+		//获取EF的链接字符串
+		var efConnectionString = stringsSettings.ConnectionString;
+
+		//匹配 "provider=" 与 ";" 之间的所有字符的正则表达式
+		string providerRegexStr = "provider=(?<key>.*?);";
+		//获取EF生成的链接字符串的connectionString中的provider
+		providerNameStr = GetMatchStringByRegex(efConnectionString,providerRegexStr,groupName);
+	}
+	else
+	{
+		//获取链接字符串(非EF生成)
+		providerNameStr = stringsSettings.ProviderName;
+	}
+	return providerNameStr;
+}
+
+//根据正则表达式获取字符串
+private string GetMatchStringByRegex(string srcString, string regexStr, string groupName)
+{
+    //匹配正则，不区分大小写
+    Regex regex = new Regex(regexStr,  RegexOptions.IgnoreCase);
+    Match match = regex.Match(srcString);
+    //返回根据key获取由正则表达式匹配的值
+    return match.Groups[groupName].Value;
+}
+
+#>

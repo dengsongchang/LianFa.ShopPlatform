@@ -1,0 +1,73 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}礼品卡类型列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li>
+                            <a data-type="0" data-toggle="tab" href="#first">礼品卡类型列表</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <div class="form-group col-lg-3 col-sm-6">
+                        <label>礼品卡类型名称：</label>
+                        <input type="text" class="form-control" id="CouponName">
+                    </div>
+                    <div class="form-group col-lg-6 col-sm-6">
+                        <label>配送区域：</label>
+                        <select class="form-control" id="DeliveryAreaId">
+                            <option selected="selected" value="0">请选择配送区域</option>
+                        </select>
+                        <a class="btn btn-primary" style="margin-left: 10px" id="search">查询</a>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="paginalNum">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <table id="productTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/productGiftType.js" type="text/babel"></script>
+{{/block}}

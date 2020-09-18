@@ -1,0 +1,691 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+
+{{block 'title'}}营销方式-营销方式{{/block}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/counp.css">
+<link rel="stylesheet" href="/public/css/marketing_way.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/flat/_all.css">
+<link rel="stylesheet" href="/public/css/setting_field.css">
+
+{{/block}}
+
+{{block 'content'}}
+
+<section class="content-header">
+    <h4 style="border-bottom: 1px solid #ddd;margin:0px;padding:10px 0px 10px">
+        <i class="iconfont icon-qiaquanguanli" style="font-size: 22px;"></i>营销方式
+    </h4>
+</section>
+<section>
+    <div class="" style="margin-top: 30px;">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a data-type="0" data-toggle="tab" href="#first">优惠券列表</a>
+            </li>
+            <li>
+                <a data-type="4" href="/marketMode/activityRules">活动规则</a>
+            </li>
+        </ul>
+    </div>
+    <div class="choice_coupon_box ">
+        <div class="container-fluid form-horizontal"
+             style="margin-left:15px;margin-right:15px;padding-left:0px;padding-right:0px;border-bottom: 1px solid #ddd;overflow: hidden;">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <div class="label-wrapper">
+                                    <label class="control-label" for="coupon_name">优惠券名称：</label>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" id="coupon_name" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <div class="label-wrapper">
+                                    <label class="control-label" class="">状态：</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-7">
+                                <select class="form-control select2 select2-hidden-accessible" id="state_box"
+                                        aria-hidden="true">
+                                    <option selected="selected" value="0">全部</option>
+                                    <option value="1">有效</option>
+                                    <option value="2">无效</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <div class="label-wrapper">
+                                    <label class="control-label" for="coupon_taking_way">领取方式：</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-7">
+                                <select class="form-control select2 select2-hidden-accessible" id="payment"
+                                        aria-hidden="true">
+                                    <option selected="selected" value="0">全部</option>
+                                    <option value="1">主动领取</option>
+                                    <!--<option value="2">指定发放</option>-->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <label class="control-label" for="search_coupon"
+                                       style="vertical-align: middle;opacity: 0;display: none">查询：</label>
+                            </div>
+                            <div class="col-md-7">
+                                <button type="button" class="btn btn-primary" id="search_coupon">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="content container-fluid">
+    <div class="main_list_content">
+        <div class="list_title_header" style="float:left;width:100%">
+            <a class="btn btn-primary pull-left" data-toggle="modal" data-target="#coupon_add_modal">+添加优惠券</a>
+        </div>
+        <div id="coupon_list_box">
+
+            <table id="tb_coupon_list">
+
+            </table>
+
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 添加优惠券弹窗 start-->
+<div class="modal fade in" id="coupon_add_modal" style="display: none; padding-right: 17px;" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">优惠券添加</h4>
+            </div>
+            <div class="modal-body" style="overflow-y: scroll;height: 400px">
+                <div class="box_div_coupon">
+                    <div class="form-group">
+                        <label for="coupon_name_add" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>优惠券名称：
+                        </label>
+                        <input type="text" class="form-control" id="coupon_name_add" placeholder="必填，在1到20个字符">
+                    </div>
+                    <div class="form-group">
+                        <label for="denomination" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>面值：
+                        </label>
+                        <input type="number" class="form-control" id="denomination" placeholder="请输入数值">
+                    </div>
+                    <div class="form-group">
+                        <label for="denomination" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>发放总量：
+                        </label>
+                        <input type="number" class="form-control" id="TotalAmount" placeholder="必填，只能输入整数">
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>每人限领：
+                        </label>
+                        <select id="GetModel" class="form-control select2 select2-hidden-accessible"
+                                style="width: 177px;" aria-hidden="true">
+                            <option selected="selected" value="0">无限制</option>
+                            <option value="1">限领一张</option>
+                            <option value="2">每天限领一张</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>订单金额：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" id="unlimited" name="order_amount" checked>无限制
+                            <input type="radio" class="flat-green" id="full" name="order_amount"
+                                   style="margin-left: 30px;">满
+                            <div class="pull-right" style="margin-left:30px">
+                                <input type="number" class="form-control" id="fullnumber"
+                                       style="display: inline-block;width:80px;float:none;    margin-right: 6px;">元使用
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>有效期：
+                        </label>
+                        <div class="form-group">
+                            <input type="text" style="float:left" readonly class="form-control demo-input"
+                                   placeholder=""
+                                   id="start_time">
+                            <span style="float: left;margin-left: 6px;">
+                                    至
+                                    <input type="text" style="display:inline-block;width: auto;margin-left: 6px;"
+                                           readonly
+                                           class="form-control demo-input" placeholder="" id="end_time">
+                                </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>发放时间：
+                        </label>
+                        <div class="form-group">
+                            <input type="text" style="float:left" readonly class="form-control demo-input"
+                                   placeholder=""
+                                   id="sendStart_time_add">
+                            <span style="float: left;margin-left: 6px;">
+                                    至
+                                    <input type="text" style="display:inline-block;width: auto;margin-left: 6px;"
+                                           readonly
+                                           class="form-control demo-input" placeholder="" id="sendEnd_time_add">
+                                </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>可使用商品：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" name="limitProduct" checked id="fullField" value="0">全场通用
+                            <input type="radio" class="flat-green" name="limitProduct" value="1">指定商品
+                            <a id="chooseProductBtn" class="btn btn-default" style="margin-left: 10px;display: none">选择商品</a>
+                        </div>
+                    </div>
+                    <div class="form-group" id="SpecifyProductBox" style="display: none;">
+                        <label for="" style="width:100px;text-align: right;">
+
+                        </label>
+                        <div class="input-group form-group">
+                            <table id="addlist" class="table table-striped bundling-table table-fixed">
+
+                            </table>
+                            <div style="float: right; display: block;" id="divPage">
+                                <span>每页5条，共</span><span id="spanPageCount"><span class="currentIndex">1</span>/<span
+                                    id="totalIndex"></span></span></span><span style="margin-right:10px">页</span>
+                                <a class="btn_pre_c" id="btnPrePage"></a>
+                                <a class="btn_next_c" id="btnNextPage"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>领取方式：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" name="SendModeRadio" checked id="activeClaim"
+                                   value="1">主动领取
+                            <!--<input type="radio" class="flat-green" name="SendModeRadio" value="2">指定发放-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="width: 100px;text-align: right">
+                            <span class="red-star">*</span>封面图片：</label>
+                        <div class="col-md-9">
+                            <div class="icon-box_about_classify" style="position: relative">
+                                <div class="small_con" style="height: 100px">
+                                    <img src="/public/images/addImg.png" alt=""
+                                         id="small_icon" style="width: 100px;height: 100px">
+                                    <div id="small_upload_pick"
+                                         class="webuploader-container">
+                                        <div class="webuploader-pick"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top:4px;font-size: 12px;color:#666">建议图片大小140*140</div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="saveData">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 添加优惠券弹窗end -->
+<!-- 编辑优惠券弹窗 start-->
+<div class="modal fade in" id="coupon_edit_modal" style="display: none; padding-right: 17px;" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">优惠券编辑</h4>
+            </div>
+            <div class="modal-body" style="overflow-y: scroll;height: 400px">
+                <div class="box_div_coupon">
+                    <div class="form-group">
+                        <label for="coupon_name_edit" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>优惠券名称：
+                        </label>
+                        <input type="text" class="form-control" id="coupon_name_edit" placeholder="必填，在1到20个字符">
+                    </div>
+                    <div class="form-group">
+                        <label for="denomination" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>面值：
+                        </label>
+                        <input type="number" class="form-control" id="denomination_edit" placeholder="请输入数值">
+                    </div>
+                    <div class="form-group">
+                        <label for="denomination" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>发放总量：
+                        </label>
+                        <input type="number" class="form-control" id="TotalAmount_edit" placeholder="必填，只能输入整数">
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>每人限领：
+                        </label>
+                        <select id="GetModel_edit" class="form-control select2 select2-hidden-accessible"
+                                style="width: 177px;" aria-hidden="true">
+                            <option selected="selected" value="0">无限制</option>
+                            <option value="1">限领一张</option>
+                            <option value="2">每天限领一张</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>订单金额：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" id="unlimited_edit" name="order_amount" checked>无限制
+                            <input type="radio" class="flat-green" id="full_edit" name="order_amount"
+                                   style="margin-left: 30px;">满
+                            <div class="pull-right" style="margin-left:30px">
+                                <input type="number" class="form-control" id="fullnumber_edit"
+                                       style="display: inline-block;width:80px;float:none;    margin-right: 6px;">元使用
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>有效期：
+                        </label>
+                        <div class="form-group">
+                            <input type="text" style="float:left" readonly class="form-control demo-input"
+                                   placeholder=""
+                                   id="start_time_edit">
+                            <span style="float: left;margin-left: 6px;">
+                                    至
+                                    <input type="text" style="display:inline-block;width: auto;margin-left: 6px;"
+                                           readonly
+                                           class="form-control demo-input" placeholder="" id="end_time_edit">
+                                </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>发放时间：
+                        </label>
+                        <div class="form-group">
+                            <input type="text" style="float:left" readonly class="form-control demo-input"
+                                   placeholder=""
+                                   id="sendStart_time_edit">
+                            <span style="float: left;margin-left: 6px;">
+                                    至
+                                    <input type="text" style="display:inline-block;width: auto;margin-left: 6px;"
+                                           readonly
+                                           class="form-control demo-input" placeholder="" id="sendEnd_time_edit">
+                                </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>可使用商品：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" name="order_time_limit" checked id="fullField_edit">全场通用
+                            <input type="radio" class="flat-green" name="order_time_limit" id="designated_edit">指定商品
+                        </div>
+                    </div>
+                    <div class="form-group" id="SpecifyProductBoxEdit" style="display: none;">
+                        <label for="" style="width:100px;text-align: right;">
+
+                        </label>
+                        <div class="input-group form-group">
+                            <table id="addlistEdit" class="table table-striped bundling-table table-fixed">
+
+                            </table>
+                            <div style="float: right; display: block;" id="divPage">
+                                <span>每页5条，共</span><span id="spanPageCountEdit"><span class="currentIndexEdit">1</span>/<span
+                                    id="totalIndexEdit"></span></span></span><span style="margin-right:10px">页</span>
+                                <a class="btn_pre_c" id="btnPrePageEdit"></a>
+                                <a class="btn_next_c" id="btnNextPageEdit"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>领取方式：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" name="order_taking_w" checked id="activeClaim_edit"
+                                   value="1">主动领取
+                            <!--<input type="radio" class="flat-green" name="order_taking_w" id="designated_send_edit" value="2">指定发放-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="width: 100px;text-align: right">
+                            <span class="red-star">*</span>封面图片：</label>
+                        <div class="col-md-9">
+                            <div class="icon-box_about_classify">
+                                <div class="small_con" style="height: 100px">
+                                    <img src="/public/images/addImg.png" alt=""
+                                         id="small_icon2" style="width: 100px;height: 100px">
+                                    <div id="small_upload_pick2"
+                                         class="webuploader-container">
+                                        <div class="webuploader-pick"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top:4px;font-size: 12px;color:#666">建议图片大小140*140</div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="saveEditData">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 编辑优惠券弹窗 -->
+<!-- 查看优惠券弹窗 start-->
+<div class="modal fade in" id="coupon_readonly_modal" style="display: none; padding-right: 17px;"
+     data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">优惠券查看</h4>
+            </div>
+            <div class="modal-body" style="overflow-y: scroll;height: 400px">
+                <div class="box_div_coupon">
+                    <div class="form-group">
+                        <label for="coupon_name_readonly" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>优惠券名称：
+                        </label>
+                        <input type="text" readonly class="form-control" id="coupon_name_readonly"
+                               placeholder="必填，在1到20个字符">
+                    </div>
+                    <div class="form-group">
+                        <label for="denomination" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>面值：
+                        </label>
+                        <input type="text" readonly class="form-control" id="denomination_readonly" placeholder="请输入数值">
+                    </div>
+                    <div class="form-group">
+                        <label for="denomination" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>发放总量：
+                        </label>
+                        <input type="text" readonly class="form-control" id="TotalAmount_readonly"
+                               placeholder="必填，只能输入整数">
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>每人限领：
+                        </label>
+                        <select id="GetModel_readonly" class="form-control select2 select2-hidden-accessible"
+                                style="width: 177px;" aria-hidden="true" disabled>
+                            <option selected="selected" value="0">无限制</option>
+                            <option value="1">限领一张</option>
+                            <option value="2">每天限领一张</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>订单金额：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" id="unlimited_readonly" name="order_amount" checked>无限制
+                            <input type="radio" class="flat-green" id="full_readonly" name="order_amount"
+                                   style="margin-left: 30px;">满
+                            <div class="pull-right" style="margin-left:30px">
+                                <input type="text" readonly class="form-control" id="fullnumber_readonly"
+                                       style="display: inline-block;width:80px;float:none;    margin-right: 6px;">元使用
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>有效期：
+                        </label>
+                        <div class="form-group">
+                            <input type="text" readonly style="float:left" class="form-control demo-input"
+                                   placeholder="" id="start_time_readonly">
+                            <span style="float: left;margin-left: 6px;">
+                                    至
+                                    <input type="text" readonly
+                                           style="display:inline-block;width: auto;margin-left: 6px;"
+                                           class="form-control demo-input" placeholder="" id="end_time_readonly">
+                                </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>发放时间：
+                        </label>
+                        <div class="form-group">
+                            <input type="text" readonly style="float:left" class="form-control demo-input"
+                                   placeholder="" id="sendStart_time_readonly">
+                            <span style="float: left;margin-left: 6px;">
+                                    至
+                                    <input type="text" readonly
+                                           style="display:inline-block;width: auto;margin-left: 6px;"
+                                           class="form-control demo-input" placeholder="" id="sendEnd_time_readonly">
+                                </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>可使用商品：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" name="order_time_limit" checked
+                                   id="fullField_readonly">全场通用
+                            <input type="radio" class="flat-green" name="order_time_limit" id="designated_readonly">指定商品
+                        </div>
+                    </div>
+                    <div class="form-group" id="SpecifyProductBoxreadonly" style="display: none;">
+                        <label for="" style="width:100px;text-align: right;">
+
+                        </label>
+                        <div class="input-group form-group">
+                            <table id="addlistreadonly" class="table table-striped bundling-table table-fixed">
+
+                            </table>
+                            <div style="float: right; display: block;" id="divPage">
+                                <span>每页5条，共</span><span id="spanPageCountreadonly"><span
+                                    class="currentIndexreadonly">1</span>/<span
+                                    id="totalIndexreadonly"></span></span></span><span
+                                    style="margin-right:10px">页</span>
+                                <a class="btn_pre_c" id="btnPrePagereadonly"></a>
+                                <a class="btn_next_c" id="btnNextPagereadonly"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="width:100px;text-align: right;">
+                            <span style="color:#f00;margin-right:5px;">*</span>领取方式：
+                        </label>
+                        <div class="input-group form-group">
+                            <input type="radio" class="flat-green" name="order_taking_w" checked
+                                   id="activeClaim_readonly">主动领取
+                            <!--<input type="radio"  class="flat-green" name="order_taking_w" id="designated_send_readonly">指定发放-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="width:100px;text-align: right;">
+                            <span class="red-star">*</span>封面图片：</label>
+                        <div class="col-md-9">
+                            <div class="icon-box_about_classify">
+                                <div class="small_conForSee" style="height: 100px">
+                                    <img src="/public/images/addImg.png" alt=""
+                                         id="seeSmall_icon" style="width: 100px;height: 100px">
+                                </div>
+                            </div>
+                            <div style="margin-top:4px;font-size: 12px;color:#666">建议图片大小140*140</div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 编辑优惠券弹窗 -->
+<!-- 优惠券链接弹窗 start -->
+<div class="modal fade in" id="coupon_link_box" style="display: none; padding-right: 17px;" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">优惠券链接</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="" style="width:95px;text-align: right;vertical-align: top;">
+                        优惠券链接：
+                    </label>
+                    <div class="input-group form-group" style="width: 400px;display: inline-block">
+                        <div class="link_txt">
+                            https://demo.vshop.kuaidiantong.cn/wapshop/
+                            CouponDetails.aspx?couponId=3
+                        </div>
+                    </div>
+                    <button class="btn btn-default" style="display:inline-block;vertical-align: top;">复制</button>
+                </div>
+                <div class="form-group">
+                    <label for="" style="width:95px;text-align: right;">
+                        二维码：
+                    </label>
+                    <div class="input-group form-group" style="display:inline-block;vertical-align: top;">
+                        <img src="/public/images/erweima.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 优惠券链接弹窗 end -->
+<!--选择礼品模态框-->
+<div class="modal fade" id="choicePresentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     data-backdrop="static">
+    <div class="modal-dialog" role="document" style="width:980px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">选择商品</h4>
+            </div>
+            <div class="modal-body" style="margin:auto">
+                <div class="row form-group search_goods_box">
+                    <label for="" style="width:80px;text-align: right">商品名称：</label>
+                    <input type="text" class="form-control" id="choice_presentName"
+                           style="width:200px;display: inline-block;text-align:left;border-radius: 4px ">
+                    <div class="disp_page_box pull-right" style="margin-right: 20px">
+                        <label style="float:left;line-height: 34px;margin-right: 4px;">每页显示数量：</label>
+                        <select id="pagesize_dropdown" class="orderTypeSelect select2 pull-right" tabindex="-1"
+                                aria-hidden="true">
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                            <option value="200">200</option>
+                            <option value="500">500</option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="prosearchBtn" style="margin-left: 20px">查询</button>
+                </div>
+                <input type="checkbox" class="sel-all" id="selAll" style="position: relative;">
+                <div class="row form-group">
+                    <div class="box_choice_goods">
+                        <table id="choice_goods_tb">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="confirmBtn">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择礼品模态框end-->
+
+{{/block}}
+
+{{block 'footer'}}
+<aside class="control-sidebar control-sidebar-dark"></aside>
+{{/block}}
+
+{{block 'requirejs'}}
+<!-- bootstrp table分页插件 -->
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_counp.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+<script src="/public/js/marketing_way.js" type="text/babel"></script>
+
+{{/block}}

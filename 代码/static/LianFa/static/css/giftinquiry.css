@@ -1,0 +1,70 @@
+.content {
+    min-height: 100vh;
+    background: #fff;
+    padding-bottom: 48px;
+}
+
+.Inquire_tltle {
+    color: #666;
+    font-size: 13px;
+    padding-left: 26px;
+    padding-top: 21px;
+}
+
+.Inquire_input {
+    position: relative;
+    margin: 0px 25px;
+    border-bottom: 1px #999999 solid;
+    box-sizing: border-box;
+}
+
+.Inquire_input input {
+    border: 0;
+    color: #333;
+    font-size: 15px;
+}
+
+.loginBtn {
+    background-color: #D94E3A;
+    color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 25px;
+    margin: 35px 10px 0px 116px;
+    width: 144px;
+    border: 0;
+    box-shadow: 0px 1px 4px 0px rgba(191, 81, 88, 0.47);
+}
+
+.result {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.result_span {
+    color: #666;
+    font-size: 13px;
+    padding-left: 26px;
+}
+
+.result_nmae {
+    color: #333;
+    padding-left: 26px;
+    margin-top: 19px;
+    font-size: 15px;
+}
+
+.result_date {
+    margin-top: 10px;
+    padding-left: 26px;
+}
+
+.result_noe {
+    color: #333;
+    font-size: 15px;
+}
+
+.result_tow {
+    color: #D94E3A;
+    font-size: 12px;
+    padding-left: 12px;
+}

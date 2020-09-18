@@ -1,0 +1,103 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}商品标签{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/productLabel.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            添加商品标签
+        </button>
+        <!--模态框-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p class="modal-title" id="myModalLabel">添加标签</p>
+                    </div>
+                    <div class="modal-body">
+                        <div class="brand-list form-inline clearfix">
+                            <div class="form-group">
+                                <em style="color: red">*</em>
+                                <label>标签名称：</label>
+                                <input type="text" class="form-input" id="labelName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="conserve">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--编辑模态框-->
+        <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p class="modal-title" id="myModalLabel_edit">编辑标签</p>
+                    </div>
+                    <div class="modal-body">
+                        <div class="brand-list form-inline clearfix">
+                            <div class="form-group">
+                                <label>标签名称：</label>
+                                <input type="text" class="form-input" id="labelName_edit">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="conserve_edit">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--标签列表-->
+        <!--<div class="labelNav">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-8">标签名称</div>-->
+                <!--<div class="col-md-4">操作</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<ul class="labelList">-->
+            <!--<li class="labelItem">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-8">热销</div>-->
+                    <!--<div class="col-md-4"><span class="editor">编辑</span> &nbsp;&nbsp;<span class="delete">删除</span></div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="labelItem">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-8">热销</div>-->
+                    <!--<div class="col-md-4"><span class="editor">编辑</span> &nbsp;&nbsp;<span class="delete">删除</span></div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="labelItem">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-8">热销</div>-->
+                    <!--<div class="col-md-4"><span class="editor">编辑</span> &nbsp;&nbsp;<span class="delete">删除</span></div>-->
+                <!--</div>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <table id="productLableBox">
+
+        </table>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/productLabel.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

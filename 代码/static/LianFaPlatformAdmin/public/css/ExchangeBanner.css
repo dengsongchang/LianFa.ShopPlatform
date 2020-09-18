@@ -1,0 +1,48 @@
+.webuploader-container {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+
+.webuploader-container div,
+.webuploader-container input {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.webuploader-container label {
+    display: none;
+}
+
+.form-group label {
+    width: 130px !important;
+}
+
+.icon-ExchangeBanner {
+    width: 375px;
+    height: 210px;
+    float: left;
+    margin-right: 15px;
+}
+
+.small_icon {
+    position: relative;
+    display: inline-block;
+    width: 375px;
+    height: 210px;
+}
+
+.small_con {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px
+}
+
+.footer-btn {
+    text-align: center;
+}

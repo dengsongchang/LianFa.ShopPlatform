@@ -1,0 +1,123 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}佣金明细列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/statisticsDistribution.css">
+<link rel="stylesheet" href="/public/css/userList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li >
+                            <a data-type="1" href="/distribution/UserList">分销员列表</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="3" href="javascript:;">购物积分明细</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="VIPbg fonts">
+                    <ul>
+                        <li class="colorQ">分销员：<strong style="color: black" id="distributionMember"></strong></li><strong style="color: black">
+                        <li class="colorQ">当前可提现购物积分：<strong style="color: black" id="withdrawalMoney"></strong></li><strong style="color: black">
+                        <li class="colorQ">未结算购物积分：<strong style="color: black" id="NowithdrawalMoney"></strong></li><strong style="color: black">
+                    </strong></strong></strong></ul><strong style="color: black"><strong style="color: black"><strong style="color: black">
+                    <ul>
+                        <li class="colorQ">直接下级数：<strong style="color: black" id="directInferiorNumber"></strong></li><strong style="color: black">
+                        <li class="colorQ">直接下级成交额：<strong style="color: black" id="SubUserAmount"></strong></li><strong style="color: black">
+                        <li class="colorQ">累计获得购物积分：<strong style="color: black" id="CumulativeAmount"></strong></li><strong style="color: black">
+                    </strong></strong></strong></ul><strong style="color: black"><strong style="color: black"><strong style="color: black">
+                    <ul>
+                        <li class="colorQ">上级分销员：<strong style="color: black" id="DistUserName"></strong></li><strong style="color: black"><strong style="color: black">
+                    </strong></strong></ul><strong style="color: black"><strong style="color: black">
+                </strong></strong></strong></strong></strong></strong></strong></strong></div>
+                <div class="tab-content">
+
+                    <div class="row form-horizontal">
+
+
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <div class="" style="text-align: center">
+                                        <label class="control-label">购物积分结算时间：</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="start_timeForCommission" placeholder="">
+                                </div>
+                                <div class="col-md-3">
+                                    <div style="text-align: center">
+                                        <label class="control-label" for="coupon_taking_way">至</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="end_timeForCommission" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <!--<div class="form-group">-->
+                                <!--<div class="col-md-3">-->
+                                    <!--<div class="" style="text-align: center">-->
+                                        <!--<label class="control-label">佣金类型：</label>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-3">-->
+                                    <!--<select class="form-control" id="state_box">-->
+                                        <!--<option selected="selected" value="0">全部</option>-->
+                                        <!--<option  value="1">销售佣金</option>-->
+                                        <!--<option  value="2">雏鹰奖励</option>-->
+                                        <!--<option  value="3">累计销售佣金</option>-->
+                                        <!--<option  value="4">服务费</option>-->
+                                        <!--<option  value="7">育成奖励</option>-->
+                                    <!--</select>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class="row form-horizontal">
+                        <div class="col-md-6 col-sm-6">
+
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="col-md-12">
+                                <button id="seachBtn" style="margin-left: 30px;float: right" class="btn btn-primary">查询</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="all_data_operation_box clearfix">
+                    <div class="about_output_box pull-left">
+                        <button class="btn btn-primary" id="exportBtn">导出数据</button>
+                    </div>
+                </div>
+                <div class="bootstrap-table">
+                    <table id="productTable" class="table table-bordered table-striped table-hover">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}}
+
+{{block 'footer'}}
+{{/block}}
+
+{{block 'requirejs'}}
+<!--<script src="/public/js/template.js"></script>-->
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/commissionSubsidiary.js" type="text/babel"></script>
+{{/block}}

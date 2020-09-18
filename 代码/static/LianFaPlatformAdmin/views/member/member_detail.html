@@ -1,0 +1,56 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}会员明细{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/css/memberIntegral.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-info">
+                    <ul class="clearfix">
+                        <li >
+                            <p>会员：<span id="memberName">yy@qq.com</span></p>
+                        </li>
+                        <li >
+                            <p>可用积分：<span id="memberCredit">500</span></p>
+                        </li>
+                        <li >
+                            <p>历史积分：<span id="historyCredit">500</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="integral-btn">
+                    <div class="integral-source">
+                        <p>积分来源：</p>
+                        <select class="form-control" style="width: 160px;" id="orginSelect">
+                            <option selected="selected" value="-1">请选择积分来源</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" style="margin-right: 20px;" id="searchBtn">查询</button>
+                    <button class="btn btn-primary" id="exportBtn">导出数据</button>
+                </div>
+                <div>
+                    <table id="detailTable" class="table table-bordered table-striped">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/js/memberDetail.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

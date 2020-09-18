@@ -1,0 +1,70 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}添加分销等级{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/classifyAdd.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/distribution/UserList">分销员列表</a>
+                        </li>
+                        <li >
+                            <a data-type="3" href="/distribution/UserApply">熊王审核列表</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="3" href="/distribution/addKing">添加熊王</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="classify_add_box">
+                    <div class="row form-group">
+                        <label for="type" class="col-md-3 text-right" style="position: relative;top: 7px"> <em style="color: red">*</em>类型：</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="type" style="width: 180px">
+                                <option selected="selected" value="0">请选择</option>
+                                <option value="1">熊粉</option>
+                                <option value="2">熊王</option>
+                                <option value="3">合伙人</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="phone" class="col-md-3 text-right" style="position: relative;top: 7px"> <em style="color: red">*</em>手机号码：</label>
+                        <div class="col-md-4">
+                            <input type="number" id="phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group" style="margin-top: 30px;">
+                        <div class="col-md-3" style="text-align: center">
+
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary finish_bth_add">添加</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/distribution_addKing.js" type="text/babel"></script>
+{{/block}}

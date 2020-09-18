@@ -1,0 +1,59 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}区域管理{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/areaManage.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid">
+    <div class="main_list_content type_box">
+        <div class="list_title_header clearfix">
+            <div class="pull-left title-box">
+                <p>区域管理（双击地区可编辑）</p>
+            </div>
+            <div class="pull-right">
+                <!--<button class="btn btn-primary">同步门店APP地区数据</button>-->
+                <button class="btn btn-primary" style="margin-left: 10px;">恢复默认设置</button>
+            </div>
+        </div>
+        <div>
+            <div class="list-title row">
+                <div class="col-xs-4">
+                    <p>省/自治区/直辖市</p>
+                </div>
+                <div class="col-xs-4">
+                    <p>地级市</p>
+                </div>
+                <div class="col-xs-4">
+                    <p>市辖区/县(县级市)</p>
+                </div>
+                <!-- <div class="col-xs-3">
+                    <p>乡/镇/街道</p>
+                </div> -->
+            </div>
+            <div class="list-content row">
+                <div class="col-xs-4" id="provinceList" data-layer="1">
+
+                </div>
+                <div class="col-xs-4" id="cityList" data-layer="2">
+
+                </div>
+                <div class="col-xs-4" id="districtList" data-layer="3">
+
+                </div>
+                <!-- <div class="col-xs-3" id="streetList" data-layer="4">
+
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/areaManage.js" type="text/babel"></script><!--productExport.js-->
+{{/block}}

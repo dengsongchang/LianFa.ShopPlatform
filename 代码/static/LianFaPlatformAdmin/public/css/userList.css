@@ -1,0 +1,52 @@
+.all_data_operation_box {
+    padding: 20px 0px;
+}
+.tips{
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #999;
+}
+.superiorInfo{
+    padding: 10px 0;
+}
+.search{
+    padding: 10px 0;
+}
+.search .form-group *{
+    float: left;
+}
+.modal-body .form-group label {
+    height: 34px;
+    line-height: 34px;
+    float: left;
+    text-align: right;
+}
+
+.form-text{
+    padding-top: 0 !important;
+}
+.VIPbg {
+    background: #fff9ee;
+    border: 1px #fce5b7 solid;
+    line-height: 35px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+.VIPbg li {
+    color: #666;
+    float: left;
+    font-size: 14px;
+    padding-right: 30px;
+    width: 33%;
+}
+.colorQ{
+    font-weight: 800;
+}
+.graynotic{
+    color: #ccc;
+    line-height: 18px;
+    font-size: 12px;
+}

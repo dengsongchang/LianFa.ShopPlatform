@@ -1,0 +1,57 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}商品类型列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/typeList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/classify/typeList">管理</a>
+                        </li>
+                        <li>
+                            <a data-type="2" href="/classify/typeAdd_name">添加</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="delete_all_box">
+                    <div class="row form-group">
+                        <label for="" class="col-md-3 text-right" style="margin-top: 7px">商品类型名称：</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="classify_name" placeholder="不超过20个字符">
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary" id="searchBtn">查询</button>
+                        </div>
+                    </div>
+                </div>
+                <table id="orderBox">
+
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/typeList.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

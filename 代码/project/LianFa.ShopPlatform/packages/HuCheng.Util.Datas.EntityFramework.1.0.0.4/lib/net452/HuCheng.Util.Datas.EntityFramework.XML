@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuCheng.Util.Datas.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:HuCheng.Util.Datas.EntityFramework.DataBaseContextFactory`1">
+            <summary>
+            数据库上下文工厂
+            </summary>
+            <typeparam name="TS">数据库上下文</typeparam>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.DataBaseContextFactory`1.GetCurrentDbContext">
+            <summary>
+            线程内实例唯一
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HuCheng.Util.Datas.EntityFramework.Disposable">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1">
+            <summary>
+            基础仓储类
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+        </member>
+        <member name="P:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.UnitOfWork">
+            <summary>
+            Ef工作单元
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.DatabaseFactory">
+            <summary>
+            数据库工厂
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.DbContext">
+            <summary>
+            获取数据库上下文
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.#ctor(HuCheng.Util.Datas.EntityFramework.IDataBaseContextFactory)">
+            <summary>
+            基础仓储类构造函数
+            </summary>
+            <param name="databaseFactory">数据库工厂</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.#ctor(HuCheng.Util.Datas.EntityFramework.IDataBaseContextFactory,HuCheng.Util.Core.Datas.IUnitOfWork)">
+            <summary>
+            基础仓储类构造函数
+            </summary>
+            <param name="databaseFactory">数据库工厂</param>
+            <param name="unitOfWork">工作单元</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Add(`0)">
+            <summary>
+            添加实体
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.BatchAdd(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="entities">实体列表</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Update(`0)">
+            <summary>
+            更新实体(用于未跟踪实体)
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.BatchUpdate(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量更新实体列表
+            </summary>
+            <param name="entities">实体列表</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.BatchUpdate(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,`0}})">
+            <summary>
+            批量更新实体列表(推荐)
+            </summary>
+            <param name="whereLambda">查询条件</param>
+            <param name="updateExpression">更新表达式</param>
+            <returns>返回影响条数</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Delete(`0)">
+            <summary>
+            删除实体
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据查询条件删除
+            </summary>
+            <param name="whereLambda">查询条件</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.BatchDelete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量删除
+            </summary>
+            <param name="entities">实体列表</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.BatchDelete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据查询条件批量删除(推荐)
+            </summary>
+            <param name="whereLambda">查询条件</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.GetById(System.Object)">
+            <summary>
+            根据Id获取实体
+            </summary>
+            <param name="id">Id</param>
+            <returns>实体</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据查询条件获取单条实体数据
+            </summary>
+            <param name="whereLambda">查询条件</param>
+            <returns>实体</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.GetAll">
+            <summary>
+            获取所有实体
+            </summary>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.GetList(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据查询条件获取实体列表
+            </summary>
+            <param name="whereLambda">查询条件</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.LoadEntitiesNoTracking(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据查询条件获取实体(返回IQueryable)
+            </summary>
+            <param name="whereLambda">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.LoadTopEntitiesNoTracking``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32,System.Boolean)">
+            <summary>
+            根据查询条件获取前几条实体数据(返回IQueryable)
+            </summary>
+            <typeparam name="TS">泛型</typeparam>
+            <param name="whereLambda">查询条件</param>
+            <param name="orderbyLambda">排序条件</param>
+            <param name="topList">前几条数据数量</param>
+            <param name="isAsc">是否升序</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Exist(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            根据查询条件实体判断是否存在
+            </summary>
+            <param name="whereLambda">查询条件</param>
+            <returns>true-存在,false-不存在</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.LoadPageEntities``1(System.Int32,System.Int32,System.Int32@,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            根据查询条件分页获取实体数据(返回IQueryable)
+            </summary>
+            <typeparam name="TS">泛型</typeparam>
+            <param name="pageSize">每页数量(页大小)</param>
+            <param name="pageIndex">页数(第几页)</param>
+            <param name="total">总数</param>
+            <param name="whereLambda">查询条件</param>
+            <param name="orderbyLambda">排序条件</param>
+            <param name="isAsc">是否升序</param>
+            <returns>实体分页列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.PagerQuery(System.Linq.IQueryable{`0},System.Int32,System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="query">查询对象</param>
+            <param name="page">页索引，表示第几页，从1开始</param>
+            <param name="pageSize">每页显示行数，默认20</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取实体个数
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.Clear">
+            <summary>
+            清空实体
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.ClearCache">
+            <summary>
+            清空缓存
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.GetUnitOfWork">
+            <summary>
+            获取工作单元
+            </summary>
+            <returns>工作单元</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfRepositoryBase`1.GetDbSetNoTracking">
+            <summary>
+            Get DbSet(不追踪)
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns>DbSet</returns>
+        </member>
+        <member name="T:HuCheng.Util.Datas.EntityFramework.Exceptions.EfValidationException">
+            <summary>
+            Entity Framework实体验证异常
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.Exceptions.EfValidationException.#ctor(System.Data.Entity.Validation.DbEntityValidationException)">
+            <summary>
+            初始化Entity Framework实体验证异常
+            </summary>
+            <param name="exception">实体验证异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.Exceptions.EfValidationException.SetExceptionDatas(System.Data.Entity.Validation.DbEntityValidationException)">
+            <summary>
+            设置异常数据
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Datas.EntityFramework.IDataBaseContextFactory">
+            <summary>
+            数据库上下文工厂
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.IDataBaseContextFactory.GetCurrentDbContext">
+            <summary>
+            获取当前数据库上下文对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HuCheng.Util.Datas.EntityFramework.EfQueryExtension">
+            <summary>
+            分页扩展
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.EfQueryExtension.LoadPagerEntities``1(System.Linq.IQueryable{``0},HuCheng.Util.Core.Datas.Repositories.IPager)">
+            <summary>
+            创建分页列表(推荐使用，已优化)
+            </summary>
+            <typeparam name="T">泛型,必须为实体类型</typeparam>
+            <param name="source">数据源</param>
+            <param name="pager">分页对象</param>
+            <returns>实体分页列表</returns>
+        </member>
+        <member name="T:HuCheng.Util.Datas.EntityFramework.UnitOfWork">
+            <summary>
+            工作单元
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.UnitOfWork.#ctor(HuCheng.Util.Datas.EntityFramework.IDataBaseContextFactory)">
+            <summary>
+            工作单元构造函数
+            </summary>
+            <param name="databaseFactory"></param>
+        </member>
+        <member name="P:HuCheng.Util.Datas.EntityFramework.UnitOfWork.DbContext">
+            <summary>
+            数据库上下文对象
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.UnitOfWork.Set``1">
+            <summary>
+            Get DbSet
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <returns>DbSet</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.UnitOfWork.Commit(System.Boolean)">
+            <summary>
+            提交事务
+            </summary>
+            <param name="validateOnSaveEnabled">是否打开验证</param>
+            <returns>影响条数</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.UnitOfWork.CommitAsync(System.Boolean)">
+            <summary>
+            异步提交事务
+            </summary>
+            <returns>影响条数</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.UnitOfWork.ExecuteSqlCommand(System.String,System.Object[])">
+            <summary>
+            执行Sql命令(非查询)
+            </summary>
+            <param name="sql">sql</param>
+            <param name="parameters">参数</param>
+            <returns>影响条数</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.UnitOfWork.SqlQuery``1(System.String,System.Object[])">
+            <summary>
+            执行sql查询
+            </summary>
+            <typeparam name="TResult">实体类型</typeparam>
+            <param name="sql">sql</param>
+            <param name="parameters">参数</param>
+            <returns>实体</returns>
+        </member>
+        <member name="M:HuCheng.Util.Datas.EntityFramework.UnitOfWork.SqlQueryResult``1(System.String,System.Object[])">
+            <summary>
+            执行sql查询
+            </summary>
+            <typeparam name="TResult">实体类型</typeparam>
+            <param name="sql">sql</param>
+            <param name="parameters">参数</param>
+            <returns>实体列表</returns>
+        </member>
+    </members>
+</doc>

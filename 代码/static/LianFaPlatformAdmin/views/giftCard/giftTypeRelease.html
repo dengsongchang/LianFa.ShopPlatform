@@ -1,0 +1,189 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}礼包类型创建{{/block}} {{block 'head'}}
+<link type="text/css" rel="stylesheet" href="/public/plugins/ueditor/themes/default/css/ueditor.css">
+<link rel="stylesheet" href="/public/css/classifyList.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/editMiniApp.css">
+<link rel="stylesheet" href="/public/plugins/pagination/pagination.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/jquery-chosen/chosen.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="tab-content edit-content">
+                    <div class="tab-pane active" id="first">
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                基本信息
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button" class="btn btn-sm pull-right btn-primary operate-btn" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>礼品卡类型名称：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="Name">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>礼品卡序列号：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="CouponTypeSn" placeholder="不能超过3位数">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>价格：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="number" class="form-control" id="Money">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>运费模板：</label>
+                                                    <div class="col-md-9 feed-price">
+                                                        <select class="form-control" id="TemplateId">
+                                                            <option selected="selected" value="0">请选择运费模板</option>
+                                                        </select>
+                                                        <a href="/product/addFreightTemplate" target="_blank">新增运费模板</a>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">开启特价：</label>
+                                                    <div class="col-md-6 sale-state" id="Whethertoopen">
+                                                        <label class="checkbox-inline">
+                                                            <input type="radio" name="Whethertoopen" value="1"
+                                                                checked="checked" class="show-IsWholesale">
+                                                            开启
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="radio" name="Whethertoopen" value="0"
+                                                                class="show-IsWholesale"> 关闭
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group Specialprice">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>特价：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="number" class="form-control" id="CostPrice">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">礼品卡内容：</label>
+                                                    <div class="col-md-4">
+                                                        <textarea class="form-control product-intro" id="Summary" placeholder="请输入礼品卡内容,逗号隔开"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>配送范围：</label>
+                                                    <div class="col-md-4 feed-price">
+                                                        <select class="form-control" id="DeliveryAreaId">
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="form-group form-inline_custom">
+                                                    <label class="col-md-2 control-label"><em
+                                                            style="color: red;font-size: 15px">*</em>兑换开始日期：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" readonly placeholder="只有达到开始日期，礼品卡才会生效" id="start_time">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-inline_custom">
+                                                    <label class="col-md-2 control-label"><em
+                                                            style="color: red;font-size: 15px">*</em>兑换结束日期：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" readonly placeholder="只有达到结束日期，礼品卡才会结束" id="end_time">
+                                                    </div>
+
+                                                </div> -->
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>礼品卡图片：</label>
+                                                    <div class="col-md-9">
+                                                        <div class="icon-box_about_classify">
+                                                            <div class="small_con">
+                                                                <img src="/public/images/addImg.png" alt="" id="small_icon" style="width: 100px;height: 100px">
+                                                                <div id="small_upload_pick"></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star"></span></label>
+                                                    <div class="col-md-9">
+                                                        <div style="color: #ccc;">
+                                                            建议尺寸650*360像素
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>商品图片：</label>
+                                                    <div class="col-md-9">
+                                                        <div class="icon-box_about_classify">
+                                                            <div class="small_con">
+                                                                <img src="/public/images/addImg.png" alt="" id="product_icon" style="width: 100px;height: 100px">
+                                                                <div id="product_upload_pick"></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star"></span></label>
+                                                    <div class="col-md-9">
+                                                        <div style="color: #ccc;">
+                                                            建议尺寸200*200像素
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-btn">
+                            <button class="btn btn-primary" id="finish">完成</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/js/jqPaginator.js"></script>
+<script src="/public/plugins/pagination/jquery.pagination.js"></script>
+<script src="/public/plugins/jquery-chosen/chosen.jquery.js"></script>
+<script src="/public/js/uploader_pic_toLibraryforProduct.js"></script>
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/giftTypeRelease.js"></script>
+{{/block}}

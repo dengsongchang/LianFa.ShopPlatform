@@ -1,0 +1,1242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LF_ShopPlatformModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LF_AdminActions">
+          <Key>
+            <PropertyRef Name="AdminAId" />
+          </Key>
+          <Property Name="AdminAId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Action" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="Layer" Type="int" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="IconClass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ActionType" Type="int" Nullable="false" />
+          <Property Name="IsAllChildAction" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_AdminGroups">
+          <Key>
+            <PropertyRef Name="AdminGId" />
+          </Key>
+          <Property Name="AdminGId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ActionIds" Type="varchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_AdminOperateLogs">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uid" Type="int" Nullable="false" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminGId" Type="smallint" Nullable="false" />
+          <Property Name="AdminGTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Ip" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="OperateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Banners">
+          <Key>
+            <PropertyRef Name="BannerId" />
+          </Key>
+          <Property Name="BannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShowImg" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Brands">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Categories">
+          <Key>
+            <PropertyRef Name="CateId" />
+          </Key>
+          <Property Name="CateId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_CouponDeliveryAreas">
+          <Key>
+            <PropertyRef Name="DeliveryAreaId" />
+          </Key>
+          <Property Name="DeliveryAreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeliveryAreaSn" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="RegionIds" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Coupons">
+          <Key>
+            <PropertyRef Name="CouponId" />
+          </Key>
+          <Property Name="CouponId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UId" Type="int" Nullable="false" />
+          <Property Name="CouponTypeId" Type="int" Nullable="false" />
+          <Property Name="OId" Type="int" Nullable="false" />
+          <Property Name="UseTime" Type="datetime" Nullable="false" />
+          <Property Name="UseIp" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="PassWord" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="State" Type="tinyint" Nullable="false" />
+          <Property Name="UseUId" Type="int" Nullable="false" />
+          <Property Name="UseStartTime" Type="datetime" Nullable="false" />
+          <Property Name="UseEndTime" Type="datetime" Nullable="false" />
+          <Property Name="CouponSn" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_CouponTypeContents">
+          <Key>
+            <PropertyRef Name="CouponContentId" />
+          </Key>
+          <Property Name="CouponContentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CouponTypeId" Type="int" Nullable="false" />
+          <Property Name="CouponContent" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_CouponTypes">
+          <Key>
+            <PropertyRef Name="CouponTypeId" />
+          </Key>
+          <Property Name="CouponTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="State" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="CouponImg" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProductImg" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="RegionIds" Type="varchar(max)" Nullable="false" />
+          <Property Name="Money" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DeliveryAreaId" Type="int" Nullable="false" />
+          <Property Name="UseStartTime" Type="datetime" Nullable="false" />
+          <Property Name="UseEndTime" Type="datetime" Nullable="false" />
+          <Property Name="CouponTypeSn" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DeliveryAreaSn" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CostPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsCostPrice" Type="int" Nullable="false" />
+          <Property Name="TemplateId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_MaterialCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Sort" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_MaterialLibrary">
+          <Key>
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="MaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="tinyint" Nullable="false" />
+          <Property Name="ShowName" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="FileExt" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FileSize" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Oauth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UId" Type="int" Nullable="false" />
+          <Property Name="OpenId" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="Server" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_OrderActions">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OId" Type="int" Nullable="false" />
+          <Property Name="UId" Type="int" Nullable="false" />
+          <Property Name="RealName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="AdminGId" Type="smallint" Nullable="false" />
+          <Property Name="AdminGTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ActionType" Type="tinyint" Nullable="false" />
+          <Property Name="ActionTime" Type="datetime" Nullable="false" />
+          <Property Name="ActionDes" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_OrderProducts">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OId" Type="int" Nullable="false" />
+          <Property Name="UId" Type="int" Nullable="false" />
+          <Property Name="SId" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="PId" Type="int" Nullable="false" />
+          <Property Name="PSn" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="CateId" Type="smallint" Nullable="false" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ShowImg" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ShopPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CostPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="RealCount" Type="int" Nullable="false" />
+          <Property Name="BuyCount" Type="int" Nullable="false" />
+          <Property Name="SendCount" Type="int" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="ShipFee" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Orders">
+          <Key>
+            <PropertyRef Name="OId" />
+          </Key>
+          <Property Name="OId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OSn" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="UId" Type="int" Nullable="false" />
+          <Property Name="OrderState" Type="tinyint" Nullable="false" />
+          <Property Name="ProductAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="OrderAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SurplusMoney" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="ShipSn" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="ShiPsyStemName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="ShipFriendName" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="ShipTime" Type="datetime" Nullable="false" />
+          <Property Name="PayMode" Type="tinyint" Nullable="false" />
+          <Property Name="PaySn" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PaySystemName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PayFriendName" Type="nvarchar" MaxLength="30" />
+          <Property Name="PayTime" Type="datetime" />
+          <Property Name="RegionId" Type="smallint" Nullable="false" />
+          <Property Name="Consignee" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Mobile" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ShipFee" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="BuyerRemark" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Ip" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="IsDel" Type="bit" Nullable="false" />
+          <Property Name="OrderSource" Type="int" Nullable="false" />
+          <Property Name="Type" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ProductImages">
+          <Key>
+            <PropertyRef Name="PImgId" />
+          </Key>
+          <Property Name="PImgId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PId" Type="int" Nullable="false" />
+          <Property Name="ShowImg" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsMain" Type="tinyint" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Products">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PSn" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="CateId" Type="smallint" Nullable="false" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CostPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="State" Type="tinyint" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="ShowImg" Type="nvarchar" MaxLength="300" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ShopPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TemplateId" Type="int" Nullable="false" />
+          <Property Name="IsCostPrice" Type="int" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LF_ProductStocks">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="int" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Limit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Regions">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Spell" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="ShortSpell" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="smallint" Nullable="false" />
+          <Property Name="Layer" Type="tinyint" Nullable="false" />
+          <Property Name="ProvinceId" Type="smallint" Nullable="false" />
+          <Property Name="ProvinceName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="CityId" Type="smallint" Nullable="false" />
+          <Property Name="CityName" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShipAddresses">
+          <Key>
+            <PropertyRef Name="SAId" />
+          </Key>
+          <Property Name="SAId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UId" Type="int" Nullable="false" />
+          <Property Name="RegionId" Type="smallint" Nullable="false" />
+          <Property Name="IsDefault" Type="tinyint" Nullable="false" />
+          <Property Name="Consignee" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Mobile" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Flag" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShipCompanies">
+          <Key>
+            <PropertyRef Name="ShipCoId" />
+          </Key>
+          <Property Name="ShipCoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingAppointRegions">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemplateId" Type="int" Nullable="false" />
+          <Property Name="MeetNum" Type="int" Nullable="false" />
+          <Property Name="MeetPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingPrice">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemplateId" Type="int" Nullable="false" />
+          <Property Name="StartPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EndPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Freight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WithFree" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="SPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SFreight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingRegions">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemplateId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="AppId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingRegionsGroups">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemplateId" Type="int" Nullable="false" />
+          <Property Name="DefaultNumber" Type="int" Nullable="false" />
+          <Property Name="AddNumber" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AddPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingTemplates">
+          <Key>
+            <PropertyRef Name="TemplateId" />
+          </Key>
+          <Property Name="TemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemplateName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DefaultNumber" Type="int" Nullable="false" />
+          <Property Name="AddNumber" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AddPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsfreeShipping" Type="bit" Nullable="false" />
+          <Property Name="ValuationMethod" Type="int" Nullable="false" />
+          <Property Name="IsAppoint" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Users">
+          <Key>
+            <PropertyRef Name="UId" />
+          </Key>
+          <Property Name="UId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Mobile" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="PassWord" Type="char" MaxLength="32" />
+          <Property Name="AdminGId" Type="smallint" Nullable="false" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Salt" Type="nchar" MaxLength="6" />
+          <Property Name="RegisterTime" Type="datetime" Nullable="false" />
+          <Property Name="Gender" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LF_ShopPlatformModelStoreContainer">
+          <EntitySet Name="LF_AdminActions" EntityType="Self.LF_AdminActions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_AdminGroups" EntityType="Self.LF_AdminGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_AdminOperateLogs" EntityType="Self.LF_AdminOperateLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Banners" EntityType="Self.LF_Banners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Brands" EntityType="Self.LF_Brands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Categories" EntityType="Self.LF_Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_CouponDeliveryAreas" EntityType="Self.LF_CouponDeliveryAreas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Coupons" EntityType="Self.LF_Coupons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_CouponTypeContents" EntityType="Self.LF_CouponTypeContents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_CouponTypes" EntityType="Self.LF_CouponTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_MaterialCategory" EntityType="Self.LF_MaterialCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_MaterialLibrary" EntityType="Self.LF_MaterialLibrary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Oauth" EntityType="Self.LF_Oauth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_OrderActions" EntityType="Self.LF_OrderActions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_OrderProducts" EntityType="Self.LF_OrderProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Orders" EntityType="Self.LF_Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ProductImages" EntityType="Self.LF_ProductImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Products" EntityType="Self.LF_Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ProductStocks" EntityType="Self.LF_ProductStocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Regions" EntityType="Self.LF_Regions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ShipAddresses" EntityType="Self.LF_ShipAddresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ShipCompanies" EntityType="Self.LF_ShipCompanies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ShippingAppointRegions" EntityType="Self.LF_ShippingAppointRegions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ShippingPrice" EntityType="Self.LF_ShippingPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ShippingRegions" EntityType="Self.LF_ShippingRegions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ShippingRegionsGroups" EntityType="Self.LF_ShippingRegionsGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_ShippingTemplates" EntityType="Self.LF_ShippingTemplates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LF_Users" EntityType="Self.LF_Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LF_ShopPlatformModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LF_ShopPlatformEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LF_AdminActions" EntityType="LF_ShopPlatformModel.LF_AdminActions" />
+          <EntitySet Name="LF_AdminGroups" EntityType="LF_ShopPlatformModel.LF_AdminGroups" />
+          <EntitySet Name="LF_AdminOperateLogs" EntityType="LF_ShopPlatformModel.LF_AdminOperateLogs" />
+          <EntitySet Name="LF_Banners" EntityType="LF_ShopPlatformModel.LF_Banners" />
+          <EntitySet Name="LF_Brands" EntityType="LF_ShopPlatformModel.LF_Brands" />
+          <EntitySet Name="LF_Categories" EntityType="LF_ShopPlatformModel.LF_Categories" />
+          <EntitySet Name="LF_CouponDeliveryAreas" EntityType="LF_ShopPlatformModel.LF_CouponDeliveryAreas" />
+          <EntitySet Name="LF_Coupons" EntityType="LF_ShopPlatformModel.LF_Coupons" />
+          <EntitySet Name="LF_CouponTypeContents" EntityType="LF_ShopPlatformModel.LF_CouponTypeContents" />
+          <EntitySet Name="LF_MaterialCategory" EntityType="LF_ShopPlatformModel.LF_MaterialCategory" />
+          <EntitySet Name="LF_MaterialLibrary" EntityType="LF_ShopPlatformModel.LF_MaterialLibrary" />
+          <EntitySet Name="LF_Oauth" EntityType="LF_ShopPlatformModel.LF_Oauth" />
+          <EntitySet Name="LF_OrderActions" EntityType="LF_ShopPlatformModel.LF_OrderActions" />
+          <EntitySet Name="LF_OrderProducts" EntityType="LF_ShopPlatformModel.LF_OrderProducts" />
+          <EntitySet Name="LF_Orders" EntityType="LF_ShopPlatformModel.LF_Orders" />
+          <EntitySet Name="LF_ProductImages" EntityType="LF_ShopPlatformModel.LF_ProductImages" />
+          <EntitySet Name="LF_ProductStocks" EntityType="LF_ShopPlatformModel.LF_ProductStocks" />
+          <EntitySet Name="LF_Regions" EntityType="LF_ShopPlatformModel.LF_Regions" />
+          <EntitySet Name="LF_ShipAddresses" EntityType="LF_ShopPlatformModel.LF_ShipAddresses" />
+          <EntitySet Name="LF_ShipCompanies" EntityType="LF_ShopPlatformModel.LF_ShipCompanies" />
+          <EntitySet Name="LF_ShippingAppointRegions" EntityType="LF_ShopPlatformModel.LF_ShippingAppointRegions" />
+          <EntitySet Name="LF_ShippingPrice" EntityType="LF_ShopPlatformModel.LF_ShippingPrice" />
+          <EntitySet Name="LF_ShippingRegions" EntityType="LF_ShopPlatformModel.LF_ShippingRegions" />
+          <EntitySet Name="LF_ShippingTemplates" EntityType="LF_ShopPlatformModel.LF_ShippingTemplates" />
+          <EntitySet Name="LF_Users" EntityType="LF_ShopPlatformModel.LF_Users" />
+          <EntitySet Name="LF_Products" EntityType="LF_ShopPlatformModel.LF_Products" />
+          <EntitySet Name="LF_CouponTypes" EntityType="LF_ShopPlatformModel.LF_CouponTypes" />
+          <EntitySet Name="LF_ShippingRegionsGroups" EntityType="LF_ShopPlatformModel.LF_ShippingRegionsGroups" />
+        </EntityContainer>
+        <EntityType Name="LF_AdminActions">
+          <Key>
+            <PropertyRef Name="AdminAId" />
+          </Key>
+          <Property Name="AdminAId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="Layer" Type="Int32" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="IconClass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActionType" Type="Int32" Nullable="false" />
+          <Property Name="IsAllChildAction" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_AdminGroups">
+          <Key>
+            <PropertyRef Name="AdminGId" />
+          </Key>
+          <Property Name="AdminGId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActionIds" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_AdminOperateLogs">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uid" Type="Int32" Nullable="false" />
+          <Property Name="NickName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AdminGId" Type="Int16" Nullable="false" />
+          <Property Name="AdminGTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="OperateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LF_Banners">
+          <Key>
+            <PropertyRef Name="BannerId" />
+          </Key>
+          <Property Name="BannerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShowImg" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LF_Brands">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_Categories">
+          <Key>
+            <PropertyRef Name="CateId" />
+          </Key>
+          <Property Name="CateId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_CouponDeliveryAreas">
+          <Key>
+            <PropertyRef Name="DeliveryAreaId" />
+          </Key>
+          <Property Name="DeliveryAreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryAreaSn" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="RegionIds" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LF_Coupons">
+          <Key>
+            <PropertyRef Name="CouponId" />
+          </Key>
+          <Property Name="CouponId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UId" Type="Int32" Nullable="false" />
+          <Property Name="CouponTypeId" Type="Int32" Nullable="false" />
+          <Property Name="OId" Type="Int32" Nullable="false" />
+          <Property Name="UseTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UseIp" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PassWord" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Byte" Nullable="false" />
+          <Property Name="UseUId" Type="Int32" Nullable="false" />
+          <Property Name="UseStartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UseEndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CouponSn" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LF_CouponTypeContents">
+          <Key>
+            <PropertyRef Name="CouponContentId" />
+          </Key>
+          <Property Name="CouponContentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CouponTypeId" Type="Int32" Nullable="false" />
+          <Property Name="CouponContent" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_MaterialCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sort" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_MaterialLibrary">
+          <Key>
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="MaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Byte" Nullable="false" />
+          <Property Name="ShowName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="FileExt" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FileSize" Type="Int32" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FileUrl" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_Oauth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UId" Type="Int32" Nullable="false" />
+          <Property Name="OpenId" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Server" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LF_OrderActions">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OId" Type="Int32" Nullable="false" />
+          <Property Name="UId" Type="Int32" Nullable="false" />
+          <Property Name="RealName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="AdminGId" Type="Int16" Nullable="false" />
+          <Property Name="AdminGTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActionType" Type="Byte" Nullable="false" />
+          <Property Name="ActionTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ActionDes" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_OrderProducts">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OId" Type="Int32" Nullable="false" />
+          <Property Name="UId" Type="Int32" Nullable="false" />
+          <Property Name="SId" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="PId" Type="Int32" Nullable="false" />
+          <Property Name="PSn" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="CateId" Type="Int16" Nullable="false" />
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ShowImg" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShopPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CostPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="RealCount" Type="Int32" Nullable="false" />
+          <Property Name="BuyCount" Type="Int32" Nullable="false" />
+          <Property Name="SendCount" Type="Int32" Nullable="false" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ShipFee" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="LF_Orders">
+          <Key>
+            <PropertyRef Name="OId" />
+          </Key>
+          <Property Name="OId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OSn" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="UId" Type="Int32" Nullable="false" />
+          <Property Name="OrderState" Type="Byte" Nullable="false" />
+          <Property Name="ProductAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="OrderAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SurplusMoney" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ShipSn" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="ShiPsyStemName" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="ShipFriendName" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="ShipTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PayMode" Type="Byte" Nullable="false" />
+          <Property Name="PaySn" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PaySystemName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PayFriendName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PayTime" Type="DateTime" Precision="3" />
+          <Property Name="RegionId" Type="Int16" Nullable="false" />
+          <Property Name="Consignee" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ShipFee" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="BuyerRemark" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="IsDel" Type="Boolean" Nullable="false" />
+          <Property Name="OrderSource" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ProductImages">
+          <Key>
+            <PropertyRef Name="PImgId" />
+          </Key>
+          <Property Name="PImgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PId" Type="Int32" Nullable="false" />
+          <Property Name="ShowImg" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsMain" Type="Byte" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ProductStocks">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="Limit" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Regions">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Spell" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="ShortSpell" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="Int16" Nullable="false" />
+          <Property Name="Layer" Type="Byte" Nullable="false" />
+          <Property Name="ProvinceId" Type="Int16" Nullable="false" />
+          <Property Name="ProvinceName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CityId" Type="Int16" Nullable="false" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_ShipAddresses">
+          <Key>
+            <PropertyRef Name="SAId" />
+          </Key>
+          <Property Name="SAId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UId" Type="Int32" Nullable="false" />
+          <Property Name="RegionId" Type="Int16" Nullable="false" />
+          <Property Name="IsDefault" Type="Byte" Nullable="false" />
+          <Property Name="Consignee" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LF_ShipCompanies">
+          <Key>
+            <PropertyRef Name="ShipCoId" />
+          </Key>
+          <Property Name="ShipCoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingAppointRegions">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateId" Type="Int32" Nullable="false" />
+          <Property Name="MeetNum" Type="Int32" Nullable="false" />
+          <Property Name="MeetPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingPrice">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateId" Type="Int32" Nullable="false" />
+          <Property Name="StartPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="EndPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Freight" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="WithFree" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="SPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SFreight" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="LF_ShippingRegions">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateId" Type="Int32" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingTemplates">
+          <Key>
+            <PropertyRef Name="TemplateId" />
+          </Key>
+          <Property Name="TemplateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultNumber" Type="Int32" Nullable="false" />
+          <Property Name="AddNumber" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="AddPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IsfreeShipping" Type="Boolean" Nullable="false" />
+          <Property Name="ValuationMethod" Type="Int32" Nullable="false" />
+          <Property Name="IsAppoint" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Users">
+          <Key>
+            <PropertyRef Name="UId" />
+          </Key>
+          <Property Name="UId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="PassWord" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="AdminGId" Type="Int16" Nullable="false" />
+          <Property Name="NickName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Avatar" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Salt" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="RegisterTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Gender" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_Products">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PSn" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="CateId" Type="Int16" Nullable="false" />
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CostPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="State" Type="Byte" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="ShowImg" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShopPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TemplateId" Type="Int32" Nullable="false" />
+          <Property Name="IsCostPrice" Type="Int32" Nullable="false" />
+          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LF_CouponTypes">
+          <Key>
+            <PropertyRef Name="CouponTypeId" />
+          </Key>
+          <Property Name="CouponTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="State" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CouponImg" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProductImg" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RegionIds" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Money" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DeliveryAreaId" Type="Int32" Nullable="false" />
+          <Property Name="UseStartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UseEndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CouponTypeSn" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryAreaSn" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CostPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IsCostPrice" Type="Int32" Nullable="false" />
+          <Property Name="TemplateId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LF_ShippingRegionsGroups">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateId" Type="Int32" Nullable="false" />
+          <Property Name="DefaultNumber" Type="Int32" Nullable="false" />
+          <Property Name="AddNumber" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="AddPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LF_ShopPlatformModelStoreContainer" CdmEntityContainer="LF_ShopPlatformEntities">
+          <EntitySetMapping Name="LF_AdminActions">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_AdminActions">
+              <MappingFragment StoreEntitySet="LF_AdminActions">
+                <ScalarProperty Name="IsAllChildAction" ColumnName="IsAllChildAction" />
+                <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+                <ScalarProperty Name="IconClass" ColumnName="IconClass" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Layer" ColumnName="Layer" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AdminAId" ColumnName="AdminAId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_AdminGroups">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_AdminGroups">
+              <MappingFragment StoreEntitySet="LF_AdminGroups">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ActionIds" ColumnName="ActionIds" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AdminGId" ColumnName="AdminGId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_AdminOperateLogs">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_AdminOperateLogs">
+              <MappingFragment StoreEntitySet="LF_AdminOperateLogs">
+                <ScalarProperty Name="OperateTime" ColumnName="OperateTime" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="AdminGTitle" ColumnName="AdminGTitle" />
+                <ScalarProperty Name="AdminGId" ColumnName="AdminGId" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Banners">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Banners">
+              <MappingFragment StoreEntitySet="LF_Banners">
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ShowImg" ColumnName="ShowImg" />
+                <ScalarProperty Name="BannerId" ColumnName="BannerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Brands">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Brands">
+              <MappingFragment StoreEntitySet="LF_Brands">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Categories">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Categories">
+              <MappingFragment StoreEntitySet="LF_Categories">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="CateId" ColumnName="CateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_CouponDeliveryAreas">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_CouponDeliveryAreas">
+              <MappingFragment StoreEntitySet="LF_CouponDeliveryAreas">
+                <ScalarProperty Name="RegionIds" ColumnName="RegionIds" />
+                <ScalarProperty Name="DeliveryAreaSn" ColumnName="DeliveryAreaSn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DeliveryAreaId" ColumnName="DeliveryAreaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Coupons">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Coupons">
+              <MappingFragment StoreEntitySet="LF_Coupons">
+                <ScalarProperty Name="CouponSn" ColumnName="CouponSn" />
+                <ScalarProperty Name="UseEndTime" ColumnName="UseEndTime" />
+                <ScalarProperty Name="UseStartTime" ColumnName="UseStartTime" />
+                <ScalarProperty Name="UseUId" ColumnName="UseUId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="UseIp" ColumnName="UseIp" />
+                <ScalarProperty Name="UseTime" ColumnName="UseTime" />
+                <ScalarProperty Name="OId" ColumnName="OId" />
+                <ScalarProperty Name="CouponTypeId" ColumnName="CouponTypeId" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="CouponId" ColumnName="CouponId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_CouponTypeContents">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_CouponTypeContents">
+              <MappingFragment StoreEntitySet="LF_CouponTypeContents">
+                <ScalarProperty Name="CouponContent" ColumnName="CouponContent" />
+                <ScalarProperty Name="CouponTypeId" ColumnName="CouponTypeId" />
+                <ScalarProperty Name="CouponContentId" ColumnName="CouponContentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_MaterialCategory">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_MaterialCategory">
+              <MappingFragment StoreEntitySet="LF_MaterialCategory">
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_MaterialLibrary">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_MaterialLibrary">
+              <MappingFragment StoreEntitySet="LF_MaterialLibrary">
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="FileExt" ColumnName="FileExt" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Oauth">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Oauth">
+              <MappingFragment StoreEntitySet="LF_Oauth">
+                <ScalarProperty Name="Server" ColumnName="Server" />
+                <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_OrderActions">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_OrderActions">
+              <MappingFragment StoreEntitySet="LF_OrderActions">
+                <ScalarProperty Name="ActionDes" ColumnName="ActionDes" />
+                <ScalarProperty Name="ActionTime" ColumnName="ActionTime" />
+                <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+                <ScalarProperty Name="AdminGTitle" ColumnName="AdminGTitle" />
+                <ScalarProperty Name="AdminGId" ColumnName="AdminGId" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="OId" ColumnName="OId" />
+                <ScalarProperty Name="AId" ColumnName="AId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_OrderProducts">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_OrderProducts">
+              <MappingFragment StoreEntitySet="LF_OrderProducts">
+                <ScalarProperty Name="ShipFee" ColumnName="ShipFee" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+                <ScalarProperty Name="BuyCount" ColumnName="BuyCount" />
+                <ScalarProperty Name="RealCount" ColumnName="RealCount" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+                <ScalarProperty Name="ShopPrice" ColumnName="ShopPrice" />
+                <ScalarProperty Name="ShowImg" ColumnName="ShowImg" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="CateId" ColumnName="CateId" />
+                <ScalarProperty Name="PSn" ColumnName="PSn" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="SId" ColumnName="SId" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="OId" ColumnName="OId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Orders">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Orders">
+              <MappingFragment StoreEntitySet="LF_Orders">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="OrderSource" ColumnName="OrderSource" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="BuyerRemark" ColumnName="BuyerRemark" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="ShipFee" ColumnName="ShipFee" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Consignee" ColumnName="Consignee" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="PayTime" ColumnName="PayTime" />
+                <ScalarProperty Name="PayFriendName" ColumnName="PayFriendName" />
+                <ScalarProperty Name="PaySystemName" ColumnName="PaySystemName" />
+                <ScalarProperty Name="PaySn" ColumnName="PaySn" />
+                <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+                <ScalarProperty Name="ShipTime" ColumnName="ShipTime" />
+                <ScalarProperty Name="ShipFriendName" ColumnName="ShipFriendName" />
+                <ScalarProperty Name="ShiPsyStemName" ColumnName="ShiPsyStemName" />
+                <ScalarProperty Name="ShipSn" ColumnName="ShipSn" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="SurplusMoney" ColumnName="SurplusMoney" />
+                <ScalarProperty Name="OrderAmount" ColumnName="OrderAmount" />
+                <ScalarProperty Name="ProductAmount" ColumnName="ProductAmount" />
+                <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="OSn" ColumnName="OSn" />
+                <ScalarProperty Name="OId" ColumnName="OId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ProductImages">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ProductImages">
+              <MappingFragment StoreEntitySet="LF_ProductImages">
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="IsMain" ColumnName="IsMain" />
+                <ScalarProperty Name="ShowImg" ColumnName="ShowImg" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="PImgId" ColumnName="PImgId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ProductStocks">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ProductStocks">
+              <MappingFragment StoreEntitySet="LF_ProductStocks">
+                <ScalarProperty Name="Limit" ColumnName="Limit" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Regions">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Regions">
+              <MappingFragment StoreEntitySet="LF_Regions">
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+                <ScalarProperty Name="Layer" ColumnName="Layer" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="ShortSpell" ColumnName="ShortSpell" />
+                <ScalarProperty Name="Spell" ColumnName="Spell" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ShipAddresses">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ShipAddresses">
+              <MappingFragment StoreEntitySet="LF_ShipAddresses">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Consignee" ColumnName="Consignee" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+                <ScalarProperty Name="SAId" ColumnName="SAId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ShipCompanies">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ShipCompanies">
+              <MappingFragment StoreEntitySet="LF_ShipCompanies">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShipCoId" ColumnName="ShipCoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ShippingAppointRegions">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ShippingAppointRegions">
+              <MappingFragment StoreEntitySet="LF_ShippingAppointRegions">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="MeetPrice" ColumnName="MeetPrice" />
+                <ScalarProperty Name="MeetNum" ColumnName="MeetNum" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ShippingPrice">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ShippingPrice">
+              <MappingFragment StoreEntitySet="LF_ShippingPrice">
+                <ScalarProperty Name="SFreight" ColumnName="SFreight" />
+                <ScalarProperty Name="SPrice" ColumnName="SPrice" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="WithFree" ColumnName="WithFree" />
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="EndPrice" ColumnName="EndPrice" />
+                <ScalarProperty Name="StartPrice" ColumnName="StartPrice" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ShippingRegions">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ShippingRegions">
+              <MappingFragment StoreEntitySet="LF_ShippingRegions">
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ShippingTemplates">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ShippingTemplates">
+              <MappingFragment StoreEntitySet="LF_ShippingTemplates">
+                <ScalarProperty Name="IsAppoint" ColumnName="IsAppoint" />
+                <ScalarProperty Name="ValuationMethod" ColumnName="ValuationMethod" />
+                <ScalarProperty Name="IsfreeShipping" ColumnName="IsfreeShipping" />
+                <ScalarProperty Name="AddPrice" ColumnName="AddPrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="AddNumber" ColumnName="AddNumber" />
+                <ScalarProperty Name="DefaultNumber" ColumnName="DefaultNumber" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Users">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Users">
+              <MappingFragment StoreEntitySet="LF_Users">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="AdminGId" ColumnName="AdminGId" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UId" ColumnName="UId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_Products">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_Products">
+              <MappingFragment StoreEntitySet="LF_Products">
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="IsCostPrice" ColumnName="IsCostPrice" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="ShopPrice" ColumnName="ShopPrice" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="ShowImg" ColumnName="ShowImg" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="CateId" ColumnName="CateId" />
+                <ScalarProperty Name="PSn" ColumnName="PSn" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_CouponTypes">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_CouponTypes">
+              <MappingFragment StoreEntitySet="LF_CouponTypes">
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="IsCostPrice" ColumnName="IsCostPrice" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+                <ScalarProperty Name="DeliveryAreaSn" ColumnName="DeliveryAreaSn" />
+                <ScalarProperty Name="CouponTypeSn" ColumnName="CouponTypeSn" />
+                <ScalarProperty Name="UseEndTime" ColumnName="UseEndTime" />
+                <ScalarProperty Name="UseStartTime" ColumnName="UseStartTime" />
+                <ScalarProperty Name="DeliveryAreaId" ColumnName="DeliveryAreaId" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="RegionIds" ColumnName="RegionIds" />
+                <ScalarProperty Name="ProductImg" ColumnName="ProductImg" />
+                <ScalarProperty Name="CouponImg" ColumnName="CouponImg" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CouponTypeId" ColumnName="CouponTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LF_ShippingRegionsGroups">
+            <EntityTypeMapping TypeName="LF_ShopPlatformModel.LF_ShippingRegionsGroups">
+              <MappingFragment StoreEntitySet="LF_ShippingRegionsGroups">
+                <ScalarProperty Name="AddPrice" ColumnName="AddPrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="AddNumber" ColumnName="AddNumber" />
+                <ScalarProperty Name="DefaultNumber" ColumnName="DefaultNumber" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

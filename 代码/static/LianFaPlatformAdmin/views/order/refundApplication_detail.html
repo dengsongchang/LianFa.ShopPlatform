@@ -1,0 +1,85 @@
+<!--productRecyclebin.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}退款申请清单详情{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/refundApplication_detail.css"> {{/block}} {{block 'content'}}
+<section class="content">
+    <div class="product_consulting_box"></div>
+    <div class="container-fluid form-horizontal" style="margin-left:15px;margin-right:15px;padding-left:0px;padding-right:0px;overflow: hidden;">
+        <div style="margin: 22px 0px 0px 15px;"><a class="backBtn"><img src="/public/images/back.png" alt=""><span>返回</span></a></div>
+        <div class="main_list_content type_box">
+            <div class="list_title_header" style="float:left;width:100%">
+                <div id="order_tab_box">
+                    <ul class="nav nav-tabs" id="tab">
+                        <li class="active">
+                            <a data-toggle="tab" id="out_all" data-type="0" href="#application_detail">退款详情</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 总容器box -->
+                <div class="tab-content">
+                    <div class="active tab-pane" id="application_detail">
+                        <div class="refund_detail_box">
+                            <div class="row">
+                                <div class="col-md-2">售后编号:<span id="sellNumber"></span></div>
+                                <div class="col-md-2">状态:<span id="stateName"></span></div>
+                            </div>
+                        </div>
+                        <div class="detail-wrap">
+                            <div class="row">
+                                <div class="col-md-2">订单编号:</div>
+                                <div class="col-md-10" id="orderNumber"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">退款原因:</div>
+                                <div class="col-md-10" id="refund_reason"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">申请退款金额:</div>
+                                <div class="col-md-10" id="apply_momeny"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">支付方式:</div>
+                                <div class="col-md-10" id="applyWay"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">支付单号:</div>
+                                <div class="col-md-10" id="applyNumber"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">退款单号:</div>
+                                <div class="col-md-10" id="refundsNumber"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">买家备注:</div>
+                                <div class="col-md-10" id="marker"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">订单总金额:</div>
+                                <div class="col-md-10" id="tatal"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">确认退款金额:</div>
+                                <div class="col-md-10" id="confirmMomeny"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">申请时间:</div>
+                                <div class="col-md-10" id="applyTime"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">退款时间:</div>
+                                <div class="col-md-10" id="handleTime"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">管理员备注:</div>
+                                <div class="col-md-10" id="adminMarker"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/js/refundApplicationDetail.js" type="text/babel"></script>
+{{/block}}  `

@@ -1,0 +1,107 @@
+.content{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.option-list{
+    padding-bottom: 20px;
+    padding-top:30px;
+}
+.check{
+    width:57px;height:32px;
+    line-height: 32px;
+    text-align: center;
+    display: inline-block;
+    border:1px solid #e8e8e8;
+    background-color: #f9f9f9;
+}
+.deleteBtn{
+    margin-left:22px;
+    position:relative;
+    top:-3px;
+}
+.showPage{
+    font-size:14px;
+    color:#3f3f3f;
+}
+.memberNav{
+    width:100%;
+    height:52px;
+    background-color: #f8f8f8;
+    line-height:52px;
+    text-align: center;
+    color:#3f3f3f;
+    font-size:14px;
+    border-bottom: 2px solid #dddddd;
+}
+.memberItem{
+    width:100%;
+    display: inline-block;
+    height:73px;
+    line-height: 73px;
+    text-align: center;
+    font-size:14px;
+    border-bottom:1px solid #e8e8e8;
+    overflow: hidden;
+}
+.isCheck{
+    position:relative;
+    left:-30px;
+}
+.memberItem  .col-md-3 span{
+    color:#1792e7;
+}
+
+/*站内写信*/
+.writeMail{
+    margin-left:200px;
+    color:#aaaaaa;
+}
+.object{
+    margin-top:34px;
+    font-size:14px;
+}
+.form-group{
+    margin-top:30px;
+}
+.form-group .form-input{
+    width:380px;
+}
+.form-group .wcontent{
+    position:relative;
+    top:-95px;
+    left:0;
+}
+.form-group .form-textarea{
+    width:380px;
+    height:109px;
+    resize:none;
+}
+.finish{
+    margin-top:50px;
+    margin-left:180px;
+}
+.product_consulting_box {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.secondWrite{
+    padding-top:10px;
+    margin-left:100px;
+    color:#aaaaaa;
+}
+.write-item{
+    margin-top:23px;
+}
+em{
+    color:red;
+}
+.write-item .col-md-2{
+    font-size:14px;
+    text-align: end;
+}
+textarea{
+    resize: none;
+}
+

@@ -1,0 +1,39 @@
+.all_data_operation_box {
+    padding: 20px 0px;
+}
+.modal-dialog{
+    padding-top:200px; 
+}
+.modal-body .form-control {
+    border: 1px solid #ccc;
+    width: 200px !important;
+    height: 34px;
+    line-height: 34px;
+}
+.modal-body .form-group{
+    clear: both;
+    overflow: auto;
+}
+.modal-body .form-group label {
+    height: 34px;
+    line-height: 34px;
+    float: left;
+    text-align: right;
+}
+.formitem_con {
+    line-height: 32px;
+    width: 100%;
+    float: left;
+}
+.blockquote-tip {
+    overflow: hidden;
+    font-size: 12px;
+    color: #333;
+}
+.blockquote-default {
+    position: relative;
+    padding: 20px 30px;
+    background-color: #fff;
+    border: 1px solid #fb0;
+    line-height: 1.8;
+}

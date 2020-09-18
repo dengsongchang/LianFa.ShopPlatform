@@ -1,0 +1,75 @@
+{{extend '../share/layout.html'}}
+{{block 'title'}}问题列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/css/navsetting.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box" style="padding-top: 30px">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li  class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">问题列表</a>
+                        </li>
+                        <li  class="">
+                            <a data-type="2" data-toggle="tab" href="#second">添加</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="first">
+                        <table id="brand_box"></table>
+                    </div>
+                    <div class="tab-pane" id="second">
+                        <div class="box box-solid">
+                            <div class="box-body">
+                                <div class="form-box form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">
+                                            <span class="red-star">*</span>标题：</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="ProblemTitle" placeholder="请输入名称">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">
+                                            <span class="red-star">*</span>描述</label>
+                                        <div class="col-md-6">
+                                            <textarea class="form-control" id="description" name="" id="" rows="7"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">
+                                            <span class="red-star">*</span>排序：</label>
+                                        <div class="col-md-10">
+                                            <input type="number" class="form-control" id="sort" style="width: 120px">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-btn" style="text-align: center;">
+                            <button class="btn btn-primary" id="nextStep">保存</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/js/problemList.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

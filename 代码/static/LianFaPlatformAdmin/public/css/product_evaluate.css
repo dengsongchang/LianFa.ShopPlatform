@@ -1,0 +1,91 @@
+.content-wrapper{
+    background: #fff;
+}
+.nav-tabs {
+    border-bottom: 1px solid #fd522d;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #fff;
+  cursor: default;
+  background-color: #fd522d;
+  border-bottom-color: transparent;
+  border-radius: 10px 10px 0px 0px;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: transparent transparent #fd522d;
+  }
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #3f3f3f;
+}
+.product_consulting_box {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main_list_content {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+.list_title_header {
+    margin-bottom: 20px;
+}
+.choice_condition_box {
+    padding: 15px 15px 0px;
+    border-bottom: 1px solid #ddd;
+}
+.tab-content>.active {
+    display: block;
+}
+
+.starul{
+    margin: 0;
+}
+.starul li{
+    display: inline-block;
+}
+.starul li img{
+    display: block;
+}
+.evaluateReply{
+    margin-top:30px;
+}
+.evaluateReply .col-sm-2{
+    text-align: end;
+}
+.evaluateReply textarea{
+    resize: none;
+    border-radius: 10px;
+}
+#replyBtn{
+    float: right;
+}
+#evaluateImg li{
+    float: left;
+    margin-left:5px;
+}
+.evaluate-img{
+    width:92px;
+    height:90px;
+}
+/*.evaluate-content{*/
+    /*display: block;*/
+    /*width:250px;*/
+    /*height:30px;*/
+    /*overflow: hidden;*/
+    /*text-align: center;*/
+    /*text-overflow:ellipsis;*/
+    /*white-space: nowrap;*/
+/*}*/

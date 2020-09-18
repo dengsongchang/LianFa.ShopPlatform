@@ -1,0 +1,378 @@
+.allBox{
+    min-height: 100vh;
+    background: #fff;
+    padding-bottom: 100px;
+}
+.line{
+    height: 5px;
+    background: #f5f5f5;
+}
+.lineLast{
+    height: 5px;
+    background: #f5f5f5;
+    margin-bottom: 60px;
+}
+.addressBox{
+    height: 74px;
+    box-sizing: border-box;
+    margin: 10px 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-top: 0;
+    padding-top: 10px;
+}
+.addressLeft{
+    height: 100%;
+    width: 330px;
+    float: left;
+}
+.leftTop{
+    float: left;
+    height: 20px;
+    overflow: hidden;
+    line-height: 20px;
+    width: 330px;
+}
+.addressRight{
+    height: 100%;
+    width: 18px;
+    float: right;
+}
+.addressIcon{
+    width: 12px;
+    height:16px;
+    margin-right: 14px;
+    float: left;
+}
+.userName{
+    float: left;
+    font-size:15px;
+    color: #3F3F3F;
+    margin-right: 18px;
+    font-weight: 800;
+}
+.phone{
+    float: left;
+    font-size:15px;
+    color: #3F3F3F;
+    font-weight: 800;
+}
+.leftBottom{
+    float: left;
+    margin-top: 13px;
+    color: #3f3f3f;
+    font-size: 14px;
+    padding-left: 24px;
+    box-sizing: border-box;
+    max-width: 330px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.rightIcon{
+    width: 18px;
+    height:18px;
+    float: left;
+    /*position: relative;*/
+    /*top:20px;*/
+}
+.productBox{
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+.storeName{
+    height: 40px;
+    font-size: 13px;
+    color: #333;
+    overflow: hidden;
+}
+.shopIcon{
+    width: 18px;
+    height:18px;
+    margin-right: 11px;
+    float: left;
+    position: relative;
+    top:12px;
+}
+.sName{
+    margin-right: 10px;
+    float: left;
+    position: relative;
+    top:12px;
+}
+.gray-right{
+    width: 12px;
+    height:12px;
+    float: left;
+    position: relative;
+    top:15px;
+}
+.productTitle{
+    font-size: 14px;
+    color: #333;
+    height: 55px;
+    line-height: 55px;
+    font-weight: 800;
+}
+.productItem{
+    overflow: hidden;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+}
+.productImg{
+    float: left;
+    width: 80px;
+    height:80px;
+    margin-right: 10px;
+}
+.productNameBox{
+    float: left;
+    color: #333;
+    font-size: 14px;
+    height: 80px;
+    width: 265px;
+    position: relative;
+}
+.productName{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+    font-weight: 800;
+}
+.money{
+    font-size: 14px;
+    position: relative;
+    top:4px;
+}
+.moneyBox{
+    font-size: 18px;
+    color: #D94E3A;
+    float: left;
+    margin-left: 11px;
+}
+.icon{
+    font-size: 15px;
+}
+.productPrice{
+    color: #D94E3A;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.count{
+    color: #333;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.descritionBox{
+    box-sizing: border-box;
+    margin: 0 10px;
+    font-size: 14px;
+    color: #3f3f3f;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.descritionItem{
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.descritionItem:last-child{
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+.descritionItemLeft{
+    float: left;
+}
+.descritionItemRight{
+    float: right;
+}
+.timeBox{
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 12px;
+    color: #666;
+}
+.timeItem{
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.boxLeft{
+    margin-right: 20px;
+    float: left;
+}
+.boxLeftO{
+    margin-right: 32px;
+    float: left;
+}
+.boxRight{
+    float: left;
+}
+.payBox{
+    background: #fff;
+    font-size: 15px;
+    color: #3f3f3f;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+.payTitle{
+    height: 45px;
+    line-height: 45px;
+    font-weight: 800;
+}
+.payItem{
+    height: 28px;
+    /*overflow: hidden;*/
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ddd;
+}
+.payIcon{
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+    float: left;
+}
+.payText{
+    float: left;
+    font-size: 15px;
+    color: #3F3F3F;
+    position: relative;
+    top:4px;
+}
+.radioBox{
+    float: right;
+    position: relative;
+    top:1px;
+}
+
+.integralBox{
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 11px;
+    height: 48px;
+}
+.integralLeft{
+    height: 48px;
+    float: left;
+}
+.integralTitle{
+    font-size: 14px;
+    color: #3F3F3F;
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+.van-checkbox__icon{
+    display: block;
+}
+.integralNum{
+    font-size: 10px;
+    color: #999;
+}
+.integralRadio{
+    float: right;
+    position: relative;
+    top:15px;
+}
+.markBox{
+    /*height: 40px;*/
+    box-sizing: border-box;
+    padding: 0 11px;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+}
+.markTitle{
+    font-size: 14px;
+    color: #333;
+    font-weight: 800;
+    height: 53px;
+    line-height: 53px;
+}
+.mark{
+    float: left;
+    padding-left: 0;
+    padding-top: 0;
+    /*height: 40px;*/
+}
+.footerBox{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width: 375px;
+    height:48px;
+    background: #fff;
+    font-size: 14px;
+    color: #3F3F3F;
+    line-height: 48px;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+}
+.money{
+    float: left;
+    margin-left: 10px;
+}
+.payBtn{
+    width: 115px;
+    height:48px;
+    color: #fff;
+    background: #D94E3A;
+    text-align: center;
+    line-height: 48px;
+    float: right;
+    padding: 0;
+    border: none;
+}
+.mask{
+    position: fixed;
+    width: 375px;
+    height: 100vh;
+    left:0;
+    top: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 10000;
+}
+.tipsM{
+    position: fixed;
+    z-index: 100000;
+    background: #fff;
+    left: 40px;
+    top:120px;
+    font-size: 15px;
+    color: #333;
+    width: 290px;
+    min-height: 110px;
+    box-sizing: border-box;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 4px;
+}
+.arrow{
+    width: 71px;
+    height: 101px;
+    position: fixed;
+    top:12px;
+    right: 34px;
+    z-index: 100000;
+}
+.allPrice{
+    font-size: 16px;
+    color: #333;
+}
+.leftTopNo {
+    float: left;
+    height: 20px;
+    overflow: hidden;
+    line-height: 20px;
+    margin-top: 24px;
+}

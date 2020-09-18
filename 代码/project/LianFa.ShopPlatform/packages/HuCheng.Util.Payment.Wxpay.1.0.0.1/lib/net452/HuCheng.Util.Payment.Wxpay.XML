@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuCheng.Util.Payment.Wxpay</name>
+    </assembly>
+    <members>
+        <member name="T:HuCheng.Util.Payment.Wxpay.Enum.WxPayTradeType">
+            <summary>
+            微信支付交易类型
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Wxpay.Enum.WxPayTradeType.JsApi">
+            <summary>
+            JsApi支付
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Wxpay.Enum.WxPayTradeType.ScanCode">
+            <summary>
+            扫码支付
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Wxpay.Enum.WxPayTradeType.App">
+            <summary>
+            APP支付
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Wxpay.IWxpayService">
+            <summary>
+            微信支付服务类
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.IWxpayService.InitAliPay(System.String,System.String,System.String)">
+            <summary>
+            初始化微信支付
+            </summary>
+            <param name="wxAppId">微信AppId</param>
+            <param name="wxPayMchId">微信商户号</param>
+            <param name="wxPayKey">微信支付密钥</param>
+            <returns>初始化结果，true-成功,false-失败</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.IWxpayService.GetJsApiParams(System.String,System.String,System.Decimal,System.String,System.String,System.String)">
+            <summary>
+            获取JsApi参数列表
+            </summary>
+            <param name="openId">openId</param>
+            <param name="productName">订单名称</param>
+            <param name="price">付款金额</param>
+            <param name="createIp">用户的公网ip，不是商户服务器IP</param> 
+            <param name="notifyUrl">回调地址</param>
+            <param name="spBillNo">商家订单号，10位序列号，默认为时间和随机数生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.IWxpayService.GetAppParams(System.String,System.Decimal,System.String,System.String,System.String)">
+            <summary>
+            获取app参数列表
+            </summary>
+            <param name="productName">订单名称</param>
+            <param name="price">付款金额</param>
+            <param name="createIp">用户的公网ip，不是商户服务器IP</param>
+            <param name="notifyUrl">回调地址</param>
+            <param name="spBillNo">商家订单号，10位序列号，默认为时间和随机数生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.IWxpayService.Transfers(System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            企业付款
+            </summary>
+            <param name="transfersCertificate">微信支付证书路径</param>
+            <param name="openId">openId</param>
+            <param name="amount"></param>
+            <param name="desc">企业付款描述信息</param>
+            <param name="ip"></param>
+            <param name="password">交易密码，默认为商户号</param>
+            <param name="checkName">校验用户姓名选项，默认NO_CHECK,不校验</param>
+            <param name="outNo">提现单号，默认自动为Transfer-时间毫秒数</param>
+            <param name="reUserName">收款用户姓名，默认为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.IWxpayService.Refund(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            退款申请接口
+            </summary>
+            <param name="transfersCertificate">微信支付证书路径</param>
+            <param name="transactionId">支付单号</param>
+            <param name="refundFee">退款金额</param>
+            <param name="totalFee">订单金额</param>
+            <param name="password">交易密码，默认为商户号</param>
+            <param name="outRefundNo">提现单号，默认自动为OutRefunNo-时间毫秒数</param>
+            <param name="opUserId">操作员帐号，默认为商户号</param>
+            <returns></returns>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Wxpay.Model.WxAppParameter">
+            <summary>
+            微信app支付
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.WxAppParameter.PartnerId">
+            <summary>
+            微信支付分配的商户号
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.WxAppParameter.PrepayId">
+            <summary>
+            预支付交易会话ID
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Wxpay.Model.JsApiParameter">
+            <summary>
+            微信支付 JS Api 参数
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.JsApiParameter.AppId">
+            <summary>
+            APPId
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.JsApiParameter.TimeStamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.JsApiParameter.NonceStr">
+            <summary>
+            随机字符串
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.JsApiParameter.Package">
+            <summary> 
+            package
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.JsApiParameter.SignType">
+            <summary>
+            signType
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Wxpay.Model.JsApiParameter.PaySign">
+            <summary>
+            支付签名
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Wxpay.WxpayService">
+            <summary>
+            微信支付服务类
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Wxpay.WxpayService._wxAppId">
+            <summary>
+            微信AppId
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Wxpay.WxpayService._wxPayMchId">
+            <summary>
+            微信商户号
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Wxpay.WxpayService._wxPayKey">
+            <summary>
+            微信支付密钥
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.WxpayService.InitAliPay(System.String,System.String,System.String)">
+            <summary>
+            初始化微信支付
+            </summary>
+            <param name="wxAppId">微信AppId</param>
+            <param name="wxPayMchId">微信商户号</param>
+            <param name="wxPayKey">微信支付密钥</param>
+            <returns>初始化结果，true-成功,false-失败</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.WxpayService.GetJsApiParams(System.String,System.String,System.Decimal,System.String,System.String,System.String)">
+            <summary>
+            获取JsApi参数列表
+            </summary>
+            <param name="openId">openId</param>
+            <param name="productName">订单名称</param>
+            <param name="price">付款金额</param>
+            <param name="createIp">用户的公网ip，不是商户服务器IP</param> 
+            <param name="notifyUrl">回调地址</param>
+            <param name="spBillNo">商家订单号，10位序列号，默认为时间和随机数生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.WxpayService.GetAppParams(System.String,System.Decimal,System.String,System.String,System.String)">
+            <summary>
+            获取app参数列表
+            </summary>
+            <param name="productName">订单名称</param>
+            <param name="price">付款金额</param>
+            <param name="createIp">用户的公网ip，不是商户服务器IP</param>
+            <param name="notifyUrl">回调地址</param>
+            <param name="spBillNo">商家订单号，10位序列号，默认为时间和随机数生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.WxpayService.GetPayParams(HuCheng.Util.Payment.Wxpay.Enum.WxPayTradeType,System.String,System.Decimal,System.String,System.String,System.String)">
+            <summary>
+            获取支付参数列表
+            </summary>
+            <param name="tradeType">微信支付交易类型</param>
+            <param name="productName">订单名称</param>
+            <param name="price">付款金额</param>
+            <param name="createIp">用户的公网ip，不是商户服务器IP</param>
+            <param name="notifyUrl">回调地址</param>
+            <param name="spBillNo">商家订单号，10位序列号，默认为时间和随机数生成</param>
+            <returns>支付参数列表</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.WxpayService.Transfers(System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            企业付款
+            </summary>
+            <param name="transfersCertificate">微信支付证书路径</param>
+            <param name="openId">openId</param>
+            <param name="amount"></param>
+            <param name="desc">企业付款描述信息</param>
+            <param name="ip"></param>
+            <param name="password">交易密码，默认为商户号</param>
+            <param name="checkName">校验用户姓名选项，默认NO_CHECK,不校验</param>
+            <param name="outNo">提现单号，默认自动为Transfer-时间毫秒数</param>
+            <param name="reUserName">收款用户姓名，默认为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.WxpayService.Refund(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            退款申请接口
+            </summary>
+            <param name="transfersCertificate">微信支付证书路径</param>
+            <param name="transactionId">支付单号</param>
+            <param name="refundFee">退款金额</param>
+            <param name="totalFee">订单金额</param>
+            <param name="password">交易密码，默认为商户号</param>
+            <param name="outRefundNo">提现单号，默认自动为OutRefunNo-时间毫秒数</param>
+            <param name="opUserId">操作员帐号，默认为商户号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Wxpay.WxpayService.GetPaySign(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取UI使用的JS支付签名
+            </summary>
+            <param name="timeStamp">时间戳</param>
+            <param name="prepayId">预支付订单Id</param>
+            <param name="nonceStr">随机字符串</param>
+            <param name="package">格式：prepay_id={0}</param>
+            <param name="signType">签名类型，默认为MD5</param>
+            <returns>支付签名</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,27 @@
+.content{
+    background-color: #fff;
+}
+.tab-content{
+    padding-top:26px;
+}
+.refund_detail_box{
+    width:80%;
+    height:38px;
+    line-height: 38px;
+    text-align: center;
+    color:#666666;
+    background-color: #f6f6f6;
+    border:1px solid #e8e8e8;
+}
+.detail-wrap .row{
+    /*border:1px solid red;*/
+    margin-top:30px;
+    font-size:16px;
+    color:#666666;
+}
+.detail-wrap .row .col-md-2 {
+    text-align: end;
+}
+.detail-wrap .row .col-md-10 {
+    text-align: start;
+}

@@ -1,0 +1,60 @@
+.content-wrapper{
+    background: #fff;
+}
+/*以下是公共样式*/
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+/*以下是自己写的代码*/
+.classify_add_box{
+    padding: 15px 0px;
+    width: 640px;
+}
+.finish_bth_add{
+    width:86px;
+}
+input[type="text"],select{
+    border-radius: 5px !important;
+}
+/*上传图标样式*/
+.small_con {
+    position: relative;
+    display: inline-block;
+}
+#small_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#small_upload_pick div,#small_upload_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#small_upload_pick label{
+    display: none;
+}
+.big_con {
+    position: relative;
+    display: inline-block;
+}
+#big_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#big_upload_pick div,#big_upload_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#big_upload_pick label{
+    display: none;
+}

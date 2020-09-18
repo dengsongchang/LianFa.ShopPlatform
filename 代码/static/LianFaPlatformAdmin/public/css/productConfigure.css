@@ -1,0 +1,55 @@
+.content{
+    background-color: #fff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.functionHandleArea {
+    background: #fff;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+#selectProduct{
+    margin-left:20px;
+}
+.option-list{
+    width:100%;
+    height:92px;
+    line-height: 92px;
+    border-bottom:1px solid #dddddd;
+}
+.selectOperate{
+    background: #fff;
+    position: relative;
+    padding:30px 20px 20px;
+    overflow: hidden;
+}
+.coup-search{
+    margin-bottom: 20px;
+}
+.box-footer{
+    text-align: end;
+}
+.box-footer .btn{
+    margin-right:20px;
+}
+.order-disp{width:20%;}
+.selectTabel{
+    margin-left:20px;
+    margin-right:20px;
+}
+.order-disp {
+    display: inline-block;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    line-height: 35px;
+    border-radius: 5px;
+    width: 50px;
+    text-align: center;
+    min-height: 38px;
+}
+
+.content-box{
+    max-height: 725px;
+}

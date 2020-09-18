@@ -1,0 +1,215 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ include file="..\GetSummary.ttinclude"#><#@
+ output extension=".cs"#>
+ 
+<#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+
+string inputFile = @"..\\LianFa.ShopPlatform.DataBase\\LF_ShopPlatform.edmx";
+
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = code.VsNamespaceSuggestion();
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+#>
+   
+<#
+// Emit Entity Types
+
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+	string entityName = RemoveTablePerfix(entity.Name);
+	string lowEntityName = ConvertFirstCharToLower(entityName);
+	string entityListName = lowEntityName + "List";
+	string tableSummary = GetTableSummary(code.Escape(entity));
+	tableSummary = RemoveTableSummarySuffix(tableSummary);
+	string tableSummaryList = tableSummary + "列表";
+    fileManager.StartNewFile("I" + entity.Name.Replace("LF_","") + "Service.cs");
+#>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using LianFa.ShopPlatform.DataBase;
+
+namespace LianFa.ShopPlatform.Service
+{
+	 public partial interface I<#=entityName#>Service
+     {
+        /// <summary>
+        /// 添加<#= tableSummary #> 
+        /// </summary>
+        /// <param name="<#= lowEntityName #>"><#= lowEntityName #></param>
+        /// <returns><#= tableSummary #></returns>
+        void Add<#= entityName #>(<#= entity.Name #> <#= lowEntityName #>);
+
+		/// <summary>
+        /// 批量添加<#= tableSummary #> 
+        /// </summary>
+        /// <param name="<#= entityListName #>"><#= entityListName #></param>
+        /// <returns><#= tableSummaryList #></returns>
+        void BatchAdd<#= entityName #>(IEnumerable<<#= entity.Name #>> <#= entityListName #>);
+
+		/// <summary>
+        /// 更新<#= tableSummary #> 
+        /// </summary>
+        /// <param name="<#= lowEntityName #>"><#= lowEntityName #></param>
+        /// <returns><#= tableSummary #></returns>
+        void Update<#= entityName #>(<#= entity.Name #> <#= lowEntityName #>);
+
+		/// <summary>
+        /// 批量更新<#= tableSummary #> 
+        /// </summary>
+        /// <param name="<#= entityListName #>"><#= entityListName #></param>
+        /// <returns><#= tableSummaryList #></returns>
+        void BatchUpdate<#= entityName #>(IEnumerable<<#= entity.Name #>> <#= entityListName #>);
+
+        /// <summary>
+        /// 批量更新<#= tableSummary #>列表(推荐)
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        /// <param name="updateExpression">更新表达式</param>
+        /// <returns>返回影响条数</returns>
+        int BatchUpdate(Expression<Func<<#= entity.Name #>, bool>> whereLambda, Expression<Func<<#= entity.Name #>, <#= entity.Name #>>> updateExpression);
+
+        /// <summary>
+        /// 删除<#= tableSummary #> 
+        /// </summary>
+        /// <param name="<#= lowEntityName #>"><#= lowEntityName #></param>
+        /// <returns><#= tableSummary #></returns>
+        void Delete<#= entityName #>(<#= entity.Name #> <#= lowEntityName #>);
+
+        /// <summary>
+        /// 根据查询条件删除<#= tableSummary #> 
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        /// <returns><#= tableSummary #></returns>
+        void Delete<#= entityName #>(Expression<Func<<#= entity.Name #>, bool>> whereLambda);
+
+		/// <summary>
+        /// 批量删除<#= tableSummary #> 
+        /// </summary>
+        /// <param name="<#= entityListName #>"><#= entityListName #></param>
+        /// <returns><#= tableSummaryList #></returns>
+        void BatchDelete<#= entityName #>(IEnumerable<<#= entity.Name #>> <#= entityListName #>);
+
+        /// <summary>
+        /// 根据查询条件批量删除(推荐)
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        int BatchDelete(Expression<Func<<#= entity.Name #>, bool>> whereLambda);
+
+        /// <summary>
+        /// 根据Id获取<#= tableSummary #> 
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <returns><#= tableSummary #></returns>
+        <#= entity.Name #> Get<#= entityName #>ById(int id);
+
+		/// <summary>
+        /// 根据查询条件获取单条<#= tableSummary #>
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        /// <returns><#= tableSummary #></returns>
+        <#= entity.Name #> Get(Expression<Func<<#= entity.Name #>, bool>> whereLambda);
+
+        /// <summary>
+        /// 获取所有<#= tableSummary #>
+        /// </summary>
+        /// <returns><#= tableSummaryList #></returns>
+        IEnumerable<<#= entity.Name #>> GetAll();
+
+        /// <summary>
+        /// 根据查询条件获取<#= tableSummaryList #>
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        /// <returns><#= tableSummaryList #></returns>
+        IEnumerable<<#= entity.Name #>> GetList(Expression<Func<<#= entity.Name #>, bool>> whereLambda);
+
+        /// <summary>
+        /// 根据查询条件获取单个实体(不追踪)
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        /// <returns></returns>
+        <#= entity.Name #> LoadEntitieNoTracking(Expression<Func<<#= entity.Name #>, bool>> whereLambda);
+
+        /// <summary>
+        /// 根据查询条件获取实体列表(不追踪)
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        /// <returns></returns>
+        IList<<#= entity.Name #>> LoadEntitiesNoTracking(Expression<Func<<#= entity.Name #>, bool>> whereLambda);
+
+        /// <summary>
+        /// 根据查询条件获取前几条实体数据(不追踪)
+        /// </summary>
+        /// <typeparam name="S">泛型</typeparam>
+        /// <param name="whereLambda">查询条件</param>
+        /// <param name="orderbyLambda">排序条件</param>
+        /// <param name="topList">前几条数据数量</param>
+        /// <param name="isAsc">是否升序</param>
+        /// <returns><#= tableSummaryList #></returns>
+        IList<<#= entity.Name #>> LoadTopEntitiesNoTracking<S>(Expression<Func<<#= entity.Name #>, bool>> whereLambda,
+            Expression<Func<<#= entity.Name #>, S>> orderbyLambda, int topList, bool isAsc);
+
+        /// <summary>
+        /// 根据查询条件实体判断是否存在
+        /// </summary>
+        /// <param name="whereLambda">查询条件</param>
+        /// <returns>true-存在,false-不存在</returns>
+        bool Exist(Expression<Func<<#= entity.Name #>, bool>> whereLambda);
+
+		/// <summary>
+        /// 根据查询条件分页获取实体数据(不追踪)
+        /// </summary>
+        /// <typeparam name="TS">泛型</typeparam>
+        /// <param name="pageSize">每页数量(页大小)</param>
+        /// <param name="pageIndex">页数(第几页)</param>
+        /// <param name="total">总数</param>
+        /// <param name="whereLambda">查询条件</param>
+        /// <param name="orderbyLambda">排序条件</param>
+        /// <param name="isAsc">是否升序</param>
+        /// <returns><#= tableSummaryList #></returns>
+        IList<<#= entity.Name #>> LoadPageEntities<TS>(int pageSize, int pageIndex, out int total,
+            Expression<Func<<#= entity.Name #>, bool>> whereLambda, Expression<Func<<#= entity.Name #>, TS>> orderbyLambda, bool isAsc);
+     }
+}
+<#}#>
+
+<# fileManager.Process(); #>
+
+<#+
+
+public string RemoveTablePerfix(string tableName)
+{
+	return tableName.Replace("LF_","");
+}
+
+public string RemoveTableSummarySuffix(string tablSummary)
+{
+	int index = tablSummary.LastIndexOf("表");
+	if(index < 0) return tablSummary;
+	return tablSummary.Remove(index,1);
+}
+
+public string ConvertFirstCharToLower(string str)
+{
+    if (str.Length > 1)
+    {
+        str = str[0].ToString().ToLower() + str.Substring(1, str.Length - 1);
+    }
+    else
+    {
+        str = str.ToLower();
+    }
+	return str;
+}
+#>

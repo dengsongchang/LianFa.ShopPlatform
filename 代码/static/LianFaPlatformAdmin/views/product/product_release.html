@@ -1,0 +1,330 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}商品发布{{/block}} {{block 'head'}}
+<link type="text/css" rel="stylesheet" href="/public/plugins/ueditor/themes/default/css/ueditor.css">
+<link rel="stylesheet" href="/public/css/classifyList.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/editMiniApp.css">
+<link rel="stylesheet" href="/public/plugins/pagination/pagination.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/jquery-chosen/chosen.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="edit-head">
+                    <ul class="nav nav-tabs edit-type" id="typeNav">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">1.编辑商品信息</a>
+                        </li>
+                        <li>
+                            <a data-type="2" id="secondBtn" data-toggle="tab" href="#second">2.编辑商品详情</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content edit-content">
+                    <div class="tab-pane active" id="first">
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                基本信息
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button" class="btn btn-sm pull-right btn-primary operate-btn" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label"><span
+                                                            class="red-star">*</span>商品分类：</label>
+                                                    <div class="col-md-2">
+                                                        <input type='button' value='选择分类' class="btn btn-default uploadBtn" id="selectClassify" />
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <p class="classifyName" data-id="0" id="classifyName"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        商品品牌：</label>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control" id="ProductBrand">
+                                                            <option selected="selected" value="0">请选择</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>商品名称：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="Name" placeholder="限定在60个字符">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">销售状态：</label>
+                                                    <div class="col-md-6 sale-state" id="State">
+                                                        <label class="checkbox-inline">
+                                                            <input type="radio" name="state" value="1"
+                                                                checked="checked"> 出售中
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="radio" name="state" value="0"> 下架区
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>运费模板：</label>
+                                                    <div class="col-md-9 feed-price">
+                                                        <select class="form-control" id="TemplateId">
+                                                            <option selected="selected" value="0">请选择运费模板</option>
+                                                        </select>
+                                                        <a href="/product/addFreightTemplate" target="_blank">新增运费模板</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                库存规格
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button" class="btn btn-sm pull-right btn-primary operate-btn" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div id="specificationsBox">
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">
+                                                            <span class="red-star">*</span>零售价：</label>
+                                                        <div class="col-md-3">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">￥</span>
+                                                                <input type="number" class="form-control" id="ShopPrice">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">开启特价：</label>
+                                                        <div class="col-md-6 sale-state" id="Whethertoopen">
+                                                            <label class="checkbox-inline">
+                                                                <input type="radio" name="Whethertoopen" value="1"
+                                                                    checked="checked" class="show-IsWholesale">
+                                                                开启
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="radio" name="Whethertoopen" value="0"
+                                                                    class="show-IsWholesale"> 关闭
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group common-product Specialprice">
+                                                        <label class="col-md-2 control-label">
+                                                            <span class="red-star">*</span>特价：</label>
+                                                        <div class="col-md-3">
+                                                            <div class="input-group">
+                                                                <input type="number" class="form-control" id="CostPrice">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="form-group">
+                                                        <label class="col-md-2 control-label">
+                                                            <span class="red-star">*</span>成本价：</label>
+                                                        <div class="col-md-3">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">￥</span>
+                                                                <input type="number" class="form-control" id="costPrice">
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">
+                                                            <span class="red-star">*</span>库存：</label>
+                                                        <div class="col-md-3">
+                                                            <div class="input-group">
+                                                                <input type="number" class="form-control" id="inventory">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">
+                                                            <span class="red-star">*</span>重量：</label>
+                                                        <div class="col-md-3">
+                                                            <div class="input-group">
+                                                                <input type="number" class="form-control" id="Weight">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-btn">
+                            <button class="btn btn-primary" id="nextStep">下一步</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="second">
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                图片和描述
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button" class="btn btn-sm pull-right btn-primary operate-btn" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>列表图片：</label>
+                                                    <div class="col-md-9">
+                                                        <div class="icon-box_about_classify">
+                                                            <div class="small_con">
+                                                                <img src="/public/images/addImg.png" alt="" id="small_icon" style="width: 100px;height: 100px">
+                                                                <div id="small_upload_pick" class="webuploader-container">
+                                                                    <div class="webuploader-pick"></div>
+                                                                    <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar1" style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                        <input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star"></span></label>
+                                                    <div class="col-md-9">
+                                                        <div style="color: #ccc;">
+                                                            建议尺寸300*330像素
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group" style="margin-bottom: 10px">
+                                                    <label class="col-sm-2 control-label">商品主图：</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="productImg" id="productImg">
+                                                            <div class="img-container">
+                                                                <img class="select-img" src="/public/images/addImg.png">
+                                                                <input class="img-input" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+                                                                <img class="close-img" src="/public/images/close.png">
+                                                            </div>
+                                                        </div>
+                                                        <div style="color: #ccc;margin-top: 8px">
+                                                            建议尺寸750*750像素
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-bottom: 10px">
+                                                    <label class="col-sm-2 control-label">商品描述：</label>
+                                                    <div class="col-sm-9" id="editorContent">
+                                                        <!-- 加载编辑器的容器 -->
+                                                        <script id="hcEditor" name="content" type="text/plain"></script>
+                                                        <input type="file" id="uploadfile_btn" class="form-inline" name="file" style="width: 20px;height: 20px;display: inline-block;position: absolute;top: 52px;left: 103px;z-index: 100" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                参数
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button" class="btn btn-sm pull-right btn-primary operate-btn" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">售后保障：</label>
+                                                    <div class="col-sm-9" id="guarantee">
+                                                        <!-- 加载编辑器的容器 -->
+                                                        <script id="container" name="content" type="text/plain">
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-btn">
+                            <button class="btn" style="margin-right: 12px" id="lastStep">上一步</button>
+                            <button class="btn btn-primary" id="finish">完成</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask">
+        <div class="content-box">
+            <h2>选择商品分类</h2>
+            <a class="close">×</a>
+            <div class="coup-content">
+                <div id="table_header_classify">
+                    <div class="col-xs-1">
+                        编号
+                    </div>
+                    <div class="col-xs-7">
+                        分类名称
+                    </div>
+                    <div class="col-xs-4">
+                        操作
+                    </div>
+                </div>
+                <div id="table_content_classify">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/js/uploadProductImg.js"></script>
+<script src="/public/js/jqPaginator.js"></script>
+<script src="/public/plugins/pagination/jquery.pagination.js"></script>
+<script src="/public/plugins/jquery-chosen/chosen.jquery.js"></script>
+<script src="/public/js/uploader_pic_toLibraryforProduct.js"></script>
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/productRelease.js"></script>
+{{/block}}

@@ -1,0 +1,32 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}提现设置{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/mall_basicsetup.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="order_settings">
+                <div class="settings">
+                    <span class="settings_text">提现设置</span>
+                </div>
+                <div class="basicsetup_txet">
+                    <div class="form-group basicsetup_title_next">
+                        <label class="col-md-2  control-label">自动提现限额：</label>
+                        <div class="col-md-5">
+                            <input type="number" class="form-control" id="AutoWithdrawAmount">
+                        </div>
+                    </div>
+                    <div class="basicsetup-btn">
+                        <button class="btn btn-primary" id="nextStep">提交</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/withdrawConfig.js" type="text/babel"></script>
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+{{/block}}

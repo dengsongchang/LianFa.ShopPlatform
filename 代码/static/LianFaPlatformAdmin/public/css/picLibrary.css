@@ -1,0 +1,176 @@
+.content-wrapper{
+    background: #fff;
+}
+/*以下是公共样式*/
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+input[type="text"]{
+    border-radius: 4px;
+}
+.form-group label {
+    color: #333;
+    font-weight: 100;
+    font-size: 12px;
+    width: 86px;
+    text-align: right;
+}
+/*以下是自己写的代码*/
+.file_search_box{
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #DDD;
+}
+#numOrder_box,#timeOrder_box{
+    width:159px;
+    border-radius: 4px;
+    display: inline-block;
+}
+.left_delete_dv{
+    float: left;
+}
+.right_condition_dv{
+    float: right;
+}
+.operation_file_dv{
+    margin-top: 30px;
+}
+.header_tips {
+    color: #cfcfcf;
+    padding-top: 20px;
+    margin-bottom: 25px;
+}
+.file_item {
+    float: left;
+    text-align: center;
+    width: 140px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.file_item a {
+    cursor: pointer;
+    display: inline-block;
+}
+.file_item img {
+    width: 95px;
+}
+.edit_Filename_box {
+    margin-top: 2px;
+    margin-bottom: 6px;
+    text-align: center;
+    height: 26px;
+    line-height: 26px;
+}
+.edit_ipt {
+    height: 26px;
+}
+.edit_ipt {
+    border-width: 0px 0px 1px;
+    border-style: dashed;
+    color: #585555;
+    text-align: center;
+    width: 140px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    font-size: 13px;
+}
+.edit_dv span {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.isspan{
+    border:none !important;
+}
+.add_choice_ul li a{
+    padding:10px 20px;
+}
+#uploader_pic_trigger{
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+#uploader_pic_trigger,#uploader_pic_trigger div,#uploader_pic_trigger input{
+    width:158px;
+    height: 42px;
+    opacity: 0;
+}
+/*以下是模态框*/
+.tip_img_uploader {
+    border: 1px solid #fb0;
+    padding: 12px;
+}
+.tip_img_uploader li {
+    line-height: 24px;
+    font-size: 14px;
+}
+.uploader_row {
+    border-top: 1px solid #f4f4f4;
+    padding-top: 20px;
+}
+#wrapper_pick_img_box{
+    position: relative;
+    display: inline-block;
+}
+.uploader_img_list_box .file-item{
+    float: left;
+    position: relative;
+    width:50px;
+    height: 50px;
+    margin-right: 20px;
+
+}
+.uploader_img_list_box {
+    padding: 0px 42px;
+}
+#wrapper_pick_img_box {
+//display: inline-block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    position: relative;
+
+}
+#wrapper_pick_img_box div{
+    width:100% !important;
+    height: 100% !important;
+    top:0px !important;
+}
+#wrapper_pick_img_box input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+}
+.uploader_img_list_box {
+    padding: 0px 0px 0px 42px;
+    float: left;
+    min-height: 70px;
+//display: inline-block;
+}
+.edit_operation_box a,.edit_operation_box span{
+    cursor:pointer;
+}
+.file_li{
+    line-height: 35px;
+    padding: 0px 6px;
+    cursor:pointer;
+}
+.file_li_active{
+    background: #f8f8f8;
+}
+.maydelete_uploadPic {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    left: -8px;
+    top: -6px;
+    background: #cac7c7;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+    cursor:pointer;
+}

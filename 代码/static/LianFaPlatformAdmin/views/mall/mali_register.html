@@ -1,0 +1,171 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}注册设置{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/mali_register.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/all.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="order_settings">
+                <div class="settings">
+                    <span class="settings_text">注册设置</span>
+                </div>
+                <div class="basicsetup_txet">
+                    <div class="form-group basicsetup_title">
+                        <label class="col-md-2 control-label">
+                            注册名类型：
+                        </label>
+                        <div class="col-md-4">
+                            <div class="icheck">
+                                <div class="icheck_user">
+                                    <!--<input type="checkbox" name="registerKind" id="registerName" value="1"-->
+                                           <!--class="check-box registerKind" style=" float: left; margin-top: 5px;"-->
+                                           <!--checked/>-->
+                                    <!--<span>用户名</span>-->
+                                    <div class="checked" style="position: relative; top:5px;">
+                                        <input type="radio" name="registerKind" id="registerName" value="1"
+                                               class="check-box registerKind" style=" float: left; margin-top: 5px;"
+                                               checked/>
+                                    </div>
+                                    <span>用户名</span>
+                                </div>
+                                <div class="icheck_mailbox">
+                                    <!--<input type="checkbox" name="registerKind" id="registerMail" value="2"-->
+                                           <!--class="check-box registerKind"/>-->
+                                    <!--<span>邮箱</span>-->
+                                    <div class="checked" style="position: relative; top:5px;">
+                                        <input type="radio" name="registerKind" id="registerMail" value="2"
+                                           class="check-box registerKind"/>
+                                    </div>
+                                    <span>邮箱</span>
+                                </div>
+                                <div class="icheck_phone">
+                                    <!--<input type="checkbox" name="registerKind" id="reginsterPhone"-->
+                                           <!--value="3" class="check-box registerKind"/>-->
+                                    <!--<span>手机</span>-->
+                                    <div class="checked" style="position: relative; top:5px;">
+                                        <input type="radio" name="registerKind" id="reginsterPhone"
+                                           value="3" class="check-box registerKind"/>
+                                    </div>
+                                    <span>手机</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group basicsetup_title">
+                        <label class="col-md-2  control-label">登录名类型：</label>
+                        <div class="col-md-5">
+                            <div class="icheck">
+                                <div class="icheck_user">
+                                    <!--<input type="checkbox" name="loginKind" class="stuCheckBox check-box loginKind"-->
+                                           <!--id="loginName" value="1" checked/>-->
+                                    <!--<span>用户名</span>-->
+                                    <div class="checked" style="position: relative; top:5px;">
+                                        <input type="radio" name="loginKind" class="stuCheckBox check-box loginKind"
+                                           id="loginName" value="1" checked/>
+                                    </div>
+                                    <span>用户名</span>
+                                </div>
+                                <div class="icheck_mailbox">
+                                    <!--<input type="checkbox" name="loginKind" class="stuCheckBox check-box loginKind"-->
+                                           <!--id="loginMail" value="2"/>-->
+                                    <!--<span>邮箱</span>-->
+                                    <div class="checked" style="position: relative; top:5px;">
+                                        <input type="radio" name="loginKind" class="stuCheckBox check-box loginKind"
+                                           id="loginMail" value="2"/>
+                                    </div>
+                                    <span>邮箱</span>
+                                </div>
+                                <div class="icheck_phone">
+                                    <!--<input type="checkbox" name="loginKind" class="stuCheckBox check-box loginKind"-->
+                                           <!--id="loginPhone" value="3"/>-->
+                                    <!--<span>手机</span>-->
+                                    <div class="checked" style="position: relative; top:5px;">
+                                        <input type="radio" name="loginKind" class="stuCheckBox check-box loginKind"
+                                           id="loginPhone" value="3"/>
+                                    </div>
+                                    <span>手机</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group basicsetup_title_next ">
+                        <label class="col-md-2 control-label">保留用户名：</label>
+                        <div class="col-md-7 register_span">
+                            <textarea class="form-control product-intro" id="reserveName"
+                                      placeholder="限定在60个字符"></textarea>
+                            <span>每一行代表一个用户名</span>
+                        </div>
+                    </div>
+                    <div class="form-group basicsetup_title_next">
+                        <label class="col-md-2 control-label">注册时间限制： </label>
+                        <div class="col-md-5">
+                            <input type="text" class="register_input" id="registerTime" placeholder="">
+                            <span class=" register-label">单位为分钟 </span>
+                        </div>
+                    </div>
+                    <div class="form-group basicsetup_title_next">
+                        <label class="col-md-2 control-label">登录失败次数：</label>
+                        <div class="col-md-5">
+                            <input type="text" class="register_input" id="loginFail" placeholder="">
+                            <span class=" register-label">禁止时间为15分钟 </span>
+                        </div>
+                    </div>
+                    <div class="form-group register_title">
+                        <label class="col-md-2 control-label">
+                            是否记住密码：
+                        </label>
+                        <div class="col-md-4">
+                            <div class="iCheck">
+                                <div class=" checked" style="position: relative;top:5px;">
+                                    <input type="radio" name="password" class="stuCheckBox" id="isPassword" value="true"
+                                           checked/>
+                                </div>
+                                <span for="stuCheckBox">记住</span>
+                                <div class="checked" style="position: relative; top:5px;">
+                                    <input type="radio" name="password" class="stuCheckBox2" id="noPassword" value="false"/>
+                                </div>
+                                <span for="stuCheckBox2">不记住</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group register_title">
+                        <label class="col-md-2 control-label">
+                            是否发送信息：
+                        </label>
+                        <div class="col-md-4">
+                            <div class="iCheck">
+                                <div class=" checked" style="position: relative;top:5px;">
+                                    <input type="radio" name="send" class="stuCheckBox" id="isSend" value="true" checked/>
+                                </div>
+                                <span for="stuCheckBox">发送</span>
+                                <div class="checked" style="position: relative; top:5px;">
+                                    <input type="radio" name="send" class="stuCheckBox2" id="noSend" value="false"/>
+                                </div>
+                                <span for="stuCheckBox2">不发送</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group basicsetup_title_next writeMess">
+                        <label class="col-md-2 control-label">欢迎信息： </label>
+                        <div class="col-md-7 register_span">
+                            <textarea class="form-control product-intro" id="message" placeholder=""></textarea>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="提交" id="submitBtn" class="btn btn-primary">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/js/mallrRegister.js" type="text/babel"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

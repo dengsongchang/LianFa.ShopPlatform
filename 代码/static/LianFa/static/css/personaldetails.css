@@ -1,0 +1,145 @@
+.content {
+    min-height: 100vh;
+    background: #fff;
+    padding-bottom: 48px;
+}
+
+.personal_name {
+    height: 73px;
+    margin: 0px 25px;
+    border-bottom: 1px #999999 solid;
+}
+
+.nmae {
+    color: #666;
+    font-size: 13px;
+    float: left;
+    width: 100%;
+    margin-top: 18px;
+}
+
+.name_span {
+    color: #333;
+    font-size: 15px;
+    float: left;
+    width: 100%;
+    border: 0;
+    margin-top: 10px;
+}
+
+.personal_Avatar {
+    height: 73px;
+    margin: 0px 25px;
+    border-bottom: 1px #999999 solid;
+}
+
+.Avatar_name {
+    float: left;
+    color: #666;
+    font-size: 13px;
+    margin-top: 35px;
+}
+
+.Avatar_img {
+    float: right;
+    width: 50px;
+    height: 100%;
+}
+
+.Avatar_img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 16px;
+}
+
+.img {
+    height: 100%;
+}
+
+.address {
+    height: 48px;
+    margin: 0px 25px;
+    margin-bottom: 4px;
+}
+
+.address_left {
+    float: left;
+    color: #666;
+    font-size: 13px;
+    margin-top: 31px;
+}
+
+.address_right {
+    float: right;
+    margin-top: 32px;
+    color: #D94E3A;
+    font-size: 13px;
+}
+
+.address_box {
+    height: 65px;
+    margin: 0px 25px;
+    border-bottom: 1px #999999 solid;
+}
+
+.address_top {
+    width: 255px;
+    height: 100%;
+    float: left;
+}
+
+.area {
+    color: #333;
+    font-size: 13px;
+    float: left;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.detailed {
+    color: #333;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+    margin-top: 4px;
+}
+
+.address_icon {
+    float: right;
+    height: 100%;
+}
+
+.delete {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-top: 26px;
+    margin-right: 20px;
+}
+
+.modify {
+    float: left;
+    margin-top: 26px;
+    width: 16px;
+    height: 16px;
+}
+
+.addbtn {
+    /* position: absolute; */
+    margin-top: 67px;
+    background: #D94E3A;
+    border-radius: 25px;
+    width: 180px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+    color: #fff;
+    height: 50px;
+    box-shadow: 0px 1px 4px 0px rgba(191, 81, 88, 0.47);
+    border: 0;
+    /* left: 97px; */
+    margin-left: 97px;
+}

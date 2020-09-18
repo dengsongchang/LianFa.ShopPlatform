@@ -1,0 +1,96 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}分销规则设置{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/all.css">
+{{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active" style="cursor: pointer">
+                            <a data-type="1" href="/application/application">分佣规则设置</a>
+                        </li>
+                        <li style="cursor: pointer">
+                            <a data-type="2" href="/application/applicationForFans">礼包分销设置</a>
+                        </li>
+                        <li style="cursor: pointer">
+                            <a data-type="3" href="/application/applicationForQueen">熊王分销设置</a>
+                        </li>
+                        <li style="cursor: pointer">
+                            <a data-type="4" href="/application/applicationForKing">合伙人分销设置</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="first">
+                        <div class="form-horizontal" style="margin-top: 40px;">
+                            <div class="form-group" style="margin-top: 42px;">
+                                <label class="col-md-2 control-label" style="color: #999999;">基础佣金比例：</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="Proportion">
+                                        <span class="input-group-addon" style="background-color: #F5F5F5;">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top: 42px;">
+                                <label class="col-md-2 control-label" style="color: #999999;">熊王佣金比例：</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="QueenProportion">
+                                        <span class="input-group-addon" style="background-color: #F5F5F5;">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top: 42px;">
+                                <label class="col-md-2 control-label" style="color: #999999;">合伙人佣金比例：</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="KingProportion">
+                                        <span class="input-group-addon" style="background-color: #F5F5F5;">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top: 42px;">
+                                <label class="col-md-2 control-label" style="color: #999999;">熊王育成佣金比例：</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="ParentQueenProportion">
+                                        <span class="input-group-addon" style="background-color: #F5F5F5;">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top: 42px;">
+                                <label class="col-md-2 control-label" style="color: #999999;">合伙人育成佣金比例：</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="ParentKingProportion">
+                                        <span class="input-group-addon" style="background-color: #F5F5F5;">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 control-label">
+                                    <a class="btn btn-primary"
+                                       style="cursor: pointer;margin-top: 50px;width: 100px;background-color: #1792e7;"
+                                       id="Submission">提交</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/application.js" type="text/babel"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

@@ -1,0 +1,149 @@
+.content-wrapper{
+    background: #fff;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+/*以下是自己写的代码*/
+.search_goods_box{
+    padding:20px 0px;
+}
+.search_goods_box{
+    border-bottom: 1px solid #ccc;
+}
+.search_goods_box label{
+    font-weight: 100;
+
+}
+.box_choice_goods {
+    margin: 15px;
+}
+#choice_goods_tb{
+    width:100%;
+}
+#choice_goods_tb th{
+    padding:12px 0px;
+    text-align: center;
+    background: #f8f8f8;
+    font-weight: 100;
+}
+#choice_goods_tb td{
+    padding:8px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.goods_name_modal{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
+}
+.sure_choice {
+    cursor:pointer;
+    color:#1792e7;
+}
+.specification {
+    width: 100%;
+    /*margin-left: 50px;*/
+}
+.specification td {
+    padding: 15px;
+    text-align: center;}
+
+.specification th {
+    font-weight: 100;
+    padding: 12px 0px;
+    text-align: center;
+    background: #f8f8f8;
+}
+.manageClassify_box_contanier {
+    width: 780px;
+    padding: 30px 15px;
+
+}
+.form-inline_custom .form-control{
+    display: inline-block;
+    width:180px;
+    border-radius: 4px;
+}
+.share_content{
+    display: inline-block;
+    width: 280px;
+    border-radius: 4px;
+    vertical-align: top;
+}
+.share_icon_box {
+    display: inline-block;
+    vertical-align: top;
+}
+.form-group label {
+    width: 120px;
+    text-align: right;
+    display: inline-block;
+    font-weight: 100;
+}
+.icon_box {
+    position: relative;
+}
+#pick_share_icon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+#pick_share_icon div{
+    height: 100% !important;
+}
+#pick_share_icon input{
+    height: 100% !important;
+    opacity: 0;
+}
+.goods-name_final {
+    display: inline-block;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.skuListBox td{
+    text-align: center;
+}
+.skuTitle{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 670px;
+    display: inline-block;
+}

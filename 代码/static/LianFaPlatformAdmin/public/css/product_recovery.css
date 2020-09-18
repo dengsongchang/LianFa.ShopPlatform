@@ -1,0 +1,159 @@
+.content-wrapper{
+    background: #fff;
+}
+.main_list_content {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+.functionHandleArea {
+    background: #fff;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+
+.pull-left {
+    float: left!important;
+}
+
+.btn-group,
+.btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn {
+    font-size: 14px;
+    padding: 7px 20px;
+    border-radius: 3px;
+    vertical-align: top;
+}
+
+.btn-default {
+    background: url(/public/images/bg_btngrp.png);
+    border-color: #ddd !important;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-default a {
+    color: #333;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.content {
+    min-height: 250px;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+.table-striped th {
+    text-align: center;
+    padding: 15px 5px !important;
+    font-size: 14px;
+}
+
+#datashow tr td {
+    border-top: 1px solid #ddd;
+}
+
+.commodity {
+    height: 99px;
+    border-top: 2px solid #ddd;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.commodity div {
+    float: left;
+}
+
+.checkbox {
+    line-height: 99px !important;
+    padding-top: 40px !important;
+    padding-right: 98px;
+}
+
+.number {
+    margin-right: 170px;
+    padding-top: 40px;
+}
+
+.name {
+    width: 364px;
+    padding-top: 27px;
+    color: #1792e7;
+}
+
+.number_commodity {
+    margin-left: 185px;
+    padding-top: 40px;
+    
+}
+
+.stock {
+    padding-top: 40px;
+    margin-left: 100px;
+}
+
+.market_value {
+    padding-top: 40px;
+    margin-left: 130px;
+    
+}
+
+.cost_price {
+    padding-top: 40px;
+    margin-left: 100px;
+    
+}
+
+.price {
+    padding-top: 40px;
+    margin-left: 100px;
+    
+}
+
+.delete {
+    padding-top: 40px;
+    margin-left: 100px;
+    
+}
+.colorC{
+    width: 364px;
+}
+
+.table {
+    width: 100%;
+    min-width: 1200px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+.functionHandleArea {
+    background: #fff;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    min-width: 1200px;
+    width: 100%;
+}

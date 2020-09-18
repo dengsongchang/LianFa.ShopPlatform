@@ -1,0 +1,307 @@
+.content {
+    padding-bottom: 110px;
+    background: #fff;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.information {
+    padding-top: 30px;
+    height: 132px;
+}
+
+.information_img {
+    height: 90px;
+    text-align: center;
+    width: 100%;
+    float: left
+}
+
+.information_img img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.information_name {
+    float: left;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.myorder {
+    position: relative;
+    padding-left: 25px;
+}
+
+.myorder_box {
+    height: 55px;
+    margin-top: 30px;
+}
+
+.myorder_left {
+    height: 55px;
+    line-height: 55px;
+    float: left;
+}
+
+.myorder_left img {
+    width: 12px;
+    float: left;
+    height: 6px;
+    margin-top: 27px;
+    vertical-align: middle;
+}
+
+.myorder_left span {
+    float: left;
+    color: #333;
+    font-size: 15px;
+    margin-left: 16px;
+}
+
+.myorder_right {
+    line-height: 55px;
+    float: right;
+    margin-right: 10px;
+}
+
+.myorder_right span {
+    color: #333;
+    font-size: 12px;
+    margin-right: 12px;
+    float: left;
+}
+
+.myorder_right img {
+    width: 14px;
+    height: 14px;
+    margin-top: 20px;
+    float: left;
+    vertical-align: middle;
+}
+
+.order_commodity {
+    width: 212px;
+    /* height: 258px; */
+    background: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(140, 140, 140, 0.35);
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+    /* padding-left: 10px; */
+    border-radius: 8px;
+}
+
+.zoneSwiper_item {
+    width: 222px !important;
+    float: left;
+    margin-right: 10px;
+}
+
+.zoneSwiper_item:last-child {
+    margin-right: 0px;
+}
+
+.commodity_img {
+    height: 120px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.commodity_img img {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+
+.commodity_status {
+    color: #333;
+    padding-left: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.commodity_Amount {
+    color: #333;
+    padding-left: 10px;
+    margin-top: 11px;
+    font-size: 12px;
+}
+
+.commodity_date {
+    color: #333;
+    padding-left: 10px;
+    margin-top: 11px;
+    font-size: 12px;
+}
+
+.commodity_number {
+    padding-left: 10px;
+    color: #333;
+    font-size: 12px;
+    margin-top: 11px;
+}
+
+.see_details {
+    margin-top: 11px;
+    margin-bottom: 7px;
+}
+
+.see_details div {
+    width: 79px;
+    height: 19px;
+    background: #D94E3A;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 19px;
+    margin-top: 11px;
+    margin: 0 auto;
+}
+
+.exchange {
+    position: relative;
+    padding-left: 25px;
+}
+
+.exchange_box {
+    height: 55px;
+    /* margin-top: 39px; */
+}
+
+.exchange_left {
+    height: 55px;
+    line-height: 55px;
+    float: left;
+}
+
+.exchange_left img {
+    width: 12px;
+    float: left;
+    height: 6px;
+    margin-top: 27px;
+    vertical-align: middle;
+}
+
+.exchange_left span {
+    float: left;
+    color: #333;
+    font-size: 15px;
+    margin-left: 16px;
+}
+
+.exchange_right {
+    line-height: 55px;
+    float: right;
+    margin-right: 10px;
+}
+
+.exchange_right span {
+    color: #333;
+    font-size: 12px;
+    margin-right: 12px;
+    float: left;
+}
+
+.exchange_right img {
+    width: 14px;
+    height: 14px;
+    margin-top: 20px;
+    float: left;
+    vertical-align: middle;
+}
+
+.exchange_status {
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 11px;
+    padding-left: 10px;
+}
+
+.exchange_Amount {
+    color: #333;
+    font-size: 12px;
+    margin-top: 11px;
+    padding-left: 10px;
+}
+
+.exchange_date {
+    color: #333;
+    font-size: 12px;
+    margin-top: 11px;
+    padding-left: 10px;
+}
+
+.exchange_number {
+    color: #333;
+    font-size: 12px;
+    margin-top: 11px;
+    padding-left: 10px;
+}
+
+.exchange_details {
+    margin-top: 13px;
+    margin-bottom: 7px;
+}
+
+.exchange_details div {
+    width: 79px;
+    height: 19px;
+    background: #D94E3A;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 19px;
+    margin-left: 56px;
+    margin: 0 auto;
+}
+
+.exchangelist_img {
+    height: 96px;
+    text-align: center;
+    margin-top: 9px;
+    /* width: 100%; */
+}
+
+.exchangelist_img img {
+    width: 170px;
+    height: 96px;
+    text-align: center;
+}
+
+
+/* .zoneSwiper:nth-child(2) {
+    height: 300px;
+}
+
+ */
+
+.zoneSwiper {
+    height: 312px;
+}
+
+.noProduct {
+    width: 325px;
+    text-align: center;
+}
+
+.noProductImg {
+    width: 60px;
+    text-align: center;
+}
+
+.noText {
+    color: #aaa;
+    font-size: 10px;
+    text-align: center;
+}

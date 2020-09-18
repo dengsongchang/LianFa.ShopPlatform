@@ -1,0 +1,412 @@
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.allBox {
+    padding-bottom: 50px;
+    background: #fff;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+    float: left;
+    max-height: 100vh;
+}
+
+.bannerSwiper {
+    height: 281px;
+    width: 100%;
+}
+
+.bannerSwiper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.home_img {
+    width: 100%;
+    height: 281px;
+    float: left;
+}
+
+.home_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.giftcard {
+    float: left;
+    width: 100%;
+}
+
+.giftcard_name {
+    width: 100%;
+    float: left;
+    height: 60px;
+}
+
+.giftcard_name_left {
+    line-height: 60px;
+    height: 60px;
+    float: left;
+    /* vertical-align: middle; */
+    margin-left: 10px;
+}
+
+.giftcard_name_left img {
+    width: 25px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.giftcard_name_left span {
+    font-size: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: #333;
+}
+
+.giftcard_name_right {
+    margin-right: 10px;
+    float: right;
+    line-height: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.giftcard_name_right span {
+    color: #666;
+    font-size: 12px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.giftcard_name_right img {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.giftcard_list {
+    float: left;
+    width: 100%;
+}
+
+.giftcard_list ul li {
+    width: 173px;
+    height: 128px;
+    float: left;
+    margin-bottom: 22px;
+}
+
+.giftcard_list ul li:nth-child(2n+1) {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.giftcard_list ul li span {
+    float: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.giftcard_list ul li img {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 98px;
+}
+
+.latest_products {
+    float: left;
+    width: 100%;
+    margin-top: 46px;
+    overflow: scroll;
+}
+
+.products_text {
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.products_name {
+    color: #333;
+    font-size: 20px;
+    float: left;
+    padding-left: 10px;
+}
+
+.products_right {
+    margin-right: 13px;
+    float: right;
+    height: 45px;
+    line-height: 45px;
+}
+
+.products_right span {
+    color: #666;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.products_right img {
+    width: 14px;
+    height: 13px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.Sliding_list {
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0.6, 0.2, 1);
+}
+
+.Sliding_list-active {
+    transition: all 3s;
+}
+
+.label_list {
+    float: left;
+    line-height: 20px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 22px;
+}
+
+.labellist_name {
+    color: #333333;
+    font-size: 12px;
+    float: left;
+    /* padding-left: 12px; */
+    margin-right: 13px;
+}
+
+.Selected {
+    border: 1px #999999 solid;
+    border-radius: 10px;
+    width: 66px;
+    font-size: 12px;
+    color: #999999;
+    text-align: center;
+    line-height: 20px;
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 11px;
+    height: 20px;
+}
+
+.Selected.active {
+    border: 1px #EC6A57 solid;
+    float: left;
+    border-radius: 10px;
+    width: 66px;
+    margin-right: 11px;
+    font-size: 12px;
+    color: #D94E3A;
+    text-align: center;
+    line-height: 20px;
+    height: 20px;
+}
+
+.list_name {
+    float: left;
+    width: 85%;
+}
+
+.Sliding_list_box {
+    float: left;
+}
+
+.btn {
+    float: left;
+    height: 47px;
+    width: 100%;
+}
+
+.btn_box {
+    float: right;
+    margin-top: 5px;
+    margin-right: 11px;
+}
+
+.reset {
+    background: #EEEEEE;
+    width: 74px;
+    height: 34px;
+    line-height: 34px;
+    float: left;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    border-radius: 17px;
+    box-shadow: 0px 2px 7px 0px rgba(190, 190, 190, 0.6);
+}
+
+.determine {
+    background: #EC6A57;
+    width: 74px;
+    height: 34px;
+    line-height: 34px;
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    margin-left: 11px;
+    border-radius: 17px;
+    box-shadow: 0px 2px 7px 0px rgba(192, 55, 35, 0.6);
+}
+
+.commodity {
+    margin-top: 21px;
+    width: 100%;
+    float: left;
+}
+
+.commodity_list {
+    width: 365px;
+    margin-left: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.commodity_list ul li {
+    width: 173px;
+    /* height: 219px; */
+    float: left;
+    margin-bottom: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.commodity_list ul li:nth-child(2n+1) {
+    margin-right: 10px;
+}
+
+.commodity_img {
+    float: left;
+    width: 173px;
+    border-radius: 5px;
+    border: 1px #eee solid;
+    height: 173px;
+}
+
+.commodity_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.commodity_name {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.commodity_price {
+    float: left;
+    width: 100%;
+    display: block;
+    position: relative;
+    font-size: 15px;
+    color: #D94E3A;
+    margin-top: 10px;
+}
+
+.model {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog {
+    position: fixed;
+    text-align: center;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    z-index: 1001;
+}
+
+.dialog_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog_img img {
+    width: 290px;
+    height: 365px;
+}
+
+.dialog_off {
+    height: 30px;
+    float: left;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    margin-top: 47px;
+}
+
+.dialog_off img {
+    width: 30px;
+    height: 30px;
+}
+
+.ShopPrice {
+    float: left;
+    font-size: 15px;
+    color: #D94E3A;
+}
+
+.CostPrice {
+    /* float: left; */
+    font-size: 12px;
+    color: #999;
+    margin-left: 3px;
+    text-decoration: line-through;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+.list-content {
+    margin-top: 46px;
+    overflow: scroll;
+}
+
+.list-item {
+    text-align: center;
+}

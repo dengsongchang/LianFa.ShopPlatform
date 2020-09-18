@@ -1,0 +1,167 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}统计分析/会员分析{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/analysisMember.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="row" style="border: 1px solid #eee;padding: 10px 0">
+        <div class="col-sm-6">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">会员增长情况</span>
+                    <span class="export" style="color: #0091ea;">导出数据</span>
+                </h3>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="r_title_r">
+                <select class="iselect_one" id="myOne">
+                    <option value="1">按月</option>
+                    <option value="2">按年</option>
+                </select>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend input-group">
+                            <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                            <input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px" name="MemberAdded" id="MemberYearMonth" class="form-control" value="">
+                            <input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px;display: none" name="MemberAdded" id="MemberYearMonth2" class="form-control" value="">
+                        </div>
+                    </div>
+                </div>
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;border: 1px solid #eee">
+        <div class="col-sm-12">
+            <div id="MembershipGrowth" class="chart_1" style="width:100%;height:400px;"></div>
+        </div>
+    </div>
+    <!--<div class="row" style="border: 1px solid #eee;padding: 10px 0">-->
+        <!--<div class="col-sm-6">-->
+            <!--<div class="r_title">-->
+                <!--<h3>-->
+                    <!--<span style="float: left">会员端口来源</span>-->
+                <!--</h3>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6">-->
+            <!--<div class="r_title_r">-->
+                <!--<select class="iselect_one" id="myOne2">-->
+                    <!--<option value="1">按月</option>-->
+                    <!--<option value="2">按年</option>-->
+                <!--</select>-->
+                <!--<div class="control-group">-->
+                    <!--<div class="controls">-->
+                        <!--<div class="input-prepend input-group">-->
+                            <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                            <!--<input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px" name="MemberAdded" id="MemberYearMonth_second" class="form-control" value="">-->
+                            <!--<input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px;display: none" name="MemberAdded" id="MemberYearMonth2_second" class="form-control" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<a class="img_toggle" href="javascript:;">-->
+                    <!--<img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">-->
+                    <!--<img src="/public/images/icon_down.png" class="icon_down" style="display: none;">-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row" style="margin-top: 10px;border: 1px solid #eee">-->
+        <!--<div class="col-sm-12">-->
+            <!--<div id="MemberPortSource" class="chart_1" style="width:100%;height:310px;"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row" style="border: 1px solid #eee;padding: 10px 0">-->
+        <!--<div class="col-sm-6">-->
+            <!--<div class="r_title">-->
+                <!--<h3>-->
+                    <!--<span style="float: left">粉丝与会员构成</span>-->
+                <!--</h3>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6">-->
+            <!--<div class="r_title_r">-->
+                <!--&lt;!&ndash;<select class="iselect_one" id="myOne3">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="1">按月</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value="2">按年</option>&ndash;&gt;-->
+                <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="control-group">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="controls">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="input-prepend input-group">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px" name="MemberAdded" id="MemberYearMonth_third" class="form-control" value="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px;display: none" name="MemberAdded" id="MemberYearMonth2_third" class="form-control" value="">&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--<a class="img_toggle" href="javascript:;">-->
+                    <!--<img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">-->
+                    <!--<img src="/public/images/icon_down.png" class="icon_down" style="display: none;">-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row" style="margin-top: 10px;border: 1px solid #eee">-->
+        <!--<div class="col-sm-12">-->
+            <!--<div id="VermicelliMembership" class="chart_1" style="width:100%;height:310px;"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="row" style="border: 1px solid #eee;padding: 10px 0">
+        <div class="col-sm-6">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">会员累计消费金额分布</span>
+                </h3>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="r_title_r">
+                <!--<select class="iselect_one" id="myOne4">-->
+                    <!--<option value="1">按月</option>-->
+                    <!--<option value="2">按年</option>-->
+                <!--</select>-->
+                <!--<div class="control-group">-->
+                    <!--<div class="controls">-->
+                        <!--<div class="input-prepend input-group">-->
+                            <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                            <!--<input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px" name="MemberAdded" id="MemberYearMonth_four" class="form-control" value="">-->
+                            <!--<input type="text" placeholder="YYYY/MM" readonly="" style="width: 160px;display: none" name="MemberAdded" id="MemberYearMonth2_four" class="form-control" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;border: 1px solid #eee">
+        <div class="col-sm-12">
+            <div id="DistributionCumulative" class="chart_1" style="width:100%;height:385px;"></div>
+        </div>
+    </div>
+</section>
+
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/echarts/echarts.min.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/analysis_member.js"></script>
+{{/block}}

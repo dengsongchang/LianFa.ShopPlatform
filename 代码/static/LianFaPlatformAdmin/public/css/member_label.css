@@ -1,0 +1,162 @@
+.table-striped tr:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    line-height: 50px;
+    font-size: 14px;
+    width: 33.33%;
+    text-align: center;    
+    padding: 0px 0px 0px 0px;
+
+}
+
+.table {
+    width: 100%;
+    min-width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.content {
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+    min-width: 1200px;
+}
+
+.datashow tr td {
+    font-size: 14px;
+    vertical-align: top;
+    line-height: 70px;
+    height: 70px;
+    width: 33.33%;
+
+    text-align: center;    
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.datashow {
+    width: 100%;
+    min-width: 100%;
+    margin-left: 109px;
+    margin-top: 40px;
+}
+.formitem ul li span{
+    float: left;
+    line-height: 32px;
+    height: 32px;
+
+    text-align: right;
+}
+.formitem em {
+    color: Red;
+    font-style: normal;
+}
+.formitem_word{
+    width: 180px;
+    line-height: 32px;
+    height: 32px;
+    border: 1px solid #e4e4e4;
+    padding:0 10px;
+}
+.formitem ul li{
+    width: 100%;
+    margin-bottom: 20px;
+    float: left;
+   
+}
+.formitem_Second{
+    width: 120px;
+    line-height: 32px;
+    height: 32px;
+    border: 1px solid #e4e4e4;
+    padding:0 10px;
+    float: left;
+    margin-left: 10px;
+    
+}
+.formitem ul li p{
+    margin-left: 6px;
+    line-height: 32px;
+    height: 32px;
+    float: left;
+
+}
+.formitem_third{
+    width: 120px;
+    line-height: 32px;
+    height: 32px;
+    border: 1px solid #e4e4e4;
+    padding:0 10px;
+    float: left;
+    margin-left: 10px;
+}
+.formitem ul li span:nth-child(2){
+    float: left;
+    line-height: 32px;
+    height: 32px;
+    text-align: right;
+    margin-left: 39px;
+}
+
+.formitem ul li:nth-child(1) {
+   margin-left: 27px;
+}
+.formitem ul li:nth-child(3) {
+    margin-left: 98px;
+ }
+ .btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+.btn {
+    display: inline-block;
+    padding: 15px 44px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.button{
+    float: left;
+    margin-top: 40px;
+}
+.areacolumn{
+    margin-left: 107px;
+    margin-top: 40px;
+   
+}
+.icheckbox_flat-blue, .iradio_flat-blue {
+    /* display: inline-block;
+    vertical-align: middle; */
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: url(blue.png) no-repeat;
+    border: none;
+    cursor: pointer;
+  
+}
+.pagination-detail{
+    display: none;
+}

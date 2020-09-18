@@ -1,0 +1,188 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}售后服务{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/orderService.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li>
+                            <a data-type="0"  href="/order/orderService">退货申请单</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="1" href="/order/orderServiceChange">换货申请单</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <div class="form-group col-lg-3 col-sm-6 option">
+                        <label>订单编号：</label>
+                        <input type="text" class="form-control" id="osnId">
+                    </div>
+                    <div class="form-group col-lg-3 col-sm-6 option">
+                        <label>状态：</label>
+                        <select class="form-control" id="state_Box">
+                            <option  value="0">全部</option>
+                            <option  value="1">审核中</option>
+                            <option  value="2">审核通过</option>
+                            <option  value="3">审核拒绝</option>
+                            <option  value="4">客户已邮寄</option>
+                            <option  value="5">商城已收货</option>
+                            <option  value="6">商城已发货</option>
+                            <option  value="7">完成</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-3 col-sm-6 option">
+                        <label>开始时间：</label>
+                        <input type="text" class="form-control" readonly="" id="start">
+                    </div>
+                    <div class="form-group col-lg-3 col-sm-6 option">
+                        <label>结束时间：</label>
+                        <input type="text" class="form-control" readonly="" id="end">
+                    </div>
+                    <a class="btn btn-primary" id="search">查询</a>
+                </div>
+                <div>
+                    <div class="btn-div">
+                        <div class="checkall">
+                            <input type="checkbox" name="selectall" id="stuCheckBox" class="check-box" />
+                        </div>
+                        <a class="btn btn-default pull-left order-btn" id="check">审核</a>
+                        <!--<a class="btn btn-default pull-left order-btn" id="delete">删除</a>-->
+                        <div class="btn btn-primary export-btn" id="export">导出数据</div>
+                        <div class="paginalNum">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <table id="productTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask">
+        <div class="content-box checkBox" style="display: none">
+            <h2>审核订单</h2>
+            <a class="close">×</a>
+            <div class="form-horizontal" style="margin-top: 40px;">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label form-text">销售状态：</label>
+                    <label class="checkbox-inline" style="float: left;">
+                        <input type="radio" name="saleState" checked="checked" value="3">
+                        拒绝
+                    </label>
+                    <label class="checkbox-inline" style="float: left;">
+                        <input type="radio" name="saleState" value="2">
+                        通过
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label form-text">手机号码：</label>
+                    <div class="col-sm-3">
+                        <input type="number" id="phoneNumber" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label form-text">联系人：</label>
+                    <div class="col-sm-3">
+                        <input type="text" id="userName" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label form-text">地址：</label>
+                    <div class="col-sm-3">
+                        <input type="text" id="address" style="width: 400px" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group remark-form">
+                    <label class="col-sm-3 control-label form-text">审核备注：</label>
+                    <div class="col-sm-3">
+                        <textarea class="form-control remark" style="width: 400px"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button class="btn btn-primary confirm-btn" id="confirm">确认</button>
+                <button class="btn cancel-btn" id="cancel">取消</button>
+            </div>
+        </div>
+        <div class="content-box deliverBox" style="display: none">
+            <h2>订单发货</h2>
+            <a class="close">×</a>
+            <div class="buyer-info">
+                <ul>
+                    <li class="clearfix">
+                        <label>收货信息：</label>
+                        <p id="orderAddress"></p>
+                    </li>
+                    <li class="clearfix">
+                        <label>买家留言：</label>
+                        <p id="buymarker"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-horizontal" style="margin-top: 40px;">
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label form-text">物流公司：</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="logisticsCompany">
+                            <option selected="selected" value="0">请选择快递公司</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label form-text">快递单号：</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="expressNumber">
+                    </div>
+                </div>
+            </div>
+            <div class="product-list">
+                <div class="pl-title">
+                    <p>商品名称</p>
+                    <p>购买数量</p>
+                    <p>小计(元)</p>
+                </div>
+                <ul class="pl-table">
+
+                </ul>
+            </div>
+            <div class="box-footer">
+                <button class="btn btn-primary deliver-btn" id="deliver">发货</button>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/orderService_change.js" type="text/babel"></script>
+{{/block}}

@@ -1,0 +1,59 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}引导图设置{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/product_grarantee.css">
+<link type="text/css" rel="stylesheet" href="/public/plugins/ueditor/themes/default/css/ueditor.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/plugins/viewer/viewer.min.css">
+{{/block}}
+{{block 'content'}}
+<section class="content-header" style="border-bottom: 1px solid #ddd">
+    <h4>
+        <i class="iconfont icon-caipinfenlei" style="font-size: 22px;"></i>引导图设置</h4>
+</section>
+<section class="content container-fluid" style="background: #fff;min-height: 800px">
+    <div class="main_list_content">
+        <div class="about_food_info_box">
+            <div class="form-box form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">引导图：</label>
+                    <div class="col-sm-9">
+                        <div class="productImg" id="productImg">
+                            <div id="dowebok" style="float: left">
+
+                            </div>
+                            <div class="img-container noSelect">
+                                <img class="select-img" src="/public/images/addImg.png">
+                                <input class="img-input" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+                                <!--<img class="close-img" src="/public/images/close.png">-->
+                            </div>
+                        </div>
+                        <div style="color: #ccc;margin-top: 8px">限定上传8张图片，建议尺寸750*1134像素</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="margin: 200px auto;width: 200px;height: 40px">
+        <button class="btn btn-primary" id="preBtn" style="margin-right: 10px">预览</button>
+        <button class="btn btn-primary" id="save">保存</button>
+    </div>
+
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+
+<script src="/public/js/setGuideImg.js"></script>
+<script src="/public/plugins/viewer/viewer.min.js"></script>
+<script src="/public/js/uploadGuideImg.js"></script>
+
+
+{{/block}}

@@ -1,0 +1,111 @@
+.content{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.add-quota-wrap{
+    padding-top:10px;
+    margin-left:156px;
+}
+.quota-item{
+    margin-top:23px;
+}
+em{
+    color:red;
+}
+.quota-item .col-md-2{
+    font-size:14px;
+    color:#666666;
+    text-align: end;
+}
+.quota-item .tip{
+    color:#aaaaaa;
+    font-size:14px;
+}
+.form-group .input-group-addon{
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+.mainGoodNav{
+    width:65%;
+    height:50px;
+    line-height: 50px;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-size:14px;
+    color:#3f3f3f;
+    border-bottom:1px solid #dddddd;
+    margin-left:60px;
+}
+.mainGoodList{
+    width:65%;
+    height:55px;
+    line-height: 55px;
+    text-align: center;
+    font-size:14px;
+    color:#3f3f3f;
+    border-bottom:1px solid #e8e8e8;
+    margin-left:60px;
+}
+.mainGoodList .name, .mainGoodList .operate{
+    color:#4da3ea;
+}
+.submitBtn{
+    margin:46px 300px;
+}
+.manage-box{
+    margin-top: 20px;
+}
+
+.coup-content{
+    padding: 20px;
+}
+.coup-search input{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+.coup-search .btn-primary{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+#sendCoupBox{
+    padding-bottom: 90px;
+}
+.see-label{
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.coup-search{
+    margin-bottom: 20px;
+}
+
+.box-footer a{
+    position: absolute;
+    right: 30px;
+    top: 18px;
+}
+.status_choose{
+    cursor: pointer;
+    color: #039cf8;
+}
+.Pname{
+    /*width: 300px;*/
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#import{
+    position: relative;
+    margin-right: 20px;
+}
+#import input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}

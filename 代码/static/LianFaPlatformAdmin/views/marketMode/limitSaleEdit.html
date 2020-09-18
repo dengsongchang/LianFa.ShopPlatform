@@ -1,0 +1,82 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}限时抢购编辑{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/limitSaleAdd.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/jquery-chosen/chosen.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/marketMode/limitSaleIng">正在进行</a>
+                        </li>
+                        <li>
+                            <a data-type="2" href="/marketMode/limitSaleWillStar">即将开始</a>
+                        </li>
+                        <li>
+                            <a data-type="3" href="/marketMode/limitSaleHistory">历史抢购</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="4" href="javascript:void(0);">编辑</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="manageClassify_box_contanier">
+                    <div class="form-group">
+                        <label for="" style="font-weight: 100;"><em style="color: red;font-size: 15px">*</em>商品名称：</label>
+                        <a data-toggle="modal" href="#choiceProductModal" class="btn btn-default">选择商品</a>
+                        <span class="goods-name_final" style=""></span>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label for="" style="font-weight: 100;margin-bottom: 20px"><em style="color: red;font-size: 15px">*</em>商品规格：</label>-->
+                        <!--<table id="specification" style="display: block">-->
+
+                        <!--</table>-->
+                    <!--</div>-->
+                    <div class="form-group form-inline_custom">
+                        <label><em style="color: red;font-size: 15px">*</em>开始日期：</label>
+                        <input type="text" disabled class="form-control" readonly placeholder="只有达到开始日期，活动才会生效" id="start_time">
+                    </div>
+                    <div class="form-group form-inline_custom">
+                        <label><em style="color: red;font-size: 15px">*</em>结束日期：</label>
+                        <input type="text" disabled class="form-control" readonly placeholder="只有达到结束日期，活动才会结束" id="end_time">
+                    </div>
+                    <!--<div class="form-group form-inline_custom">-->
+                        <!--<label><em style="color: red;font-size: 15px">*</em>每人限购数量：</label>-->
+                        <!--<input type="number" class="form-control" id="LimitPurchase" placeholder="此次活动可购买的商品总数量">-->
+                    <!--</div>-->
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="editBtn" style="margin-left: 52px;">编辑</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/jquery-chosen/chosen.jquery.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_limitSale.js"></script>
+<script src="/public/js/limitSaleEdit.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/utility/productmodal.js"></script>
+{{/block}}

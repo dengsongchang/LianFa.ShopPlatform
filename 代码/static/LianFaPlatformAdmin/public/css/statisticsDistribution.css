@@ -1,0 +1,79 @@
+.option-list{
+    border-bottom: 1px solid #c5c5c5;
+    padding-bottom: 30px;
+    margin-top: 10px;
+}
+.option-list>.form-group{
+    margin-top: 20px;
+}
+
+.title-head{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.textcenter{
+    text-align: center;
+}
+
+.count-list ul li:nth-child(1) .count-text{
+    background-color: #3c8cbc;
+}
+.count-list ul li:nth-child(2) .count-text{
+    background-color: #25c5c8;
+}
+.count-list ul li:nth-child(3) .count-text{
+    background-color: #1db294;
+}
+.info-box{
+    max-width: 280px;
+    height: 160px;
+    border: 1px solid #a8a7a7;
+    border-radius: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.info-box div{
+    height: 80px;
+    padding-top: 12px;
+}
+.info-box div:first-child{
+    border-bottom: 1px solid #a8a7a7;
+}
+.count-text{
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    margin-right: 50px;
+}
+.count-num{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.dayOrMonth{
+    width: 176px;
+    float: left;
+    height: 35px;
+    border: solid #e0e0e0 1px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 30px;
+}
+.dayOrMonth li{
+    float: left;
+    width: 58px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+    background: #eeeeee;
+    cursor: pointer;
+}
+.dayOrMonth .active{
+    background-color: #FFFFFF;
+}

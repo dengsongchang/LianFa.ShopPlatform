@@ -1,0 +1,124 @@
+.content-wrapper{
+    background: #fff;
+}
+.settings {
+    height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.settings_text {
+    font-size: 16px;
+    color: #666;
+    padding-left: 20px;
+}
+
+.order_text {
+    margin-left: 137px;
+    margin-top: 40px;
+    float: left;
+}
+
+.order_title {
+    height: 32px;
+    margin-bottom: 30px;
+    float: left;
+    width: 100%;
+    
+}
+
+.order_title:nth-child(2) {
+    padding-left: 42px;
+}
+
+.order_title:nth-child(3) {
+    padding-left: 54px;
+}
+.order_title:nth-child(4){
+    padding-left: 24px;
+}
+.order_title:nth-child(5){
+    padding-left: 24px;
+}
+.order_title:nth-child(6){
+    padding-left: 24px;
+}
+.order_title:nth-child(7){
+    padding-left: 24px;
+}
+.order_title em {
+    color: red;
+    float: left;
+    line-height: 32px;
+    font-size: 14px;
+}
+
+.order_title span {
+    font-size: 14px;
+    color: #999;
+    float: left;
+    line-height: 32px;
+}
+
+.order_input {
+    width: 230px;
+    margin-left: 6px;
+    float: left;
+    color: #3f3f3f;
+    border: 1px solid #e8e8e8;
+    
+}
+
+.order_input input {
+    width: 197px;
+    border: 1px solid #e8e8e8;
+    float: left;
+    height: 32px;
+    padding: 0 10px;
+}
+
+.order_input span {
+    color: #3f3f3f;
+    float: left;
+    line-height: 32px;
+    height: 32px;
+    width: 31px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.order_title p {
+    float: left;
+    color: #3f3f3f;
+    line-height: 32px;
+    margin-left: 14px;
+}
+.switch{
+    width: 61px;
+    height: 32px;
+    background-color: #898989;
+    border-radius: 30px;
+    position: relative;
+    float: left;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 6px;
+}
+.switch p{
+    width: 28px;
+    height: 28px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    margin-left: 0px !important;
+}
+.switch-on {
+    background-color: #1792e7;
+}
+.switch-on p {
+    left: 30px;
+}
+.finish{
+    margin: 50px 300px;
+}

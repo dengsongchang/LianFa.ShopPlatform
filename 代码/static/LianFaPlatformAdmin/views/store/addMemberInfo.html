@@ -1,0 +1,77 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}添加店长信息{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/memberEdit.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li >
+                            <a data-type="1" href="/store/managerList">店长列表</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="1"  href="/store/addMemberInfo">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="first">
+                        <div class="form-box form-horizontal">
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>店长名称：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="MemberName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>联系电话：</label>
+                                <div class="col-md-3">
+                                    <input type="number" class="form-control" id="phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>验证码：</label>
+                                <div class="col-md-3">
+                                    <input type="number" class="form-control" id="code" style="width: 144px;float: left">
+                                    <button class="btn btn-primary" id="getVCode" style="margin: 0;float: left">获取验证码</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>密码：</label>
+                                <div class="col-md-3">
+                                    <input type="password" class="form-control" id="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"><span class="red-star">*</span>确认密码：</label>
+                                <div class="col-md-3">
+                                    <input type="password" class="form-control" id="repassword">
+                                </div>
+                            </div>
+
+                        </div>
+                        <a class="btn btn-primary" id="baseConfirm">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/time/timerButton.js"></script>
+<script src="/public/js/addMemberInfo.js" type="text/babel"></script>
+{{/block}}

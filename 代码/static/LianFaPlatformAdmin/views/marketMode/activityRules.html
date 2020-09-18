@@ -1,0 +1,66 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}活动规则设置{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/statisticsDistribution.css">
+<link rel="stylesheet" href="/public/css/limitSaleAdd.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/marketMode/marketCoupon">优惠券列表</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="4" href="/marketMode/activityRules">活动规则</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix" style="padding-bottom: 0">
+                    <div class="blockquote-default blockquote-tip" style="margin: 10px 0px 30px 15px;">
+                        <span style="color: red;">注意：</span>每一点以换行分割开
+                    </div>
+                </div>
+                <div class="manageClassify_box_contanier" style="width: 900px">
+                    <div class="form-group">
+                        <label for="" style="font-weight: 100">活动规则：</label>
+                        <textarea name="" id="AContent" style="width: 650px" cols="50" rows="10"
+                                  class="form-control share_content" placeholder="不超过500字"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="font-weight: 100">领取规则：</label>
+                        <textarea name="" id="GContent" style="width: 650px" cols="50" rows="10"
+                                  class="form-control share_content" placeholder="不超过500字"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="addBtn" style="margin-left:420px;">设置</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_limitSale.js"></script>
+<script src="/public/js/activityRules.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

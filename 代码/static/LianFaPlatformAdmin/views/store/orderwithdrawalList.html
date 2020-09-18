@@ -1,0 +1,123 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}订单列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/orderList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs tabs_orderList_ul">
+                        <li class="active">
+                            <a data-type="1" data-state="0" href="#">提现列表</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!--copy别人的-->
+                <div class="tab-content" style="margin-top: 15px;">
+                    <div class="row form-horizontal" style="">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <div class="" style="text-align: center">
+                                        <label class="control-label">选择时间：</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="start_time" placeholder="" lay-key="1">
+                                </div>
+                                <div class="col-md-3">
+                                    <div style="text-align: center">
+                                        <label class="control-label" for="coupon_taking_way">至</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="end_time" placeholder="" lay-key="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <div class="" style="text-align: center">
+                                        <button id="seachBtn" style="margin-left: 30px" class="btn btn-primary">查询</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 这是筛选条件end -->
+                <!--操作选择div-->
+                <div class="all_data_operation_box">
+
+                </div>
+                <table id="productTable">
+
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 申请提现模态框（Modal） -->
+<div class="modal fade" id="myWithdrawalModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">审核</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal" style="margin-top: 40px;">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label form-text">状态：</label>
+                        <label class="checkbox-inline" style="float: left;">
+                            <input type="radio" name="saleState" checked="checked" value="1">
+                            拒绝
+                        </label>
+                        <label class="checkbox-inline" style="float: left;">
+                            <input type="radio" name="saleState" value="2">
+                            通过
+                        </label>
+                    </div>
+                    <div class="form-group remark-form">
+                        <label class="col-sm-3 control-label form-text">审核备注：</label>
+                        <div class="col-sm-3">
+                            <textarea class="form-control remark" style="width: 400px;min-height: 150px"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="confirm">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/orderwithdrawalList.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

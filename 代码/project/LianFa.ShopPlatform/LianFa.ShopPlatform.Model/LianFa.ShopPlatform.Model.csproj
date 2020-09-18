@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F337334-0BF6-44FD-8A84-967ABFCCC5D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LianFa.ShopPlatform.Model</RootNamespace>
+    <AssemblyName>LianFa.ShopPlatform.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\LianFa.ShopPlatform.WebApi\bin\LianFa.ShopPlatform.Model.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\LianFa.ShopPlatform.WebApi\bin\LianFa.ShopPlatform.Model.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AopSdk, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alipay.AopSdk.2.0.0\lib\net35\AopSdk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.AutoMapper, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.AutoMapper.1.0.0.2\lib\net452\HuCheng.Util.AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Core, Version=1.0.0.18, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Core.1.0.0.18\lib\net452\HuCheng.Util.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Payment.Alipay, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Payment.Alipay.1.0.0.3\lib\net452\HuCheng.Util.Payment.Alipay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Payment.Wxpay, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Payment.Wxpay.1.0.0.1\lib\net452\HuCheng.Util.Payment.Wxpay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.CO2NET, Version=0.5.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.CO2NET.0.5.1.1\lib\net45\Senparc.CO2NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.CO2NET.APM, Version=0.2.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.CO2NET.APM.0.2.3.2\lib\net45\Senparc.CO2NET.APM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.NeuChar, Version=0.6.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.NeuChar.0.6.0.2\lib\net45\Senparc.NeuChar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin, Version=6.3.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.6.3.4.2\lib\net45\Senparc.Weixin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP, Version=16.6.3.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.MP.16.6.3.1\lib\net45\Senparc.Weixin.MP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin.TenPay, Version=1.1.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.TenPay.1.1.2.2\lib\net45\Senparc.Weixin.TenPay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper\Profiles\Admin\Material\AdminGetMaterialListProfile.cs" />
+    <Compile Include="AutoMapper\Profiles\Admin\OperateLog\AdminAdminOperateLogListProfle.cs" />
+    <Compile Include="AutoMapper\Profiles\Admin\CouponTypeInfoProfile.cs" />
+    <Compile Include="AutoMapper\Profiles\Admin\TimeProductActivity\AdminTemplatesListProfile.cs" />
+    <Compile Include="AutoMapper\Profiles\Client\UserInfoProfile.cs" />
+    <Compile Include="Payment\Wxpay\JsApiParameter.cs" />
+    <Compile Include="Payment\Wxpay\MWebParameter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\Admin\Account\AdminChangePassWordRequest.cs" />
+    <Compile Include="Request\Admin\Account\AdminDataRequest.cs" />
+    <Compile Include="Request\Admin\Account\AdminLoginRequest.cs" />
+    <Compile Include="Request\Admin\Account\DeleteAdminRequest.cs" />
+    <Compile Include="Request\Admin\Account\GetAdminListRequest.cs" />
+    <Compile Include="Request\Admin\Account\UpdateAdminRequest.cs" />
+    <Compile Include="Request\Admin\AdminOperateLog\AdminDelAdminOperateLogRequest.cs" />
+    <Compile Include="Request\Admin\AdminOperateLog\AdminOperateLogListRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminAddAdminRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminAdminInfoRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminAdminListRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminDelAdminRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminEditAdminInfoRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminEditAdminPwdRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminInfoRequest.cs" />
+    <Compile Include="Request\Admin\Admin\AdminListRequest.cs" />
+    <Compile Include="Request\Admin\AfterSalesService\AdminAfterSalesServiceRequest.cs" />
+    <Compile Include="Request\Admin\AfterSalesService\AdminGetAfterSaleProtectionRequest.cs" />
+    <Compile Include="Request\Admin\AfterSalesService\AdminGetAfterSalesServiceDetailRequest.cs" />
+    <Compile Include="Request\Admin\Banner\AdminCouponImgSetupRequest.cs" />
+    <Compile Include="Request\Admin\Banner\AdminScreenSetupRequest.cs" />
+    <Compile Include="Request\Admin\Brand\AdminAddBrandRequest.cs" />
+    <Compile Include="Request\Admin\Brand\AdminBatchDelBrandRequest.cs" />
+    <Compile Include="Request\Admin\Brand\AdminBrandInfoRequest.cs" />
+    <Compile Include="Request\Admin\Brand\AdminBrandListRequest.cs" />
+    <Compile Include="Request\Admin\Brand\AdminDelBrandRequest.cs" />
+    <Compile Include="Request\Admin\Brand\AdminEditBrandRequest.cs" />
+    <Compile Include="Request\Admin\Brand\AdminTransferBrandProductRequest.cs" />
+    <Compile Include="Request\Admin\Category\AdminAddCategoryRequest.cs" />
+    <Compile Include="Request\Admin\Category\AdminBatchDelCategoryRequest.cs" />
+    <Compile Include="Request\Admin\Category\AdminCategoryInfoRequest.cs" />
+    <Compile Include="Request\Admin\Category\AdminCategoryListRequest.cs" />
+    <Compile Include="Request\Admin\Category\AdminDelCategoryRequest.cs" />
+    <Compile Include="Request\Admin\Category\AdminEditCategoryRequest.cs" />
+    <Compile Include="Request\Admin\Category\AdminTransferCategoryProductRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminAddCouponRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminAddCouponTypeRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminDelCouponRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminEditCouponRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminEditCouponTypeRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminGetCouponDetailRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminSubmitCouponOrderRequest.cs" />
+    <Compile Include="Request\Admin\DepartMent\AdminAddDepartmentRequest.cs" />
+    <Compile Include="Request\Admin\DepartMent\AdminDeleteDepartmentRequest.cs" />
+    <Compile Include="Request\Admin\DepartMent\AdminDeletePermissionsRequest.cs" />
+    <Compile Include="Request\Admin\DepartMent\AdminDepartmentListRequest.cs" />
+    <Compile Include="Request\Admin\DepartMent\AdminEditDepartmentRequest.cs" />
+    <Compile Include="Request\Admin\DepartMent\AdminPermissionsListRequest.cs" />
+    <Compile Include="Request\Admin\DepartMent\AdminSetPermissionsRequest.cs" />
+    <Compile Include="Request\Admin\Banner\AdminAddBannerRequest.cs" />
+    <Compile Include="Request\Admin\Banner\AdminBannerInfoRequest.cs" />
+    <Compile Include="Request\Admin\Banner\AdminBannerListRequest.cs" />
+    <Compile Include="Request\Admin\Banner\AdminDelBannerRequest.cs" />
+    <Compile Include="Request\Admin\Banner\AdminEditBannerRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminEditCouponTypeStateRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\AdminGetCouponTypeDetailRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\CouponListRequest.cs" />
+    <Compile Include="Request\Admin\Coupon\CouponTypeListRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminAddMaterialCategoryRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminBatchDeleteMaterialRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminDeleteMaterialCategoryRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminDeleteMaterialRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminGetCategoryListRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminGetMaterialListRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminMoveMaterialRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminSaveMaterialRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminUpdateCategoryNameRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminUpdateCategorySortRequest.cs" />
+    <Compile Include="Request\Admin\Material\AdminUpdateMaterialNameRequest.cs" />
+    <Compile Include="Request\Admin\OrderSetting\AdminEditOrderSettingRequest.cs" />
+    <Compile Include="Request\Admin\Orders\AdminCouponsOrdertListReques.cs" />
+    <Compile Include="Request\Admin\Orders\AdminOrderListRequest.cs" />
+    <Compile Include="Request\Admin\Orders\AdminOrdersGoodsRequest.cs" />
+    <Compile Include="Request\Admin\Product\AdminAddProductRequest.cs" />
+    <Compile Include="Request\Admin\Product\AdminDelProductIdArrayRequest.cs" />
+    <Compile Include="Request\Admin\Product\AdminEditProductDisplayOrderRequest.cs" />
+    <Compile Include="Request\Admin\Product\AdminEditProductRequest.cs" />
+    <Compile Include="Request\Admin\Product\AdminProductIdArrayRequest.cs" />
+    <Compile Include="Request\Admin\Product\AdminProductInfoRequest.cs" />
+    <Compile Include="Request\Admin\Product\AdminProductListRequest.cs" />
+    <Compile Include="Request\Admin\Regions\AdminAddStoreRegionsRequest.cs" />
+    <Compile Include="Request\Admin\Regions\AdminRegionsRequest.cs" />
+    <Compile Include="Request\Admin\Regions\GetAdminStoreRegionListRequest.cs" />
+    <Compile Include="Request\Admin\Setting\AdminBasicSetupRequest.cs" />
+    <Compile Include="Request\Admin\ShipCompanies\AdminAddShipCompanieRequest.cs" />
+    <Compile Include="Request\Admin\ShipCompanies\AdminEditShipCompanieRequest.cs" />
+    <Compile Include="Request\Admin\ShipCompanies\AdminShipCompanieIdRequest.cs" />
+    <Compile Include="Request\Admin\ShipCompanies\AdminShipCompanieInfoRequest.cs" />
+    <Compile Include="Request\Admin\ShipCompanies\AdminShipCompanieListRequest.cs" />
+    <Compile Include="Request\Admin\Statistics\AdminGetAddUserAnalyzeListRequest.cs" />
+    <Compile Include="Request\Admin\Statistics\AdminGetIndexOrderAmountTrendRequest.cs" />
+    <Compile Include="Request\Admin\Statistics\AdminGetIndexOrderCountTrendRequest.cs" />
+    <Compile Include="Request\Admin\Statistics\AdminGetProductAnalysisListRequest.cs" />
+    <Compile Include="Request\Admin\Statistics\AdminGetUserPortSourceListRequest.cs" />
+    <Compile Include="Request\Admin\Templates\AdminAddTemplatesRequest.cs" />
+    <Compile Include="Request\Admin\Templates\AdminDelTemplatesRequest.cs" />
+    <Compile Include="Request\Admin\Templates\AdminEditTemplatesRequest.cs" />
+    <Compile Include="Request\Admin\Templates\AdminTemplatesIdRequest.cs" />
+    <Compile Include="Request\Admin\Templates\AdminTemplatesListRequest.cs" />
+    <Compile Include="Request\Admin\Templates\CalculateFreightRequest.cs" />
+    <Compile Include="Request\Admin\Templates\RegionIdListRequest.cs" />
+    <Compile Include="Request\Admin\User\AdminDelUserRequest.cs" />
+    <Compile Include="Request\Admin\User\AdminEditUserPwdRequest.cs" />
+    <Compile Include="Request\Admin\User\AdminEditUserRequest.cs" />
+    <Compile Include="Request\Admin\User\AdminGetUserInfoRequest.cs" />
+    <Compile Include="Request\Admin\User\AdminUserListRequest.cs" />
+    <Compile Include="Request\Admin\User\ExportAdminUserListRequest.cs" />
+    <Compile Include="Request\Client\Account\LoginRequest.cs" />
+    <Compile Include="Request\Client\Account\RegisterRequest.cs" />
+    <Compile Include="Request\Client\Account\SendMobileVerifyRequest.cs" />
+    <Compile Include="Request\Client\Cart\AddProductRequest.cs" />
+    <Compile Include="Request\Client\Cart\CancelOrSelectCartItemRequest.cs" />
+    <Compile Include="Request\Client\Cart\ChangePruductCountRequest.cs" />
+    <Compile Include="Request\Client\Cart\DelPruductRequest.cs" />
+    <Compile Include="Request\Client\Cart\ValidCouponListRequest.cs" />
+    <Compile Include="Request\Client\Coupon\BuyCouponRequest.cs" />
+    <Compile Include="Request\Client\Coupon\CouponDetailRequest.cs" />
+    <Compile Include="Request\Client\Coupon\GetCouponInfoRequest.cs" />
+    <Compile Include="Request\Client\Coupon\GetCouponValidDateRequest.cs" />
+    <Compile Include="Request\Client\Coupon\SubmitCouponOrderRequest.cs" />
+    <Compile Include="Request\Client\Coupon\VerifyCouponInfoRequest.cs" />
+    <Compile Include="Request\Client\Coupon\VerifyShipAddressRequest.cs" />
+    <Compile Include="Request\Client\IndexData\GetCouponListRequest.cs" />
+    <Compile Include="Request\Client\IndexData\ProductDetailRequest.cs" />
+    <Compile Include="Request\Client\IndexData\ProductListRequest.cs" />
+    <Compile Include="Request\Client\Order\ConfirmOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\DirectConfirmOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\DirectConfirmScanOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\OrderRequest.cs" />
+    <Compile Include="Request\Client\Order\ReComposeOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\RefundOrderListRequest.cs" />
+    <Compile Include="Request\Client\Order\ReSubmitOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\ReviewOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\ReviewProductRequest.cs" />
+    <Compile Include="Request\Client\Order\SubmitBuyCardOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\SubmitOrderRequest.cs" />
+    <Compile Include="Request\Client\Order\SubmitScanOrderRequest.cs" />
+    <Compile Include="Request\Client\ShipAddress\AddShipAddressRequest.cs" />
+    <Compile Include="Request\Client\ShipAddress\DelShipAddressRequest.cs" />
+    <Compile Include="Request\Client\ShipAddress\EditShipAddressRequest.cs" />
+    <Compile Include="Request\Client\ShipAddress\GetShipAddressRequest.cs" />
+    <Compile Include="Request\Client\ShipAddress\SetDefaultShipAddressRequest.cs" />
+    <Compile Include="Request\Client\UCenter\BeenSentAfterSalesServiceRequest.cs" />
+    <Compile Include="Request\Client\UCenter\EditUserRequest.cs" />
+    <Compile Include="Request\Client\UCenter\ReviewProductRequest.cs" />
+    <Compile Include="Request\Client\UCenter\UserCreditDetailListRequest.cs" />
+    <Compile Include="Request\Client\WxOpen\GetUserInfoRequest.cs" />
+    <Compile Include="Request\Client\WxOpen\OnLoginRequest.cs" />
+    <Compile Include="Request\RequestHead.cs" />
+    <Compile Include="Response\Admin\Account\AdminDataResponse.cs" />
+    <Compile Include="Response\Admin\Account\AdminListResponse.cs" />
+    <Compile Include="Response\Admin\Account\AdminLoginResponse.cs" />
+    <Compile Include="Response\Admin\AdminOperateLog\AdminOperateLogListResponse.cs" />
+    <Compile Include="Response\Admin\AdminOperateLog\AdminAdminOperateLogListResponse.cs" />
+    <Compile Include="Response\Admin\Admin\AdminInfoResponse.cs" />
+    <Compile Include="Response\Admin\AdminOperateLog\AdminAdminPartListResponse.cs" />
+    <Compile Include="Response\Admin\Admin\AdminListResponse.cs" />
+    <Compile Include="Response\Admin\AfterSalesService\AdminAfterSalesServiceResponse.cs" />
+    <Compile Include="Response\Admin\AfterSalesService\AdminGetAfterSalesServiceDetailResponse.cs" />
+    <Compile Include="Response\Admin\Banner\AdminCouponImgSetupDataResponse.cs" />
+    <Compile Include="Response\Admin\Banner\AdminScreenSetupDataResponse.cs" />
+    <Compile Include="Response\Admin\Brand\AdminBrandInfoResponse.cs" />
+    <Compile Include="Response\Admin\Brand\AdminBrandListResponse.cs" />
+    <Compile Include="Response\Admin\Brand\AdminFirstBrandListResponse.cs" />
+    <Compile Include="Response\Admin\Category\AdminCategoryInfoResponse.cs" />
+    <Compile Include="Response\Admin\Category\AdminCategoryListResponse.cs" />
+    <Compile Include="Response\Admin\Category\AdminFirstCategoryListResponse.cs" />
+    <Compile Include="Response\Admin\Coupon\AdminCouponListResponse.cs" />
+    <Compile Include="Response\Admin\Coupon\AdminGetCouponDetailResponse.cs" />
+    <Compile Include="Response\Admin\Coupon\AdminUploadCouponExcelResponse.cs" />
+    <Compile Include="Response\Admin\Coupon\MiniCouponTypeListResponse.cs" />
+    <Compile Include="Response\Admin\DepartMent\AdminDepartmentListResponse.cs" />
+    <Compile Include="Response\Admin\Coupon\AdminGetCouponTypeDetailResponse.cs" />
+    <Compile Include="Response\Admin\DepartMent\AdminDepartMentRespone.cs" />
+    <Compile Include="Response\Admin\Coupon\CouponListResponse.cs" />
+    <Compile Include="Response\Admin\DepartMent\AdminPermissionsListResponse.cs" />
+    <Compile Include="Response\Admin\Coupon\CouponTypeListResponse.cs" />
+    <Compile Include="Response\Admin\Coupon\DeliveryAreaListResponse.cs" />
+    <Compile Include="Response\Admin\Material\AdminGetCategoryListResponse.cs" />
+    <Compile Include="Response\Admin\Material\AdminGetMaterialListResponse.cs" />
+    <Compile Include="Response\Admin\OrderSetting\AdminOrderSettingListResponse.cs" />
+    <Compile Include="Response\Admin\Orders\AdminCouponsOrderInfoModelResponse.cs" />
+    <Compile Include="Response\Admin\Orders\AdminOrderListModelResponse.cs" />
+    <Compile Include="Response\Admin\Product\AdminProductInfoResponse.cs" />
+    <Compile Include="Response\Admin\Product\AdminProductListResponse.cs" />
+    <Compile Include="Response\Admin\Regions\AdminRegionsResponse.cs" />
+    <Compile Include="Response\Admin\Setting\AdminBasicSetupDataResponse.cs" />
+    <Compile Include="Response\Admin\ShipCompanies\AdminShipCompanieInfoResponse.cs" />
+    <Compile Include="Response\Admin\ShipCompanies\AdminShipCompanieListResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetAddUserAnalyzeListResponse.cs" />
+    <Compile Include="Response\Admin\Regions\NewRegionListResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetIndexDataInfoResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetIndexOrderAmountTrendResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetOrderTransactionAnalysisResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetProductAnalysisListResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetUserAmountListResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetUserAndFansListResponse.cs" />
+    <Compile Include="Response\Admin\Statistics\AdminGetUserPortSourceListResponse.cs" />
+    <Compile Include="Response\Admin\Templates\AdminTemplatesInfoResponse.cs" />
+    <Compile Include="Response\Admin\Templates\AdminTemplatesListResponse.cs" />
+    <Compile Include="Response\Admin\Templates\CalculateFreightResponse.cs" />
+    <Compile Include="Response\Admin\Templates\RegionDataListResponse.cs" />
+    <Compile Include="Response\Admin\Banner\AdminBannerInfoResponse.cs" />
+    <Compile Include="Response\Admin\Banner\AdminBannerListResponse.cs" />
+    <Compile Include="Response\Admin\UEditor\UEditorNotSupportedResponse.cs" />
+    <Compile Include="Response\Admin\UEditor\UEditorUploadImageResponse.cs" />
+    <Compile Include="Response\Admin\UEditor\UEditorUploadVideoResponse.cs" />
+    <Compile Include="Response\Admin\User\AdminGetUserInfoResponse.cs" />
+    <Compile Include="Response\Admin\User\AdminGetUserLayerResponse.cs" />
+    <Compile Include="Response\Admin\User\AdminUploadUserExcelResponse.cs" />
+    <Compile Include="Response\Admin\User\AdminUserListResponse.cs" />
+    <Compile Include="Response\BaseResponse.cs" />
+    <Compile Include="Response\Client\Account\LoginResponse.cs" />
+    <Compile Include="Response\Client\Cart\CartResponse.cs" />
+    <Compile Include="Response\Client\Coupon\BuyCouponResponse.cs" />
+    <Compile Include="Response\Client\Coupon\CouponDetailResponse.cs" />
+    <Compile Include="Response\Client\Coupon\GetCouponImgInfoResponse.cs" />
+    <Compile Include="Response\Client\Coupon\GetCouponInfoResponse.cs" />
+    <Compile Include="Response\Client\Coupon\GetCouponValidDateResponse.cs" />
+    <Compile Include="Response\Client\Coupon\SubmitCouponOrderResponse.cs" />
+    <Compile Include="Response\Client\Coupon\VerifyCouponInfoResponse.cs" />
+    <Compile Include="Response\Client\IndexData\GetBannerListResponse.cs" />
+    <Compile Include="Response\Client\IndexData\GetBrandAndCategoryListResponse.cs" />
+    <Compile Include="Response\Client\IndexData\GetCouponListResponse.cs" />
+    <Compile Include="Response\Client\IndexData\ProductDetailResponse.cs" />
+    <Compile Include="Response\Client\IndexData\ProductListResponse.cs" />
+    <Compile Include="Response\Client\IndexData\ScreenInfoResponse.cs" />
+    <Compile Include="Response\Client\Order\ConfirmOrderResponse.cs" />
+    <Compile Include="Response\Client\Order\GetValidCouponListResponse.cs" />
+    <Compile Include="Response\Client\Order\OrderResponse.cs" />
+    <Compile Include="Response\Client\Order\ReComposeOrderResponse.cs" />
+    <Compile Include="Response\Client\Order\RefundOrderListResponse.cs" />
+    <Compile Include="Response\Client\Order\ShipAddressInfo.cs" />
+    <Compile Include="Response\Client\Order\SubmitOrderResponse.cs" />
+    <Compile Include="Response\Client\ShipAddress\GetShipAddressResponse.cs" />
+    <Compile Include="Response\Client\ShipAddress\RegionListResponse.cs" />
+    <Compile Include="Response\Client\ShipAddress\ShipAddressListResponse.cs" />
+    <Compile Include="Response\Client\User\AfterServicesDetailResponse.cs" />
+    <Compile Include="Response\Client\User\AfterServicesListResponse.cs" />
+    <Compile Include="Response\Client\User\BeenSendDetailResponse.cs" />
+    <Compile Include="Response\Client\User\CouponListResponse.cs" />
+    <Compile Include="Response\Client\User\ReturnRecordListResponse.cs" />
+    <Compile Include="Response\Client\User\UCenterDataResponse.cs" />
+    <Compile Include="Response\Client\User\UserCreditDetailListResponse.cs" />
+    <Compile Include="Response\Client\User\UserInfoDataResponse.cs" />
+    <Compile Include="Response\Client\User\UserInfoResponse.cs" />
+    <Compile Include="Response\Client\User\UserListResponse.cs" />
+    <Compile Include="Response\Client\WxOpen\GetUserInfoResponse.cs" />
+    <Compile Include="Response\Client\WxOpen\OnLoginResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LianFa.ShopPlatform.Code\LianFa.ShopPlatform.Code.csproj">
+      <Project>{4f8136d6-c61d-4c4f-ad61-25853a32d2e1}</Project>
+      <Name>LianFa.ShopPlatform.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LianFa.ShopPlatform.DataBase\LianFa.ShopPlatform.DataBase.csproj">
+      <Project>{c2888ac4-25d9-448d-b676-3ce7fbfb30cb}</Project>
+      <Name>LianFa.ShopPlatform.DataBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

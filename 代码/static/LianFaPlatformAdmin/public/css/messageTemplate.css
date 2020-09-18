@@ -1,0 +1,22 @@
+.content{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.main_list_content{
+    height:65px;
+    padding-bottom:20px;
+}
+#uploadHelp{
+    float: left;
+}
+#saveSet{
+    float: right;
+}
+td,th{
+    height:50px;
+    position:relative;
+    top:8px;
+    text-align: center;
+}
+.type-id{width:250px;}

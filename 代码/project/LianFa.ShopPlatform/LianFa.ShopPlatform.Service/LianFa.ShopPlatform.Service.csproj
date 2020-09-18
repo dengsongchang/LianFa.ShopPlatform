@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B3542E4-2B04-4F7D-9E54-8A0C867496B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LianFa.ShopPlatform.Service</RootNamespace>
+    <AssemblyName>LianFa.ShopPlatform.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AopSdk, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alipay.AopSdk.2.0.0\lib\net35\AopSdk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.AutoMapper, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.AutoMapper.1.0.0.2\lib\net452\HuCheng.Util.AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Core, Version=1.0.0.18, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Core.1.0.0.18\lib\net452\HuCheng.Util.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Datas.EntityFramework, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Datas.EntityFramework.1.0.0.4\lib\net452\HuCheng.Util.Datas.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Express.KuaiDi100, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Express.KuaiDi100.1.0.0\lib\net452\HuCheng.Util.Express.KuaiDi100.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Payment.Alipay, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Payment.Alipay.1.0.0.3\lib\net452\HuCheng.Util.Payment.Alipay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HuCheng.Util.Payment.Wxpay, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HuCheng.Util.Payment.Wxpay.1.0.0.1\lib\net452\HuCheng.Util.Payment.Wxpay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JWT, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.3.0.1\lib\net35\JWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.CO2NET, Version=0.5.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.CO2NET.0.5.1.1\lib\net45\Senparc.CO2NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.CO2NET.APM, Version=0.2.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.CO2NET.APM.0.2.3.2\lib\net45\Senparc.CO2NET.APM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.NeuChar, Version=0.6.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.NeuChar.0.6.0.2\lib\net45\Senparc.NeuChar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin, Version=6.3.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.6.3.4.2\lib\net45\Senparc.Weixin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP, Version=16.6.3.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.MP.16.6.3.1\lib\net45\Senparc.Weixin.MP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Senparc.Weixin.TenPay, Version=1.1.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Senparc.Weixin.TenPay.1.1.2.2\lib\net45\Senparc.Weixin.TenPay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminActionsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGroupsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGroups\AdminGroupsService_Part.cs" />
+    <Compile Include="AdminGroups\IAdminGroupsService_Part.cs" />
+    <Compile Include="AdminOperateLogsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminOperateLog\AdminOperateLogsService_Part.cs" />
+    <Compile Include="AdminOperateLog\IAdminOperateLogsService_Part.cs" />
+    <Compile Include="BannersService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banners\BannersService_Part.cs" />
+    <Compile Include="Banners\IBannersService_Part.cs" />
+    <Compile Include="BrandsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brands\BrandsService_Part.cs" />
+    <Compile Include="Brands\IBrandsService_Part.cs" />
+    <Compile Include="CategoriesService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Categories\CategoriesService_Part.cs" />
+    <Compile Include="Categories\ICategoriesService_Part.cs" />
+    <Compile Include="CouponDeliveryAreasService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CouponDeliveryAreas\CouponDeliveryAreasService_Part.cs" />
+    <Compile Include="CouponDeliveryAreas\ICouponDeliveryAreasService_Part.cs" />
+    <Compile Include="CouponsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons\CouponsService_Part.cs" />
+    <Compile Include="Coupons\ICouponsService_Part.cs" />
+    <Compile Include="CouponTypeContentsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CouponTypeContent\CouponTypeContentsService_Part.cs" />
+    <Compile Include="CouponTypeContent\ICouponTypeContentsService_Part.cs" />
+    <Compile Include="CouponTypesService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CouponTypes\CouponTypesService_Part.cs" />
+    <Compile Include="CouponTypes\ICouponTypesService_Part.cs" />
+    <Compile Include="IAdminOperateLogsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBannersService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBrandsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICategoriesService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICouponDeliveryAreasService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICouponsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICouponTypeContentsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICouponTypesService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMaterialCategoryService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMaterialLibraryService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOrderActionsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOrderProductsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOrdersService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IProductImagesService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IProductsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IProductStocksService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRegionsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IShipAddressesService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IShipCompaniesService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IShippingAppointRegionsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IShippingPriceService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IShippingRegionsGroupsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IShippingRegionsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IShippingTemplatesService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShopPlatformIService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShopPlatformService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAdminActionsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAdminGroupsService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOauthService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IUsersService.cs">
+      <DependentUpon>LF_ShopPlatformIService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialCategoryService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialLibraryService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Material\IMaterialCategoryService_Part.cs" />
+    <Compile Include="Material\IMaterialLibraryService_Part.cs" />
+    <Compile Include="Material\MaterialCategoryService_Part.cs" />
+    <Compile Include="Material\MaterialLibraryService_Part.cs" />
+    <Compile Include="OauthService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Oauth\IOauthService_Part.cs" />
+    <Compile Include="Oauth\OauthService_Part.cs" />
+    <Compile Include="OrderActionsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderProductsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderProducts\IOrderProductsService_Part.cs" />
+    <Compile Include="OrderProducts\OrderProductsService_Part.cs" />
+    <Compile Include="OrdersService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\IOrdersService_Part.cs" />
+    <Compile Include="Orders\OrdersService_Part.cs" />
+    <Compile Include="Payment\Wxpay\IWxpayService.cs" />
+    <Compile Include="Payment\Wxpay\WxpayService.cs" />
+    <Compile Include="ProductImagesService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImages\IProductImagesService_Part.cs" />
+    <Compile Include="ProductImages\ProductImagesService_Part.cs" />
+    <Compile Include="ProductsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStocksService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Products\IProductsService_Part.cs" />
+    <Compile Include="Products\ProductsService_Part.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Regions\IRegionsService_Part.cs" />
+    <Compile Include="Regions\RegionsService_Part.cs" />
+    <Compile Include="ShipAddressesService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipAddress\IShipAddressesService.cs" />
+    <Compile Include="ShipAddress\ShipAddressesService.cs" />
+    <Compile Include="ShipCompaniesService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipCompanie\IShipCompaniesService_Part.cs" />
+    <Compile Include="ShipCompanie\ShipCompaniesService_Part.cs" />
+    <Compile Include="ShippingAppointRegionsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingPriceService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingRegionsGroupsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingRegionsService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingTemplatesService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipTemplates\IShippingTemplatesService_Part.cs" />
+    <Compile Include="ShipTemplates\ShippingTemplatesService_Part.cs" />
+    <Compile Include="UsersService.cs">
+      <DependentUpon>LF_ShopPlatformService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User\IUsersService_Part.cs" />
+    <Compile Include="User\UsersService_Part.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LianFa.ShopPlatform.Code\LianFa.ShopPlatform.Code.csproj">
+      <Project>{4F8136D6-C61D-4C4F-AD61-25853A32D2E1}</Project>
+      <Name>LianFa.ShopPlatform.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LianFa.ShopPlatform.DataBase\LianFa.ShopPlatform.DataBase.csproj">
+      <Project>{c2888ac4-25d9-448d-b676-3ce7fbfb30cb}</Project>
+      <Name>LianFa.ShopPlatform.DataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LianFa.ShopPlatform.Model\LianFa.ShopPlatform.Model.csproj">
+      <Project>{2f337334-0bf6-44fd-8a84-967abfccc5d7}</Project>
+      <Name>LianFa.ShopPlatform.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LianFa.ShopPlatform.Respository\LianFa.ShopPlatform.Repository.csproj">
+      <Project>{be5251f1-17d1-4383-98aa-89e78becf288}</Project>
+      <Name>LianFa.ShopPlatform.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LF_ShopPlatformIService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LF_ShopPlatformIService.cs</LastGenOutput>
+    </Content>
+    <Content Include="LF_ShopPlatformService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LF_ShopPlatformService.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

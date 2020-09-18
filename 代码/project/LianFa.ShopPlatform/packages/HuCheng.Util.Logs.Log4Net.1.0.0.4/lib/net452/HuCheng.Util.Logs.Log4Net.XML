@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuCheng.Util.Logs.Log4Net</name>
+    </assembly>
+    <members>
+        <member name="T:HuCheng.Util.Logs.Log4Net.ApiLogger">
+            <summary>
+            Api日志类
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Debug(System.String,System.String,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Debug(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Info(System.String,System.String,System.Exception)">
+            <summary>
+            提示信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Info(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            提示信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Warn(System.String,System.String,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Warn(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Error(System.String,System.String,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Error(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Fatal(System.String,System.String,System.Exception)">
+            <summary>
+            致命错误信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.ApiLogger.Fatal(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            致命错误信息
+            </summary>
+            <param name="method">接口名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="T:HuCheng.Util.Logs.Log4Net.Logger">
+            <summary>
+            通用日志类
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Debug(System.String,System.String,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Debug(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            调试信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Info(System.String,System.String,System.Exception)">
+            <summary>
+            提示信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Info(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            提示信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Warn(System.String,System.String,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Warn(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            警告信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Error(System.String,System.String,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Error(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            错误信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Fatal(System.String,System.String,System.Exception)">
+            <summary>
+            致命错误信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:HuCheng.Util.Logs.Log4Net.Logger.Fatal(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            致命错误信息
+            </summary>
+            <param name="method">方法名称</param>
+            <param name="requestData">请求参数</param>
+            <param name="msg">信息</param>
+            <param name="ex">异常</param>
+        </member>
+    </members>
+</doc>

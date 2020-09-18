@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuCheng.Util.Web.Api</name>
+    </assembly>
+    <members>
+        <member name="T:HuCheng.Util.Web.Api.WebApi.ActionHandling.MonitorActionFilter">
+            <summary>
+            监控接口过滤器
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Web.Api.WebApi.ActionHandling.MonitorActionFilter.Logger">
+            <summary>
+            日志记录器
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ActionHandling.MonitorActionFilter.#ctor(HuCheng.Util.Core.Logs.ILog)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="F:HuCheng.Util.Web.Api.WebApi.ActionHandling.MonitorActionFilter.Key">
+            <summary>
+            接口执行时间
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ActionHandling.MonitorActionFilter.OnActionExecutingAsync(System.Web.Http.Controllers.HttpActionContext,System.Threading.CancellationToken)">
+            <summary>
+            启用计时器
+            </summary>
+            <param name="actionContext"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ActionHandling.MonitorActionFilter.OnActionExecutedAsync(System.Web.Http.Filters.HttpActionExecutedContext,System.Threading.CancellationToken)">
+            <summary>
+            记录监控接口执行日志
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HuCheng.Util.Web.Api.WebApi.ActionHandling.NoLogAttribute">
+            <summary>
+            不记录监控接口执行日志
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Web.Api.WebApi.ApiMonitor">
+            <summary>
+            接口监视
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ApiMonitor.RecordRequestLog(System.Web.Http.Controllers.HttpActionContext,HuCheng.Util.Core.Logs.ILog)">
+            <summary>
+            记录请求数据
+            </summary>
+            <param name="actionContext">动作上下文</param>
+            <param name="logger">日志管理者</param>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ApiMonitor.RecordResponseLog(System.Web.Http.Controllers.HttpActionContext,HuCheng.Util.Core.Logs.ILog)">
+            <summary>
+            记录响应数据
+            </summary>
+            <param name="actionContext">动作上下文</param>
+            <param name="logger">日志管理者</param>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ApiMonitor.StreamToString(System.IO.Stream)">
+            <summary>
+            将 Stream 转成 string
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Web.Api.WebApi.ExceptionHandling.ExceptionFilter">
+            <summary>
+            异常过滤器
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Web.Api.WebApi.ExceptionHandling.ExceptionFilter.Logger">
+            <summary>
+            日志记录器
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ExceptionHandling.ExceptionFilter.#ctor(HuCheng.Util.Core.Logs.ILog)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:HuCheng.Util.Web.Api.WebApi.ExceptionHandling.ExceptionFilter.OnException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            OnException
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+    </members>
+</doc>

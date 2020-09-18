@@ -1,0 +1,42 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} 
+
+{{block 'title'}}通知内页{{/block}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/inform_page.css">
+<link rel="stylesheet" href="/public/plugins/pagination/pagination.css">
+{{/block}} 
+
+{{block 'content'}}
+
+<section class="content-header">
+    <div style="border-bottom: 1px solid #ddd">
+        <h4>
+            <i class="iconfont icon-caipinfenlei" style="font-size: 22px;margin-right: 10px"></i>全部通知</h4>
+    </div>
+</section>
+<section class="content container-fluid">
+    <div class="inform_container" id="informationList">
+
+    </div>
+
+    <div class="pages clearfix">
+        <div id="Pagination"></div>
+        <!--<div class="searchPage">-->
+            <!--<span class="page-sum">共<strong class="allPage">15</strong>页</span>-->
+            <!--<span class="page-go">跳转<input type="text" id="pageNu">页</span>-->
+            <!--<a href="javascript:;" class="page-btn" id="pageBtn">确定</a>-->
+        <!--</div>-->
+    </div>
+
+</section>
+
+{{/block}}
+
+{{block 'footer'}} {{/block}} 
+
+{{block 'requirejs'}}
+<script src="/public/plugins/pagination/jquery.pagination.js"></script>
+<script src="/public/js/information.js" type="text/babel"></script>
+{{/block}}

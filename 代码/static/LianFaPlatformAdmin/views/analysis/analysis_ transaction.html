@@ -1,0 +1,173 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}交易分析{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/analysis_transaction.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/plugins/daterangepicker/daterangepicker-bs3.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+{{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">交易数据</span>
+                    <img class="queryImg" src="/public/images/ic_query.png">
+                    <!--<span class="export" style="color: #0091ea;">导出数据</span>-->
+                </h3>
+                <div class="tipBox" style="display: none;">
+                    <p><b>下单转化率：</b>下单人数/浏览人数*100%</p>
+                    <p><b>付款转化率：</b>付款人数/下单人数*100%</p>
+                    <p><b>成交转化率：</b>付款人数/浏览人数*100%</p>
+                    <p><b>客平均价：</b>付款总金额/付款订单数</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="r_title_r">
+                <ul id="dateUl1" class="tabDay">
+                    <li svalue="inOneWeek" class="active">最近7天</li>
+                    <li svalue="inOneMonth">最近30天</li>
+                    <li svalue="preThreeMonth">最近90天</li>
+                </ul>
+
+                <div class="input-prepend input-group">
+                    <span class="add-on input-group-addon">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </span>
+                    <input type="text" placeholder="MM/DD/YY — MM/DD/YY" readonly="" style="width: 165px"
+                           name="reservation" id="AmountDate" class="form-control" value="">
+
+                </div>
+
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px">
+        <div class="chart_1">
+            <div class="col-sm-12">
+                <div id="content" style="padding: 20px">
+                    <div class="chart_1_1">
+                        <div class="chart_list chart_list_visit">
+                            <div class="chart_list_cell">
+                                <span>浏览人数</span>
+                                <b id="BroswerCount">0</b>
+                            </div>
+                        </div>
+                        <div class="chart_list chart_list_order">
+                            <div class="chart_list_cell">
+                                <span>下单人数</span>
+                                <b id="OrderUserCount">0</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>订单数</span>
+                                <b id="OrderCount">0</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>下单件数</span>
+                                <b id="ProductCount">0</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>下单金额</span>
+                                <b id="OrderAmount">0.00</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>退款金额</span>
+                                <b id="RefundAmount">0.00</b>
+                            </div>
+                        </div>
+                        <div class="chart_list chart_list_pay">
+                            <div class="chart_list_cell">
+                                <span>付款人数</span>
+                                <b id="PayUserCount">0</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>付款订单数</span>
+                                <b id="PayOrderCount">0</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>付款件数</span>
+                                <b id="PayProductCount">0</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>付款金额</span>
+                                <b id="PayAmount">0.00</b>
+                            </div>
+                            <div class="chart_list_cell">
+                                <span>客平均价</span>
+                                <b id="AvgAmount">0.00</b>
+                            </div>
+                        </div>
+                        <div class="region region_1">
+                            <p>下单转化率</p>
+                            <b id="OrderConversionRate">0.00</b>%
+                        </div>
+                        <div class="region region_2">
+                            <p>付款转化率</p>
+                            <b id="PayConversionRate">0.00</b>%
+                        </div>
+                        <div class="region region_3">
+                            <p>成交转化率</p>
+                            <b id="SuccConversionRate">0.00</b>%
+                        </div>
+                        <img src="/public/images/chart_funnel.png" class="chart_funnel">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div id="MembershipGrowth" class="chart_1" style="width:100%;height:400px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px">
+        <div class="col-sm-6">
+            <div class="r_title">
+                <h3>
+                    <span style="float: left">交易数据</span>
+                </h3>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="r_title_r">
+                <ul id="dateUl" class="tabDay">
+                    <li svalue="inOneWeek" class="active">最近7天</li>
+                    <li svalue="inOneMonth">最近30天</li>
+                </ul>
+
+                <div class="input-prepend input-group">
+                    <span class="add-on input-group-addon">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </span>
+                    <input type="text" placeholder="MM/DD/YY — MM/DD/YY" readonly="" style="width: 165px"
+                           name="reservation" id="AmountDate2" class="form-control" value="">
+
+                </div>
+
+                <a class="img_toggle" href="javascript:;">
+                    <img src="/public/images/icon_fold.png" class="icon_fold" style="display: inline;">
+                    <img src="/public/images/icon_down.png" class="icon_down" style="display: none;">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px;border: 1px solid #eee">
+        <div class="col-sm-12">
+            <div id="MembershipGrowth2" class="chart_1" style="width:100%;height:400px;"></div>
+        </div>
+    </div>
+
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/echarts/echarts.min.js"></script>
+<script src="/public/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="/public/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/analysis_transaction.js"></script>
+{{/block}}

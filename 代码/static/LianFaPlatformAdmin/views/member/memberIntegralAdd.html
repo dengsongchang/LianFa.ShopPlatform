@@ -1,0 +1,71 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}熊豆规则添加{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/css/memberList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="/member/memberIntegralManagement">熊豆规则管理列表</a>
+                        </li>
+                        <li class="active">
+                            <a href="/member/memberIntegralAdd">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="first">
+                        <div class="form-horizontal" style="margin-top: 40px;">
+                            <div class="form-group" style="margin-top: 42px;">
+                                <label class="col-md-2 control-label" style="color: #999999;">订单金额：</label>
+                                <div class="col-md-2">
+                                    <div class="input-group" style="width: 180px">
+                                        <input type="number" class="form-control" id="OrderLimit">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top: 42px;">
+                                <label class="col-md-2 control-label" style="color: #999999;">最大使用熊豆数量：</label>
+                                <div class="col-md-2">
+                                    <div class="input-group" style="width: 180px">
+                                        <input type="number" class="form-control" id="MaxAmount">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 control-label">
+                                    <a class="btn btn-primary"
+                                       style="cursor: pointer;margin-top: 50px;width: 100px;background-color: #1792e7;"
+                                       id="Submission">提交</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/memberIntegralAdd.js" type="text/babel"></script>
+{{/block}}

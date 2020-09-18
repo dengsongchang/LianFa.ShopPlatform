@@ -1,0 +1,131 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}分销统计{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/statisticsDistribution.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/marketMode/statisticsDistribution">分销统计</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <div class="form-group col-lg-2 col-sm-6">
+                        <label>省份：</label>
+                        <select class="form-control" id="Province">
+                            <option value="0">请输选择省份</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-2 col-sm-6">
+                        <label>市：</label>
+                        <select class="form-control" id="City">
+                            <option value="0">请输选择市区</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-2 col-sm-6">
+                        <label>组名：</label>
+                        <input type="text" class="form-control" id="GroupName" placeholder="请输入名称">
+                    </div>
+                    <div class="form-group col-lg-3 col-sm-6">
+                        <a class="btn btn-primary" id="search"><i class="fa fa-search" aria-hidden="true"></i> 查询</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="title-head clearfix">
+                        <p class="title-text">统计指标</p>
+                    </div>
+                    <div class="count-list">
+                        <ul class="row" id="keyIndicators">
+                            <li class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <div>
+                                        <span class="count-text">总业绩</span>
+                                        <span class="count-num">0</span>
+                                    </div>
+                                    <div>
+                                        <span class="count-text">总佣金</span>
+                                        <span class="count-num">0</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <div>
+                                        <span class="count-text">省业绩</span>
+                                        <span class="count-num">0</span>
+                                    </div>
+                                    <div>
+                                        <span class="count-text">省佣金</span>
+                                        <span class="count-num">0</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <div>
+                                        <span class="count-text">市业绩</span>
+                                        <span class="count-num">0</span>
+                                    </div>
+                                    <div>
+                                        <span class="count-text">市业绩</span>
+                                        <span class="count-num">0</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="title-head clearfix">
+                        <p class="title-text col-md-6" >
+                            <span>分组列表</span>
+                        </p>
+                        <div style="float: right;" class="col-md-6">
+                            <ul class="dayOrMonth">
+                                <li class="active">月</li>
+                                <li>周</li>
+                                <li>日</li>
+                            </ul>
+                            <div class="form-inline">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" placeholder="MM/DD/YY" readonly="" style="width: 165px" id="start" class="form-control" value="">
+                                </div>
+                                至
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" placeholder="MM/DD/YY" readonly="" style="width: 165px" id="end" class="form-control" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <table id="GroupingTable" class="table table-bordered table-striped">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+{{/block}}
+
+{{block 'requirejs'}}
+<!--<script src="/public/js/template.js"></script>-->
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/statisticsDistribution.js" type="text/babel"></script>
+{{/block}}

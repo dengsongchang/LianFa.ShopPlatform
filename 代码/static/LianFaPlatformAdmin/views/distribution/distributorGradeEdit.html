@@ -1,0 +1,74 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}编辑分销等级{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/classifyAdd.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/distribution/distributorGrade">分销等级列表</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2"  href="/distribution/distributorGradeEdit">编辑</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="classify_add_box">
+                    <div class="row form-group">
+                        <label for="gradeName" class="col-md-3 text-right" style="position: relative;top: 7px"> <em style="color: red">*</em>分销员等级名称：</label>
+                        <div class="col-md-4">
+                            <input type="text" id="gradeName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="Sales" class="col-md-3 text-right" style="position: relative;top: 7px"> <em style="color: red">*</em>销售额：</label>
+                        <div class="col-md-4">
+                            <input type="number" id="Sales" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="TeamSales" class="col-md-3 text-right" style="position: relative;top: 7px"> <em style="color: red">*</em>团队销售额：</label>
+                        <div class="col-md-4">
+                            <input type="number" id="TeamSales" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="TeamCount" class="col-md-3 text-right" style="position: relative;top: 7px"> <em style="color: red">*</em>团队数量：</label>
+                        <div class="col-md-4">
+                            <input type="number" id="TeamCount" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group" style="margin-top: 30px;">
+                        <div class="col-md-3" style="text-align: center">
+
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary finish_bth_edit">编辑</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/distributorGradeEdit.js" type="text/babel"></script>
+{{/block}}

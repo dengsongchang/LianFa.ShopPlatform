@@ -1,0 +1,535 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}运费模板编辑{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/addFreightTemplate.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/all.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li >
+                            <a data-type="1" href="/mall/freightTemplate">管理</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2"  href="/mall/editFreightTemplate">编辑</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="basicsetup_txet">
+
+                        <div class="form-group basicsetup_title_next">
+                            <label class="col-md-2 control-label" style="height: 34px;line-height: 34px"><em style="color: red">*</em>模板名称： </label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="templateName" placeholder="长度限制在20字符以内">
+
+                            </div>
+                        </div>
+                        <!--<div class="form-group basicsetup_title">-->
+                            <!--<label class="col-md-2 control-label">-->
+                                <!--<em style="color: red">*</em>是否包邮：-->
+                            <!--</label>-->
+                            <!--<div class="col-md-4">-->
+                                <!--<div class="icheck">-->
+                                    <!--<div class="icheck_user">-->
+                                        <!--<div class="checked" style="position: relative; top:5px;">-->
+                                            <!--<input type="radio" name="packageMail" id="custom" value="1"-->
+                                                   <!--class="check-box registerKind" style=" float: left; margin-top: 5px;"-->
+                                                   <!--checked/>-->
+                                        <!--</div>-->
+                                            <!--<span>自定义运费</span>-->
+                                    <!--</div>-->
+                                    <!--<div class="icheck_mailbox">-->
+                                        <!--<div class="checked" style="position: relative; top:5px;">-->
+                                            <!--<input type="radio" name="packageMail" id="Seller" value="2"-->
+                                                   <!--class="check-box registerKind"/>-->
+                                        <!--</div>-->
+                                        <!--<span>卖家承担运费</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="isshow">
+                            <div class="form-group basicsetup_title">
+                                <label class="col-md-2  control-label"><em style="color: red">*</em>计价方式：</label>
+                                <div class="col-md-8">
+                                    <div class="icheck">
+                                        <div class="icheck_user">
+                                            <div class="checked" style="position: relative; top:5px;">
+                                                <input type="radio" name="Valuation" class="stuCheckBox check-box loginKind"
+                                                       id="onNumber" value="1" checked/>
+                                            </div>
+                                            <span>按件数</span>
+                                        </div>
+                                        <!--<div class="icheck_mailbox">-->
+                                            <!--<div class="checked" style="position: relative; top:5px;">-->
+                                                <!--<input type="radio" name="Valuation" class="stuCheckBox check-box loginKind"-->
+                                                       <!--id="onWeight" value="2"/>-->
+                                            <!--</div>-->
+                                            <!--<span>按重量</span>-->
+                                        <!--</div>-->
+                                        <!--<div class="icheck_phone">-->
+                                            <!--<div class="checked" style="position: relative; top:5px;">-->
+                                                <!--<input type="radio" name="Valuation" class="stuCheckBox check-box loginKind"-->
+                                                       <!--id="onVolume" value="3"/>-->
+                                            <!--</div>-->
+                                            <!--<span>按体积</span>-->
+                                        <!--</div>-->
+                                        <div class="icheck_phone">
+                                            <div class="checked" style="position: relative; top:5px;">
+                                                <input type="radio" name="Valuation"  class="stuCheckBox check-box loginKind"
+                                                       id="onpercentage" value="4"/>
+                                            </div>
+                                            <span>按百分比</span>
+                                        </div>
+                                        <div class="icheck_phone" style="margin-left: 8px">
+                                            <div class="checked" style="position: relative; top:5px;">
+                                                <input type="radio" name="Valuation" class="stuCheckBox check-box loginKind"
+                                                       id="onFixedFreight" value="5"/>
+                                            </div>
+                                            <span>按固定运费</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group basicsetup_title_next">
+                                <label class="col-md-2 control-label" style="height: 34px;line-height: 34px"><em style="color: red">*</em>默认运费：</label>
+                                <div class="col-md-10" style="padding: 0 0">
+
+                                    <div  id="formatBox">
+                                        <div class="input-group fl">
+                                            <input name="ctl00$contentHolder$txtDefaultNumber" type="text" id="onNumberone" class="form-control" placeholder="" style="width:50px">
+                                            <span class="input-group-addon changeText" name="ValuationUnit">件</span>
+                                        </div>
+                                        <span class="fl">内</span>
+                                        <div class="input-group fl">
+                                            <input name="ctl00$contentHolder$txtDefaultNumber" type="text" id="onNumbertwo" class="form-control" placeholder="" style="width:50px">
+                                            <span class="input-group-addon" name="ValuationUnit">元</span>
+                                        </div>
+                                        <span class="fl">每增加</span>
+                                        <div class="input-group fl">
+                                            <input name="ctl00$contentHolder$txtDefaultNumber" type="text" id="onNumberthree" class="form-control" placeholder="" style="width:50px">
+                                            <span class="input-group-addon changeText" name="ValuationUnit">件</span>
+                                        </div>
+                                        <span class="fl">增加运费</span>
+                                        <div class="input-group fl">
+                                            <input name="ctl00$contentHolder$txtDefaultNumber" type="text" id="onNumberfour" class="form-control" placeholder="" style="width:50px">
+                                            <span class="input-group-addon" name="ValuationUnit">元</span>
+                                        </div>
+                                        
+                                        <span class="fl">最低消费</span>
+                                        <div class="input-group fl">
+                                            <input name="ctl00$contentHolder$txtDefaultNumber" type="text" id="onNumberfive" class="form-control" placeholder="" style="width:50px">
+                                            <span class="input-group-addon" name="ValuationUnit">元</span>
+                                        </div>
+                                    </div>
+                                    <div id="PercentageBox" style="display:none">
+                                        <div style="" class="form-inline">
+                                            <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                                <label >商品金额≤</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" style="width: 70px" class="form-control num_other" id="one_num1" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                                <label >元收总金额的</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" style="width: 70px" class="form-control num_other" id="one_num2" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label >&nbsp;&nbsp;%&nbsp;&nbsp;</label>
+                                            </div>
+
+
+                                        </div>
+                                        <div style="margin-top: 20px" class="form-inline">
+                                            <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                                <label >商品金额&nbsp;:</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" style="width: 70px" class="form-control num_other" id="one_num3" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label> &nbsp;&nbsp;-&nbsp;&nbsp; </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" style="width: 70px" class="form-control num_other" id="one_num4" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                                <label > 收 </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" style="width: 70px" class="form-control num_other" id="one_num5" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                                <label > %</label>
+                                            </div>
+
+                                        </div>
+                                        <div style="margin-top: 20px" class="form-inline">
+                                            <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                                <label >商品金额&nbsp;:</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" style="width: 70px" class="form-control num_other" id="one_num6" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                                <label > 元及以上免运费。</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: none" class="form-inline" id="freightBox" >
+                                        <div class="form-group" style="margin-right: 15px">
+                                            <label ></label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="number" style="width: 70px" class="form-control num_other" id="two_num1" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-left: 15px;margin-right: 15px">
+                                            <label >元以下收</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="number" style="width: 70px" class="form-control num_other" id="two_num2" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label >&nbsp;&nbsp;元，满&nbsp;&nbsp;</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="number" style="width: 70px" class="form-control num_other" id="two_num3" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label >元免运费。</label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group basicsetup_title_next">
+                                <label class="col-md-2 control-label" style="height: 34px;line-height: 34px"></label>
+                                <div class="col-md-10">
+                                    <table class="table table-bordered table-area-freight" id="regionFreight">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:271px;">运送到</th>
+                                                <th nowrap="nowrap" style="width:120px;">首<span name="ValuationUnitDesc" class="nofloat">件</span>（<span name="ValuationUnit" class="nofloat">件</span>）</th>
+                                                <th nowrap="nowrap" style="width:120px;">首费（元）</th>
+                                                <th nowrap="nowrap" style="width:120px;">续<span name="ValuationUnitDesc" class="nofloat">件</span>（<span name="ValuationUnit" class="nofloat">件</span>）</th>
+                                                <th nowrap="nowrap" style="width:120px;">续费（元）</th>
+                                                <th nowrap="nowrap" style="width:120px;">最低消费（元）</th>
+                                                <th nowrap="nowrap" style="width:67px;">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group basicsetup_title_next">
+                                <label class="col-md-2 control-label" style="height: 34px;line-height: 34px"></label>
+                                <div class="col-md-10">
+                                    <a href="javascript:;" style="color: #0091ea" id="addCityFreight">新增指定城市运费</a>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group basicsetup_title_next">
+                                <label class="col-md-2 control-label" style="height: 34px;line-height: 34px">是否指定包邮（选填）：</label>
+                                <div class="col-md-10">
+                                    <div class="switch" id="EStore">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="form-group basicsetup_title_next">
+                                <label class="col-md-2 control-label" style="height: 34px;line-height: 34px"></label>
+                                <div class="col-md-10">
+                                    <table class="table table-bordered table-area-freight" id="regionFree" style="display: none;">
+                                        <tbody>
+                                        <tr>
+                                            <th style="width:281px;">选择地区</th>
+                                            <th nowrap="nowrap" style="width:348px;">设置包邮条件</th>
+                                            <th nowrap="nowrap" style="width:67px;">操作</th>
+                                        </tr>
+                                        <tr><td><a href="javascript:void(0);" class="exit-area">编辑</a><div class="area-group"><p>未添加地区</p></div></td><td><select class="setfreeshipping form-control fl" style="width:100px;"><option value="1">件数</option><option value="2">金额</option><option value="3">件数+金额</option></select><span class="free-contion">满<input type="text" value="" class="form-control mlr">件包邮</span></td><td><span class="btn-a"><a href="javascript:void(0);" name="delFree">删除</a></span></td></tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group basicsetup_title_next">
+                                <label class="col-md-2 control-label" style="height: 34px;line-height: 34px"></label>
+                                <div class="col-md-10" id="addFreeBox" style="display: none">
+                                    <a href="javascript:;" style="color: #0091ea" id="addFree">新增指定城市包邮</a>
+                                </div>
+                            </div>-->
+                        </div>
+
+
+                        <div class="button">
+                            <input type="submit" value="编辑" id="submitBtn" class="btn btn-primary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="area-modal-wrap" style="display: none;">
+            <div class="modal-mask"></div>
+            <div class="area-modal" style="top:100px;">
+                <div class="area-modal-head">
+                    <div class="col-md-4" style="padding-left: 0;padding-right: 2px">
+                        <select class="form-control select2 select2-hidden-accessible" id="province_box" tabindex="-1" aria-hidden="true">
+                            <option selected="selected" value="0">所有省</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4" style="padding-left: 3px;padding-right: 2px">
+                        <select id="city_box" class=" form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                            <option selected="selected" value="0">所有市</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4" style="padding-left: 3px;padding-right: 2px">
+                        <select id="area_box" class=" form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                            <option selected="selected" value="0">所有区/县</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- <div class="area-modal-head">选择可配送区域</div>
+                <div class="area-modal-content">
+                    <div class="area-editor-wrap clearfix">
+                        <div class="area-editor-column js-area-editor-notused">
+                            <div class="area-editor">
+                                <h4 class="area-editor-head">可选省、市、区</h4>
+                                <ul class="area-editor-list area-editor-depth0">
+                                    <li data-id="1">
+                                        <div class="area-editor-list-title">
+                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                <div class="js-ladder-toggle area-editor-ladder-toggle extend">+</div>
+                                                上海
+                                            </div>
+                                            <div class="area-editor-list-title-content js-ladder-select" style="display: none">
+                                                <div class="js-ladder-toggle area-editor-ladder-toggle extend">-</div>
+                                                上海
+                                            </div>
+                                        </div>
+                                        <ul class="area-editor-list area-editor-depth1" style="display: none">
+                                            <li data-id="1-20">
+                                                <div class="area-editor-list-title">
+                                                    <div class="area-editor-list-title-content js-ladder-select">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">+</div>
+                                                        上海市
+                                                    </div>
+                                                    <div class="area-editor-list-title-content js-ladder-select" style="display: none">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">-</div>
+                                                        上海市
+                                                    </div>
+                                                </div>
+                                                <ul class="area-editor-list area-editor-depth2" style="display: none">
+                                                    <li data-id="1-20-11">
+                                                        <div class="area-editor-list-title" >
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                黄浦区
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="1-20-22">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                卢湾区
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="1-20-33">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                徐汇区
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li data-id="1-30">
+                                                <div class="area-editor-list-title">
+                                                    <div class="area-editor-list-title-content js-ladder-select">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">+</div>
+                                                        上海市2
+                                                    </div>
+                                                    <div class="area-editor-list-title-content js-ladder-select" style="display: none">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">-</div>
+                                                        上海市2
+                                                    </div>
+                                                </div>
+                                                <ul class="area-editor-list area-editor-depth2" style="display: none">
+                                                    <li data-id="1-30-44">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                黄浦区2
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="1-30-55">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                卢湾区2
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="1-30-66">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                徐汇区2
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                    <li data-id="2">
+                                        <div class="area-editor-list-title">
+                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                <div class="js-ladder-toggle area-editor-ladder-toggle extend">+</div>
+                                                上海
+                                            </div>
+                                            <div class="area-editor-list-title-content js-ladder-select" style="display: none">
+                                                <div class="js-ladder-toggle area-editor-ladder-toggle extend">-</div>
+                                                上海
+                                            </div>
+                                        </div>
+                                        <ul class="area-editor-list area-editor-depth1" style="display: none">
+                                            <li data-id="2-40">
+                                                <div class="area-editor-list-title">
+                                                    <div class="area-editor-list-title-content js-ladder-select">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">+</div>
+                                                        上海市
+                                                    </div>
+                                                    <div class="area-editor-list-title-content js-ladder-select" style="display: none">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">-</div>
+                                                        上海市
+                                                    </div>
+                                                </div>
+                                                <ul class="area-editor-list area-editor-depth2" style="display: none">
+                                                    <li data-id="2-40-11">
+                                                        <div class="area-editor-list-title" >
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                黄浦区
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="2-40-22">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                卢湾区
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="2-40-33">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                徐汇区
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li data-id="2-50">
+                                                <div class="area-editor-list-title">
+                                                    <div class="area-editor-list-title-content js-ladder-select">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">+</div>
+                                                        上海市2
+                                                    </div>
+                                                    <div class="area-editor-list-title-content js-ladder-select" style="display: none">
+                                                        <div class="js-ladder-toggle area-editor-ladder-toggle extend">-</div>
+                                                        上海市2
+                                                    </div>
+                                                </div>
+                                                <ul class="area-editor-list area-editor-depth2" style="display: none">
+                                                    <li data-id="2-50-44">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                黄浦区2
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="2-50-55">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                卢湾区2
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li data-id="2-50-66">
+                                                        <div class="area-editor-list-title">
+                                                            <div class="area-editor-list-title-content js-ladder-select">
+                                                                徐汇区2
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="zent-btn btn-wide area-editor-add-btn js-area-editor-translate" id="addAddressBtn" >添加</span>
+                        <div class="area-editor-column area-editor-column-used js-area-editor-used">
+                            <div class="area-editor">
+                                <h4 class="area-editor-head">已选省、市、区</h4>
+                                <ul class="area-editor-list area-editor-depth0">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                   
+                <div class="area-modal-foot">
+                    <span class="zent-btn zent-btn-primary btn-wide js-modal-save" id="sureBtn" >确定</span>&nbsp;&nbsp;
+                    <span class="zent-btn btn-wide js-modal-close" >取消</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/editFreightTemplate.js" type="text/babel"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

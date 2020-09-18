@@ -1,0 +1,101 @@
+#addlist tr th {
+    border: 1px solid #e4e4e4 !important;
+    background: #fff;
+    padding: 10px 15px !important;
+}
+
+#addlist tr td {
+    border: solid #e4e4e4 !important;
+    border-width: 0 1px 1px 1px !important;
+    background: #fff;
+    padding: 10px 15px !important;
+}
+#addlist tr td:first-child,#addlist tr th:first-child{
+    border-right:0 !important;
+}
+#addlist tr td:last-child,#addlist tr th:last-child{
+    border-left:0 !important;
+}
+
+#addlistEdit tr th {
+    border: 1px solid #e4e4e4 !important;
+    background: #fff;
+    padding: 10px 15px !important;
+}
+
+#addlistEdit tr td {
+    border: solid #e4e4e4 !important;
+    border-width: 0 1px 1px 1px !important;
+    background: #fff;
+    padding: 10px 15px !important;
+}
+#addlistEdit tr td:first-child,#addlistEdit tr th:first-child{
+    border-right:0 !important;
+}
+#addlistEdit tr td:last-child,#addlistEdit tr th:last-child{
+    border-left:0 !important;
+}
+
+/*查看*/
+
+#addlistreadonly tr th {
+    border: 1px solid #e4e4e4 !important;
+    background: #fff;
+    padding: 10px 15px !important;
+}
+
+#addlistreadonly tr td {
+    border: solid #e4e4e4 !important;
+    border-width: 0 1px 1px 1px !important;
+    background: #fff;
+    padding: 10px 15px !important;
+}
+#addlistreadonly tr td:first-child,#addlist tr th:first-child{
+    border-right:0 !important;
+}
+#addlistreadonly tr td:last-child,#addlist tr th:last-child{
+    border-left:0 !important;
+}
+
+.table-fixed {
+    table-layout: fixed;
+}
+.table-striped > tbody > tr:first-child {
+    background: #f8f8f8;
+}
+.table-striped > tbody > tr:first-child {
+    background: #f8f8f8;
+}
+.areacolumn .columnright .formitem span, .databody .datafrom .formitem span, .Pop_up .mianform span, .dataarea .areaform span {
+    float: left;
+    display: block;
+}
+.btn_pre_c {
+    width: 28px;
+    height: 25px;
+    background: url(../images/next_c.png);
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.btn_next_c {
+    width: 28px;
+    height: 25px;
+    background: url(../images/pre_c.png);
+    display: inline-block;
+    cursor: pointer;
+}
+.icon_close {
+    width: 16px;
+    height: 16px;
+    background: url(../images/icon_close.png);
+    display: inline-block;
+    cursor: pointer;
+}
+.icon_closeEdit {
+    width: 16px;
+    height: 16px;
+    background: url(../images/icon_close.png);
+    display: inline-block;
+    cursor: pointer;
+}

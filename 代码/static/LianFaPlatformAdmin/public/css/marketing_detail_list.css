@@ -1,0 +1,85 @@
+#food_variety tr>td{
+	line-height: 80px;
+	font-size: 15px;
+}
+.editor_food_box>span{
+	padding:0px 6px;
+}
+.pagination{
+	float: right;
+}
+
+.type-select {
+    padding: 0 15px;
+}
+.type-select {
+    margin-top: 30px;
+}
+.type-select ul {
+    border-bottom: 1px solid #d0d1d1;
+}
+.type-select ul li {
+    width: 95px;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    text-align: center;
+    margin-right: 30px;
+}
+.type-select ul li a {
+    color: #545454;
+}
+.select {
+    border-bottom: 2px solid #44b8fd;
+}
+.choice_coupon_box{
+	overflow:hidden;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.choice_coupon_box .form-group+.form-group{
+	margin-bottom: 20px;
+}
+.box_div_coupon .form-group>label{
+	float: left;
+}
+.box_div_coupon .form-group>input{
+	width:auto;
+}
+.box_div_coupon .iradio_flat-green{
+	
+}
+.form-group{
+	overflow:hidden;
+}
+.box_div_coupon .iradio_flat-green+.iradio_flat-green{
+	margin-left: 30px;
+}
+#tb_coupon_list{
+	width:100%;
+}
+#tb_coupon_list thead{
+	background: #f4f4f8;
+    line-height: 45px;
+}
+#tb_coupon_list thead tr>th{
+	text-align: center;
+	color:#3f3f3f;
+}
+#tb_coupon_list tr>td{
+	text-align: center;
+	line-height: 40px;
+}
+#tb_coupon_list tr{
+	border:1px solid #f4f4f8;
+}
+#tb_coupon_list tr>td>a{
+	cursor: pointer;
+	padding:0px 3px;
+}
+.no_use{
+	color:#f00;
+}
+.has_use{
+	color:#ccc;
+}

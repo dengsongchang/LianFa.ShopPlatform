@@ -1,0 +1,83 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}商品列表{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/order_settings.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="order_settings">
+                <div class="settings">
+                    <span class="settings_text">自动化设置</span>
+                </div>
+                <div class="order_text">
+
+                    <div class="order_title">
+                        <em>*</em>
+                        <span>限时抢购订单超过</span>
+                        <div class="order_input">
+                            <input type="text" id="orderTime" value="40">
+                            <span>分钟</span>
+                        </div>
+                        <p>未付款，订单自动关闭</p>
+                    </div>
+                    <div class="order_title">
+                        <em>*</em>
+                        <span>下单后超过</span>
+                        <div class="order_input">
+                            <input type="text" id="orderDay" value="3">
+                            <span>分钟</span>
+                        </div>
+                        <p>未付款，订单自动关闭</p>
+                    </div>
+                    <div class="order_title">
+                        <em>*</em>
+                        <span>发货超过</span>
+                        <div class="order_input">
+                            <input type="text" id="sendDay" value="7">
+                            <span>天</span>
+                        </div>
+                        <p>未确认收货，订单自动完成</p>
+                    </div>
+                    <div class="order_title">
+                        <em>*</em>
+                        <span>订单完成超过</span>
+                        <div class="order_input">
+                            <input type="text" id="finishDay" value="7">
+                            <span>天</span>
+                        </div>
+                        <p>自动结束交易，不能申请售后</p>
+                    </div>
+                    <!--<div class="order_title">-->
+                        <!--<em>*</em>-->
+                        <!--<span>订单完成超过</span>-->
+                        <!--<div class="order_input">-->
+                            <!--<input type="text" id="finishEvaluate" value="7">-->
+                            <!--<span>天</span>-->
+                        <!--</div>-->
+                        <!--<p>自动五星好评</p>-->
+                    <!--</div>-->
+                    <!--<div class="order_title" >-->
+                        <!--<em>*</em>-->
+                        <!--<span>自动处理退款</span>-->
+                        <!--<div class="switch" id="autoRefund">-->
+                            <!--<p class=""></p>-->
+                        <!--</div>-->
+                        <!--<p>开启后,如果客户申请退款自动退钱给客户(仅对服务类订单有效)</p>-->
+                    <!--</div>-->
+                    <!--<div class="order_title" >-->
+                        <!--<em>*</em>-->
+                        <!--<span>订单短信通知</span>-->
+                        <!--<div class="switch" id="smsNotice">-->
+                                <!--<p class=""></p>-->
+                            <!--</div>-->
+                        <!--<p>订单支付后系统发短信通知发货人</p>-->
+                    <!--</div>-->
+                </div>
+                <a class="btn btn-primary finish" id="submit">完成</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/orderSettings.js" type="text/babel"></script>
+{{/block}}

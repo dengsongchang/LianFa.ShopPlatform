@@ -1,0 +1,75 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}添加类型名称{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/typeAdd_name.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1" href="/classify/typeList">管理</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" href="/classify/typeAdd_name">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--商品类型添加主体内容-->
+                    <div class="tab_li_type_box">
+                        <div class="col-xs-4">
+                            <button class="btn btn-block active_li_aboutClassify">1.添加类型名称</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-block">2.添加规格</button>
+                        </div>
+                    </div>
+
+                    <div class="step_content_container">
+                        <div class="first-step-con">
+                            <div class="row form-group">
+                                <label for="classify_name" class="col-md-3 text-right">*商品类型名称：</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="classify_name" placeholder="长度限制在1-30个字符之间">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="classify_name" class="col-md-3 text-right">备注：</label>
+                                <div class="col-md-9">
+                                    <textarea name=""  class="form-control" id="Remark" cols="30" rows="10"  placeholder="长度限制在0-100个字符之间"></textarea>
+
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-9" style="margin-top: 30px">
+                                    <span class="btn btn-primary" id="nextBtn">下一步</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                <!--商品类型添加主体内容end-->
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/typeAdd_name.js" type="text/babel"></script>
+{{/block}}

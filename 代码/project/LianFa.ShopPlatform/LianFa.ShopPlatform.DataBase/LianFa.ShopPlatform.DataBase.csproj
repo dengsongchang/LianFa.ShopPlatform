@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2888AC4-25D9-448D-B676-3CE7FBFB30CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LianFa.ShopPlatform.DataBase</RootNamespace>
+    <AssemblyName>LianFa.ShopPlatform.DataBase</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LF_AdminActions.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_AdminGroups.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_AdminOperateLogs.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Banners.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Brands.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Categories.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_CouponDeliveryAreas.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Coupons.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_CouponTypeContents.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_CouponTypes.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_MaterialCategory.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_MaterialLibrary.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Oauth.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_OrderActions.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_OrderProducts.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Orders.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ProductImages.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Products.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ProductStocks.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Regions.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShipAddresses.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShipCompanies.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShippingAppointRegions.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShippingPrice.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShippingRegions.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShippingRegionsGroups.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShippingTemplates.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShopPlatform.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LF_ShopPlatform.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShopPlatform.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LF_ShopPlatform.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LF_ShopPlatform.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LF_Users.cs">
+      <DependentUpon>LF_ShopPlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="LF_ShopPlatform.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LF_ShopPlatform.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="LF_ShopPlatform.edmx.diagram">
+      <DependentUpon>LF_ShopPlatform.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LF_ShopPlatform.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LF_ShopPlatform.edmx</DependentUpon>
+      <LastGenOutput>LF_ShopPlatform.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LF_ShopPlatform.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LF_ShopPlatform.edmx</DependentUpon>
+      <LastGenOutput>LF_ShopPlatform.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

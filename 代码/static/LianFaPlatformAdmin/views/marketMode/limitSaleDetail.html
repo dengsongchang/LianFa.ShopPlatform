@@ -1,0 +1,139 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}限时抢购 详情页{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/orderList.css">
+<link rel="stylesheet" href="/public/css/limitSaleDetail.css">
+<link rel="stylesheet" href="/public/css/orderService.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div style="margin-bottom: 15px"><a class="backBtn"><img src="/public/images/back.png" alt=""><span>返回</span></a></div>
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/marketMode/limitSaleDetail">详情</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="manageClassify_box_contanier">
+                    <div class="file_search_box">
+                        <div class="form-group form-inline">
+                            <lable>订单状态：</lable>
+                            <select name="" class="form-control" id="stateBox" style="border-radius: 4px">
+                                <option value="0" selected>请选择状态</option>
+                                <option value="1" >待付款</option>
+                                <option value="2" >确认中</option>
+                                <option value="3" >已确认</option>
+                                <option value="4" >等待配送</option>
+                                <option value="5" >配送中</option>
+                                <option value="6" >已完成</option>
+                                <option value="7" >锁定</option>
+                                <option value="8" >已关闭</option>
+                            </select>
+                            <button class="btn btn-primary" id="searchBtn" style="margin-left:10px ">查询</button>
+                        </div>
+                    </div>
+                    <div class="page_size_box" style="overflow: hidden">
+                        <div class="about_output_box pull-left">
+                            <div class="all_output" style="cursor: pointer">导出数据</div>
+                        </div>
+                        <div class="form-group form-inline pull-right" style="margin-bottom: 0px">
+                            <label style="position: relative;top: 6px;" for="">每页显示数量：</label>
+                            <select id="pagesize_dropdown" class="orderTypeSelect select2 pull-right" tabindex="-1" aria-hidden="true">
+                                <option value="10" selected>10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--以下是表格内容-->
+                    <div class="table_content_box">
+                        <table id="tb_limit_content">
+
+                        </table>
+                    </div>
+                    <!--以上是表格内容end-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--发货模态框-->
+<div class="mask" style="display: none">
+    <div class="content-box deliverBox" style="display: none">
+        <h2>订单发货</h2>
+        <a class="close">×</a>
+        <div class="buyer-info">
+            <ul>
+                <!--<li class="clearfix">-->
+                <!--<label>收货时间：</label>-->
+                <!--<p>时间不限</p>-->
+                <!--</li>-->
+                <li class="clearfix">
+                    <label>收货信息：</label>
+                    <p id="orderAddress"></p>
+                </li>
+                <li class="clearfix">
+                    <label>买家留言：</label>
+                    <p id="buymarker"></p>
+                </li>
+            </ul>
+        </div>
+        <div class="form-horizontal" style="margin-top: 40px;">
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label form-text">物流公司：</label>
+                <div class="col-sm-3">
+                    <select class="form-control" id="logisticsCompany">
+                        <option selected="selected" value="0">请选择快递公司</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label form-text">快递单号：</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="expressNumber">
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="pl-title">
+                <p>商品名称</p>
+                <p>购买数量</p>
+                <p>小计(元)</p>
+            </div>
+            <ul class="pl-table">
+
+            </ul>
+        </div>
+        <div class="box-footer">
+            <button class="btn btn-primary deliver-btn" id="deliver">发货</button>
+        </div>
+    </div>
+</div>
+
+<!--发货模态框end-->
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/js/limitSaleDetail.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

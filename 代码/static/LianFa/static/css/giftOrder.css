@@ -1,0 +1,289 @@
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+.allBox {
+    min-height: 100vh;
+    background: #fff;
+}
+
+.tabBox {
+    height: 46px;
+    position: relative;
+}
+
+.tabActive {
+    color: #333;
+    font-size: 14px!important;
+    font-weight: 800;
+}
+
+.tabLine {
+    height: 4px;
+    background: #D94E3A;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition-duration: 0.3s;
+    transform: translateX(0);
+    border-radius: 2px;
+}
+
+.orderBox_box {
+    float: left;
+}
+
+.tabItem {
+    width: 25%;
+    text-align: center;
+    line-height: 46px;
+    height: 46px;
+    font-size: 13px;
+    color: #333;
+    float: left;
+}
+
+.orderBox {
+    min-height: 206px;
+    background: #fff;
+    box-shadow: 0px 0px 4px 0px rgba(140, 140, 140, 0.35);
+    border-radius: 8px;
+    margin: 0 20px;
+    margin-top: 30px;
+}
+
+.osnBox {
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    overflow: hidden;
+    color: #333;
+}
+
+.osn {
+    color: #333;
+    font-size: 15px;
+    float: left;
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 800;
+}
+
+.osnNumber {
+    color: #333;
+}
+
+.stateBox {
+    color: #D94E3A;
+    float: right;
+    font-size: 12px;
+}
+
+.contentBox {
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*border-bottom: 1px solid #F4F5F8;*/
+}
+
+.productImg {
+    width: 80px;
+    height: 80px;
+    float: left;
+    background: #ccc;
+    margin-right: 10px;
+}
+
+.productRight {
+    float: left;
+    height: 80px;
+    width: 225px;
+    position: relative;
+}
+
+.productName {
+    width: 225px;
+    color: #333333;
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    float: left;
+}
+
+.priceBox {
+    float: left;
+    font-size: 13px;
+    color: #666;
+    width: 225px;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    bottom: 0;
+}
+
+.price {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: right;
+    font-size: 18px;
+    color: #D94E3A;
+}
+
+.icon {
+    font-size: 14px;
+}
+
+.count {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333;
+    float: left;
+    font-size: 14px;
+}
+
+.bottomBox {
+    min-height: 45px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    padding-right: 10px;
+    line-height: 45px;
+    font-size: 13px;
+    color: #333;
+    /*border-bottom: 1px solid #F4F5F8;*/
+}
+
+.allIcon {
+    color: #333;
+    font-size: 13px;
+    float: left;
+}
+
+.blod {
+    font-weight: 800;
+    font-size: 16px;
+    float: left;
+}
+
+.left {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    color: #333;
+    font-size: 14px;
+}
+
+.right {
+    float: right;
+    margin-left: 10px;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+}
+
+.actionBox {
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+
+.grayBtn {
+    width: 74px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+    float: right;
+    position: relative;
+    top: 7px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 13px;
+}
+
+.colorBtn {
+    width: 74px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #D94E3A;
+    float: right;
+    position: relative;
+    top: 7px;
+    box-sizing: border-box;
+    border: 1px solid #D94E3A;
+    margin-left: 10px;
+    border-radius: 13px;
+}
+
+.otherBtn {
+    margin-left: 10px;
+}
+
+.storeName {
+    height: 40px;
+    font-size: 13px;
+    color: #333;
+    overflow: hidden;
+}
+
+.shopIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 11px;
+    float: left;
+    position: relative;
+    top: 12px;
+}
+
+.sName {
+    margin-right: 10px;
+    float: left;
+    position: relative;
+    top: 12px;
+}
+
+.gray-right {
+    width: 12px;
+    height: 12px;
+    float: left;
+    position: relative;
+    top: 15px;
+}
+
+.evaluatBtn {
+    width: 50px;
+    height: 27px;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 27px;
+    color: #D10202;
+    border: 1px solid #D10202;
+    font-size: 14px;
+    float: right;
+    margin-right: 20px;
+    border-radius: 13.5px;
+    position: relative;
+    top: 12px;
+}
+
+.giftImg {
+    width: 100%;
+    height: 182px;
+    float: left;
+}

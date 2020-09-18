@@ -1,0 +1,107 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}添加新规格值/第三步{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/ruleAdd_third.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content rule_box">
+        <div class="handle_add_box">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addRuleValueModal">添加新规格值</button>
+        </div>
+        <div class="table_header">
+            <div class="col-xs-5">属性值</div>
+            <div class="col-xs-3">排序</div>
+            <div class="col-xs-4">操作</div>
+        </div>
+        <div class="table_body">
+            <div class="item-table" data-id="11">
+                <div class="col-xs-5 rule_txt_v">666</div>
+                <div class="col-xs-3">
+                    <img src="/public/images/up_order.png" alt="">
+                    <img src="/public/images/down_order.png" alt="">
+                </div>
+                <div class="col-xs-4 operation_dv">
+                    <span class="delete_rule">删除</span>
+                    <a data-toggle="modal" data-target="#reviseRuleValueModal">修改</a>
+                </div>
+            </div>
+            <div class="item-table" data-id="22">
+                <div class="col-xs-5 rule_txt_v">666</div>
+                <div class="col-xs-3">
+                    <img src="/public/images/up_order.png" alt="">
+                    <img src="/public/images/down_order.png" alt="">
+                </div>
+                <div class="col-xs-4 operation_dv">
+                    <span class="delete_rule">删除</span>
+                    <a data-toggle="modal" data-target="#reviseRuleValueModal">修改</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改属性值模态框-->
+    <div class="modal fade" id="reviseRuleValueModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">修改规格值</h4>
+                </div>
+                <div class="modal-body" style="width:452px;margin:auto">
+                    <div class="row form-group">
+                        <label for="" class="pull-left">规格值名：<span class="star">*</span></label>
+                        <div class="pull-left" style="width:300px;">
+                            <input type="text" class="form-control" id="reviseRuleVal-input">
+                            <div class="tip-txt-name">
+                                多个规格值可用“,”号隔开，每个值的字符数最多15个字符，不允许包含脚本标签和\(反斜杠)，系统会自动过滤
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="reviseRuleVal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改属性值模态框end-->
+    <!--添加属性值模态框-->
+    <div class="modal fade" id="addRuleValueModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">修改规格值</h4>
+                </div>
+                <div class="modal-body" style="width:452px;margin:auto">
+                    <div class="row form-group">
+                        <label for="" class="pull-left">规格值名：<span class="star">*</span></label>
+                        <div class="pull-left" style="width:300px;">
+                            <input type="text" class="form-control" id="addRuleVal-input">
+                            <div class="tip-txt-name">
+                                多个规格值可用“,”号隔开，每个值的字符数最多15个字符，不允许包含脚本标签和\(反斜杠)，系统会自动过滤
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="addRuleVal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加属性值模态框end-->
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/ruleAdd_third.js" type="text/babel"></script>
+{{/block}}

@@ -1,0 +1,124 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}标签管理{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/all.css">
+<link rel="stylesheet" href="/public/css/member_label.css"> {{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li >
+                            <a data-type="1"  href="/member/memberLabel">管理</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" data-toggle="tab" href="#second">编辑</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane" id="first">
+                    <table class="table table-striped">
+                        <tr>
+                            <td>标签名称</td>
+                            <td>会员人数</td>
+                            <td>操作</td>
+
+                        </tr>
+                    </table>
+                    <table class="datashow">
+                        <tr>
+                            <td>这是名称</td>
+                            <td>100</td>
+
+                            <td>
+                                <div class="operation">
+                                    <span>
+                                        <a href="">编辑</a>
+                                    </span>
+                                    <span>
+                                        <a href="">删除</a>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>这是名称</td>
+                            <td>100</td>
+
+                            <td>
+                                <div class="operation">
+                                    <span>
+                                        <a href="">编辑</a>
+                                    </span>
+                                    <span>
+                                        <a href="">删除</a>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>这是名称</td>
+                            <td>100</td>
+
+                            <td>
+                                <div class="operation">
+                                    <span>
+                                        <a href="">编辑</a>
+                                    </span>
+                                    <span>
+                                        <a href="">删除</a>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="tab-pane active" id="second">
+                    <div class="areacolumn">
+                        <div class="formitem">
+                            <ul>
+                                <li>
+                                    <span>
+                                        <em>*</em>标签名称：</span>
+                                    <input name="" type="text" id="txtTagName" class="formitem_word" placeholder="限制在20字符以内" style="margin-left: 10px;">
+                                </li>
+                                <li>
+                                    <span>自动打标签条件：</span>
+                                    <span>累计成功交易</span>
+                            
+                                    <input name="" type="number" id="txtOrderCount" class="formitem_Second">
+                                    <p>笔</p>
+                                </li>
+                                <li>
+                                    <span>或</span>
+                                    <span>累计购买金额</span>
+
+                                    <input name="" type="number" id="txtOrderTotalAmount" class="formitem_third">
+                                    <p>元</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                                <input type="submit" id="submitBtn" value="完 成"   class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/js/memberEditLabel.js" type="text/babel"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+{{/block}}

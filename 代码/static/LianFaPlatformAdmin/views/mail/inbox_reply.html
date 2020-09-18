@@ -1,0 +1,86 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}会员管理{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/inboxReply.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a data-type="1"  href="/mail">收件箱</a>
+                        </li>
+                        <li>
+                            <a data-type="2"  href="/mail/hasreply">已回复</a>
+                        </li>
+                        <li>
+                            <a data-type="3"  href="/mail/notreply">未回复</a>
+                        </li>
+                        <li  class="active">
+                            <a data-type="3"  href="/mail/reply">回复</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="inbox">
+                        <div class="inbox-reply-wrap">
+                            <div class="reply-item row">
+                                <div class="col-md-2">
+                                    <span>标题:</span>
+                                </div>
+                                <div class="col-md-4 form-group ">
+                                    <span>1</span>
+                                </div>
+                            </div>
+                            <div class="reply-item row">
+                                <div class="col-md-2">
+                                    <span>内容:</span>
+                                </div>
+                                <div class="col-md-5 form-group ">
+                                    <textarea class="form-control" rows="7" disabled ></textarea>
+                                </div>
+                            </div>
+                            <div class="reply-item row">
+                                <div class="col-md-2">
+                                    <em>*</em>
+                                    <span>标题:</span>
+                                </div>
+                                <div class="col-md-5 form-group ">
+                                    <input type="text" id="title" class="form-control" placeholder="标题长度限制在1-60个字符内" maxlength="60">
+                                </div>
+                            </div>
+                            <div class="reply-item row">
+                                <div class="col-md-2">
+                                    <em>*</em>
+                                    <span>内容:</span>
+                                </div>
+                                <div class="col-md-5 form-group ">
+                                    <textarea class="form-control" id="content" rows="7" placeholder="标题长度限制在1-300个字符内"></textarea>
+                                </div>
+                            </div>
+                            <div class="btn btn-primary submitBtn" >回复</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/inboxReply.js" type="text/babel"></script>
+<script src="/public/plugins/sweetalert/sweetalert.min.js"></script>
+
+{{/block}}

@@ -1,0 +1,72 @@
+.allBox {
+    min-height: 100vh;
+    background: #fff;
+    padding-bottom: 50px;
+}
+
+#app {}
+
+.giftImg {
+    height: 210px;
+    margin-bottom: 25px;
+}
+
+.contentBox {
+    margin: 0 15px;
+}
+
+.contentItem {
+    overflow: hidden;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.contentItem:last-child {
+    margin-bottom: 12px;
+}
+
+.icon {
+    width: 22px;
+    height: 19px;
+    float: left;
+    position: relative;
+    left: 0;
+    top: 13px;
+}
+
+.icon2 {
+    width: 18px;
+    height: 22px;
+    float: left;
+    position: relative;
+    left: 0;
+    top: 10px;
+}
+
+.inputItem {
+    width: 300px;
+    float: left;
+    color: #ccc;
+}
+
+.check {
+    text-align: center;
+    font-size: 12px;
+    color: #D94E3A;
+    margin-bottom: 75px;
+}
+
+.btn {
+    width: 180px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #D94E3A;
+    font-size: 18px;
+    border-radius: 25px;
+}

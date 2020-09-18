@@ -1,0 +1,92 @@
+<!--productRecyclebin.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}退款申请清单{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/refund_application.css"> {{/block}} {{block 'content'}}
+<section class="content">
+    <div class="product_consulting_box"></div>
+    <div class="container-fluid form-horizontal" style="margin-left:15px;margin-right:15px;padding-left:0px;padding-right:0px;overflow: hidden;">
+        <div class="main_list_content type_box">
+            <div class="list_title_header" style="float:left;width:100%">
+                <div id="order_tab_box">
+                    <ul class="nav nav-tabs" id="tab">
+                        <li class="active">
+                            <a  id="out_all" data-type="0" href="/order/refundApplication">全部退款申请单</a>
+                        </li>
+                        <li>
+                            <a  data-type="20" href="/order/refundApplicating">退款中</a>
+                        </li>
+                        <li>
+                            <a  data-type="20" href="/order/refundErrorApplication">失败</a>
+                        </li>
+                        <li>
+                            <a  data-type="20" href="/order/refundHasApplication">已退款</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 总容器box -->
+                <div class="tab-content">
+                    <!--全部退款申请单-->
+
+                    <div class="active tab-pane" id="application_list">
+                        <div class="refund_condition_box">
+                            <div class="form-inline clearfix">
+                                <div class="form-group col-lg-3 col-sm-6">
+                                    <label>订单编号：</label>
+                                    <input id="order_name" type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-lg-3 col-sm-6">
+                                    <a class="btn btn-primary" id="searchBtn">查询</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="refund-operate">
+                            <div class="form-group col-lg-9 col-sm-6">
+                                <div class="checkbox-refund">
+                                        <div class="check"><input type="checkbox" class="allCheck" ></div>
+                                        <div class="btn btn-default exportBtn">导出数据</div>
+                                        <div class="btn btn-default deleteBtn">删除</div>
+                                </div>
+                            </div>
+                            <div class="form-group form-inline col-lg-3 col-sm-6">
+                                <label class="showPage">每页显示数量: </label>
+                                <select id="pagesize_dropdown" class="form-control">
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>40</option>
+                                    <option>200</option>
+                                    <option>500</option>
+                                    <option>1000</option>
+                                    <option>2000</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="refund-nav">-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-2">订单编号</div>-->
+                                <!--<div class="col-md-1">会员名</div>-->
+                                <!--<div class="col-md-2">退款金额(元)</div>-->
+                                <!--<div class="col-md-2">申请时间</div>-->
+                                <!--<div class="col-md-1">处理状态</div>-->
+                                <!--<div class="col-md-2">处理时间</div>-->
+                                <!--<div class="col-md-2">操作</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <table id="RefundBox">
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 总容器box end -->
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/js/orderRefund_application.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}  `

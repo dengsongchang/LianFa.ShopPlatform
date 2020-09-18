@@ -1,0 +1,193 @@
+.content-wrapper{
+    background: #fff;
+}
+.option-list .form-group {
+    margin-top: 20px;
+}
+/*以下是公共样式*/
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+#choice_condition_box label{
+    font-size: 12px;
+    padding-right: 0px !important;
+    font-weight: 500;
+}
+input,select{
+    border-radius: 4px !important;
+}
+
+
+/*以下是自己写的代码*/
+#choice_condition_box {
+    padding: 15px 0px 0px;
+    border-bottom: 1px solid #ccc;
+}
+#start_time,#end_time{
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.orderTypeSelect{
+    display: block;
+
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.districe_place{
+    padding-left: 15px;
+}
+.about_district_box{
+    overflow: hidden;
+}
+@media (max-width: 1000px){
+    .about_district_box{
+        padding-left: 45px;
+    }
+}
+#province_box,.about_district_box select{
+
+}
+.quanxuan_con {
+    background: #f8f8f8;
+    line-height: 34px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-right: 15px;
+    width: 58px;
+}
+.all_data_operation_box {
+    padding: 30px 0px;
+}
+.about_output_box {
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    background: #f8f8f8;
+    /*margin-left: 40px;*/
+}
+.all_delivery {
+    float: left;
+    line-height: 34px;
+    text-align: center;
+    padding: 0px 4px;
+    font-size: 13px;
+    border-right: 1px solid #ccc;
+}
+.all_output {
+    float: left;
+    line-height: 34px;
+    text-align: center;
+    padding: 0px 4px;
+    font-size: 13px;
+}
+.all_delete_box {
+    float: left;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    background: #f8f8f8;
+    line-height: 34px;
+    text-align: center;
+    padding: 0px 4px;
+    font-size: 13px;
+    margin-left: 30px;
+    width:58px;
+    cursor:pointer;
+}
+.disp_page_box{
+    overflow: hidden;
+}
+/*表格样式*/
+#example1_wrapper .col-sm-12, #example1_wrapper .col-sm-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.table>thead>tr>th {
+    /*border: 0px 0px 1px;*/
+    background: #f8f8f8;
+}
+.table>thead>tr>th {
+    padding: 15px 8px;
+    border-bottom: 1px solid #ddd;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+.list_title_header .form-horizontal .form-group {
+    margin-right: 0px;
+     margin-left: 0px;
+}
+/*.table-bordered>tbody>tr>td {*/
+    /*border: none !important;*/
+    /*padding-left: 0px !important;*/
+    /*padding-right: 0px !important;*/
+/*}*/
+/*.blue {*/
+    /*display: inline-block;*/
+    /*vertical-align: bottom;*/
+    /*width: 100%;*/
+    /*!*background: #c9e5ff;*!*/
+    /*line-height: 36px;*/
+    /*height: 36px;*/
+    /*padding-left: 8px;*/
+    /*padding-right: 8px;*/
+/*}*/
+/*.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{*/
+    /*padding-left: 0!important;*/
+    /*padding-right: 0!important;*/
+    /*padding-top: 0!important;*/
+/*}*/
+/*发货确认模态框样式*/
+.about_state_desc{
+    border: 1px solid #fd9626;
+    padding: 8px;
+    background: #ffeedc;
+}
+.about_state_desc li {
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 22px;
+}
+.about_info_order label{
+    color: #666;
+    font-weight: 100;
+}
+.goods_tb th{
+    line-height: 45px;
+    background: #f8f8f8;
+    color:#666;
+    font-weight: 100;
+}
+.goods-title,.desc-title-goods{
+    display: block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

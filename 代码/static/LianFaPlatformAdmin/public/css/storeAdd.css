@@ -1,0 +1,222 @@
+.content-wrapper{
+    background: #fff;
+}
+/*以下是自己写的代码*/
+.classify_add_box{
+    padding: 15px 0px;
+    width: 640px;
+}
+.finish_bth_add{
+    width:86px;
+}
+input[type="text"],select{
+    border-radius: 5px !important;
+}
+/*上传图标样式*/
+.small_con {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px
+}
+.small_con img{
+    width: 100px;
+    height: 100px;
+}
+#small_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#small_upload_pick div,#small_upload_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#small_upload_pick label{
+    display: none;
+}
+#product_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#product_upload_pick div,#product_upload_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#product_upload_pick label{
+    display: none;
+}
+.code_con {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px
+}
+.code_con img{
+    width: 100px;
+    height: 100px;
+}
+#code_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#code_upload_pick div,#code_upload_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#code_upload_pick label{
+    display: none;
+}
+.preBox{
+    position: relative;
+    top: -34px;
+    left: 110px;
+    z-index: 1;
+    width: 54px;
+    height: 34px;
+}
+
+.merchantQualification_img {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px
+}
+.merchantQualification_img img{
+    width: 100px;
+    height: 100px;
+}
+.icon-box_about_classify{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 15px;
+}
+#merchantQualification_pick{
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#merchantQualification_pick div,#merchantQualification_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#merchantQualification_pick label{
+    display: none;
+}
+
+#merchantIdCardOne_pick{
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#merchantIdCardOne_pick div,#merchantIdCardOne_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#merchantIdCardOne_pick label{
+    display: none;
+}
+#merchantIdCardTwo_pick{
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#merchantIdCardTwo_pick div,#merchantIdCardOne_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#merchantIdCardTwo_pick label{
+    display: none;
+}
+
+#merchantLogo_pick_pick{
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#merchantLogo_pick div,#merchantIdCardOne_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#merchantLogo_pick label{
+    display: none;
+}
+.big_con {
+    position: relative;
+    display: inline-block;
+}
+#big_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+#big_upload_pick div,#big_upload_pick input{
+    width:100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+#big_upload_pick label{
+    display: none;
+}
+.time-box{
+    width: 100%;
+}
+.time-item{
+    width: 118px;
+    height:28px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    line-height: 30px;
+    position: relative;
+    color: #aaaaaa;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.delectBtn{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right:-5px;
+    top: -5px;
+}
+.ulImg li{
+    float: left;
+    margin-right: 10px;
+    width: 150px;
+    height: 150px;
+}

@@ -1,0 +1,30 @@
+.webuploader-container {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+
+.webuploader-container div,
+.webuploader-container input {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.webuploader-container label {
+    display: none;
+}
+
+.small_con {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px
+}
+
+.footer-btn {
+    text-align: center;
+}

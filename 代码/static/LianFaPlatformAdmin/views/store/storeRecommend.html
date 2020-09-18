@@ -1,0 +1,80 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}推荐画廊配置{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/productConfigure.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="functionHandleArea clearfix">
+        <div class="batchHandleArea">
+            <div class="checkall">
+                <input type="checkbox" name="selectall" id="stuCheckBox" class="check-box">
+            </div>
+        </div>
+        <a class="btn btn-default ml20 pull-left" id="delete">删除</a>
+        <a class="btn btn-primary ml20 pull-left" id="selectProduct">选择门店</a>
+    </div>
+    <div>
+        <table id="configureTable" class="table table-bordered table-striped">
+        </table>
+    </div>
+    <!--选择商品-->
+    <div class="mask">
+        <div class="content-box" style="height: 540px">
+            <h2>选择商品</h2>
+            <a class="close">×</a>
+            <div class="coup-content">
+                <div class="coup-search">
+                    <div class="option-list form-inline clearfix">
+                        <div class="form-group col-lg-4 col-md-4" style="width:400px;height: 90px">
+                            <label>门店名称：</label>
+                            <input type="text" class="form-control" id="UserName">
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3">
+                            <a class="btn btn-primary" id="productSearch">查询</a>
+                        </div>
+                    </div>
+                    <!--<div class="selectOperate clearfix">-->
+                        <!--<div class="checkall">-->
+                            <!--<input type="checkbox" name="selectall" id="allCheckBox" class="check-box">-->
+                        <!--</div>-->
+                        <!--<div class="paginalNum">-->
+                            <!--<span>每页显示数量：</span>-->
+                            <!--<select name="pagesize_dropdown" id="pagesize_dropdown">-->
+                                <!--<option value="2">2</option>-->
+                                <!--<option value="10">10</option>-->
+                                <!--<option value="40">40</option>-->
+                                <!--<option value="200">200</option>-->
+                                <!--<option value="500">500</option>-->
+                                <!--<option value="1000">1000</option>-->
+                                <!--<option value="2000">2000</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="selectTabel">
+                    <table id="productTabel" class="table table-bordered table-striped">
+
+                    </table>
+                </div>
+            </div>
+            <div class="box-footer">
+                <a class="btn btn-danger confirm-btn" id="bathAdd">一键添加</a>
+                <a class="btn btn-primary confirm-btn" id="addProduct">添加</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/js/storeRecommend.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

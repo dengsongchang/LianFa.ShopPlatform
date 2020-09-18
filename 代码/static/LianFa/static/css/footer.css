@@ -1,0 +1,42 @@
+
+.footerBox{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 375px;
+    height:50px;
+    box-sizing: border-box;
+    background: #fff;
+    z-index: 2000;
+    padding: 6px 0 0;
+    overflow: hidden;
+    border-top:1px solid #e5e5e5 ;
+}
+.footItem{
+    float: left;
+    height: 44px;
+    width: 25%;
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+    overflow: hidden;
+}
+.footItem:last-child{
+    margin-right: 0;
+}
+.homeIcon{
+    width: 22px;
+    height: 22px;
+}
+.active{
+    color: #D94E3A;
+}
+.displayClass{
+    position: static;
+    display: block;
+}
+.showClass{
+    position: fixed;
+    display: block;
+}
+

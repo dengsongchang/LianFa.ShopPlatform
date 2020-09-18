@@ -1,0 +1,97 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}店长列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link rel="stylesheet" href="/public/css/memberList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" href="/store/managerList">店长列表</a>
+                        </li>
+                        <li>
+                            <a data-type="1" href="/store/addMemberInfo">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <div class="form-group col-lg-3 col-md-6">
+                        <label>店长账户：</label>
+                        <input type="text" class="form-control" id="NickName">
+                    </div>
+                    <div class="form-group col-lg-3 col-md-6">
+                        <a class="btn btn-primary" id="search">查询</a>
+                    </div>
+                </div>
+                <div class="operate-box">
+                    <div class="btn-div clearfix">
+                        <!--<div class="checkall">-->
+                            <!--<input type="checkbox" name="selectall" id="stuCheckBox" class="check-box"/>-->
+                        <!--</div>-->
+                        <!--<a class="btn btn-default pull-left order-btn" id="delete">删除</a>-->
+
+                        <div class="paginalNum">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="memberTableDiv">
+                    <table id="memberTable" class="table table-bordered table-striped member-table">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask">
+        <div class="content-box" style="width: 580px;height: 260px;">
+            <h2>编辑会员</h2>
+            <a class="close">×</a>
+            <div class="form-inline" style="margin-top: 40px;">
+                <div class="form-group col-lg-9 col-md-12">
+                    <div class="col-md-4" style="height: 34px;line-height: 34px">
+                        <label>其他联系方式：</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="editPhone">
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <a class="btn btn-primary confirm-btn" id="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/managerList.js" type="text/babel"></script>
+{{/block}}

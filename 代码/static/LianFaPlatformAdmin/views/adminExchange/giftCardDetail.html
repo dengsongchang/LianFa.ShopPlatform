@@ -1,0 +1,123 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}礼包卡详情{{/block}} {{block 'head'}}
+<link type="text/css" rel="stylesheet" href="/public/plugins/ueditor/themes/default/css/ueditor.css">
+<link rel="stylesheet" href="/public/css/classifyList.css">
+<link rel="stylesheet" href="/public/css/storeAdd.css">
+<link rel="stylesheet" href="/public/css/productRelease.css">
+<link rel="stylesheet" href="/public/css/editMiniApp.css">
+<link rel="stylesheet" href="/public/plugins/pagination/pagination.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/jquery-chosen/chosen.css">
+{{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div style="margin: 22px 0px 0px 15px;"><a class="backBtn"><img src="/public/images/back.png" alt=""><span>返回</span></a>
+            </div>
+            <div class="">
+                <div class="tab-content edit-content">
+                    <div class="tab-pane active" id="first">
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="box box-solid">
+                                        <div class="box-header">
+                                            <h3 class="box-title">
+                                                基本信息
+                                            </h3>
+                                            <div class="pull-right">
+                                                <button type="button"
+                                                        class="btn btn-sm pull-right btn-primary operate-btn"
+                                                        data-widget="collapse" data-toggle="tooltip"
+                                                        title="Collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div class="form-box form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>礼品卡名称：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="cardName">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>礼品卡序列号：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="SerialNumber">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>用户名称：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="userName">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>购买时间：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="buyTime">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>兑换时间：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="checkTime">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>礼品卡状态：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="state">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>订单号：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="orderNumber">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">
+                                                        <span class="red-star">*</span>订单状态：</label>
+                                                    <div class="col-md-4">
+                                                        <input type="text" readonly class="form-control" id="orderState">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/js/jqPaginator.js"></script>
+<script src="/public/plugins/pagination/jquery.pagination.js"></script>
+<script src="/public/plugins/jquery-chosen/chosen.jquery.js"></script>
+<script src="/public/js/uploader_pic_toLibraryforProduct.js"></script>
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/giftCardDetail.js"></script>
+{{/block}}

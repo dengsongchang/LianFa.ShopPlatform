@@ -1,0 +1,239 @@
+.export {
+    padding-left: 26px;
+    background: url(../images/ic_export.png) no-repeat;
+    font-size: 14px;
+    text-decoration: underline !important;
+    margin-left: 30px;
+}
+
+
+
+.r_title h3 {
+    font-size: 16px;
+    float: left;
+    width: 300px;
+    padding-left: 10px;
+    margin-top: 8px;
+}
+
+#all_box {
+    background: #fff;
+    margin: 20px 20px 100px 20px;
+    border-radius: 5px;
+    width: 1200px;
+}
+
+.iselect_one {
+    background: #f9f9f9;
+    height: 34px;
+    line-height: 22px;
+    font-family: tahoma;
+    font-size: 12px;
+    color: #333;
+    float: left;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../Images/iselect_one_bg.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    font-family: "Microsoft YaHei";
+    width: 100px;
+    padding-left: 10px;
+}
+
+.r_title_r {
+    line-height: 35px;
+}
+
+.r_title_r ul {
+    width: 266px;
+    float: left;
+    height: 35px;
+    border: solid #e0e0e0 1px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-left: 48px;
+    margin-bottom: 0px;
+}
+
+.r_title_r ul li {
+    float: left;
+    width: 88px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+    background: #eeeeee;
+    cursor: pointer;
+}
+
+.img_toggle {
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 0px;
+}
+
+.input-group {
+    line-height: 32px;
+    color: #999;
+    width: 200px;
+}
+
+.input-prepend {
+    margin-right: 35px;
+    float: right;
+}
+
+/**/
+.chart_1_1 {
+    position: relative;
+    padding: 20px;
+}
+
+.chart_list_visit, .chart_list_order {
+    border-bottom: 1px solid #eee;
+}
+
+.chart_list {
+    height: 70px;
+    float: left;
+    width: 600px;
+}
+
+.chart_list_cell {
+    width: 100px;
+    float: left;
+    padding: 10px 0;
+}
+
+.chart_list_cell span {
+    font-size: 13px;
+}
+
+
+.chart_list_cell span, .chart_list_cell b {
+    float: left;
+    width: 100%;
+    line-height: 25px;
+}
+
+.chart_list_cell span, .chart_list_cell b {
+    float: left;
+    width: 100%;
+    line-height: 25px;
+}
+
+.chart_funnel {
+    position: absolute;
+    right: 75px;
+    top: 21px;
+}
+
+.region_1 {
+    right: 117px;
+    top: 75px;
+}
+
+.region_2 {
+    right: 160px;
+    top: 140px;
+}
+
+.region_3 {
+    right: 45px;
+    top: 110px;
+}
+
+.region {
+    display: inline-block;
+    position: absolute;
+    font-size: 13px;
+    color: #666;
+}
+
+.chart_list_cell span, .chart_list_cell b {
+    float: left;
+    width: 100%;
+    line-height: 25px;
+}
+#dateUl{
+    width: 178px;
+    margin-left: 130px;
+}
+#OrderSourceDistributionInfo table th, #OrderSourceDistributionInfo table td {
+    height: 40px;
+    text-align: left;
+    padding-left: 20px;
+}
+#OrderSourceDistributionInfo table th {
+    background: #f5f5f5;
+}
+
+#OrderSourceDistributionInfo table {
+    float: left;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+}
+#CustomerTradingTable {
+    position: absolute;
+    width: 490px;
+    height: 120px;
+    right: 20px;
+    top: 110px;
+    z-index: 2;
+    font-size: 13px;
+}
+#CustomerTradingTable table {
+    float: left;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+}
+#CustomerTradingTable table th {
+    height: 38px;
+    background: #f5f5f5;
+    text-align: center;
+}
+#CustomerTradingTable table tr:first-child td {
+    background: #fff;
+}
+#CustomerTradingTable table td {
+    height: 38px;
+    background: #f5f5f5;
+    text-align: center;
+}
+.NewCustomerNum {
+    position: absolute;
+    top: -42px;
+    right: 250px;
+    font-size: 14px;
+    color: #26c6da;
+}
+.OldCustomerNum {
+    position: absolute;
+    top: -42px;
+    right: 100px;
+    font-size: 14px;
+    color: #26c6da;
+}
+.tipBox {
+    position: absolute;
+    left: 118px;
+    top: -14px;
+    z-index: 9;
+    background: #fff8e1;
+    border: solid 1px #ffc107;
+    display: none;
+    padding: 10px;
+}
+.queryImg {
+    cursor: pointer;
+    margin-left: 10px;
+}

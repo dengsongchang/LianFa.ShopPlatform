@@ -1,0 +1,27 @@
+.content{
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.inbox-reply-wrap{
+    padding-top:10px;
+    margin-left:156px;
+}
+.reply-item{
+    margin-top:23px;
+}
+em{
+    color:red;
+}
+.reply-item .col-md-2{
+    font-size:14px;
+    color:#666666;
+    text-align: end;
+}
+textarea{
+    resize: none;
+    overflow-y: auto;
+}
+.submitBtn{
+    margin:46px 300px;
+}

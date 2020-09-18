@@ -1,0 +1,56 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}会员分层{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/memberLayer.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="head-data">
+        <h2 class="layer-title">新注册会员</h2>
+        <div>
+            <ul class="clearfix" id="newUser">
+                <li>
+                    <p class="data-num">0</p>
+                    <p class="data-text">今日新注册会员</p>
+                </li>
+                <li>
+                    <p class="data-num">0</p>
+                    <p class="data-text">本周新注册会员</p>
+                </li>
+                <li>
+                    <p class="data-num">0</p>
+                    <p class="data-text">本月新注册会员</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="user-box" id="userBox">
+        <h2 class="layer-title">会员消费</h2>
+        <div class="chart-box" id="memberSpend">
+
+        </div>
+    </div>
+    <div class="active-box" id="activeBox">
+        <h2 class="layer-title">活跃会员</h2>
+        <div class="chart-box" id="activeMember">
+
+        </div>
+    </div>
+    <div class="sleep-box" id="sleepBox">
+        <h2 class="layer-title">休眠会员</h2>
+        <div class="chart-box" id="sleepMember">
+
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/echarts/echarts.min.js"></script>
+<script src="/public/js/memberLayer.js" type="text/babel"></script>
+{{/block}}

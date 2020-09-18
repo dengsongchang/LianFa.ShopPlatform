@@ -1,0 +1,67 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}添加银行{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/productBrandOne.css">
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/sweetalert.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li >
+                            <a data-type="1" href="/distribution/bankList">管理</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" href="javascript:void(0);">编辑</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel">
+                        <div class="brandAdd">
+                            <div class="brand-list form-inline clearfix">
+                                <div class="form-group">
+                                    <label>银行名称：</label>
+                                    <input type="text" class="form-input" id="bankName" placeholder="请输入银行名称">
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <label>银行编号：</label>
+                                    <input type="text" class="form-input" id="bankNum" placeholder="请输入银行编号">
+                                </div>
+                                <!--<div class="form-group" style="position:relative">-->
+                                    <!--<label>品牌Logo：</label>-->
+                                    <!--<div id="uploader_food_btn"></div>-->
+                                    <!--<img id="brandbox" style="width: 50px;height: 50px" src="../../public/images/addImg.png">-->
+                                    <!--<p class="imgSize">450*150</p>-->
+                                <!--</div>-->
+                                <div class="form-group">
+                                    <a class="btn btn-primary finish" id="submit">完成</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/uploader_picset.js"></script>
+<script src="/public/js/bankEdit.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

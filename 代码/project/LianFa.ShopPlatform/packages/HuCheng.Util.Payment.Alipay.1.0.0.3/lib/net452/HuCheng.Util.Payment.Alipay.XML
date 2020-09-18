@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuCheng.Util.Payment.Alipay</name>
+    </assembly>
+    <members>
+        <member name="T:HuCheng.Util.Payment.Alipay.Response.AlipayRefundResponse">
+            <summary>
+            支付宝退款返回数据
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayRefundResponse.alipay_trade_refund_response">
+            <summary>
+            支付宝退款返回响应数据
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayRefundResponse.sign">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Response.Alipay_Trade_Refund_Response">
+            <summary>
+            支付宝退款返回响应数据
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Response.Refund_Preset_Paytool_List">
+            <summary>
+            退回的前置资产列表
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Response.Refund_Detail_Item_List">
+            <summary>
+            退款使用的资金渠道
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse">
+            <summary>
+            支付宝支付返回数据
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse.AppId">
+            <summary>
+            支付宝分配给开发者的应用Id
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse.OutTradeNo">
+            <summary>
+            商户订单号
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse.TradeNo">
+            <summary>
+            交易订单号
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse.TotalAmount">
+            <summary>
+            交易总金额
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse.SellerId">
+            <summary>
+            收款支付宝账号对应的支付宝唯一用户号
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse.TradeStatus">
+            <summary>
+            交易状态
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Response.AlipayTransferResponse">
+            <summary>
+            单笔转账到支付宝账户响应类
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayTransferResponse.alipay_fund_trans_toaccount_transfer_response">
+            <summary>
+            单笔转账到支付宝账户响应
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayTransferResponse.sign">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse">
+            <summary>
+            单笔转账到支付宝账户响应
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse.code">
+            <summary>
+            网关返回码
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse.msg">
+            <summary>
+            网关返回码描述
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse.out_biz_no">
+            <summary>
+            商户转账唯一订单号：发起转账来源方定义的转账单据号。请求时对应的参数，原样返回。
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse.order_id">
+            <summary>
+            支付宝转账单据号，成功一定返回，失败可能不返回也可能返回。
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse.pay_date">
+            <summary>
+            支付时间：格式为yyyy-MM-dd HH:mm:ss，仅转账成功返回。
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse.sub_code">
+            <summary>
+            业务返回码
+            </summary>
+        </member>
+        <member name="P:HuCheng.Util.Payment.Alipay.Response.AlipayFundTransToaccountTransferResponse.sub_msg">
+            <summary>
+            业务返回码描述
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.AliPayService">
+            <summary>
+            支付宝支付服务
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.AliPayService._aopClient">
+            <summary>
+            AopClient
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.AliPayService._aliPayPublicKey">
+            <summary>
+            支付宝公钥
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.AliPayService._aliPayGatewayUrl">
+            <summary>
+            支付宝支付网关地址
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.AliPayService.InitAliPay(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            初始化支付宝支付
+            </summary>
+            <param name="aliPayGatewayUrl">支付宝支付网关地址</param>
+            <param name="aliPayAppId">支付宝AppId</param>
+            <param name="aliPayPrivateKey">支付宝私钥</param>
+            <param name="aliPaySignType">支付宝签名类型</param>
+            <param name="aliPayPublicKey">支付宝公钥</param>
+            <param name="aliPayCharSet">支付宝编码格式</param>
+            <param name="format">格式-默认为json</param>
+            <param name="version">版本号，默认为1.0</param>
+            <param name="keyFromFile">密钥是否来源文件，默认为false</param>
+            <returns>初始化结果，true-成功,false-失败</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.AliPayService.BuildAliPay(System.String,System.String,System.String,System.String,System.String,System.String,HuCheng.Util.Payment.Alipay.Enum.AliPayTradeType,System.String)">
+            <summary>
+            创建支付宝支付
+            </summary>
+            <param name="orderNo">商户订单号</param>
+            <param name="subject">标题</param>
+            <param name="totalAmout">支付金额</param>
+            <param name="itemBody">商品描述</param>
+            <param name="returnUrl">同步回调返回地址</param>
+            <param name="aliPayNotifyUrl">异步回调通知地址</param>
+            <param name="tradeType">交易类型（网站支付、wap支付、APP支付）</param>
+            <param name="aliPayMchId">支付商家Id，用于生产订单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.AliPayService.VerifyCallback(System.String,System.String,System.Web.HttpRequestBase,HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse@)">
+            <summary>
+            验证支付宝回调，并获取相关返回参数
+            </summary>
+            <param name="aliPaySignType">支付宝签名类型</param>
+            <param name="aliPayCharSet">支付宝编码格式</param>
+            <param name="request">HTTP请求</param>
+            <param name="model">当验证成功后，获取主要返回参数</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.AliPayService.Refund(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            支付退款
+            </summary>
+            <param name="tradeNo">商户订单号</param>
+            <param name="alipayTradeNo">支付宝订单号</param>
+            <param name="refundAmount">退款金额</param>
+            <param name="refundReason">退款原因</param>
+            <param name="refundNo">退款单号</param>
+            <returns>退款结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.AliPayService.Transfers(System.String,HuCheng.Util.Payment.Alipay.Enum.PayeeType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            单笔转账到支付宝账户
+            </summary>
+            <param name="outBizNo">商户转账唯一订单号。发起转账来源方定义的转账单据ID，用于将转账回执通知给来源方。 不同来源方给出的ID可以重复，同一个来源方必须保证其ID的唯一性。 只支持半角英文、数字，及“-”、“_”。</param>
+            <param name="payeeType">收款方账户类型</param>
+            <param name="payeeAccount">收款方账户。与payee_type配合使用。付款方和收款方不能是同一个账户。</param>
+            <param name="amount">转账金额，单位：元。 只支持2位小数，小数点前最大支持13位，金额必须大于等于0.1元。</param>
+            <param name="remark">转账备注（支持200个英文/100个汉字）。</param>
+            <param name="payerShowName">付款方姓名（最长支持100个英文/50个汉字）。如果该字段不传，则默认显示付款方的支付宝认证姓名或单位名称。</param>
+            <param name="payeeRealName">收款方真实姓名（最长支持100个英文/50个汉字）。 如果本参数不为空，则会校验该账户在支付宝登记的实名是否与收款方真实姓名一致。</param>
+            <returns></returns>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Enum.AliPayConst">
+            <summary>
+            支付宝常量
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.AliPayConst.TradeSuccess">
+            <summary>
+            交易成功码-交易支付成功
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.AliPayConst.TradeClosed">
+            <summary>
+            交易关闭码-未付款交易超时关闭，或支付完成后全额退款
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.AliPayConst.GatewayRequestSuccess">
+            <summary>
+            网关返回码-请求成功
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Enum.AliPayTradeType">
+            <summary>
+            AliPay交易类型
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.AliPayTradeType.WebSite">
+            <summary>
+            网站支付
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.AliPayTradeType.Wap">
+            <summary>
+            wap支付
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.AliPayTradeType.App">
+            <summary>
+            APP支付
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.Enum.PayeeType">
+            <summary>
+            收款方账户类型
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.PayeeType.AlipayUserId">
+            <summary>
+            支付宝账号对应的支付宝唯一用户号。以2088开头的16位纯数字组成
+            </summary>
+        </member>
+        <member name="F:HuCheng.Util.Payment.Alipay.Enum.PayeeType.AlipayLoginId">
+            <summary>
+            支付宝登录号，支持邮箱和手机号格式
+            </summary>
+        </member>
+        <member name="T:HuCheng.Util.Payment.Alipay.IAlipayService">
+            <summary>
+            支付宝支付服务
+            </summary>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.IAlipayService.InitAliPay(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            初始化支付宝支付
+            </summary>
+            <param name="aliPayGatewayUrl">支付宝支付网关地址</param>
+            <param name="aliPayAppId">支付宝AppId</param>
+            <param name="aliPayPrivateKey">支付宝私钥</param>
+            <param name="aliPaySignType">支付宝签名类型</param>
+            <param name="aliPayPublicKey">支付宝公钥</param>
+            <param name="aliPayCharSet">支付宝编码格式</param>
+            <param name="format">格式-默认为json</param>
+            <param name="version">版本号，默认为1.0</param>
+            <param name="keyFromFile">密钥是否来源文件，默认为false</param>
+            <returns>初始化结果，true-成功,false-失败</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.IAlipayService.BuildAliPay(System.String,System.String,System.String,System.String,System.String,System.String,HuCheng.Util.Payment.Alipay.Enum.AliPayTradeType,System.String)">
+            <summary>
+            创建支付宝支付
+            </summary>
+            <param name="orderNo">商户订单号</param>
+            <param name="subject">标题</param>
+            <param name="totalAmout">支付金额</param>
+            <param name="itemBody">商品描述</param>
+            <param name="returnUrl">同步回调返回地址</param>
+            <param name="aliPayNotifyUrl">异步回调通知地址</param>
+            <param name="tradeType">交易类型（网站支付、wap支付、APP支付）</param>
+            <param name="aliPayMchId">支付商家Id，用于生产订单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.IAlipayService.VerifyCallback(System.String,System.String,System.Web.HttpRequestBase,HuCheng.Util.Payment.Alipay.Response.AlipayReturnResponse@)">
+            <summary>
+            验证支付宝回调，并获取相关返回参数
+            </summary>
+            <param name="aliPaySignType">支付宝签名类型</param>
+            <param name="aliPayCharSet">支付宝编码格式</param>
+            <param name="request">HTTP请求</param>
+            <param name="model">当验证成功后，获取主要返回参数</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.IAlipayService.Refund(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            支付退款
+            </summary>
+            <param name="tradeNo">商户订单号</param>
+            <param name="alipayTradeNo">支付宝订单号</param>
+            <param name="refundAmount">退款金额</param>
+            <param name="refundReason">退款原因</param>
+            <param name="refundNo">退款单号</param>
+            <returns>退款结果</returns>
+        </member>
+        <member name="M:HuCheng.Util.Payment.Alipay.IAlipayService.Transfers(System.String,HuCheng.Util.Payment.Alipay.Enum.PayeeType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            单笔转账到支付宝账户
+            </summary>
+            <param name="outBizNo">商户转账唯一订单号。发起转账来源方定义的转账单据ID，用于将转账回执通知给来源方。 不同来源方给出的ID可以重复，同一个来源方必须保证其ID的唯一性。 只支持半角英文、数字，及“-”、“_”。</param>
+            <param name="payeeType">收款方账户类型</param>
+            <param name="payeeAccount">收款方账户。与payee_type配合使用。付款方和收款方不能是同一个账户。</param>
+            <param name="amount">转账金额，单位：元。 只支持2位小数，小数点前最大支持13位，金额必须大于等于0.1元。</param>
+            <param name="remark">转账备注（支持200个英文/100个汉字）。</param>
+            <param name="payerShowName">付款方姓名（最长支持100个英文/50个汉字）。如果该字段不传，则默认显示付款方的支付宝认证姓名或单位名称。</param>
+            <param name="payeeRealName">收款方真实姓名（最长支持100个英文/50个汉字）。 如果本参数不为空，则会校验该账户在支付宝登记的实名是否与收款方真实姓名一致。</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

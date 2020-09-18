@@ -1,0 +1,69 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}积分管理{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/all.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/member_grade.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">等级</a>
+                        </li>
+                        <li>
+                            <a data-type="2" id="addMember" data-toggle="tab" href="#second">添加</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="first">
+                    <table id="memberGradeBox">
+
+                    </table>
+                </div>
+                <div class="tab-pane" id="second">
+                    <div class="areacolumn">
+                        <div class="formitem">
+                            <ul>
+                                <li>
+                                    <span class="formitemtitle">
+                                        <em>*</em>会员等级名称：</span>
+                                    <input name="" type="text" id="memberName" class="form-control" placeholder="限制在20字符以内" validategroup="default">
+                                </li>
+                                <li>
+                                    <span class="formitemtitle">
+                                        <em>*</em>会员等级价格：</span>
+                                    <div class="input-group">
+                                        <span class="left">一口价 x</span>
+                                        <input name="c" type="number" id="memberPrice" class="form_input" placeholder="折扣为正数" validategroup="default">
+                                        <span class="right">%</span>
+                                    </div>
+
+                                </li>
+                            </ul>
+                  
+                        </div>
+                        <div class="button">
+                                <input type="submit" value="完 成" id="submitBtn"  class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/js/memberGgrade.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+ {{/block}}

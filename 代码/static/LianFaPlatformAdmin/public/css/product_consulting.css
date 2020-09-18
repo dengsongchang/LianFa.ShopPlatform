@@ -1,0 +1,97 @@
+/* .recycle_reply{
+border-bottom: 1px #fd522d solid;
+    height: 44px;
+}
+.recycle_reply span{
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    width: 90px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+} */
+.content-wrapper{
+    background: #fff;
+}
+
+.product_consulting_box{
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.choice_condition_box{
+    padding: 15px 15px 0px;
+    border-bottom: 1px solid #ddd;}
+
+
+input[type=file] {
+    display: block;
+}
+.btn-primary {
+    background: #1792e7;
+    border-color: #1792e7;
+}
+.btn {
+    font-size: 14px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    vertical-align: top;
+}
+.formitemtitle p{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    width: 600px;
+}.nav-tabs {
+    border-bottom: 1px solid #fd522d;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #fff;
+  cursor: default;
+  background-color: #fd522d;
+  border-bottom-color: transparent;
+  border-radius: 10px 10px 0px 0px;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: transparent transparent #fd522d;
+  }
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #3f3f3f;
+}
+.product_consulting_box {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main_list_content {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+.list_title_header {
+    margin-bottom: 20px;
+}
+.choice_condition_box {
+    padding: 15px 15px 0px;
+    border-bottom: 1px solid #ddd;
+}
+.tab-content>.active {
+    display: block;
+}
+#tb_Noreply{
+    margin
+}

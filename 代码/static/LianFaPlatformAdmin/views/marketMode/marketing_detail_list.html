@@ -1,0 +1,101 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} 
+
+{{block 'title'}}营销方式-营销方式{{/block}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/marketing_detail_list.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/flat/_all.css">
+{{/block}} 
+
+{{block 'content'}}
+
+<section class="content-header">
+    <h4 style="border-bottom: 1px solid #ddd;margin:0px;padding:10px 0px 10px">
+        <i class="iconfont icon-qiaquanguanli" style="font-size: 22px;"></i>营销方式
+    </h4>
+</section>
+<section>
+    <div class="type-select" style="line-height: 45px;border-bottom: 1px solid #d0d1d1;">
+        <a href="#" class="goBackbtn" style="color:#545454">
+            <i class="fa fa-angle-left" style="font-size: 25px;margin-right: 10px;vertical-align: sub;"></i>优惠券列表/领取详情
+        </a>
+
+    </div>
+    <div class="choice_coupon_box">
+        <div  class="container-fluid" style="margin-left:15px;margin-right:15px;padding-left:0px;padding-right:0px;border-bottom: 1px solid #ddd;overflow: hidden;">
+            <div class="row">
+                <div class="form-group col-lg-4">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label for="coupon_name">订单编号：</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="coupon_name" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-4">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label class="">使用状态：</label>
+                        </div>
+                        <div class="col-md-7">
+                            <select class="form-control select2 select2-hidden-accessible" aria-hidden="true" id="stateList">
+                                <option selected="selected" value="0">全部</option>
+                                <option value="1">未使用</option>
+                                <option value="2">已使用</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-4">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label class="" for="search_coupon" style="vertical-align: middle;opacity: 0;display: none">查询：</label>
+                        </div>
+                        <div class="col-md-7">
+                            <button type="button" class="btn btn-primary" id="search_coupon">查询</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="content container-fluid">
+    <div class="main_list_content">
+
+        <div id="coupon_list_box">
+
+            <table id="tb_coupon_list">
+
+            </table>
+
+
+        </div>
+
+    </div>
+</section>
+
+{{/block}}
+
+{{block 'footer'}}
+<aside class="control-sidebar control-sidebar-dark"></aside>
+{{/block}}
+
+{{block 'requirejs'}}
+<!-- bootstrp table分页插件 -->
+<script src="/public/js/marketing_detail_list.js" type="text/babel"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+
+{{/block}}

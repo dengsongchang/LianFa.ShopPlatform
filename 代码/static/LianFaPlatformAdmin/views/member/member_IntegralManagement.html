@@ -1,0 +1,50 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}熊豆规则管理列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/nav.css">
+<link rel="stylesheet" href="/public/css/productList.css">
+<link rel="stylesheet" href="/public/css/memberList.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#first">熊豆规则管理列表</a>
+                        </li>
+                        <li>
+                            <a href="/member/memberIntegral">熊豆获取规则</a>
+                        </li>
+                        <li>
+                            <a  href="/member/memberIntegralAdd">添加</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div id="memberTableDiv" style="margin-top: 50px">
+                    <table id="memberTable" class="table table-bordered table-striped member-table">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/memberIntegralManagement.js" type="text/babel"></script>
+{{/block}}

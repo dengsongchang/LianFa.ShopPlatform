@@ -1,0 +1,69 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}基本设置{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/mall_basicsetup.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="order_settings">
+                <div class="settings">
+                    <span class="settings_text">基本设置</span>
+                </div>
+                <div class="basicsetup_txet">
+
+                    <div class="form-group basicsetup_title">
+                        <label class="col-md-2 control-label">
+                            <em>*</em>商家名称：
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="goodsKind" placeholder="限制在20个字符" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="form-group basicsetup_title_next">
+                        <label class="col-md-2  control-label">客服电话：</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="servicePhone" placeholder="限制在20个字符" maxlength="20">
+                        </div>
+                    </div>
+                    <!--<div class="form-group basicsetup_title_next ">-->
+                        <!--<label class="col-md-2 control-label">网站标题：</label>-->
+                        <!--<div class="col-md-5">-->
+                            <!--<input type="text" class="form-control" id="websiteTitle" placeholder="限定在60个字符" maxlength="60">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group basicsetup_title_next">-->
+                        <!--<label class="col-md-2 control-label">网站网址：</label>-->
+                        <!--<div class="col-md-5">-->
+                            <!--<input type="text" class="form-control" id="websiteUrl" placeholder="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group basicsetup_title_next">-->
+                        <!--<label class="col-md-2 control-label">备案信息：</label>-->
+                        <!--<div class="col-md-5">-->
+                            <!--<input type="text" class="form-control" id="recordInfo" placeholder="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group basicsetup_title_last">-->
+                        <!--<label class="col-sm-2 control-label">会员注册协议：</label>-->
+
+                        <!--&lt;!&ndash; 加载编辑器的容器 &ndash;&gt;-->
+                        <!--<div class="col-md-9" id="editorContent">-->
+                            <!--<script id="regEditor" name="content" type="text/plain">-->
+                            <!--</script>-->
+                            <!--<input type="file" id="uploadfile_btn" class="form-inline" name="file" style="width: 20px;height: 20px;display: inline-block;position: absolute;top: 52px;left: 103px;z-index: 100"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="basicsetup-btn">
+                        <button class="btn btn-primary" id="nextStep">提交</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/js/mall_basic_setup.js" type="text/babel"></script>
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+{{/block}}
