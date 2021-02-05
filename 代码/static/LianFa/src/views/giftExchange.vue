@@ -133,7 +133,7 @@
 
             that.getCouponImgInfo();
 
-            //  that.Common.showMsg('现由于受冠状病毒影响，工厂供应紧张，个别产品缺货，不定期到货，到货后安排发货，是否继续兑换')
+            that.Common.showMsg('您好，因春节期间物流暂停收货，2月3号~2月21号的单暂停发货，您可先行兑换，2月22号恢复发货，造成不便，敬请谅解，谢谢！')
             // localStorage.getItem("token");
         },
         created() {

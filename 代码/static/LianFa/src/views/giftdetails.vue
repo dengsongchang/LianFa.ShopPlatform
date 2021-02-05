@@ -161,44 +161,44 @@
 
             },
 
-            // //立即购买
-            // actionBuyHandle: function(count) {
-            //     var that = this;
-            //     that.Common.confirmDialog('物流停运，年初十（2月3号）恢复，是否继续兑换',function(){
-            //         if (that.count == 0) {
-            //             that.Common.showMsg("数量不能为0")
-            //         } else {
-            //             that.$router.push({
-            //                 path: '/giftPayOrder',
-            //                 query: {
-            //                     count: that.count,
-            //                     gId: that.gId,
-            //                     isCartBuy: false
-            //                 }
-            //             })
-            //         }
-            //     })
-
-            // },
             //立即购买
             actionBuyHandle: function(count) {
                 var that = this;
-                if (that.count == 0) {
-                    that.Common.showMsg("数量不能为0")
-                } else {
-                    that.$router.push({
-                        path: '/giftPayOrder',
-                        query: {
-                            count: that.count,
-                            gId: that.gId,
-                            isCartBuy: false
-                        }
-                    })
-                }
-
-
+                that.Common.confirmDialog('物流停运，2月22号恢复发货，是否继续兑换',function(){
+                    if (that.count == 0) {
+                        that.Common.showMsg("数量不能为0")
+                    } else {
+                        that.$router.push({
+                            path: '/giftPayOrder',
+                            query: {
+                                count: that.count,
+                                gId: that.gId,
+                                isCartBuy: false
+                            }
+                        })
+                    }
+                })
 
             },
+            // //立即购买
+            // actionBuyHandle: function(count) {
+            //     var that = this;
+            //     if (that.count == 0) {
+            //         that.Common.showMsg("数量不能为0")
+            //     } else {
+            //         that.$router.push({
+            //             path: '/giftPayOrder',
+            //             query: {
+            //                 count: that.count,
+            //                 gId: that.gId,
+            //                 isCartBuy: false
+            //             }
+            //         })
+            //     }
+
+
+
+            // },
         },
         mounted() {
 
